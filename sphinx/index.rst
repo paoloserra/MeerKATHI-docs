@@ -7,8 +7,28 @@ Welcome to MeerKATHI documentation
 ==========================================
  
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
+ 
+ 
+ 
+Workers
+==================
+ 
+.. toctree::
+   :maxdepth: 1
+ 
+   general/index.rst
+   get_data/index.rst
+   observation_config/index.rst
+   prepare_data/index.rst
+   flagging/index.rst
+   cross_cal/index.rst
+   inspect_data/index.rst
+   split_target/index.rst
+   masking/index.rst
+   self_cal/index.rst
+   image_HI/index.rst
  
  
  
