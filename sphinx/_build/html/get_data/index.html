@@ -1,65 +1,95 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>get_data &#8212; meerkathi-docs  documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>get_data &mdash; meerkathi-docs  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="observation_config" href="../observation_config/index.html" />
-    <link rel="prev" title="general" href="../general/index.html" />
+    <link rel="prev" title="general" href="../general/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="../index.html" class="icon icon-home"> meerkathi-docs
+          
+
+          
+          </a>
+
+          
             
-  <div class="section" id="get-data">
-<h1>get_data<a class="headerlink" href="#get-data" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-</div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-
-          </div>
           
         </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">meerkathi-docs</a></h1>
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">general</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">get_data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">get_data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#order"><strong>order</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dataid"><strong>dataid</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mvftoms"><strong>mvftoms</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#untar"><strong>untar</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#combine"><strong>combine</strong></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../observation_config/index.html">observation_config</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prepare_data/index.html">prepare_data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../flagging/index.html">flagging</a></li>
@@ -71,53 +101,193 @@
 <li class="toctree-l1"><a class="reference internal" href="../image_HI/index.html">image_HI</a></li>
 </ul>
 
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../general/index.html" title="previous chapter">general</a></li>
-      <li>Next: <a href="../observation_config/index.html" title="next chapter">observation_config</a></li>
-  </ul></li>
-</ul>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">meerkathi-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>get_data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/get_data/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="get-data">
+<h1>get_data<a class="headerlink" href="#get-data" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Download and/or convert/unarchive data so that its in the MS format for further processing</p>
+<div class="section" id="order">
+<h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>Workers are executed in ascedning order based on this value.</p>
+</div></blockquote>
+</div>
+<div class="section" id="dataid">
+<h2><strong>dataid</strong><a class="headerlink" href="#dataid" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><em>optional</em>
+Basename of MS. For MeerKAT data to be downloaded by MeerKATHI, this should be the data ID of the observation</div></blockquote>
+</div>
+<div class="section" id="mvftoms">
+<h2><strong>mvftoms</strong><a class="headerlink" href="#mvftoms" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Convert HDF5/MVF files in data_path to MS files; the latter are written to msdir; also creates a MS.TAR file. (This only works for MeerKAT HDF5 files)</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><em>bool</em>, <em>optional</em>
+Execute this segment</dd>
+<dt><strong>tar</strong></dt>
+<dd><em>bool</em>, <em>optional</em>
+Create a tarbal of the converted MS.</dd>
+<dt><strong>channel_range</strong></dt>
+<dd><em>str</em>, <em>optional</em>
+Only exctract channels in this range (0-based, inclusive; comma seperated string)</dd>
+<dt><strong>full_poll</strong></dt>
+<dd><em>bool</em>, <em>optional</em>
+Extract all four correlations instead of only the XX,YY</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="untar">
+<h2><strong>untar</strong><a class="headerlink" href="#untar" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Unarchive from MS from a archive file.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><em>bool</em>, <em>optional</em>
+Execute this segment</dd>
+<dt><strong>tar_options</strong></dt>
+<dd><em>str</em>, <em>optional</em>
+Options to parse to ‘tar’ command</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="combine">
+<h2><strong>combine</strong><a class="headerlink" href="#combine" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Virtually concatenate MSs and proceed with the combined MS</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><em>bool</em>, <em>optional</em>
+Execute this section</dd>
+<dt><strong>reset</strong></dt>
+<dd><em>bool</em>, <em>optional</em>
+Delete concatenated MS if it exists. Else, proceed with existing MS</dd>
+<dt><strong>tar</strong></dt>
+<dd>Create a tarbal of the converted MS</dd>
+<dt><strong>untar</strong></dt>
+<dd>Unarchive from MS from a archive file.</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../observation_config/index.html" class="btn btn-neutral float-right" title="observation_config" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../general/index.html" class="btn btn-neutral float-left" title="general" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, MeerKATHI team
 
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2019, Paolo Serra.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="../_sources/get_data/index.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>

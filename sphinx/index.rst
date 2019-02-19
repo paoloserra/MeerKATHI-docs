@@ -3,8 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
  
-Welcome to MeerKATHI documentation
-==========================================
+Welcome to the MeerKATHI documentation [work in progress!]
  
 .. toctree::
    :maxdepth: 1
@@ -12,6 +11,13 @@ Welcome to MeerKATHI documentation
  
  
  
+====================
+Download and install
+====================
+ 
+To download and install the code go to https://github.com/ska-sa/meerkathi (currently private)
+ 
+==================
 Workers
 ==================
  
@@ -36,5 +42,4 @@ Indices and tables
 ==================
  
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`

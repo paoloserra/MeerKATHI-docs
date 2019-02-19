@@ -8,3 +8,57 @@ prepare_data
  
 .. toctree::
    :maxdepth: 1
+ 
+Prepare the data for calibration and imaging.
+
+
+
+-------------------------------------
+**enable**
+-------------------------------------
+  *bool*, *optional*
+
+  Executes the data preparation step.
+
+
+
+-------------------------------------
+**order**
+-------------------------------------
+  *int*, *optional*
+
+  Order in queue of workers.
+
+
+
+-------------------------------------
+**fixvis**
+-------------------------------------
+  Fixes the UVW coordinates through the CASA task fixvis.
+
+    **enable**
+      *bool*, *optional*
+      Enable execution of fixvis.
+
+
+
+-------------------------------------
+**prepms**
+-------------------------------------
+  Add BITFLAG column to MS.
+
+    **enable**
+      *bool*, *optional*
+      Enable addition of BITFLAG column to MS.
+
+
+
+-------------------------------------
+**add_spectral_weights**
+-------------------------------------
+  Add spectral weights column to the measurement set.
+
+    **enable**
+      *bool*, *optional*
+      Enables addition of spectral weights column to the measurement set.
+
