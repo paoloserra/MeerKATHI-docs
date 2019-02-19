@@ -91,14 +91,17 @@ Create mask from catalog / merge with mask of extended source
 
     **enable**
       *bool*, *optional*
+
       Execute this worker
 
     **catalog**
       *str*, *optional*
+
       Name of catalog to query, either NVSS or SUMSS
 
     **width_image**
       *str*, *optional*
+
       Width of the region of sky we want to mask (keep larger than dirty image)
 
 
@@ -110,10 +113,12 @@ Create mask from catalog / merge with mask of extended source
 
     **enable**
       *bool*, *optional*
+
       Execute this worker
 
     **frequency**
       *float*, *optional*
+
       Primary beam size changes with frequency, provide central frequency of dataset
 
 
@@ -125,22 +130,27 @@ Create mask from catalog / merge with mask of extended source
 
     **enable**
       *bool*
+
       Execute this worker
 
     **mask_with**
       *str*, *optional*
+
       Tool to use for masking
 
     **input_image**
       *str*, *optional*
+
       Input image where to create mask
 
     **thresh_lev**
       *float*, *optional*
+
       Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)
 
     **scale_noise_window**
       *float*, *optional*
+
       window size where to measure local rms in pixels
 
 
@@ -152,17 +162,21 @@ Create mask from catalog / merge with mask of extended source
 
     **enable**
       *bool*
+
       Execute this worker
 
     **extended_source_input**
       *str*, *optional*
+
       name of image of extended source
 
     **mask_with**
       *str*, *optional*
+
       Tool to use for masking
 
     **thresh_lev**
       *float*, *optional*
+
       Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)
 

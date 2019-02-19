@@ -38,6 +38,7 @@ Prepare the data for calibration and imaging.
 
     **enable**
       *bool*, *optional*
+
       Enable execution of fixvis.
 
 
@@ -49,6 +50,7 @@ Prepare the data for calibration and imaging.
 
     **enable**
       *bool*, *optional*
+
       Enable addition of BITFLAG column to MS.
 
 
@@ -60,5 +62,6 @@ Prepare the data for calibration and imaging.
 
     **enable**
       *bool*, *optional*
+
       Enables addition of spectral weights column to the measurement set.
 

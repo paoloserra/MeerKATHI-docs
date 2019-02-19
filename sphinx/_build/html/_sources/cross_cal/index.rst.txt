@@ -65,14 +65,17 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Execute intialization step
 
     **field**
       *optional*
+
       fields to initialize
 
     **addmodel**
       *bool*, *optional*
+
       Intializes scratch MODEL_DATA column
 
 
@@ -84,22 +87,27 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Execute the setjy task.
 
     **meerkathi_model**
       *bool*, *optional*
+
       Force disable built-in models in MeerKATHI (NOT RECOMMENDED!)
 
     **no_verify**
       *bool*, *optional*
+
       Enables setting standard manually.
 
     **field**
       *optional*
+
       Set the field to carry out setjy on. Specify either the field number, name or even as 'fcal' corresponding to field specification in observation config.
 
     **threads**
       *int*, *optional*
+
       Set the number of threads to use when predicting local sky model using MeqTrees.
 
 
@@ -111,26 +119,32 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Execute delay correction calibration.
 
     **combine**
       *str*, *optional*
+
       Parameter to combine different data axis for solving.
 
     **solint**
       *str*, *optional*
+
       Solution interval for delay-correction calibration.
 
     **minnrbl**
       *int*, *optional*
+
       Minimum number of baselines required (per antenna) for solving.
 
     **minsnr**
       *int*, *optional*
+
       Minimum required SNR for solutions.
 
     **field**
       *optional*
+
       Set the field to estimate the delay correction from. Specify either the field number, name or even as 'fcal' corresponding to field specification in observation config.
 
     **plot**
@@ -148,38 +162,47 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Executes bandpass calibration.
 
     **combine**
       *str*, *optional*
+
       Parameter to combine different data axis for solving.
 
     **field**
       *optional*
+
       Set the field to estimate the bandpass from. Specify either the field number, name or even as 'bpcal' corresponding to field specification in observation config.
 
     **minnrbl**
       *int*, *optional*
+
       Minimum number of baselines required (per antenna) for solving.
 
     **minsnr**
       *int*, *optional*
+
       Minimum required SNR for solutions.
 
     **solnorm**
       *bool*, *optional*
+
       Normalize average solution amplitudes to unity.
 
     **solint**
       *str*, *optional*
+
       Solution interval for delay-correction calibration.
 
     **set_refant**
       *bool*
+
       Should a reference antenna be used for this calibration
 
     **remove_ph_time_var**
       *bool*, *optional*
+
       Remove large temporal phase variations from bandpass calibrator before solving.
 
     **plot**
@@ -194,30 +217,37 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Execute gain calibration on the flux calibrator field.
 
     **combine**
       *str*, *optional*
+
       Parameter to combine different data axis for solving.
 
     **field**
       *optional*
+
       Set the field to estimate the gain from. Specify either the field number, name or even as 'fcal' corresponding to field specification in observation config.
 
     **minnrbl**
       *int*, *optional*
+
       Minimum number of baselines required (per antenna) for solving.
 
     **minsnr**
       *int*, *optional*
+
       Minimum required SNR for solutions.
 
     **solint**
       *str*, *optional*
+
       Time solution interval
 
     **set_refant**
       *bool*, *optional*
+
       Should a reference antenna be used for this calibration
 
     **plot**
@@ -232,30 +262,37 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Execute gain calibration on the gain calibrator field.
 
     **combine**
       *str*, *optional*
+
       Parameter to combine different data axis for solving.
 
     **field**
       *optional*
+
       Set the field to estimate the gain from. Specify either the field number, name or even as 'gcal' corresponding to field specification in observation config.
 
     **minnrbl**
       *int*, *optional*
+
       Minimum number of baselines required (per antenna) for solving.
 
     **minsnr**
       *int*, *optional*
+
       Minimum required SNR for solutions.
 
     **solint**
       *str*, *optional*
+
       Time solution interval
 
     **set_refant**
       *bool*
+
       Should a reference antenna be used for this calibration
 
     **plot**
@@ -270,14 +307,17 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Executes transferring flux scale.
 
     **reference**
       *optional*
+
       Field to transfer flux sale from. Specify either the field number, name or even as 'gcal' corresponding to field specification in observation config.
 
     **transfer**
       *optional*
+
       Field to transfer flux scale to. Specify either the field number, name or even as 'gcal' corresponding to field specification in observation config.
 
     **plot**
@@ -292,18 +332,22 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Executes application of delay correction calibration table.
 
     **field**
       *optional*
+
       Field to select in the delay correction calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal'.
 
     **applyto**
       *optional*
+
       Field(s) to apply the delay correction calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
     **applymode**
       *str*, *optional*
+
       Calibration mode, the default being "calflag" - calibrates and applies flags from solutions. See CASA documentation for info on other modes.
 
 
@@ -315,6 +359,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Executes application of bandpass table.
 
     **field**
@@ -322,10 +367,12 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **applyto**
       *optional*
+
       Field(s) to apply the bandpass table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
     **applymode**
       *str*, *optional*
+
       Calibration mode, the default being "calflag" - calibrates and applies flags from solutions. See CASA documentation for info on other modes.
 
 
@@ -337,6 +384,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Executes application of gain calibration table.
 
     **field**
@@ -344,10 +392,12 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **applyto**
       *optional*
+
       Field(s) to apply the gain calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
     **applymode**
       *str*, *optional*
+
       Calibration mode, the default being "calflag" - calibrates and applies flags from solutions. See CASA documentation for info on other modes.
 
 
@@ -359,6 +409,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Executes application of fluxscale table.
 
     **field**
@@ -366,10 +417,12 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **applyto**
       *optional*
+
       Field(s) to apply the fluxscale table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
     **applymode**
       *str*, *optional*
+
       Calibration mode, the default being "calflag" - calibrates and applies flags from solutions. See CASA documentation for info on other modes.
 
 
@@ -381,30 +434,37 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Execute flagging closure errors etc.
 
     **scan_to_scan_threshold**
       *int*, *optional*
+
       Sigma spread above the rest of the scans per field per channel.
 
     **baseline_to_group_threshold**
       *int*, *optional*
+
       Sigma above array median phase spread per scan per field per channel.
 
     **column**
       *str*, *optional*
+
       MS column to use.
 
     **fields**
       *str*, *optional*
+
       Fields to flag. Either set 'auto' or specify as 'gcal, bpcal, target'
 
     **calibrator_fields**
       *str*, *optional*
+
       Calibrator fields to estimate the closure errors etc. from.
 
     **threads**
       *int*, *optional*
+
       Number of cores to use to carry out this process.
 
 
@@ -416,5 +476,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
       *bool*, *optional*
+
       Execute printing flagging summary.
 

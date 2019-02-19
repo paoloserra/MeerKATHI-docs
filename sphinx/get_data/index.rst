@@ -37,18 +37,22 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
     **enable**
       *bool*, *optional*
+
       Execute this segment
 
     **tar**
       *bool*, *optional*
+
       Create a tarbal of the converted MS.
 
     **channel_range**
       *str*, *optional*
+
       Only exctract channels in this range (0-based, inclusive; comma seperated string)
 
     **full_poll**
       *bool*, *optional*
+
       Extract all four correlations instead of only the XX,YY
 
 
@@ -60,10 +64,12 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
     **enable**
       *bool*, *optional*
+
       Execute this segment
 
     **tar_options**
       *str*, *optional*
+
       Options to parse to 'tar' command
 
 
@@ -75,10 +81,12 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
     **enable**
       *bool*, *optional*
+
       Execute this section
 
     **reset**
       *bool*, *optional*
+
       Delete concatenated MS if it exists. Else, proceed with existing MS
 
     **tar**

@@ -262,22 +262,27 @@ Perform Self calibration on the data
 
     **enable**
       *bool*, *optional*
+
       Execute this segment
 
     **tolerance**
       *float*, *optional*
+
       Relative change in weighted mean of several indicators from aimfast.
 
     **convergence_criteria**
       *optional*
+
       The residual statistic to check convergence against. Every criterium listed will be combined into a weighted mean. Options ["DR","SKEW","KURT","STDDev","MEAN"]. Note that when calibrate model_mode = 'vis_only' DR is not an option.
 
     **area_factor**
       *float*, *optional*
+
       Peak flux source area multiplying factor i.e tot_area = psf-size*af
 
     **normality_model**
       *str*, *optional*
+
       normality test model to use. Note that normaltest is the D'Agostino
 
 
@@ -289,46 +294,57 @@ Perform Self calibration on the data
 
     **enable**
       *bool*, *optional*
+
       Execute this segment
 
     **auto_mask**
       *optional*
+
       Auto masking threshold
 
     **auto_threshold**
       *optional*
+
       Auto clean threshold
 
     **column**
       *optional*
+
       Column to image
 
     **mask_from_sky**
       *bool*, *optional*
+
       switch on cleaning within mask from fits file
 
     **fits_mask**
       *optional*
+
       filename of fits mask (in output/masking folder)
 
     **multi_scale**
       *bool*, *optional*
+
       switch on multiscale cleaning
 
     **multi_scale_scales**
       *optional*
+
       scales of multiscale [0,10,20,etc, etc]
 
     **no_update_model**
       *bool*, *optional*
+
       do not update column MODEL_DATA after wsclean
 
     **minuvw_m**
       *int*, *optional*
+
       exclude short baselines [m]
 
     **local_rms**
       *bool*, *optional*
+
       switch on local rms measurement for cleaning
 
 
@@ -340,46 +356,57 @@ Perform Self calibration on the data
 
     **enable**
       *bool*, *optional*
+
       Execute segment sofia (yes/no)? Default is yes.
 
     **threshold**
       *float*, *optional*
+
       SoFiA source finding threshold. Default is 4.0.
 
     **flag**
       *bool*, *optional*
+
       Use flag regions (yes/no)? Default is no.
 
     **flagregion**
       *optional*
+
       Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], ...]. Default is [].
 
     **inputmask**
       *str*, *optional*
+
       input mask over which add Sofia's
 
     **kernels**
       *optional*
+
       Kernels for mask
 
     **fornax_special**
       *bool*, *optional*
+
       Activates masking of Fornax A using Sofia
 
     **fornax_thresh**
       *optional*
+
       SoFiA source finding threshold. Default is 4.0.
 
     **use_sofia**
       *bool*, *optional*
+
       use sofia for mask of Fornax A instead of Fomalont mask
 
     **scale_noise_window**
       *float*, *optional*
+
       window size where to measure local rms in pixels
 
     **positivity**
       *bool*, *optional*
+
       merges only positive pixesl of sources in mask
 
 
@@ -391,18 +418,22 @@ Perform Self calibration on the data
 
     **enable**
       *bool*, *optional*
+
       Execute this segment
 
     **spi**
       *bool*, *optional*
+
       Extract source spectral index
 
     **thresh_pix**
       *optional*
+
       Source finder pixel threshold
 
     **thresh_isl**
       *optional*
+
       Source finder island threshold
 
 
@@ -414,34 +445,42 @@ Perform Self calibration on the data
 
     **enable**
       *bool*, *optional*
+
       Execute this segment
 
     **model**
       *optional*
+
       Model number to use [or combination e.g. '1+2' to use first and second models]
 
     **output_data**
       *optional*
+
       Data to output after calibration
 
     **gain_matrix_type**
       *optional*
+
       Gain matrix type
 
     **model_mode**
       *str*, *optional*
+
       pybdsm_vis, pybdsm_only,  vis_only are the possible options
 
     **add_vis_model**
       *bool*, *optional*
+
       Add/Use clean components from latest imaging step to/as sky model for calibation
 
     **Gsols_time**
       *optional*
+
       Gsols for individual calibration steps, if not given will default to cal_Gsols
 
     **Gsols_channel**
       *optional*
+
       Gsols for individual calibration steps, if not given will default to cal_Gsols
 
 
@@ -453,14 +492,17 @@ Perform Self calibration on the data
 
     **enable**
       *bool*, *optional*
+
       Execute this segment
 
     **model**
       *str*, *optional*
+
       Model number to use [or combination e.g. '1+2' to use first and second models]
 
     **clean_model**
       *str*, *optional*
+
       Clean model number to use [or combination e.g. '1+2' to use first and second models]
 
 
@@ -472,6 +514,7 @@ Perform Self calibration on the data
 
     **enable**
       *bool*, *optional*
+
       Execute this segment
 
 
@@ -483,10 +526,12 @@ Perform Self calibration on the data
 
     **enable**
       *bool*, *optional*
+
       Execute this segment
 
     **hires_label**
       *str*, *optional*
+
       label for high resolution data products in selfcal
 
 
@@ -498,45 +543,56 @@ Perform Self calibration on the data
 
     **enable**
       *bool*, *optional*
+
       Execute this segment
 
     **chans**
       *int*, *optional*
+
       output continuum channels
 
     **deconv_chans**
       *int*, *optional*
+
       nr of channels used for deconvolution grouping together output continuum channels
 
     **fit_spectral_pol**
       *int*, *optional*
+
       How many terms for the spectral polynomial fit of each clean component
 
     **fits_mask**
       *str*, *optional*
+
       filename of fits mask (including folder if not input), default None
 
     **auto_mask**
       *float*, *optional*
+
       Auto masking threshold, default None
 
     **auto_threshold**
       *float*, *optional*
+
       Auto clean threshold, default 10
 
     **column**
       *str*, *optional*
+
       Column to image
 
     **multi_scale**
       *bool*, *optional*
+
       switch on multiscale cleaning
 
     **multi_scale_scales**
       *optional*
+
       scales of multiscale [0,10,20,etc, etc]
 
     **local_rms**
       *bool*, *optional*
+
       switch on local rms measurement for cleaning
 

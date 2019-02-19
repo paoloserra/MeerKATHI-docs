@@ -29,18 +29,22 @@ Setup some basic observation information
 
     **enable**
       *bool*, *optional*
+
       Execute this section
 
     **listobs**
       *bool*, *optional*
+
       Run CASA listobs task to get observation information
 
     **summary_json**
       *bool*, *optional*
+
       Run MSUtils summary function to get observation information as JSON file which can be used to automatically configure pipeline
 
     **vampirisms**
       *bool*, *optional*
+
       Returns sun free time range
 
 
@@ -133,21 +137,26 @@ Setup some basic observation information
 
     **enable**
       *bool*, *optional*
+
       Execute this section
 
     **freq**
       *str*, *optional*
+
       A single freq, or the start, end freqs, and channel width in MHz
 
     **diameter**
       *float*, *optional*
+
       Diameter of the required beam
 
     **pixels**
       *int*, *optional*
+
       Number of pixels on one side
 
     **coefficients_file**
       *str*, *optional*
+
       Coeficients file name
 

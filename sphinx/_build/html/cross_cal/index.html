@@ -223,14 +223,17 @@
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute intialization step</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute intialization step</p>
+</dd>
 <dt><strong>field</strong></dt>
-<dd><em>optional</em>
-fields to initialize</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">fields to initialize</p>
+</dd>
 <dt><strong>addmodel</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Intializes scratch MODEL_DATA column</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Intializes scratch MODEL_DATA column</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -242,20 +245,25 @@ Intializes scratch MODEL_DATA column</dd>
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute the setjy task.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute the setjy task.</p>
+</dd>
 <dt><strong>meerkathi_model</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Force disable built-in models in MeerKATHI (NOT RECOMMENDED!)</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Force disable built-in models in MeerKATHI (NOT RECOMMENDED!)</p>
+</dd>
 <dt><strong>no_verify</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Enables setting standard manually.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Enables setting standard manually.</p>
+</dd>
 <dt><strong>field</strong></dt>
-<dd><em>optional</em>
-Set the field to carry out setjy on. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Set the field to carry out setjy on. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</p>
+</dd>
 <dt><strong>threads</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-Set the number of threads to use when predicting local sky model using MeqTrees.</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Set the number of threads to use when predicting local sky model using MeqTrees.</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -267,23 +275,29 @@ Set the number of threads to use when predicting local sky model using MeqTrees.
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute delay correction calibration.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute delay correction calibration.</p>
+</dd>
 <dt><strong>combine</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Parameter to combine different data axis for solving.</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Parameter to combine different data axis for solving.</p>
+</dd>
 <dt><strong>solint</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Solution interval for delay-correction calibration.</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Solution interval for delay-correction calibration.</p>
+</dd>
 <dt><strong>minnrbl</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-Minimum number of baselines required (per antenna) for solving.</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Minimum number of baselines required (per antenna) for solving.</p>
+</dd>
 <dt><strong>minsnr</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-Minimum required SNR for solutions.</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Minimum required SNR for solutions.</p>
+</dd>
 <dt><strong>field</strong></dt>
-<dd><em>optional</em>
-Set the field to estimate the delay correction from. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Set the field to estimate the delay correction from. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</p>
+</dd>
 <dt><strong>plot</strong></dt>
 <dd>Plotting dignostics plots for delay correction calibration.</dd>
 <dt><strong>flag</strong></dt>
@@ -299,32 +313,41 @@ Set the field to estimate the delay correction from. Specify either the field nu
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Executes bandpass calibration.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Executes bandpass calibration.</p>
+</dd>
 <dt><strong>combine</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Parameter to combine different data axis for solving.</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Parameter to combine different data axis for solving.</p>
+</dd>
 <dt><strong>field</strong></dt>
-<dd><em>optional</em>
-Set the field to estimate the bandpass from. Specify either the field number, name or even as ‘bpcal’ corresponding to field specification in observation config.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Set the field to estimate the bandpass from. Specify either the field number, name or even as ‘bpcal’ corresponding to field specification in observation config.</p>
+</dd>
 <dt><strong>minnrbl</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-Minimum number of baselines required (per antenna) for solving.</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Minimum number of baselines required (per antenna) for solving.</p>
+</dd>
 <dt><strong>minsnr</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-Minimum required SNR for solutions.</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Minimum required SNR for solutions.</p>
+</dd>
 <dt><strong>solnorm</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Normalize average solution amplitudes to unity.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Normalize average solution amplitudes to unity.</p>
+</dd>
 <dt><strong>solint</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Solution interval for delay-correction calibration.</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Solution interval for delay-correction calibration.</p>
+</dd>
 <dt><strong>set_refant</strong></dt>
-<dd><em>bool</em>
-Should a reference antenna be used for this calibration</dd>
+<dd><p class="first"><em>bool</em></p>
+<p class="last">Should a reference antenna be used for this calibration</p>
+</dd>
 <dt><strong>remove_ph_time_var</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Remove large temporal phase variations from bandpass calibrator before solving.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Remove large temporal phase variations from bandpass calibrator before solving.</p>
+</dd>
 <dt><strong>plot</strong></dt>
 <dd>Plotting dignostics plots for bandpass correction calibration.</dd>
 </dl>
@@ -338,26 +361,33 @@ Remove large temporal phase variations from bandpass calibrator before solving.<
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute gain calibration on the flux calibrator field.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute gain calibration on the flux calibrator field.</p>
+</dd>
 <dt><strong>combine</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Parameter to combine different data axis for solving.</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Parameter to combine different data axis for solving.</p>
+</dd>
 <dt><strong>field</strong></dt>
-<dd><em>optional</em>
-Set the field to estimate the gain from. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Set the field to estimate the gain from. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</p>
+</dd>
 <dt><strong>minnrbl</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-Minimum number of baselines required (per antenna) for solving.</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Minimum number of baselines required (per antenna) for solving.</p>
+</dd>
 <dt><strong>minsnr</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-Minimum required SNR for solutions.</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Minimum required SNR for solutions.</p>
+</dd>
 <dt><strong>solint</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Time solution interval</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Time solution interval</p>
+</dd>
 <dt><strong>set_refant</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Should a reference antenna be used for this calibration</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Should a reference antenna be used for this calibration</p>
+</dd>
 <dt><strong>plot</strong></dt>
 <dd>Plotting dignostics plots for flux calibrator corrections.</dd>
 </dl>
@@ -371,26 +401,33 @@ Should a reference antenna be used for this calibration</dd>
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute gain calibration on the gain calibrator field.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute gain calibration on the gain calibrator field.</p>
+</dd>
 <dt><strong>combine</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Parameter to combine different data axis for solving.</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Parameter to combine different data axis for solving.</p>
+</dd>
 <dt><strong>field</strong></dt>
-<dd><em>optional</em>
-Set the field to estimate the gain from. Specify either the field number, name or even as ‘gcal’ corresponding to field specification in observation config.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Set the field to estimate the gain from. Specify either the field number, name or even as ‘gcal’ corresponding to field specification in observation config.</p>
+</dd>
 <dt><strong>minnrbl</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-Minimum number of baselines required (per antenna) for solving.</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Minimum number of baselines required (per antenna) for solving.</p>
+</dd>
 <dt><strong>minsnr</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-Minimum required SNR for solutions.</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Minimum required SNR for solutions.</p>
+</dd>
 <dt><strong>solint</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Time solution interval</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Time solution interval</p>
+</dd>
 <dt><strong>set_refant</strong></dt>
-<dd><em>bool</em>
-Should a reference antenna be used for this calibration</dd>
+<dd><p class="first"><em>bool</em></p>
+<p class="last">Should a reference antenna be used for this calibration</p>
+</dd>
 <dt><strong>plot</strong></dt>
 <dd>Plotting dignostics plots for gain calibrator corrections.</dd>
 </dl>
@@ -404,14 +441,17 @@ Should a reference antenna be used for this calibration</dd>
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Executes transferring flux scale.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Executes transferring flux scale.</p>
+</dd>
 <dt><strong>reference</strong></dt>
-<dd><em>optional</em>
-Field to transfer flux sale from. Specify either the field number, name or even as ‘gcal’ corresponding to field specification in observation config.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Field to transfer flux sale from. Specify either the field number, name or even as ‘gcal’ corresponding to field specification in observation config.</p>
+</dd>
 <dt><strong>transfer</strong></dt>
-<dd><em>optional</em>
-Field to transfer flux scale to. Specify either the field number, name or even as ‘gcal’ corresponding to field specification in observation config.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Field to transfer flux scale to. Specify either the field number, name or even as ‘gcal’ corresponding to field specification in observation config.</p>
+</dd>
 <dt><strong>plot</strong></dt>
 <dd>Enables plotting gain amplitudes for Flux and Gain calibrator field.</dd>
 </dl>
@@ -425,17 +465,21 @@ Field to transfer flux scale to. Specify either the field number, name or even a
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Executes application of delay correction calibration table.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Executes application of delay correction calibration table.</p>
+</dd>
 <dt><strong>field</strong></dt>
-<dd><em>optional</em>
-Field to select in the delay correction calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal’.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Field to select in the delay correction calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal’.</p>
+</dd>
 <dt><strong>applyto</strong></dt>
-<dd><em>optional</em>
-Field(s) to apply the delay correction calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Field(s) to apply the delay correction calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
+</dd>
 <dt><strong>applymode</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -447,16 +491,19 @@ Calibration mode, the default being “calflag” - calibrates and applies flags
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Executes application of bandpass table.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Executes application of bandpass table.</p>
+</dd>
 <dt><strong>field</strong></dt>
 <dd>Field to select in the bandpass table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal’.</dd>
 <dt><strong>applyto</strong></dt>
-<dd><em>optional</em>
-Field(s) to apply the bandpass table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Field(s) to apply the bandpass table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
+</dd>
 <dt><strong>applymode</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -468,16 +515,19 @@ Calibration mode, the default being “calflag” - calibrates and applies flags
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Executes application of gain calibration table.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Executes application of gain calibration table.</p>
+</dd>
 <dt><strong>field</strong></dt>
 <dd>Field to select in the gain calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘gcal’.</dd>
 <dt><strong>applyto</strong></dt>
-<dd><em>optional</em>
-Field(s) to apply the gain calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Field(s) to apply the gain calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
+</dd>
 <dt><strong>applymode</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -489,16 +539,19 @@ Calibration mode, the default being “calflag” - calibrates and applies flags
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Executes application of fluxscale table.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Executes application of fluxscale table.</p>
+</dd>
 <dt><strong>field</strong></dt>
 <dd>Field to select in the fluxscale table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘gcal’.</dd>
 <dt><strong>applyto</strong></dt>
-<dd><em>optional</em>
-Field(s) to apply the fluxscale table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Field(s) to apply the fluxscale table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
+</dd>
 <dt><strong>applymode</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -510,26 +563,33 @@ Calibration mode, the default being “calflag” - calibrates and applies flags
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute flagging closure errors etc.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute flagging closure errors etc.</p>
+</dd>
 <dt><strong>scan_to_scan_threshold</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-Sigma spread above the rest of the scans per field per channel.</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Sigma spread above the rest of the scans per field per channel.</p>
+</dd>
 <dt><strong>baseline_to_group_threshold</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-Sigma above array median phase spread per scan per field per channel.</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Sigma above array median phase spread per scan per field per channel.</p>
+</dd>
 <dt><strong>column</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-MS column to use.</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">MS column to use.</p>
+</dd>
 <dt><strong>fields</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Fields to flag. Either set ‘auto’ or specify as ‘gcal, bpcal, target’</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Fields to flag. Either set ‘auto’ or specify as ‘gcal, bpcal, target’</p>
+</dd>
 <dt><strong>calibrator_fields</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Calibrator fields to estimate the closure errors etc. from.</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Calibrator fields to estimate the closure errors etc. from.</p>
+</dd>
 <dt><strong>threads</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-Number of cores to use to carry out this process.</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Number of cores to use to carry out this process.</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -541,8 +601,9 @@ Number of cores to use to carry out this process.</dd>
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute printing flagging summary.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute printing flagging summary.</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>

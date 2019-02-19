@@ -394,20 +394,25 @@ Calibration solution intervals</div></blockquote>
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute this segment</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute this segment</p>
+</dd>
 <dt><strong>tolerance</strong></dt>
-<dd><em>float</em>, <em>optional</em>
-Relative change in weighted mean of several indicators from aimfast.</dd>
+<dd><p class="first"><em>float</em>, <em>optional</em></p>
+<p class="last">Relative change in weighted mean of several indicators from aimfast.</p>
+</dd>
 <dt><strong>convergence_criteria</strong></dt>
-<dd><em>optional</em>
-The residual statistic to check convergence against. Every criterium listed will be combined into a weighted mean. Options [“DR”,”SKEW”,”KURT”,”STDDev”,”MEAN”]. Note that when calibrate model_mode = ‘vis_only’ DR is not an option.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">The residual statistic to check convergence against. Every criterium listed will be combined into a weighted mean. Options [“DR”,”SKEW”,”KURT”,”STDDev”,”MEAN”]. Note that when calibrate model_mode = ‘vis_only’ DR is not an option.</p>
+</dd>
 <dt><strong>area_factor</strong></dt>
-<dd><em>float</em>, <em>optional</em>
-Peak flux source area multiplying factor i.e tot_area = psf-size*af</dd>
+<dd><p class="first"><em>float</em>, <em>optional</em></p>
+<p class="last">Peak flux source area multiplying factor i.e tot_area = psf-size*af</p>
+</dd>
 <dt><strong>normality_model</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-normality test model to use. Note that normaltest is the D’Agostino</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">normality test model to use. Note that normaltest is the D’Agostino</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -419,38 +424,49 @@ normality test model to use. Note that normaltest is the D’Agostino</dd>
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute this segment</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute this segment</p>
+</dd>
 <dt><strong>auto_mask</strong></dt>
-<dd><em>optional</em>
-Auto masking threshold</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Auto masking threshold</p>
+</dd>
 <dt><strong>auto_threshold</strong></dt>
-<dd><em>optional</em>
-Auto clean threshold</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Auto clean threshold</p>
+</dd>
 <dt><strong>column</strong></dt>
-<dd><em>optional</em>
-Column to image</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Column to image</p>
+</dd>
 <dt><strong>mask_from_sky</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-switch on cleaning within mask from fits file</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">switch on cleaning within mask from fits file</p>
+</dd>
 <dt><strong>fits_mask</strong></dt>
-<dd><em>optional</em>
-filename of fits mask (in output/masking folder)</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">filename of fits mask (in output/masking folder)</p>
+</dd>
 <dt><strong>multi_scale</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-switch on multiscale cleaning</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">switch on multiscale cleaning</p>
+</dd>
 <dt><strong>multi_scale_scales</strong></dt>
-<dd><em>optional</em>
-scales of multiscale [0,10,20,etc, etc]</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">scales of multiscale [0,10,20,etc, etc]</p>
+</dd>
 <dt><strong>no_update_model</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-do not update column MODEL_DATA after wsclean</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">do not update column MODEL_DATA after wsclean</p>
+</dd>
 <dt><strong>minuvw_m</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-exclude short baselines [m]</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">exclude short baselines [m]</p>
+</dd>
 <dt><strong>local_rms</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-switch on local rms measurement for cleaning</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">switch on local rms measurement for cleaning</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -462,38 +478,49 @@ switch on local rms measurement for cleaning</dd>
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute segment sofia (yes/no)? Default is yes.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute segment sofia (yes/no)? Default is yes.</p>
+</dd>
 <dt><strong>threshold</strong></dt>
-<dd><em>float</em>, <em>optional</em>
-SoFiA source finding threshold. Default is 4.0.</dd>
+<dd><p class="first"><em>float</em>, <em>optional</em></p>
+<p class="last">SoFiA source finding threshold. Default is 4.0.</p>
+</dd>
 <dt><strong>flag</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Use flag regions (yes/no)? Default is no.</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Use flag regions (yes/no)? Default is no.</p>
+</dd>
 <dt><strong>flagregion</strong></dt>
-<dd><em>optional</em>
-Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], …]. Default is [].</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], …]. Default is [].</p>
+</dd>
 <dt><strong>inputmask</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-input mask over which add Sofia’s</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">input mask over which add Sofia’s</p>
+</dd>
 <dt><strong>kernels</strong></dt>
-<dd><em>optional</em>
-Kernels for mask</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Kernels for mask</p>
+</dd>
 <dt><strong>fornax_special</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Activates masking of Fornax A using Sofia</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Activates masking of Fornax A using Sofia</p>
+</dd>
 <dt><strong>fornax_thresh</strong></dt>
-<dd><em>optional</em>
-SoFiA source finding threshold. Default is 4.0.</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">SoFiA source finding threshold. Default is 4.0.</p>
+</dd>
 <dt><strong>use_sofia</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-use sofia for mask of Fornax A instead of Fomalont mask</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">use sofia for mask of Fornax A instead of Fomalont mask</p>
+</dd>
 <dt><strong>scale_noise_window</strong></dt>
-<dd><em>float</em>, <em>optional</em>
-window size where to measure local rms in pixels</dd>
+<dd><p class="first"><em>float</em>, <em>optional</em></p>
+<p class="last">window size where to measure local rms in pixels</p>
+</dd>
 <dt><strong>positivity</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-merges only positive pixesl of sources in mask</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">merges only positive pixesl of sources in mask</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -505,17 +532,21 @@ merges only positive pixesl of sources in mask</dd>
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute this segment</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute this segment</p>
+</dd>
 <dt><strong>spi</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Extract source spectral index</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Extract source spectral index</p>
+</dd>
 <dt><strong>thresh_pix</strong></dt>
-<dd><em>optional</em>
-Source finder pixel threshold</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Source finder pixel threshold</p>
+</dd>
 <dt><strong>thresh_isl</strong></dt>
-<dd><em>optional</em>
-Source finder island threshold</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Source finder island threshold</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -527,29 +558,37 @@ Source finder island threshold</dd>
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute this segment</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute this segment</p>
+</dd>
 <dt><strong>model</strong></dt>
-<dd><em>optional</em>
-Model number to use [or combination e.g. ‘1+2’ to use first and second models]</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Model number to use [or combination e.g. ‘1+2’ to use first and second models]</p>
+</dd>
 <dt><strong>output_data</strong></dt>
-<dd><em>optional</em>
-Data to output after calibration</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Data to output after calibration</p>
+</dd>
 <dt><strong>gain_matrix_type</strong></dt>
-<dd><em>optional</em>
-Gain matrix type</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Gain matrix type</p>
+</dd>
 <dt><strong>model_mode</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-pybdsm_vis, pybdsm_only,  vis_only are the possible options</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">pybdsm_vis, pybdsm_only,  vis_only are the possible options</p>
+</dd>
 <dt><strong>add_vis_model</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Add/Use clean components from latest imaging step to/as sky model for calibation</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Add/Use clean components from latest imaging step to/as sky model for calibation</p>
+</dd>
 <dt><strong>Gsols_time</strong></dt>
-<dd><em>optional</em>
-Gsols for individual calibration steps, if not given will default to cal_Gsols</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
+</dd>
 <dt><strong>Gsols_channel</strong></dt>
-<dd><em>optional</em>
-Gsols for individual calibration steps, if not given will default to cal_Gsols</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -561,14 +600,17 @@ Gsols for individual calibration steps, if not given will default to cal_Gsols</
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute this segment</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute this segment</p>
+</dd>
 <dt><strong>model</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Model number to use [or combination e.g. ‘1+2’ to use first and second models]</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Model number to use [or combination e.g. ‘1+2’ to use first and second models]</p>
+</dd>
 <dt><strong>clean_model</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Clean model number to use [or combination e.g. ‘1+2’ to use first and second models]</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Clean model number to use [or combination e.g. ‘1+2’ to use first and second models]</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -580,8 +622,9 @@ Clean model number to use [or combination e.g. ‘1+2’ to use first and second
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute this segment</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute this segment</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -593,11 +636,13 @@ Execute this segment</dd>
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute this segment</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute this segment</p>
+</dd>
 <dt><strong>hires_label</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-label for high resolution data products in selfcal</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">label for high resolution data products in selfcal</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
@@ -609,38 +654,49 @@ label for high resolution data products in selfcal</dd>
 <blockquote>
 <div><dl class="docutils">
 <dt><strong>enable</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-Execute this segment</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute this segment</p>
+</dd>
 <dt><strong>chans</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-output continuum channels</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">output continuum channels</p>
+</dd>
 <dt><strong>deconv_chans</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-nr of channels used for deconvolution grouping together output continuum channels</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">nr of channels used for deconvolution grouping together output continuum channels</p>
+</dd>
 <dt><strong>fit_spectral_pol</strong></dt>
-<dd><em>int</em>, <em>optional</em>
-How many terms for the spectral polynomial fit of each clean component</dd>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">How many terms for the spectral polynomial fit of each clean component</p>
+</dd>
 <dt><strong>fits_mask</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-filename of fits mask (including folder if not input), default None</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">filename of fits mask (including folder if not input), default None</p>
+</dd>
 <dt><strong>auto_mask</strong></dt>
-<dd><em>float</em>, <em>optional</em>
-Auto masking threshold, default None</dd>
+<dd><p class="first"><em>float</em>, <em>optional</em></p>
+<p class="last">Auto masking threshold, default None</p>
+</dd>
 <dt><strong>auto_threshold</strong></dt>
-<dd><em>float</em>, <em>optional</em>
-Auto clean threshold, default 10</dd>
+<dd><p class="first"><em>float</em>, <em>optional</em></p>
+<p class="last">Auto clean threshold, default 10</p>
+</dd>
 <dt><strong>column</strong></dt>
-<dd><em>str</em>, <em>optional</em>
-Column to image</dd>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Column to image</p>
+</dd>
 <dt><strong>multi_scale</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-switch on multiscale cleaning</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">switch on multiscale cleaning</p>
+</dd>
 <dt><strong>multi_scale_scales</strong></dt>
-<dd><em>optional</em>
-scales of multiscale [0,10,20,etc, etc]</dd>
+<dd><p class="first"><em>optional</em></p>
+<p class="last">scales of multiscale [0,10,20,etc, etc]</p>
+</dd>
 <dt><strong>local_rms</strong></dt>
-<dd><em>bool</em>, <em>optional</em>
-switch on local rms measurement for cleaning</dd>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">switch on local rms measurement for cleaning</p>
+</dd>
 </dl>
 </div></blockquote>
 </div></blockquote>
