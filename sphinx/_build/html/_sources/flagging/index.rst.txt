@@ -16,6 +16,7 @@ Flagging of the data.
 -------------------------------------
 **enable**
 -------------------------------------
+
   *bool*, *optional*
 
   Execute flagging of the data.
@@ -25,6 +26,7 @@ Flagging of the data.
 -------------------------------------
 **order**
 -------------------------------------
+
   *int*, *optional*
 
   Order in queue of workers. Generally a non-negative integer.
@@ -34,6 +36,7 @@ Flagging of the data.
 -------------------------------------
 **label**
 -------------------------------------
+
   *str*, *optional*
 
   The label is added to the input .MS file name to define the name of the .MS file that should be flagged, <input>-<label>.ms. Default is an empty string, i.e., the original .MS is flagged.
@@ -43,6 +46,7 @@ Flagging of the data.
 -------------------------------------
 **hires_label**
 -------------------------------------
+
   *str*, *optional*
 
   Label for high frequency resolution data.
@@ -52,6 +56,7 @@ Flagging of the data.
 -------------------------------------
 **hires_flag**
 -------------------------------------
+
   *bool*, *optional*
 
   Enables AOFlagger run on high frequency resolution data.
@@ -61,6 +66,7 @@ Flagging of the data.
 -------------------------------------
 **autoflag_autocorr_powerspectra**
 -------------------------------------
+
   Flags antennas based on drifts in the scan average of the auto correlation spectra per field. This doesn't strictly require any calibration. It is also not field structure dependent, since it is just based on the DC of the field. Compares scan to median power of scans per field per channel. Also compares antenna to median of the array per scan per field per channel. This should catch any antenna with severe temperature problems.
 
     **enable**
@@ -103,6 +109,7 @@ Flagging of the data.
 -------------------------------------
 **flag_autocorr**
 -------------------------------------
+
   Flag autocorrelations. Through CASA flagdata task.
 
     **enable**
@@ -115,6 +122,7 @@ Flagging of the data.
 -------------------------------------
 **quack_flagging**
 -------------------------------------
+
   Do quack flagging, i.e. flag the begining and/or end chunks of each scan. Again, through FLAGDATA.
 
     **enable**
@@ -137,6 +145,7 @@ Flagging of the data.
 -------------------------------------
 **flag_shadow**
 -------------------------------------
+
   Flag shadowed antennas through the CASA task FLAGDATA.
 
     **enable**
@@ -159,6 +168,7 @@ Flagging of the data.
 -------------------------------------
 **flag_spw**
 -------------------------------------
+
   Flag spectral windows/channels. Of course, through FLAGDATA.
 
     **enable**
@@ -169,18 +179,19 @@ Flagging of the data.
     **channels**
       *str*, *optional*
 
-      Channels to flag. Given as "spectral window index:start channel ~ end channel", e.g. "*:856~880MHz". End channel not inclusive.
+      Channels to flag. Given as "spectral window index:start channel ~ end channel", e.g. "\*:856~880MHz". End channel not inclusive.
 
     **ensure_valid_selection**
       *bool*, *optional*
 
-      Check whether the channel selection returns any data. If it does not, FLAGDATA is not executed, preventing the pipeline from crashing. This check only works with the following spw formats (multiple, comma-separated selections allowed), "*:firstchan~lastchan"; "firstspw~lastspw:firstchan~lastchan"; "spw:firstchan~lastchan"; "firstchan~lastchan". Channels are assumed to be in frequency (Hz, kHz, MHz, GHz allowed; if no units are given it assumes Hz).
+      Check whether the channel selection returns any data. If it does not, FLAGDATA is not executed, preventing the pipeline from crashing. This check only works with the following spw formats (multiple, comma-separated selections allowed), "\*:firstchan~lastchan"; "firstspw~lastspw:firstchan~lastchan"; "spw:firstchan~lastchan"; "firstchan~lastchan". Channels are assumed to be in frequency (Hz, kHz, MHz, GHz allowed; if no units are given it assumes Hz).
 
 
 
 -------------------------------------
 **flag_time**
 -------------------------------------
+
   Flag timerange in the data using CASA FLAGDATA task.
 
     **enable**
@@ -198,6 +209,7 @@ Flagging of the data.
 -------------------------------------
 **flag_antennas**
 -------------------------------------
+
   Flag bad antennas. Or just the ones you have sworn a vendetta against.
 
     **enable**
@@ -220,6 +232,7 @@ Flagging of the data.
 -------------------------------------
 **flag_scan**
 -------------------------------------
+
   Flag bad scans. Uses CASA Flagdata task.
 
     **enable**
@@ -237,6 +250,7 @@ Flagging of the data.
 -------------------------------------
 **static_mask**
 -------------------------------------
+
   Apply static mask to flag out known RFI, Meerkat specific.
 
     **enable**
@@ -259,6 +273,7 @@ Flagging of the data.
 -------------------------------------
 **autoflag_rfi**
 -------------------------------------
+
   Flag RFI using AOFlagger software.
 
     **enable**
@@ -291,6 +306,7 @@ Flagging of the data.
 -------------------------------------
 **flagging_summary**
 -------------------------------------
+
   Write flagging summary at the end of the pre-calibration flagging. Uses CASA FLAGDATA in "summary" mode.
 
     **enable**

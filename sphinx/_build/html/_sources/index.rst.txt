@@ -3,43 +3,56 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
  
-Welcome to the MeerKATHI documentation [work in progress!]
+=========
+MeerKATHI
+=========
  
-.. toctree::
-   :maxdepth: 1
-   :caption: Contents:
- 
- 
+MeerKATHI is a pipeline for radio interferometry data reduction. 
+It works on data from any radio interferometer as long as they are in "measurement set" format.
+
+*This documentation is work in progress. Please bear with us.*
  
 ====================
-Download and install
+download & install
 ====================
- 
-To download and install the code go to https://github.com/ska-sa/meerkathi (currently private)
- 
-==================
-Workers
-==================
  
 .. toctree::
    :maxdepth: 1
  
-   general/index.rst
-   get_data/index.rst
-   observation_config/index.rst
-   prepare_data/index.rst
-   flagging/index.rst
-   cross_cal/index.rst
-   inspect_data/index.rst
-   split_target/index.rst
-   masking/index.rst
-   self_cal/index.rst
-   image_HI/index.rst
+   install/index.rst
  
+========================
+manual
+========================
  
+.. toctree::
+   :maxdepth: 1
  
-Indices and tables
-==================
+   manual/index.rst
  
-* :ref:`genindex`
-* :ref:`search`
+========================
+workers
+========================
+ 
+.. toctree::
+   :maxdepth: 1
+ 
+   workers/index.rst
+   
+================
+acknowledgements
+================
+ 
+The MeerKATHI team acnkowledges support from the following institutes:
+ 
+* South African Radio Astronomy Observatory (SARAO)
+* Rhodes University
+* Istituto Nazionale di Astrofisica (INAF) - Osservatorio Astronomico di Cagliari
+* ASTRON
+* Kapteyn Astronomical Institute
+* Ruhr-Universitat Bochum
+
+and from the following funding allocations:
+
+* Starting Grant of the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation program (grant number 679629, project name FORNAX)
+* Grant from the Italian Ministry of Foreign Affairs and International Cooperation (MAECI Grant Number ZA18GR02) and the South African Department of Science and Technology’s National Research Foundation (DST-NRF Grant Number 113121) as part of the ISARP Joint Research Scheme.

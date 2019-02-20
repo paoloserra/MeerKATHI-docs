@@ -16,6 +16,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **enable**
 -------------------------------------
+
   *bool*, *optional*
 
   Execute segment image_HI (yes/no). Default is yes.
@@ -25,6 +26,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **order**
 -------------------------------------
+
   *int*, *optional*
 
   Order in queue of workers. Default is 11.
@@ -34,6 +36,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **label**
 -------------------------------------
+
   *str*, *optional*
 
   Label of names of MS data sets to be used. MS data set names will always start with the data set id, followed by a hyphen, followed by desc. Default is corr.
@@ -43,6 +46,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **hires_label**
 -------------------------------------
+
   *str*
 
   Label of names of High frequency resolution MS data sets to be used. MS data set names will always start with the data set id, followed by a hyphen, followed by desc. Default is hires.
@@ -52,6 +56,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **use_hires_data**
 -------------------------------------
+
   *bool*, *optional*
 
   Make use of high resolution data for HI imaging
@@ -61,6 +66,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **restfreq**
 -------------------------------------
+
   *str*, *optional*
 
   Rest frequency default value for this worker. Default is '1.420405752GHz'.
@@ -70,7 +76,9 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **npix**
 -------------------------------------
+
   *optional*
+
   Default number of pixels (wherever npix is requested) in this worker. List of integers (width and height) or a single integer for square images. Default is 1024.
 
 
@@ -78,6 +86,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **cell**
 -------------------------------------
+
   *float*, *optional*
 
   Default scale of a pixel in arcsec. Default is 7.
@@ -87,6 +96,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **weight**
 -------------------------------------
+
   *str*, *optional*
 
   Default weight for the worker. Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition. Default is natural.
@@ -96,6 +106,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **robust**
 -------------------------------------
+
   *float*, *optional*
 
   Default robust parameter in case of Briggs weighting. Default is 2.
@@ -105,6 +116,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **subtractmodelcol**
 -------------------------------------
+
   Replace the column CORRECTED_DATA with the difference CORRECTED_DATA - MODEL_DATA. This is useful for continuum subtraction as it enables the subtraction of the most recent continuum clean model.
 
     **enable**
@@ -117,6 +129,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **mstransform**
 -------------------------------------
+
   Perform UVLIN continuum subtraction and/or doppler tracking corrections
 
     **enable**
@@ -184,6 +197,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **sunblocker**
 -------------------------------------
+
   Use sunblocker to remove solar RFI. See description of sunblocker on github repository gigjozsa/sunblocker in method phazer of module sunblocker.py.
 
     **enable**
@@ -216,6 +230,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **wsclean_image**
 -------------------------------------
+
   Use WSClean to create line data cube. See WSclean wiki on sourceforge.
 
     **enable**
@@ -271,7 +286,7 @@ Create HI data cube and detect sources therein
     **padding**
       *float*, *optional*
 
-      Images have initial size padding*npix, and are later trimmed to npix. Default is 1.2.
+      Images have initial size padding\*npix, and are later trimmed to npix. Default is 1.2.
 
     **mgain**
       *float*, *optional*
@@ -338,6 +353,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **casa_image**
 -------------------------------------
+
   Use CASA to create line data cube.
 
     **enable**
@@ -408,6 +424,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **remove_stokes_axis**
 -------------------------------------
+
   Remove Stokes axis from HI cube
 
     **enable**
@@ -420,6 +437,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **pb_cube**
 -------------------------------------
+
   Make primary beam cube
 
     **enable**
@@ -432,6 +450,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **freq_to_vel**
 -------------------------------------
+
   Convert the spectral axis' header keys of the HI cube from frequency to velocity in the radio definition, v=c(1-obsfreq/restfreq). No change of spectra reference frame is performed.
 
     **enable**
@@ -444,6 +463,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **sofia**
 -------------------------------------
+
   Run SoFiA source finder to produce a source mask and a Moment-0 map
 
     **enable**
@@ -511,6 +531,7 @@ Create HI data cube and detect sources therein
 -------------------------------------
 **flagging_summary**
 -------------------------------------
+
   Print out flagging summary.
 
     **enable**

@@ -322,11 +322,11 @@
 </dd>
 <dt><strong>channels</strong></dt>
 <dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Channels to flag. Given as “spectral window index:start channel ~ end channel”, e.g. “<a href="#id1"><span class="problematic" id="id2">*</span></a>:856~880MHz”. End channel not inclusive.</p>
+<p class="last">Channels to flag. Given as “spectral window index:start channel ~ end channel”, e.g. “*:856~880MHz”. End channel not inclusive.</p>
 </dd>
 <dt><strong>ensure_valid_selection</strong></dt>
 <dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Check whether the channel selection returns any data. If it does not, FLAGDATA is not executed, preventing the pipeline from crashing. This check only works with the following spw formats (multiple, comma-separated selections allowed), “<a href="#id3"><span class="problematic" id="id4">*</span></a>:firstchan~lastchan”; “firstspw~lastspw:firstchan~lastchan”; “spw:firstchan~lastchan”; “firstchan~lastchan”. Channels are assumed to be in frequency (Hz, kHz, MHz, GHz allowed; if no units are given it assumes Hz).</p>
+<p class="last">Check whether the channel selection returns any data. If it does not, FLAGDATA is not executed, preventing the pipeline from crashing. This check only works with the following spw formats (multiple, comma-separated selections allowed), “*:firstchan~lastchan”; “firstspw~lastspw:firstchan~lastchan”; “spw:firstchan~lastchan”; “firstchan~lastchan”. Channels are assumed to be in frequency (Hz, kHz, MHz, GHz allowed; if no units are given it assumes Hz).</p>
 </dd>
 </dl>
 </div></blockquote>

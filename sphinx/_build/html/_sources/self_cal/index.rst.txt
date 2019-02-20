@@ -16,6 +16,7 @@ Perform Self calibration on the data
 -------------------------------------
 **enable**
 -------------------------------------
+
   *bool*, *optional*
 
   Execute this segment
@@ -25,6 +26,7 @@ Perform Self calibration on the data
 -------------------------------------
 **label**
 -------------------------------------
+
   *str*, *optional*
 
   Label to tag the output files
@@ -34,6 +36,7 @@ Perform Self calibration on the data
 -------------------------------------
 **order**
 -------------------------------------
+
   *int*, *optional*
 
   Workers are executed in ascedning order based on this value
@@ -43,6 +46,7 @@ Perform Self calibration on the data
 -------------------------------------
 **undo_subtractmodelcol**
 -------------------------------------
+
   *bool*, *optional*
 
   replace the corrected column with the sum of corrected and model columns to undo continuum subtraction that may have been done by the image HI worker. Default is false
@@ -52,6 +56,7 @@ Perform Self calibration on the data
 -------------------------------------
 **primary_beam**
 -------------------------------------
+
   *bool*, *optional*
 
   Use primary beam
@@ -61,6 +66,7 @@ Perform Self calibration on the data
 -------------------------------------
 **calibrate_with**
 -------------------------------------
+
   *str*, *optional*
 
   Tool to use for calibration
@@ -70,6 +76,7 @@ Perform Self calibration on the data
 -------------------------------------
 **spwid**
 -------------------------------------
+
   *int*, *optional*
 
   Provide spectral window id
@@ -79,6 +86,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_npix**
 -------------------------------------
+
   *int*, *optional*
 
   Number of pixels in output image
@@ -88,6 +96,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_padding**
 -------------------------------------
+
   *float*, *optional*
 
   Padding
@@ -97,6 +106,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_mgain**
 -------------------------------------
+
   *float*, *optional*
 
   Image CLEANing gain
@@ -106,6 +116,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_cell**
 -------------------------------------
+
   *float*, *optional*
 
   Image pixel size (arcsec)
@@ -115,6 +126,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_weight**
 -------------------------------------
+
   *str*, *optional*
 
   Image weighting type
@@ -124,6 +136,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_robust**
 -------------------------------------
+
   *float*, *optional*
 
   Briggs robust value
@@ -133,6 +146,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_niter**
 -------------------------------------
+
   *int*, *optional*
 
   Number of cleaning iterations
@@ -142,6 +156,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_cleanborder**
 -------------------------------------
+
   *float*, *optional*
 
   Clean border
@@ -151,6 +166,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_facets**
 -------------------------------------
+
   *int*, *optional*
 
   Number facet to image
@@ -160,6 +176,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_nchans**
 -------------------------------------
+
   *int*, *optional*
 
   Number of channesls in output image
@@ -169,6 +186,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_joinchannels**
 -------------------------------------
+
   *bool*, *optional*
 
   Join channels to create MFS image
@@ -178,6 +196,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_fit_spectral_pol**
 -------------------------------------
+
   *int*, *optional*
 
   Fit a polynomial over frequency to each clean component
@@ -187,6 +206,7 @@ Perform Self calibration on the data
 -------------------------------------
 **img_pol**
 -------------------------------------
+
   *str*, *optional*
 
   Stokes image to create
@@ -196,6 +216,7 @@ Perform Self calibration on the data
 -------------------------------------
 **bjones**
 -------------------------------------
+
   *bool*, *optional*
 
   Enable Bjones.
@@ -205,6 +226,7 @@ Perform Self calibration on the data
 -------------------------------------
 **ddjones**
 -------------------------------------
+
   *bool*, *optional*
 
   Enable direction dependent calibration, currently experimental.
@@ -214,7 +236,9 @@ Perform Self calibration on the data
 -------------------------------------
 **cal_DDsols**
 -------------------------------------
+
   *optional*
+
   Calibration solution intervals
 
 
@@ -222,6 +246,7 @@ Perform Self calibration on the data
 -------------------------------------
 **cal_gain_amplitude_clip_low**
 -------------------------------------
+
   *float*, *optional*
 
   Lower gain amplitude clipping
@@ -231,6 +256,7 @@ Perform Self calibration on the data
 -------------------------------------
 **cal_gain_amplitude_clip_high**
 -------------------------------------
+
   *float*, *optional*
 
   Higher gain amplitude clipping
@@ -240,6 +266,7 @@ Perform Self calibration on the data
 -------------------------------------
 **cal_niter**
 -------------------------------------
+
   *int*, *optional*
 
   Number of self-calibration iterations to perform
@@ -249,6 +276,7 @@ Perform Self calibration on the data
 -------------------------------------
 **start_at_iter**
 -------------------------------------
+
   *int*, *optional*
 
   Start self-cal iteration loop at this start value
@@ -258,6 +286,7 @@ Perform Self calibration on the data
 -------------------------------------
 **aimfast**
 -------------------------------------
+
   Quality assessment parameter
 
     **enable**
@@ -278,7 +307,7 @@ Perform Self calibration on the data
     **area_factor**
       *float*, *optional*
 
-      Peak flux source area multiplying factor i.e tot_area = psf-size*af
+      Peak flux source area multiplying factor i.e tot_area = psf-size\*af
 
     **normality_model**
       *str*, *optional*
@@ -290,6 +319,7 @@ Perform Self calibration on the data
 -------------------------------------
 **image**
 -------------------------------------
+
   Imaging parameter
 
     **enable**
@@ -352,6 +382,7 @@ Perform Self calibration on the data
 -------------------------------------
 **sofia_mask**
 -------------------------------------
+
   Run SoFiA source finder to produce a source mask and a Moment-0 map
 
     **enable**
@@ -414,6 +445,7 @@ Perform Self calibration on the data
 -------------------------------------
 **extract_sources**
 -------------------------------------
+
   Source finding parameters
 
     **enable**
@@ -441,6 +473,7 @@ Perform Self calibration on the data
 -------------------------------------
 **calibrate**
 -------------------------------------
+
   Calibration parameters
 
     **enable**
@@ -488,6 +521,7 @@ Perform Self calibration on the data
 -------------------------------------
 **restore_model**
 -------------------------------------
+
   Restore modelled to final calibrated residual image
 
     **enable**
@@ -510,6 +544,7 @@ Perform Self calibration on the data
 -------------------------------------
 **flagging_summary**
 -------------------------------------
+
   Output the flagging summary
 
     **enable**
@@ -522,6 +557,7 @@ Perform Self calibration on the data
 -------------------------------------
 **gain_interpolation**
 -------------------------------------
+
   Interpolate gains over the high frequency resolution data
 
     **enable**
@@ -539,6 +575,7 @@ Perform Self calibration on the data
 -------------------------------------
 **highfreqres_contim**
 -------------------------------------
+
   Make final continuum image and model at higher freq res, ideally using a clean mask based on the last round of continuum imging
 
     **enable**

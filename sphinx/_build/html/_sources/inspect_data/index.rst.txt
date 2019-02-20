@@ -16,6 +16,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 -------------------------------------
 **enable**
 -------------------------------------
+
   *bool*, *optional*
 
   Executes dignostic plotting of the first-pass cross-calibrated data.
@@ -25,6 +26,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 -------------------------------------
 **order**
 -------------------------------------
+
   *int*, *optional*
 
   The order in which this step will be executed in the pipeline.
@@ -34,6 +36,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 -------------------------------------
 **label**
 -------------------------------------
+
   *str*, *optional*
 
   Lable for output products (plots etc.) for this step.
@@ -43,6 +46,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 -------------------------------------
 **real_imag**
 -------------------------------------
+
   Plot real vs imaginary parts of data.
 
     **enable**
@@ -75,6 +79,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 -------------------------------------
 **amp_phase**
 -------------------------------------
+
   Plot Amplitude vs Phase for  data.
 
     **enable**
@@ -107,6 +112,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 -------------------------------------
 **amp_uvwave**
 -------------------------------------
+
   Plot data amplitude v/s  uvwave.
 
     **enable**
@@ -139,9 +145,9 @@ Dignostic plots of the first-pass cross-calibrated data.
 -------------------------------------
 **amp_ant**
 -------------------------------------
+
   Plot data amplitde v/s antenna.
 
-    **mapping**
     **enable**
       *bool*, *optional*
 
@@ -172,6 +178,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 -------------------------------------
 **phase_uvwave**
 -------------------------------------
+
   Plot data phase v/s uvwave.
 
     **enable**
@@ -204,6 +211,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 -------------------------------------
 **amp_scan**
 -------------------------------------
+
   Plot data amplitude v/s scan number.
 
     **enable**

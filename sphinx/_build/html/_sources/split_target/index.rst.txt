@@ -16,6 +16,7 @@ Split and average target data
 -------------------------------------
 **enable**
 -------------------------------------
+
   *bool*, *optional*
 
   Execute this worker
@@ -25,6 +26,7 @@ Split and average target data
 -------------------------------------
 **order**
 -------------------------------------
+
   *int*, *optional*
 
   Order of worker in queue
@@ -34,6 +36,7 @@ Split and average target data
 -------------------------------------
 **label**
 -------------------------------------
+
   *str*, *optional*
 
   Label for new data set
@@ -43,6 +46,7 @@ Split and average target data
 -------------------------------------
 **split_target**
 -------------------------------------
+
   Split data
 
     **enable**
@@ -80,6 +84,7 @@ Split and average target data
 -------------------------------------
 **hires_split**
 -------------------------------------
+
   Splits data while keeping the frequency resolution
 
     **enable**
@@ -107,6 +112,7 @@ Split and average target data
 -------------------------------------
 **changecentre**
 -------------------------------------
+
   changes the phase centre
 
     **enable**
@@ -129,6 +135,7 @@ Split and average target data
 -------------------------------------
 **obsinfo**
 -------------------------------------
+
   Get observation information
 
     **enable**
@@ -151,6 +158,7 @@ Split and average target data
 -------------------------------------
 **prepms**
 -------------------------------------
+
   Run MSUtils prepms function
 
     **enable**

@@ -16,6 +16,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **enable**
 -------------------------------------
+
   *bool*, *optional*
 
   Execute this segment.
@@ -25,6 +26,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **order**
 -------------------------------------
+
   *int*, *optional*
 
   Workers are executed in ascending order based on this value.
@@ -34,6 +36,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **otfdelay**
 -------------------------------------
+
   *bool*, *optional*
 
   Set whether to apply the delay calibration on the fly when solving for other calibration terms.
@@ -43,6 +46,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **uvrange**
 -------------------------------------
+
   *str*, *optional*
 
   Set the U-V range for data selection, e.g. '>50'.
@@ -52,6 +56,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **label**
 -------------------------------------
+
   *str*, *optional*
 
   Label for output files.
@@ -61,6 +66,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **clear_cal**
 -------------------------------------
+
   Initializes dataset for calibration using CASA
 
     **enable**
@@ -83,6 +89,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **set_model**
 -------------------------------------
+
   Essentially setjy task from CASA.
 
     **enable**
@@ -115,6 +122,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **delay_cal**
 -------------------------------------
+
   Carry out delay correction calibration (using gaincal task from CASA).
 
     **enable**
@@ -158,6 +166,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **bp_cal**
 -------------------------------------
+
   Carry out bandpass calibration (using bandpass task from CASA)
 
     **enable**
@@ -213,6 +222,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **gain_cal_flux**
 -------------------------------------
+
   Carry out gain calibration on the flux calibrator field.
 
     **enable**
@@ -258,6 +268,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **gain_cal_gain**
 -------------------------------------
+
   Carry out gain calibration on the gain calibrator field.
 
     **enable**
@@ -303,6 +314,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **transfer_fluxscale**
 -------------------------------------
+
   Transfers fluxscale from the flux calibrator field to the gain calibrator.
 
     **enable**
@@ -328,6 +340,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **apply_delay_cal**
 -------------------------------------
+
   Apply the delay correction calibration table to specified fields via the CASA applycal task.
 
     **enable**
@@ -355,6 +368,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **apply_bp_cal**
 -------------------------------------
+
   Apply the bandpass table to specified fields via the CASA applycal task.
 
     **enable**
@@ -380,6 +394,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **apply_gain_cal_gain**
 -------------------------------------
+
   Apply the gain calibration table to specified fields via the CASA applycal task.
 
     **enable**
@@ -405,6 +420,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **apply_transfer_fluxscale**
 -------------------------------------
+
   Apply the fluxscale table to specified fields via the CASA applycal task.
 
     **enable**
@@ -430,6 +446,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **autoflag_closure_error**
 -------------------------------------
+
   Flag closure errors and systematic issues based on calibrated calibrator phase.
 
     **enable**
@@ -472,6 +489,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 -------------------------------------
 **flagging_summary**
 -------------------------------------
+
   Prints out the buther's bill, i.e. data flagging summary at the end of cross calibration process.
 
     **enable**

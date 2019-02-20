@@ -16,6 +16,7 @@ Setup some basic observation information
 -------------------------------------
 **order**
 -------------------------------------
+
   *int*, *optional*
 
   Order in queue of workers
@@ -25,6 +26,7 @@ Setup some basic observation information
 -------------------------------------
 **obsinfo**
 -------------------------------------
+
   Get observation information
 
     **enable**
@@ -52,6 +54,7 @@ Setup some basic observation information
 -------------------------------------
 **target**
 -------------------------------------
+
   *str*, *optional*
 
   Target field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
@@ -61,6 +64,7 @@ Setup some basic observation information
 -------------------------------------
 **gcal**
 -------------------------------------
+
   *str*, *optional*
 
   Gain calibrator field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
@@ -70,6 +74,7 @@ Setup some basic observation information
 -------------------------------------
 **bpcal**
 -------------------------------------
+
   *str*, *optional*
 
   Bandpass calibrator field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
@@ -79,6 +84,7 @@ Setup some basic observation information
 -------------------------------------
 **fcal**
 -------------------------------------
+
   *str*, *optional*
 
   Fluxscale calibrator field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
@@ -88,6 +94,7 @@ Setup some basic observation information
 -------------------------------------
 **reference_antenna**
 -------------------------------------
+
   *str*, *optional*
 
   Reference antenna. If set to 'auto' then will automatically set using metadata file (only for meerkat data)
@@ -97,6 +104,7 @@ Setup some basic observation information
 -------------------------------------
 **nchans**
 -------------------------------------
+
   *int*, *optional*
 
   Number of channels. If set to 0 then will automatically set using metadata file (only for meerkat data)
@@ -106,6 +114,7 @@ Setup some basic observation information
 -------------------------------------
 **firstchanfreq**
 -------------------------------------
+
   *str*, *optional*
 
   First frequency channel. If set to 0 then will automatically set using metadata file (only for meerkat data)
@@ -115,6 +124,7 @@ Setup some basic observation information
 -------------------------------------
 **lastchanfreq**
 -------------------------------------
+
   *str*, *optional*
 
   Last frequency. If set to 0 then will automatically set using metadata file (only for meerkat data)
@@ -124,6 +134,7 @@ Setup some basic observation information
 -------------------------------------
 **chanwidth**
 -------------------------------------
+
   *str*, *optional*
 
   Channel width. If set to 0 then will automatically set using metadata file (only for meerkat data)
@@ -133,6 +144,7 @@ Setup some basic observation information
 -------------------------------------
 **primary_beam**
 -------------------------------------
+
   Generate primary beam model
 
     **enable**
