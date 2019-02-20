@@ -19,7 +19,7 @@ download & install
 .. toctree::
    :maxdepth: 1
  
-   install/index.rst
+   meerkathiREADME.md
  
 ========================
 manual

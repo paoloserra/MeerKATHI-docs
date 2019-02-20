@@ -3,7 +3,7 @@
 ########################
 
 # Where to find the MeerKATHI schema directory
-schemaDir='../meerkathi/meerkathi/schema/'
+meerkathiDir='../meerkathi'
 
 # Where to write the doc files
 docsDir='sphinx/'
@@ -94,27 +94,40 @@ sortedWorkers = [
 #   f.close()
 
 # Write the install page index.rst files
-def writeInstallIndex(instDr):
-  print('  INFO: Writing install index.rst ...')
-  writeLines=[
-    '.. meerkathi-docs documentation master file, created by',
-    '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
-    '   You can adapt this file completely to your liking, but it should at least',
-    '   contain the root `toctree` directive.',
-    ' ',
-    '==================',
-    'Download & Install',
-    '==================',
-    ' ',
-    '.. toctree::',
-    '   :maxdepth: 1',
-    ' ',
-    'To download and install the code go to https://github.com/ska-sa/meerkathi (currently private)',
-    ' ',
-    ]
+# def writeInstallIndex(instDr):
+#   print('  INFO: Writing install index.rst ...')
+#   writeLines=[
+#     '.. meerkathi-docs documentation master file, created by',
+#     '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
+#     '   You can adapt this file completely to your liking, but it should at least',
+#     '   contain the root `toctree` directive.',
+#     ' ',
+#     '==================',
+#     'Download & Install',
+#     '==================',
+#     ' ',
+#     '.. toctree::',
+#     '   :maxdepth: 1',
+#     ' ',
+#     '   meerkathiREADME.md',
+#     ' ',
+#     ]
+# 
+#   f=open(instDr+'index.rst','w')
+#   for ll in writeLines: f.write(ll+'\n')
+#   f.close()
 
-  f=open(instDr+'index.rst','w')
-  for ll in writeLines: f.write(ll+'\n')
+# Get and adapt MeerKATHI README.md
+def getMeerkathiReadme(mrkthiDr,dcsDr):
+  print('  INFO: Getting and adapting {0:s}/README.md ...'.format(mrkthiDr))
+  f=open(mrkthiDr+'/README.md')
+  readme=f.readlines()
+  f.close()
+  f=open(dcsDr+'meerkathiREADME.md','w')
+  nn=0
+  while nn<len(readme) and '## Running the pipeline' not in readme[nn]:
+    f.write(readme[nn])
+    nn+=1
   f.close()
 
 # Write the manual page index.rst files
@@ -256,6 +269,9 @@ import ruamel.yaml
 ### DO IT! ###
 ##############
 
+schemaDir=meerkathiDir+'/meerkathi/schema/'
+
+
 print('  INFO: Browsing MeerKATHI schema directory {0:s} ...'.format(schemaDir))
 # Get list of workers and their .yml files from the schema directory
 schemas=[ww.replace(schemaDir,'') for ww in glob(schemaDir+'*')]
@@ -283,9 +299,14 @@ for dd in [installDir,manualDir,workersDir]:
   os.mkdir(dd)
 for ww in sortedWorkers: os.mkdir(workersDir+ww)
 
+# Copy MeerKATHI readme from meerkathiDir and edit 
+getMeerkathiReadme(meerkathiDir,docsDir)
+#os.popen('cp {0:s}/README.md sphinx/meerkathiREADME.md'.format(meerkathiDir))
+
+
 # Write index.rst files
 #writeHomeIndex(docsDir) [OBSOLETE. THIS FILE IS STATIC AND NO LONGER NEEDS UPDATES]
-writeInstallIndex(installDir)
+#writeInstallIndex(installDir) [OBSOLETE. INSTALL DOCS COME FROM MEERKATHI README]
 writeManualIndex(manualDir)
 writeWorkerPageIndex(sortedWorkers,workersDir)
 writeWorkersIndex(sortedWorkers,workersDir,schemas,schemaDir)

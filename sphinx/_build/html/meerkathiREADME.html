@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Download &amp; Install &mdash; meerkathi-docs  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Manual" href="manual/index.html" />
+    <link rel="prev" title="MeerKATHI" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> meerkathi-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Download &amp; Install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#on-linux">On Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#on-mac">On Mac</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="manual/index.html">Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workers/index.html">Workers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">meerkathi-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Download &amp; Install</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/meerkathiREADME.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="download-install">
+<h1>Download &amp; Install<a class="headerlink" href="#download-install" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="on-linux">
+<h2>On Linux<a class="headerlink" href="#on-linux" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li>Clone this repository
+Use https and your github credentials, then go to the pipeline folder ‘meerkathi’.</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ska</span><span class="o">-</span><span class="n">sa</span><span class="o">/</span><span class="n">meerkathi</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">meerkathi</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li>Check out submodules</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span> <span class="o">--</span><span class="n">recursive</span> 
+</pre></div>
+</div>
+<ol class="simple">
+<li>Start and activate virtual environment outside the meerkathi directory</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ..
+$ virtualenv meerkathi-venv
+$ source meerkathi-venv/bin/activate
+$ pip install pip wheel setuptools -U
+</pre></div>
+</div>
+<ol class="simple">
+<li>If working from master branch it may be necessary to install bleeding edge fixes from upstream dependencies. Please install the requirements.txt requirements:</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install -U -r &lt;absolute path to meerkathi folder&gt;/requirements.txt
+</pre></div>
+</div>
+<ol class="simple">
+<li>Install meerKATHI</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install &lt;absolute path to meerkathi folder&gt;
+$ export PYTHONPATH=&#39;&#39; # Ensure that you use venv Python
+</pre></div>
+</div>
+<ol class="simple">
+<li>Build Stimela</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela build
+</pre></div>
+</div>
+</div>
+<div class="section" id="on-mac">
+<h2>On Mac<a class="headerlink" href="#on-mac" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li>create a python environment</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">env</span> <span class="pre">--name</span> <span class="pre">meer_venv</span></code></p>
+<ol class="simple">
+<li>activate environment</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">meer_venv</span></code></p>
+<ol class="simple">
+<li>clone <code class="docutils literal notranslate"><span class="pre">meerkathi</span></code></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ska</span><span class="o">-</span><span class="n">sa</span><span class="o">/</span><span class="n">meerkathi</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">meerkathi</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span> <span class="o">--</span><span class="n">recursive</span> 
+</pre></div>
+</div>
+<ol class="simple">
+<li>Start and activate virtual environment</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ virtualenv meerkathi-venv
+$ source meerkathi-venv/bin/activate
+$ pip install pip wheel setuptools -U
+</pre></div>
+</div>
+<ol class="simple">
+<li>If working from master branch it may be necessary to install bleeding edge fixes from upstream dependencies. Please install the requirements.txt requirements:</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install -U -r &lt;absolute path to meerkathi folder&gt;/requirements.txt
+</pre></div>
+</div>
+<ol class="simple">
+<li>Install meerKATHI</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install &lt;absolute path to meerkathi folder&gt;
+$ export PYTHONPATH=&#39;&#39; # Ensure that you use venv Python
+</pre></div>
+</div>
+<ol class="simple">
+<li>Build stimela</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">stimela</span> <span class="pre">build</span></code></p>
+<ol class="simple">
+<li>run meerkathi</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">meerkathi</span> <span class="pre">-c</span> <span class="pre">path_to_configuration_file</span></code></p>
+<p>WARNING: if <code class="docutils literal notranslate"><span class="pre">/etc/shadow</span></code> is not found:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">SpheMakh</span><span class="o">/</span><span class="n">Stimela</span><span class="o">.</span><span class="n">git</span><span class="nd">@issue</span><span class="o">-</span><span class="mi">241</span>
+<span class="n">stimela</span> <span class="n">clean</span> <span class="o">-</span><span class="n">ac</span>
+<span class="n">stimela</span> <span class="n">clean</span> <span class="o">-</span><span class="n">aC</span>
+<span class="n">stimela</span> <span class="n">build</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="manual/index.html" class="btn btn-neutral float-right" title="Manual" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="MeerKATHI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, MeerKATHI team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
