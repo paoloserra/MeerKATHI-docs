@@ -10,5 +10,8 @@ Manual
 .. toctree::
    :maxdepth: 1
  
-TBD
+   intro/index.rst
+   configfile/index.rst
+   reduction/index.rst
+   products/index.rst
  

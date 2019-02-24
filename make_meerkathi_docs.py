@@ -154,7 +154,7 @@ def writeManualIndex(manDr):
   for ll in writeLines: f.write(ll+'\n')
   f.close()
 
-# Write the worker page index.rst files
+# Write the worker general page index.rst files
 def writeWorkerPageIndex(srtWrks,wrkDr):
   print('  INFO: Writing workers homepage index.rst ...')
   writeLines=[
@@ -162,6 +162,8 @@ def writeWorkerPageIndex(srtWrks,wrkDr):
     '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
     '   You can adapt this file completely to your liking, but it should at least',
     '   contain the root `toctree` directive.',
+    ' ',
+    '.. _workers:',
     ' ',
     '=======',
     'Workers',
@@ -178,7 +180,7 @@ def writeWorkerPageIndex(srtWrks,wrkDr):
   for ll in writeLines: f.write(ll+'\n')
   f.close()
 
-# Write the workers' index.rst files
+# Write the individual workers' index.rst files
 def writeWorkersIndex(srtWrks,wrkDr,schms,schDr):
   print('  INFO: Writing individual workers index.rst based on the following schema files ...')
   # Loop over all workers
@@ -189,6 +191,8 @@ def writeWorkersIndex(srtWrks,wrkDr,schms,schDr):
       '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
       '   You can adapt this file completely to your liking, but it should at least',
       '   contain the root `toctree` directive.',
+      ' ',
+      '.. _{0:s}:'.format(wrk),
       ' ',
       '==========================================',
       wrk,
@@ -288,13 +292,13 @@ for ww in workers:
   if ww not in sortedWorkers: sortedWorkers.append(ww)
 
 # Write out message about which workers will be included in the docs
-print('  INFO: Will include the following workers in the docs:')
+print('  INFO: Will include the following workers in the documentation:')
 for ww in sortedWorkers: print('        {0:s}'.format(ww))
 
 # For each docs (sub-)directories
-print('  INFO: Creating docs (sub-)directories ...')
-[installDir,manualDir,workersDir]=[docsDir+dd+'/' for dd in ['install','manual','workers']]
-for dd in [installDir,manualDir,workersDir]:
+print('  INFO: Creating "Download & Install" and "Workers" (sub-)directories ...')
+[installDir,workersDir]=[docsDir+dd+'/' for dd in ['install','workers']]
+for dd in [installDir,workersDir]:
   if os.path.exists(dd): os.popen('rm -r '+dd)
   os.mkdir(dd)
 for ww in sortedWorkers: os.mkdir(workersDir+ww)
@@ -307,8 +311,13 @@ getMeerkathiReadme(meerkathiDir,docsDir)
 # Write index.rst files
 #writeHomeIndex(docsDir) [OBSOLETE. THIS FILE IS STATIC AND NO LONGER NEEDS UPDATES]
 #writeInstallIndex(installDir) [OBSOLETE. INSTALL DOCS COME FROM MEERKATHI README]
-writeManualIndex(manualDir)
+#writeManualIndex(manualDir) [OBSOLETE. THIS FILE IS STATIC AND NO LONGER NEEDS UPDATES]
 writeWorkerPageIndex(sortedWorkers,workersDir)
 writeWorkersIndex(sortedWorkers,workersDir,schemas,schemaDir)
 
 print('  INFO: Done, all good!')
+print('  INFO: Now type the following:')
+print('        cd sphinx')
+print('        make html')
+print('        cd ../')
+print('  INFO: You can now commit and push your changes to GitHub, and you are done!')
