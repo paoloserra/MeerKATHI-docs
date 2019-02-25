@@ -131,28 +131,28 @@ def getMeerkathiReadme(mrkthiDr,dcsDr):
   f.close()
 
 # Write the manual page index.rst files
-def writeManualIndex(manDr):
-  print('  INFO: Writing manual index.rst ...')
-  writeLines=[
-    '.. meerkathi-docs documentation master file, created by',
-    '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
-    '   You can adapt this file completely to your liking, but it should at least',
-    '   contain the root `toctree` directive.',
-    ' ',
-    '=======',
-    'Manual',
-    '=======',
-    ' ',
-    '.. toctree::',
-    '   :maxdepth: 1',
-    ' ',
-    'TBD',
-    ' ',
-    ]
-
-  f=open(manDr+'index.rst','w')
-  for ll in writeLines: f.write(ll+'\n')
-  f.close()
+# def writeManualIndex(manDr):
+#   print('  INFO: Writing manual index.rst ...')
+#   writeLines=[
+#     '.. meerkathi-docs documentation master file, created by',
+#     '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
+#     '   You can adapt this file completely to your liking, but it should at least',
+#     '   contain the root `toctree` directive.',
+#     ' ',
+#     '=======',
+#     'Manual',
+#     '=======',
+#     ' ',
+#     '.. toctree::',
+#     '   :maxdepth: 1',
+#     ' ',
+#     'TBD',
+#     ' ',
+#     ]
+# 
+#   f=open(manDr+'index.rst','w')
+#   for ll in writeLines: f.write(ll+'\n')
+#   f.close()
 
 # Write the worker general page index.rst files
 def writeWorkerPageIndex(srtWrks,wrkDr):
@@ -165,9 +165,9 @@ def writeWorkerPageIndex(srtWrks,wrkDr):
     ' ',
     '.. _workers:',
     ' ',
-    '=======',
-    'Workers',
-    '=======',
+    '==================',
+    'Workers parameters',
+    '==================',
     ' ',
     '.. toctree::',
     '   :maxdepth: 1',
@@ -297,7 +297,7 @@ for ww in sortedWorkers: print('        {0:s}'.format(ww))
 
 # For each docs (sub-)directories
 print('  INFO: Creating "Download & Install" and "Workers" (sub-)directories ...')
-[installDir,workersDir]=[docsDir+dd+'/' for dd in ['install','workers']]
+[installDir,workersDir]=[docsDir+dd+'/' for dd in ['install','manual/workers']]
 for dd in [installDir,workersDir]:
   if os.path.exists(dd): os.popen('rm -r '+dd)
   os.mkdir(dd)

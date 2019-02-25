@@ -14,4 +14,4 @@ Manual
    configfile/index.rst
    reduction/index.rst
    products/index.rst
- 
+   workers/index.rst

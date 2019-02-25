@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>observation_config &mdash; meerkathi-docs  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="prepare_data" href="../prepare_data/index.html" />
+    <link rel="prev" title="get_data" href="../get_data/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> meerkathi-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reduction/index.html">Data reduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data Products</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Workers parameters</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../general/index.html">general</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_data/index.html">get_data</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">observation_config</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#order"><strong>order</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#obsinfo"><strong>obsinfo</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#target"><strong>target</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gcal"><strong>gcal</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bpcal"><strong>bpcal</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fcal"><strong>fcal</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reference-antenna"><strong>reference_antenna</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nchans"><strong>nchans</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#firstchanfreq"><strong>firstchanfreq</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lastchanfreq"><strong>lastchanfreq</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#chanwidth"><strong>chanwidth</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#primary-beam"><strong>primary_beam</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../prepare_data/index.html">prepare_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flagging/index.html">flagging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cross_cal/index.html">cross_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../inspect_data/index.html">inspect_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../split_target/index.html">split_target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../image_HI/index.html">image_HI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">meerkathi-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Manual</a> &raquo;</li>
+        
+          <li><a href="../index.html">Workers parameters</a> &raquo;</li>
+        
+      <li>observation_config</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/manual/workers/observation_config/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="observation-config">
+<span id="id1"></span><h1>observation_config<a class="headerlink" href="#observation-config" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Setup some basic observation information</p>
+<div class="section" id="order">
+<h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>Order in queue of workers</p>
+</div></blockquote>
+</div>
+<div class="section" id="obsinfo">
+<h2><strong>obsinfo</strong><a class="headerlink" href="#obsinfo" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Get observation information</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute this section</p>
+</dd>
+<dt><strong>listobs</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Run CASA listobs task to get observation information</p>
+</dd>
+<dt><strong>summary_json</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Run MSUtils summary function to get observation information as JSON file which can be used to automatically configure pipeline</p>
+</dd>
+<dt><strong>vampirisms</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Returns sun free time range</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="target">
+<h2><strong>target</strong><a class="headerlink" href="#target" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Target field. If set to ‘auto’ then will automatically set using JSON file from ‘obsinfo’</p>
+</div></blockquote>
+</div>
+<div class="section" id="gcal">
+<h2><strong>gcal</strong><a class="headerlink" href="#gcal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Gain calibrator field. If set to ‘auto’ then will automatically set using JSON file from ‘obsinfo’</p>
+</div></blockquote>
+</div>
+<div class="section" id="bpcal">
+<h2><strong>bpcal</strong><a class="headerlink" href="#bpcal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Bandpass calibrator field. If set to ‘auto’ then will automatically set using JSON file from ‘obsinfo’</p>
+</div></blockquote>
+</div>
+<div class="section" id="fcal">
+<h2><strong>fcal</strong><a class="headerlink" href="#fcal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Fluxscale calibrator field. If set to ‘auto’ then will automatically set using JSON file from ‘obsinfo’</p>
+</div></blockquote>
+</div>
+<div class="section" id="reference-antenna">
+<h2><strong>reference_antenna</strong><a class="headerlink" href="#reference-antenna" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Reference antenna. If set to ‘auto’ then will automatically set using metadata file (only for meerkat data)</p>
+</div></blockquote>
+</div>
+<div class="section" id="nchans">
+<h2><strong>nchans</strong><a class="headerlink" href="#nchans" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>Number of channels. If set to 0 then will automatically set using metadata file (only for meerkat data)</p>
+</div></blockquote>
+</div>
+<div class="section" id="firstchanfreq">
+<h2><strong>firstchanfreq</strong><a class="headerlink" href="#firstchanfreq" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>First frequency channel. If set to 0 then will automatically set using metadata file (only for meerkat data)</p>
+</div></blockquote>
+</div>
+<div class="section" id="lastchanfreq">
+<h2><strong>lastchanfreq</strong><a class="headerlink" href="#lastchanfreq" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Last frequency. If set to 0 then will automatically set using metadata file (only for meerkat data)</p>
+</div></blockquote>
+</div>
+<div class="section" id="chanwidth">
+<h2><strong>chanwidth</strong><a class="headerlink" href="#chanwidth" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Channel width. If set to 0 then will automatically set using metadata file (only for meerkat data)</p>
+</div></blockquote>
+</div>
+<div class="section" id="primary-beam">
+<h2><strong>primary_beam</strong><a class="headerlink" href="#primary-beam" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Generate primary beam model</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Execute this section</p>
+</dd>
+<dt><strong>freq</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">A single freq, or the start, end freqs, and channel width in MHz</p>
+</dd>
+<dt><strong>diameter</strong></dt>
+<dd><p class="first"><em>float</em>, <em>optional</em></p>
+<p class="last">Diameter of the required beam</p>
+</dd>
+<dt><strong>pixels</strong></dt>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Number of pixels on one side</p>
+</dd>
+<dt><strong>coefficients_file</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Coeficients file name</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../prepare_data/index.html" class="btn btn-neutral float-right" title="prepare_data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../get_data/index.html" class="btn btn-neutral float-left" title="get_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, MeerKATHI team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

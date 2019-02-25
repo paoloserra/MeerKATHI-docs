@@ -17,9 +17,10 @@ MeerKATHI is a pipeline to reduce radio interferometry continuum and spectral li
 full polarisation. It works on data from any radio interferometer as long as they are in
 “measurement set” format.
 
-In the simplest terms, MeerKATHI is a collection of Stimela scripts. Stimela is a
-platform-independent radio interferometry scripting framework based on Python and
-Docker/Singularity. See https://github.com/SpheMakh/Stimela. Stimela allows users to
+In the simplest terms, MeerKATHI is a collection of Stimela scripts.
+`Stimela <https://github.com/SpheMakh/Stimela>`_ is a platform-independent radio
+interferometry scripting framework based on Python and Docker/Singularity.
+Stimela allows users to
 execute tasks from many different data reduction packages in Python without having to
 install those packages individually (e.g., CASA, MeqTrees, AOflagger, SoFiA, etc.).
 Using Stimela, the different software packages are available through a unified scheme.
@@ -32,18 +33,20 @@ executes several tasks from the interferometry packages included in Stimela (e.g
 cross-calibration worker can calibrate delays, bandpass, gains and flux scale).
 
 In practice, users tell MeerKATHI what to do – and how to do it – via a configuration file.
-The configuration file has one section for each run of a worker (a worker can be run an
-arbitrary number of times). By editing the configuration file users control the workers'
-options, deciding which tasks to run and with what settings. Normally, users won’t have to touch
-anything but the configuration file. They can check what’s happened through a variety of data
-products, diagnostic plots and log files. A detailed explanation of the configuration file syntax
-is given in the :ref:`configfile` section of this manual.
+The configuration file has one section for each run of a worker. By editing the configuration
+file users control the workers' options, deciding which tasks to run and with what settings.
+A detailed explanation of the configuration file syntax is given in the :ref:`configfile`
+section of this manual.
+
+Normally, users won’t have to touch anything but the configuration file. They can check
+what’s happened through a variety of data products, diagnostic plots and log files.
+A list of all MeerKATHI data products is available at the :ref:`products` section of this manual.
 
 In the rest of this Introduction we give a brief description of each worker. A more comprehensive
-description is available in the :ref:`reduction` section of this manual. That section follows
-the flow of a typical data reduction process, which is also the flow of the default MeerKATHI
-configuration file. The full list of parameters available for the individual workers through
-the configuration file can be found at :ref:`workers` or following the links below.
+description is available in the :ref:`reduction` section of this manual, which follows
+the flow of a typical data reduction process. The full list of parameters available for
+the individual workers through the configuration file can be found at the :ref:`workers`
+section of this manual or following the links below.
 
 Brief description of workers
 ----------------------------

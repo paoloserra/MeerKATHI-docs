@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flagging &mdash; meerkathi-docs  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="cross_cal" href="../cross_cal/index.html" />
+    <link rel="prev" title="prepare_data" href="../prepare_data/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> meerkathi-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reduction/index.html">Data reduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data Products</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Workers parameters</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../general/index.html">general</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_data/index.html">get_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../observation_config/index.html">observation_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prepare_data/index.html">prepare_data</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">flagging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enable"><strong>enable</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#order"><strong>order</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#label"><strong>label</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hires-label"><strong>hires_label</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hires-flag"><strong>hires_flag</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#autoflag-autocorr-powerspectra"><strong>autoflag_autocorr_powerspectra</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flag-autocorr"><strong>flag_autocorr</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#quack-flagging"><strong>quack_flagging</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flag-shadow"><strong>flag_shadow</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flag-spw"><strong>flag_spw</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flag-time"><strong>flag_time</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flag-antennas"><strong>flag_antennas</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flag-scan"><strong>flag_scan</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#static-mask"><strong>static_mask</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#autoflag-rfi"><strong>autoflag_rfi</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flagging-summary"><strong>flagging_summary</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cross_cal/index.html">cross_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../inspect_data/index.html">inspect_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../split_target/index.html">split_target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../image_HI/index.html">image_HI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">meerkathi-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Manual</a> &raquo;</li>
+        
+          <li><a href="../index.html">Workers parameters</a> &raquo;</li>
+        
+      <li>flagging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/manual/workers/flagging/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="flagging">
+<span id="id1"></span><h1>flagging<a class="headerlink" href="#flagging" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Flagging of the data.</p>
+<div class="section" id="enable">
+<h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute flagging of the data.</p>
+</div></blockquote>
+</div>
+<div class="section" id="order">
+<h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>Order in queue of workers. Generally a non-negative integer.</p>
+</div></blockquote>
+</div>
+<div class="section" id="label">
+<h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>The label is added to the input .MS file name to define the name of the .MS file that should be flagged, &lt;input&gt;-&lt;label&gt;.ms. Default is an empty string, i.e., the original .MS is flagged.</p>
+</div></blockquote>
+</div>
+<div class="section" id="hires-label">
+<h2><strong>hires_label</strong><a class="headerlink" href="#hires-label" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Label for high frequency resolution data.</p>
+</div></blockquote>
+</div>
+<div class="section" id="hires-flag">
+<h2><strong>hires_flag</strong><a class="headerlink" href="#hires-flag" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Enables AOFlagger run on high frequency resolution data.</p>
+</div></blockquote>
+</div>
+<div class="section" id="autoflag-autocorr-powerspectra">
+<h2><strong>autoflag_autocorr_powerspectra</strong><a class="headerlink" href="#autoflag-autocorr-powerspectra" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Flags antennas based on drifts in the scan average of the auto correlation spectra per field. This doesn’t strictly require any calibration. It is also not field structure dependent, since it is just based on the DC of the field. Compares scan to median power of scans per field per channel. Also compares antenna to median of the array per scan per field per channel. This should catch any antenna with severe temperature problems.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Enables flagging of antennas based on drifts in the scan average of the auto correlation spectra per field.</p>
+</dd>
+<dt><strong>scan_to_scan_threshold</strong></dt>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Threshold for flagging in sigma above the rest of the scans per field per channel.</p>
+</dd>
+<dt><strong>antenna_to_group_threshold</strong></dt>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Threshold for flagging in sigma above array median power spectra per scan per field per channel.</p>
+</dd>
+<dt><strong>column</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Data column to flag.</p>
+</dd>
+<dt><strong>fields</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Fields to flag. Given as ‘auto’ or comma-seperated keys (keys in gcal, bpcal, target).</p>
+</dd>
+<dt><strong>calibrator_fields</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Calibrator fields. Given as ‘auto’ or comma-seperated keys (keys in gcal, bpcal).</p>
+</dd>
+<dt><strong>threads</strong></dt>
+<dd><p class="first"><em>int</em>, <em>optional</em></p>
+<p class="last">Number of threads to use.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="flag-autocorr">
+<h2><strong>flag_autocorr</strong><a class="headerlink" href="#flag-autocorr" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Flag autocorrelations. Through CASA flagdata task.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Enables flagging of autocorrelations.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="quack-flagging">
+<h2><strong>quack_flagging</strong><a class="headerlink" href="#quack-flagging" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Do quack flagging, i.e. flag the begining and/or end chunks of each scan. Again, through FLAGDATA.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Enable quack flagging.</p>
+</dd>
+<dt><strong>quackinterval</strong></dt>
+<dd><p class="first"><em>float</em>, <em>optional</em></p>
+<p class="last">Time interval (in seconds) to flag.</p>
+</dd>
+<dt><strong>quackmode</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Quack flagging mode. Either ‘beg’, which flags scan begining, ‘endb’, which flags end of the scan, ‘end’, which flags everything but the first specified seconds of the scan and ‘tail’ which flags all but the last specified seconds of the scan.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="flag-shadow">
+<h2><strong>flag_shadow</strong><a class="headerlink" href="#flag-shadow" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Flag shadowed antennas through the CASA task FLAGDATA.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Enables flagging of shadowed antennas.</p>
+</dd>
+<dt><strong>tolerance</strong></dt>
+<dd><p class="first"><em>float</em>, <em>optional</em></p>
+<p class="last">Amounts of shadow allowed (in metres). Default is 0. A positive number allows antennas to overlap in projection. A negative number forces antennas apart in projection.</p>
+</dd>
+<dt><strong>include_full_mk64</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Consider all MeerKAT-64 antennas in the shadowing calculation even if only a subarray is used. Default is False.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="flag-spw">
+<h2><strong>flag_spw</strong><a class="headerlink" href="#flag-spw" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Flag spectral windows/channels. Of course, through FLAGDATA.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Enable flagging spectral windows/ channels.</p>
+</dd>
+<dt><strong>channels</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Channels to flag. Given as “spectral window index:start channel ~ end channel”, e.g. “*:856~880MHz”. End channel not inclusive.</p>
+</dd>
+<dt><strong>ensure_valid_selection</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Check whether the channel selection returns any data. If it does not, FLAGDATA is not executed, preventing the pipeline from crashing. This check only works with the following spw formats (multiple, comma-separated selections allowed), “*:firstchan~lastchan”; “firstspw~lastspw:firstchan~lastchan”; “spw:firstchan~lastchan”; “firstchan~lastchan”. Channels are assumed to be in frequency (Hz, kHz, MHz, GHz allowed; if no units are given it assumes Hz).</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="flag-time">
+<h2><strong>flag_time</strong><a class="headerlink" href="#flag-time" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Flag timerange in the data using CASA FLAGDATA task.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Enabla flagging timeranges.</p>
+</dd>
+<dt><strong>timerange</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Timerange to flag. Given in format ‘YYYY/MM/DD/HH:MM:SS-YYYY/MM/DD/HH:MM:SS’.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="flag-antennas">
+<h2><strong>flag_antennas</strong><a class="headerlink" href="#flag-antennas" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Flag bad antennas. Or just the ones you have sworn a vendetta against.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Enables flagging of bad antennas.</p>
+</dd>
+<dt><strong>antennas</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Antennas to flag. Follows the CASA Flagdata syntax.</p>
+</dd>
+<dt><strong>timerange</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Timerange to flag. Given in format ‘YYYY/MM/DD/HH:MM:SS-YYYY/MM/DD/HH:MM:SS’.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="flag-scan">
+<h2><strong>flag_scan</strong><a class="headerlink" href="#flag-scan" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Flag bad scans. Uses CASA Flagdata task.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Enables flagging of bad scans.</p>
+</dd>
+<dt><strong>scans</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Scans to flag. CASA flagdata syntax.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="static-mask">
+<h2><strong>static_mask</strong><a class="headerlink" href="#static-mask" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Apply static mask to flag out known RFI, Meerkat specific.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Enables the application of static mask on the data.</p>
+</dd>
+<dt><strong>mask</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">The mask to apply.</p>
+</dd>
+<dt><strong>uvrange</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">UV range to select (CASA style range, e.g. lower~upper) for flagging. Leave blank for entire array.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="autoflag-rfi">
+<h2><strong>autoflag_rfi</strong><a class="headerlink" href="#autoflag-rfi" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Flag RFI using AOFlagger software.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Enable RFI flagging with AOFlagger.</p>
+</dd>
+<dt><strong>strategy</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">The AOFlagger strategy file to use.</p>
+</dd>
+<dt><strong>column</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">Specify column to flag</p>
+</dd>
+<dt><strong>fields</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">comma separated list of (zero-indexed) field ids to process</p>
+</dd>
+<dt><strong>bands</strong></dt>
+<dd><p class="first"><em>str</em>, <em>optional</em></p>
+<p class="last">comma separated list of (zero-indexed) band ids to process</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="flagging-summary">
+<h2><strong>flagging_summary</strong><a class="headerlink" href="#flagging-summary" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Write flagging summary at the end of the pre-calibration flagging. Uses CASA FLAGDATA in “summary” mode.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first"><em>bool</em>, <em>optional</em></p>
+<p class="last">Enables the writing of flagging summary.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cross_cal/index.html" class="btn btn-neutral float-right" title="cross_cal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../prepare_data/index.html" class="btn btn-neutral float-left" title="prepare_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, MeerKATHI team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -30,15 +30,6 @@ manual
  
    manual/index.rst
  
-========================
-workers
-========================
- 
-.. toctree::
-   :maxdepth: 1
- 
-   workers/index.rst
-   
 ================
 acknowledgements
 ================
