@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Introduction &mdash; meerkathi-docs  documentation</title>
+  <title>Introduction &mdash; MeerKATHI  documentation</title>
   
 
   
@@ -50,7 +50,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> meerkathi-docs
+            <a href="../../index.html" class="icon icon-home"> MeerKATHI
           
 
           
@@ -110,6 +110,9 @@
 </ul>
 </li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a></li>
+</ul>
 
             
           
@@ -123,7 +126,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">meerkathi-docs</a>
+          <a href="../../index.html">MeerKATHI</a>
         
       </nav>
 
@@ -202,8 +205,8 @@ The configuration file has one section for each run of a worker. By editing the 
 file users control the workers’ options, deciding which tasks to run and with what settings.
 A detailed explanation of the configuration file syntax is given in the <a class="reference internal" href="../configfile/index.html#configfile"><span class="std std-ref">Configuration file</span></a>
 section of this manual.</p>
-<p>Normally, users won’t have to touch anything but the configuration file. They can check
-what’s happened through a variety of data products, diagnostic plots and log files.
+<p>Normally, users will not have to touch anything but the configuration file. They can check
+what has happened through a variety of data products, diagnostic plots and log files.
 A list of all MeerKATHI data products is available at the <a class="reference internal" href="../products/index.html#products"><span class="std std-ref">Data Products</span></a> section of this manual.</p>
 <p>In the rest of this Introduction we give a brief description of each worker. A more comprehensive
 description is available in the <a class="reference internal" href="../reduction/index.html#reduction"><span class="std std-ref">Data reduction</span></a> section of this manual, which follows
@@ -218,31 +221,31 @@ same order in which they are given below. Only the first three workers (general,
 and  observation_config) should always be executed. All other workers are optional.</p>
 <div class="section" id="general">
 <h3><a class="reference internal" href="../workers/general/index.html#general"><span class="std std-ref">general</span></a><a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
-<p>This worker is used to set up the name of various input/output directories
+<p>This worker sets up the name of various input/output directories
 and the prefix for the output data products (e.g., diagnostic plots, images, etc.).</p>
 </div>
 <div class="section" id="get-data">
 <h3><a class="reference internal" href="../workers/get_data/index.html#get-data"><span class="std std-ref">get_data</span></a><a class="headerlink" href="#get-data" title="Permalink to this headline">¶</a></h3>
-<p>This worker is used to set up the name of the files to be processed and whether any
+<p>This worker sets up the name of the files to be processed and whether any
 conversion to .MS format is necessary. It can also virtually concatenate several .MS files
 together.</p>
 </div>
 <div class="section" id="observation-config">
 <h3><a class="reference internal" href="../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a><a class="headerlink" href="#observation-config" title="Permalink to this headline">¶</a></h3>
-<p>This worker is used to set up basic information on the content of the .MS files to be
+<p>This worker collects basic information on the content of the .MS files to be
 processed (e.g., target and calibrators’ name, channelisation, etc.). The worker can also
 extract this information automatically from the .MS metadata. Finally, it can create a
 primary beam image cube on a user-defined pixel- and frequency grid.</p>
 </div>
 <div class="section" id="prepare-data">
 <h3><a class="reference internal" href="../workers/prepare_data/index.html#prepare-data"><span class="std std-ref">prepare_data</span></a><a class="headerlink" href="#prepare-data" title="Permalink to this headline">¶</a></h3>
-<p>This worker is used to prepare the data for calibration and imaging. For example, it can
+<p>This worker prepares the data for calibration and imaging. For example, it can
 recalculate UVW coordinates, add a BITFLAG column to the input .MS files, or add spectral
 weights based on Tsys measurements.</p>
 </div>
 <div class="section" id="flagging">
 <h3><a class="reference internal" href="../workers/flagging/index.html#flagging"><span class="std std-ref">flagging</span></a><a class="headerlink" href="#flagging" title="Permalink to this headline">¶</a></h3>
-<p>This worker is used to flag the data and return statistics&nbsp;on the flags. As all other
+<p>This worker flags the data and returns statistics&nbsp;on the flags. As all other
 workers, it can be run multiple times within a single MeerKATHI run (though this feature
 is not necessarily useful for many other workers). It can flag data based on, e.g.,
 channel-, antenna- and time selection, or using automated algorithms that run on
@@ -250,7 +253,7 @@ autocorrelations (to catch antennas with clear problems) or crosscorrelations.</
 </div>
 <div class="section" id="cross-cal">
 <h3><a class="reference internal" href="../workers/cross_cal/index.html#cross-cal"><span class="std std-ref">cross_cal</span></a><a class="headerlink" href="#cross-cal" title="Permalink to this headline">¶</a></h3>
-<p>This worker is used to cross-calibrate the data. Users can calibrate delays, bandpass,
+<p>This worker cross-calibrates the data. Users can calibrate delays, bandpass,
 gains and flux scale. The calibration can be applied to the calibrators’ visibilities for
 future inspection. Numerous parameters are available for users to decide how to calibrate.
 Flagging based on closure errors is available in this worker.</p>
@@ -261,13 +264,13 @@ Flagging based on closure errors is available in this worker.</p>
 </div>
 <div class="section" id="split-target">
 <h3><a class="reference internal" href="../workers/split_target/index.html#split-target"><span class="std std-ref">split_target</span></a><a class="headerlink" href="#split-target" title="Permalink to this headline">¶</a></h3>
-<p>This worker is used to create new .MS files which contain the target’s calibrated
+<p>This worker creates new .MS files which contain the target’s calibrated
 visibilities only. Time and frequency averaging is available, as well as phase rotation to
 a new phase centre.</p>
 </div>
 <div class="section" id="masking">
 <h3><a class="reference internal" href="../workers/masking/index.html#masking"><span class="std std-ref">masking</span></a><a class="headerlink" href="#masking" title="Permalink to this headline">¶</a></h3>
-<p>This worker is used to create an a-priori clean mask based on NVSS or SUMSS catalogues,
+<p>This worker creates an a-priori clean mask based on NVSS or SUMSS catalogues,
 to be used during the continuum imaging/self-calibration loop. It can also merge the
 resulting mask with a mask based on an existing image.</p>
 </div>
@@ -281,7 +284,7 @@ file they can then be transfered to a fine-channels .MS file).</p>
 </div>
 <div class="section" id="image-hi">
 <h3><a class="reference internal" href="../workers/image_HI/index.html#image-hi"><span class="std std-ref">image_HI</span></a><a class="headerlink" href="#image-hi" title="Permalink to this headline">¶</a></h3>
-<p>This worker is used to create spectra-line cubes. It can subtract the continuum via both
+<p>This worker creates spectral-line cubes and images. It can subtract the continuum via both
 model and UVLIN-like subtraction, Doppler correct, flag solar RFI, perform
 automated iterative cleaning with 3D clean masks, and, finally, run a spectral-line source
 finder.</p>
