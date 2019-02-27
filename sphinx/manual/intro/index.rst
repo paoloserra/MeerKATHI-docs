@@ -71,7 +71,7 @@ together.
 :ref:`observation_config`
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This worker sets up basic information on the content of the .MS files to be
+This worker collects basic information on the content of the .MS files to be
 processed (e.g., target and calibrators' name, channelisation, etc.). The worker can also
 extract this information automatically from the .MS metadata. Finally, it can create a
 primary beam image cube on a user-defined pixel- and frequency grid.
@@ -87,7 +87,7 @@ weights based on Tsys measurements.
 :ref:`flagging`
 ^^^^^^^^^^^^^^^
 
-This worker flags the data and return statistics on the flags. As all other
+This worker flags the data and returns statistics on the flags. As all other
 workers, it can be run multiple times within a single MeerKATHI run (though this feature
 is not necessarily useful for many other workers). It can flag data based on, e.g.,
 channel-, antenna- and time selection, or using automated algorithms that run on
