@@ -38,7 +38,7 @@ sortedWorkers = [
 # def writeHomeIndex(dcsDr):
 #   print('  INFO: Writing homepage index.rst file ...')
 #   writeLines=[
-#     '.. meerkathi-docs documentation master file, created by',
+#     '.. meerkathi documentation master file, created by',
 #     '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
 #     '   You can adapt this file completely to your liking, but it should at least',
 #     '   contain the root `toctree` directive.',
@@ -97,7 +97,7 @@ sortedWorkers = [
 # def writeInstallIndex(instDr):
 #   print('  INFO: Writing install index.rst ...')
 #   writeLines=[
-#     '.. meerkathi-docs documentation master file, created by',
+#     '.. meerkathi documentation master file, created by',
 #     '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
 #     '   You can adapt this file completely to your liking, but it should at least',
 #     '   contain the root `toctree` directive.',
@@ -134,7 +134,7 @@ def getMeerkathiReadme(mrkthiDr,dcsDr):
 # def writeManualIndex(manDr):
 #   print('  INFO: Writing manual index.rst ...')
 #   writeLines=[
-#     '.. meerkathi-docs documentation master file, created by',
+#     '.. meerkathi documentation master file, created by',
 #     '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
 #     '   You can adapt this file completely to your liking, but it should at least',
 #     '   contain the root `toctree` directive.',
@@ -158,7 +158,7 @@ def getMeerkathiReadme(mrkthiDr,dcsDr):
 def writeWorkerPageIndex(srtWrks,wrkDr):
   print('  INFO: Writing workers homepage index.rst ...')
   writeLines=[
-    '.. meerkathi-docs documentation master file, created by',
+    '.. meerkathi documentation master file, created by',
     '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
     '   You can adapt this file completely to your liking, but it should at least',
     '   contain the root `toctree` directive.',
@@ -187,7 +187,7 @@ def writeWorkersIndex(srtWrks,wrkDr,schms,schDr):
   for wrk in srtWrks:
     # Write preamble to index.rst
     writeLines=[
-      '.. meerkathi-docs documentation master file, created by',
+      '.. meerkathi documentation master file, created by',
       '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
       '   You can adapt this file completely to your liking, but it should at least',
       '   contain the root `toctree` directive.',
