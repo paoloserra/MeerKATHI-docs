@@ -38,8 +38,8 @@ file users control the workers' options, deciding which tasks to run and with wh
 A detailed explanation of the configuration file syntax is given in the :ref:`configfile`
 section of this manual.
 
-Normally, users won’t have to touch anything but the configuration file. They can check
-what’s happened through a variety of data products, diagnostic plots and log files.
+Normally, users will not have to touch anything but the configuration file. They can check
+what has happened through a variety of data products, diagnostic plots and log files.
 A list of all MeerKATHI data products is available at the :ref:`products` section of this manual.
 
 In the rest of this Introduction we give a brief description of each worker. A more comprehensive
@@ -58,20 +58,20 @@ and  observation_config) should always be executed. All other workers are option
 :ref:`general`
 ^^^^^^^^^^^^^^
 
-This worker is used to set up the name of various input/output directories
+This worker sets up the name of various input/output directories
 and the prefix for the output data products (e.g., diagnostic plots, images, etc.).
 
 :ref:`get_data`
 ^^^^^^^^^^^^^^^
 
-This worker is used to set up the name of the files to be processed and whether any
+This worker sets up the name of the files to be processed and whether any
 conversion to .MS format is necessary. It can also virtually concatenate several .MS files
 together.
 
 :ref:`observation_config`
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This worker is used to set up basic information on the content of the .MS files to be
+This worker sets up basic information on the content of the .MS files to be
 processed (e.g., target and calibrators' name, channelisation, etc.). The worker can also
 extract this information automatically from the .MS metadata. Finally, it can create a
 primary beam image cube on a user-defined pixel- and frequency grid.
@@ -80,14 +80,14 @@ primary beam image cube on a user-defined pixel- and frequency grid.
 :ref:`prepare_data`
 ^^^^^^^^^^^^^^^^^^^
 
-This worker is used to prepare the data for calibration and imaging. For example, it can
+This worker prepares the data for calibration and imaging. For example, it can
 recalculate UVW coordinates, add a BITFLAG column to the input .MS files, or add spectral
 weights based on Tsys measurements.
 
 :ref:`flagging`
 ^^^^^^^^^^^^^^^
 
-This worker is used to flag the data and return statistics on the flags. As all other
+This worker flags the data and return statistics on the flags. As all other
 workers, it can be run multiple times within a single MeerKATHI run (though this feature
 is not necessarily useful for many other workers). It can flag data based on, e.g.,
 channel-, antenna- and time selection, or using automated algorithms that run on
@@ -96,7 +96,7 @@ autocorrelations (to catch antennas with clear problems) or crosscorrelations.
 :ref:`cross_cal`
 ^^^^^^^^^^^^^^^^
 
-This worker is used to cross-calibrate the data. Users can calibrate delays, bandpass,
+This worker cross-calibrates the data. Users can calibrate delays, bandpass,
 gains and flux scale. The calibration can be applied to the calibrators' visibilities for
 future inspection. Numerous parameters are available for users to decide how to calibrate.
 Flagging based on closure errors is available in this worker.
@@ -109,14 +109,14 @@ This worker produces diagnostic plots based on the calibrated calibrators' visib
 :ref:`split_target`
 ^^^^^^^^^^^^^^^^^^^
 
-This worker is used to create new .MS files which contain the target's calibrated
+This worker creates new .MS files which contain the target's calibrated
 visibilities only. Time and frequency averaging is available, as well as phase rotation to
 a new phase centre.
 
 :ref:`masking`
 ^^^^^^^^^^^^^^
 
-This worker is used to create an a-priori clean mask based on NVSS or SUMSS catalogues, 
+This worker creates an a-priori clean mask based on NVSS or SUMSS catalogues, 
 to be used during the continuum imaging/self-calibration loop. It can also merge the
 resulting mask with a mask based on an existing image.
 
@@ -132,7 +132,7 @@ file they can then be transfered to a fine-channels .MS file).
 :ref:`image_HI`
 ^^^^^^^^^^^^^^^
 
-This worker is used to create spectra-line cubes. It can subtract the continuum via both
+This worker creates spectral-line cubes and images. It can subtract the continuum via both
 model and UVLIN-like subtraction, Doppler correct, flag solar RFI, perform
 automated iterative cleaning with 3D clean masks, and, finally, run a spectral-line source
 finder.
