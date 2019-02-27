@@ -1,3 +1,15 @@
+## Requirements
+**Provide a summary
+* which hardware is recommended/required
+* which operating systems are supported
+**
+
+## Add
+**
+* how to update MeerKATHI, see e.g. update from upstream part in https://github.com/ska-sa/meerkathi/wiki/Developing-MeerKATHI
+* Troubleshooting
+**
+
 ## Download & Install
 
 ### On Linux
