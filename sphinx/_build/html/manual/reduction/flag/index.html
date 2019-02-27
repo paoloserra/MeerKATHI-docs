@@ -173,7 +173,39 @@
 <h1>Flag data<a class="headerlink" href="#flag-data" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>TBD</p>
+<p><strong>[relevant workers:</strong> <a class="reference internal" href="../../workers/flagging/index.html#flagging"><span class="std std-ref">flagging</span></a><strong>]</strong></p>
+<p>The <a class="reference internal" href="../../workers/flagging/index.html#flagging"><span class="std std-ref">flagging</span></a> worker can be run on the input .MS files or on .MS files created at
+various stages of MeerKATHI based on the input .MS files (e.g., by the <a class="reference internal" href="../../workers/split_target/index.html#split-target"><span class="std std-ref">split_target</span></a>
+worker). The name of the .MS files created by MeerKATHI is based on that of the input .MS
+files with a label added before the extension. Users can run the <a class="reference internal" href="../../workers/flagging/index.html#flagging"><span class="std std-ref">flagging</span></a> worker on
+such files by setting the <em>flagging:label</em> parameter in this worker.</p>
+<p>The <a class="reference internal" href="../../workers/flagging/index.html#flagging"><span class="std std-ref">flagging</span></a> worker allows users to flag the data in a variety of ways using the
+CASA FLAGDATA task (unless otherwise stated below):</p>
+<ul class="simple">
+<li>based on autocorrelations to catch antennas with obvious problems using the custom
+program POLITSIYAKAT (<em>flagging:autoflag_autocorr_powerspectra</em>); a number of additional
+parameters are available for this flagging mode;</li>
+<li>flag all autocorrelations (<em>flagging:flag_autocorr</em>);</li>
+<li>flag specific parts of all scans’ beginning and/or end (<em>flagging:quack</em>); a number of
+additional parameters are available for this flagging mode;</li>
+<li>flag shadowed antennas (<em>flagging:flag_shadow</em>); for observations obtained with a
+MeerKAT subarray it is possible to include offline antennas in the shadowing
+calculation; a number of additional parameters are available for this flagging mode;</li>
+<li>flag selected channel ranges (<em>flagging:flag_spw</em>);</li>
+<li>flag selected time ranges (<em>flagging:flag_time</em>);</li>
+<li>flag selected antennas (<em>flagging:flag_antennas</em>);</li>
+<li>flag selected scans (<em>flagging:flag_scan</em>);</li>
+<li>flag according to a static mask of bad frequency ranges using the custom program
+RFIMASKER (<em>flagging:static_mask</em>); the mask file should be located at the <em>input</em>
+directory set with the <a class="reference internal" href="../../workers/general/index.html#general"><span class="std std-ref">general</span></a> worker; users can decide to limit the mask to a
+selected UV range;</li>
+<li>flag with AOFlagger (Offringa et al. 2012, A&amp;A, 539, A95); the AOFlagger strategy file
+should be located at the <em>input</em> directory set with the <a class="reference internal" href="../../workers/general/index.html#general"><span class="std std-ref">general</span></a> worker;
+additional parameters allow users to limit the execution of AOFlagger to selected
+columns, fields or frequency bands of the .MS files.</li>
+</ul>
+<p>Finally, a summary of the flags can be obtained with <em>flagging:flagging_summary</em>. The
+summary is available at the relevant log file (see <a class="reference internal" href="../../products/index.html#products"><span class="std std-ref">Data Products</span></a>).</p>
 </div>
 
 

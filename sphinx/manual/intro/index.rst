@@ -74,8 +74,7 @@ together.
 This worker is used to set up basic information on the content of the .MS files to be
 processed (e.g., target and calibrators' name, channelisation, etc.). The worker can also
 extract this information automatically from the .MS metadata. Finally, it can create a
-primary beam image cube on a user-defined pixel- and frequency grid. **Does this last step
-really belong here? Maybe a separate worker which could also be run before image_HI?**
+primary beam image cube on a user-defined pixel- and frequency grid.
 
 
 :ref:`prepare_data`
@@ -100,14 +99,12 @@ autocorrelations (to catch antennas with clear problems) or crosscorrelations.
 This worker is used to cross-calibrate the data. Users can calibrate delays, bandpass,
 gains and flux scale. The calibration can be applied to the calibrators' visibilities for
 future inspection. Numerous parameters are available for users to decide how to calibrate.
-Flagging based on closure errors is available in this worker. **Or should it go in the
-flagging worker?**
+Flagging based on closure errors is available in this worker.
 
 :ref:`inspect_data`
 ^^^^^^^^^^^^^^^^^^^
 
 This worker produces diagnostic plots based on the calibrated calibrators' visibilities.
-**Move to cross_cal worker?**
 
 :ref:`split_target`
 ^^^^^^^^^^^^^^^^^^^

@@ -173,7 +173,44 @@
 <h1>Prepare pipeline and data<a class="headerlink" href="#prepare-pipeline-and-data" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>TBD</p>
+<p><strong>[relevant workers:</strong> <a class="reference internal" href="../../workers/general/index.html#general"><span class="std std-ref">general</span></a>, <a class="reference internal" href="../../workers/get_data/index.html#get-data"><span class="std std-ref">get_data</span></a>, <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a><strong>]</strong></p>
+<p>A run of MeerKATHI must always start by setting up a number of directory and file
+names. This is done through the <a class="reference internal" href="../../workers/general/index.html#general"><span class="std std-ref">general</span></a> and <a class="reference internal" href="../../workers/get_data/index.html#get-data"><span class="std std-ref">get_data</span></a> workers.</p>
+<p>In the <a class="reference internal" href="../../workers/general/index.html#general"><span class="std std-ref">general</span></a> worker users give:</p>
+<ul class="simple">
+<li>if necessary, the directory where to find the files that should be converted to .MS
+format (<em>general:data_path</em>);</li>
+<li>the directory where to find/write the .MS files (<em>general:msdir</em>);</li>
+<li>the directory where to write all output data products (<em>general:output</em>);</li>
+<li>the directory where to find various input files, such as AOflagger strategies etc.
+(<em>general:input</em>);</li>
+<li>the prefix for the output data products (<em>general:prefix</em>).</li>
+</ul>
+<p>If they do not exist yet, the above directories can be created by setting
+<em>general:init_pipeline</em> to <em>true</em>.</p>
+<p>In the <a class="reference internal" href="../../workers/get_data/index.html#get-data"><span class="std std-ref">get_data</span></a> worker users give the name of the .MS files to be processed
+(<em>get_data:dataid</em>). Furthermore, the following optional steps are available:</p>
+<ul class="simple">
+<li>if conversion from HDF5/MVF format to .MS is necessary it can be enabled through the
+<em>get_data:mvftoms</em> parameter; further options allow users to create a .MS.TAR file, to
+convert only visibilities in a channel range, or to discard cross-polarisation products;</li>
+<li>if an .MS.TAR file already exists and should be untar-ed, this can be achieved with the
+<em>get_data:untar</em> parameter;</li>
+<li>if multiple .MS files are given as input, they can be virtually concatenated with
+<em>get_data:combine parameter</em>.</li>
+</ul>
+<p>Finally, before starting the actual data processing, users need to provide some necessary
+info about the content of the input .MS files (e.g., target and calibrators name,
+channelisation, etc.). In principle, this can be done by editing the relevant parameters
+in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker. In fact, MeerKATHI can automatically extract most
+of these info from the .MS files themselves. To do so users should enable the
+<em>observation_config:obsinfo</em> parameter. This writes a .JSON and a .TXT file to disc. Once
+the .JSON file is on disc, parameters set to <em>auto</em> in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
+worker will be automatically read from that file. Note that the reference antenna
+information is often missing from the metadata. In those cases, users should carefully
+select a good reference antenna for calibration and set it with the
+<em>observation_config:reference_antenna</em> parameter.</p>
+<p><strong>[missing from this page: vampirisms, primary beam]</strong></p>
 </div>
 
 

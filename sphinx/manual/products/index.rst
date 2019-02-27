@@ -11,6 +11,25 @@ Data Products
  
 .. toctree::
    :maxdepth: 1
+
+The following data products are written by MeerKATHI.
  
+log files
+^^^^^^^^^
+
+TBD
+
+continuum images
+^^^^^^^^^^^^^^^^^
+
 TBD
  
+spectral-line cubes
+^^^^^^^^^^^^^^^^^^^
+
+TBD
+
+spectral-line moment images
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TBD

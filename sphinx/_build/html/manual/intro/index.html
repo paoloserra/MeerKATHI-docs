@@ -232,8 +232,7 @@ together.</p>
 <p>This worker is used to set up basic information on the content of the .MS files to be
 processed (e.g., target and calibrators’ name, channelisation, etc.). The worker can also
 extract this information automatically from the .MS metadata. Finally, it can create a
-primary beam image cube on a user-defined pixel- and frequency grid. <strong>Does this last step
-really belong here? Maybe a separate worker which could also be run before image_HI?</strong></p>
+primary beam image cube on a user-defined pixel- and frequency grid.</p>
 </div>
 <div class="section" id="prepare-data">
 <h3><a class="reference internal" href="../workers/prepare_data/index.html#prepare-data"><span class="std std-ref">prepare_data</span></a><a class="headerlink" href="#prepare-data" title="Permalink to this headline">¶</a></h3>
@@ -254,13 +253,11 @@ autocorrelations (to catch antennas with clear problems) or crosscorrelations.</
 <p>This worker is used to cross-calibrate the data. Users can calibrate delays, bandpass,
 gains and flux scale. The calibration can be applied to the calibrators’ visibilities for
 future inspection. Numerous parameters are available for users to decide how to calibrate.
-Flagging based on closure errors is available in this worker. <strong>Or should it go in the
-flagging worker?</strong></p>
+Flagging based on closure errors is available in this worker.</p>
 </div>
 <div class="section" id="inspect-data">
 <h3><a class="reference internal" href="../workers/inspect_data/index.html#inspect-data"><span class="std std-ref">inspect_data</span></a><a class="headerlink" href="#inspect-data" title="Permalink to this headline">¶</a></h3>
-<p>This worker produces diagnostic plots based on the calibrated calibrators’ visibilities.
-<strong>Move to cross_cal worker?</strong></p>
+<p>This worker produces diagnostic plots based on the calibrated calibrators’ visibilities.</p>
 </div>
 <div class="section" id="split-target">
 <h3><a class="reference internal" href="../workers/split_target/index.html#split-target"><span class="std std-ref">split_target</span></a><a class="headerlink" href="#split-target" title="Permalink to this headline">¶</a></h3>
