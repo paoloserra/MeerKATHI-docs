@@ -30,6 +30,15 @@ manual
  
    manual/index.rst
  
+========================
+tutorial
+========================
+
+.. toctree::
+   :maxdepth: 1
+
+   tutorial/index.rst
+
 ================
 acknowledgements
 ================
