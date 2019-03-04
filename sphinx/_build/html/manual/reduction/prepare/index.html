@@ -13,40 +13,44 @@
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
     
 
   
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Flag data" href="../flag/index.html" />
-    <link rel="prev" title="Data reduction" href="../index.html" /> 
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="MeerKATHI  documentation" href="../../../index.html"/>
+        <link rel="up" title="Data reduction" href="../index.html"/>
+        <link rel="next" title="Flag data" href="../flag/index.html"/>
+        <link rel="prev" title="Data reduction" href="../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
@@ -77,13 +81,8 @@
           
             
             
-              
-            
-            
-              <ul>
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
-</ul>
-<ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
@@ -101,9 +100,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../workers/index.html">Workers parameters</a></li>
 </ul>
 </li>
-</ul>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits/index.html">Acknowledgements</a></li>
 </ul>
 
             
@@ -115,58 +113,38 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">MeerKATHI</a>
-        
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">MeerKATHI</a>
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../index.html">Docs</a> &raquo;</li>
-        
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
           <li><a href="../../index.html">Manual</a> &raquo;</li>
-        
+      
           <li><a href="../index.html">Data reduction</a> &raquo;</li>
-        
-      <li>Prepare pipeline and data</li>
-    
-    
+      
+    <li>Prepare pipeline and data</li>
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../_sources/manual/reduction/prepare/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -195,39 +173,42 @@ format (<em>general:data_path</em>);</li>
 (<em>get_data:dataid</em>). Furthermore, the following optional steps are available:</p>
 <ul class="simple">
 <li>if conversion from HDF5/MVF format to .MS is necessary it can be enabled through the
-<em>get_data:mvftoms</em> parameter; further options allow users to create a .MS.TAR file, to
-convert only visibilities in a channel range, or to discard cross-polarisation products;</li>
+<em>get_data:mvftoms</em> parameter; further conversion options allow users to:<ul>
+<li>create a .MS.TAR file,</li>
+<li>convert only visibilities in a channel range,</li>
+<li>discard cross-polarisation products;</li>
+</ul>
+</li>
 <li>if an .MS.TAR file already exists and should be untar-ed, this can be achieved with the
 <em>get_data:untar</em> parameter;</li>
 <li>if multiple .MS files are given as input, they can be virtually concatenated with
 <em>get_data:combine parameter</em>.</li>
 </ul>
-<p>Finally, before starting the actual data processing, users need to provide some necessary
-info about the content of the input .MS files (e.g., target and calibrators name,
-channelisation, etc.). In principle, this can be done by editing the relevant parameters
-in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker. In fact, MeerKATHI can automatically extract most
-of these info from the .MS files themselves. To do so users should enable the
+<p>Finally, before starting the actual data processing users need to provide some necessary
+info about the content of the input .MS files through the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
+(e.g., target and calibrators name, channelisation, etc.). In principle, this can be done
+by editing the relevant parameters of this worker. In fact, MeerKATHI can automatically extract
+most of these info from the .MS files themselves. To do so users should enable the
 <em>observation_config:obsinfo</em> parameter. This writes a .JSON and a .TXT file to disc. Once
 the .JSON file is on disc, parameters set to <em>auto</em> in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
-worker will be automatically read from that file. Note that the reference antenna
-information is often missing from the metadata. In those cases, users should carefully
-select a good reference antenna for calibration and set it with the
-<em>observation_config:reference_antenna</em> parameter.</p>
+worker will be automatically read from that file.</p>
+<p>Note that the reference antenna information is often missing from the metadata. In those
+cases, users should carefully select a good reference antenna for calibration and set it
+with the <em>observation_config:reference_antenna</em> parameter.</p>
 <p><strong>[missing from this page: vampirisms, primary beam]</strong></p>
 </div>
 
 
            </div>
-           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../flag/index.html" class="btn btn-neutral float-right" title="Flag data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../flag/index.html" class="btn btn-neutral float-right" title="Flag data" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral float-left" title="Data reduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral" title="Data reduction" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -236,11 +217,11 @@ select a good reference antenna for calibration and set it with the
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, MeerKATHI team
+        &copy; Copyright 2019, MeerKATHI team.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -253,15 +234,36 @@ select a good reference antenna for calibration and set it with the
   
 
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/language_data.js"></script>
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>

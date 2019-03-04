@@ -39,7 +39,7 @@ A detailed explanation of the configuration file syntax is given in the :ref:`co
 section of this manual.
 
 Normally, users will not have to touch anything but the configuration file. They can check
-what has happened through a variety of data products, diagnostic plots and log files.
+what has happened through a variety of data products, including images, diagnostic plots and log files.
 A list of all MeerKATHI data products is available at the :ref:`products` section of this manual.
 
 In the rest of this Introduction we give a brief description of each worker. A more comprehensive
@@ -125,9 +125,8 @@ resulting mask with a mask based on an existing image.
 
 This worker performs continuum imaging and standard (i.e., direction-independent)
 self-calibration. Automated convergence of the calibration procedure is optionally
-available. This worker can also transfer the resulting sky model and apply the calibration
-to another .MS (e.g., if calibration and model are obtained from a coarse-channels .MS
-file they can then be transfered to a fine-channels .MS file).
+available. This worker can also transfer sky model and calibration to another .MS
+(e.g., from a coarse- to a fine-channel .MS file).
 
 :ref:`image_HI`
 ^^^^^^^^^^^^^^^

@@ -13,40 +13,44 @@
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
     
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Configuration file" href="../configfile/index.html" />
-    <link rel="prev" title="Manual" href="../index.html" /> 
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="MeerKATHI  documentation" href="../../index.html"/>
+        <link rel="up" title="Manual" href="../index.html"/>
+        <link rel="next" title="Configuration file" href="../configfile/index.html"/>
+        <link rel="prev" title="Manual" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
@@ -77,13 +81,8 @@
           
             
             
-              
-            
-            
-              <ul>
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../meerkathiREADME.html">Download &amp; Install</a></li>
-</ul>
-<ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Manual</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#what-is-meerkathi">What is MeerKATHI?</a></li>
@@ -109,9 +108,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../workers/index.html">Workers parameters</a></li>
 </ul>
 </li>
-</ul>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../credits/index.html">Acknowledgements</a></li>
 </ul>
 
             
@@ -123,56 +121,36 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">MeerKATHI</a>
-        
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">MeerKATHI</a>
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
           <li><a href="../index.html">Manual</a> &raquo;</li>
-        
-      <li>Introduction</li>
-    
-    
+      
+    <li>Introduction</li>
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../_sources/manual/intro/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -206,7 +184,7 @@ file users control the workers’ options, deciding which tasks to run and with 
 A detailed explanation of the configuration file syntax is given in the <a class="reference internal" href="../configfile/index.html#configfile"><span class="std std-ref">Configuration file</span></a>
 section of this manual.</p>
 <p>Normally, users will not have to touch anything but the configuration file. They can check
-what has happened through a variety of data products, diagnostic plots and log files.
+what has happened through a variety of data products, including images, diagnostic plots and log files.
 A list of all MeerKATHI data products is available at the <a class="reference internal" href="../products/index.html#products"><span class="std std-ref">Data Products</span></a> section of this manual.</p>
 <p>In the rest of this Introduction we give a brief description of each worker. A more comprehensive
 description is available in the <a class="reference internal" href="../reduction/index.html#reduction"><span class="std std-ref">Data reduction</span></a> section of this manual, which follows
@@ -278,9 +256,8 @@ resulting mask with a mask based on an existing image.</p>
 <h3><a class="reference internal" href="../workers/self_cal/index.html#self-cal"><span class="std std-ref">self_cal</span></a><a class="headerlink" href="#self-cal" title="Permalink to this headline">¶</a></h3>
 <p>This worker performs continuum imaging and standard (i.e., direction-independent)
 self-calibration. Automated convergence of the calibration procedure is optionally
-available. This worker can also transfer the resulting sky model and apply the calibration
-to another .MS (e.g., if calibration and model are obtained from a coarse-channels .MS
-file they can then be transfered to a fine-channels .MS file).</p>
+available. This worker can also transfer sky model and calibration to another .MS
+(e.g., from a coarse- to a fine-channel .MS file).</p>
 </div>
 <div class="section" id="image-hi">
 <h3><a class="reference internal" href="../workers/image_HI/index.html#image-hi"><span class="std std-ref">image_HI</span></a><a class="headerlink" href="#image-hi" title="Permalink to this headline">¶</a></h3>
@@ -294,16 +271,15 @@ finder.</p>
 
 
            </div>
-           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../configfile/index.html" class="btn btn-neutral float-right" title="Configuration file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../configfile/index.html" class="btn btn-neutral float-right" title="Configuration file" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral float-left" title="Manual" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral" title="Manual" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -312,11 +288,11 @@ finder.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, MeerKATHI team
+        &copy; Copyright 2019, MeerKATHI team.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -329,15 +305,36 @@ finder.</p>
   
 
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>
