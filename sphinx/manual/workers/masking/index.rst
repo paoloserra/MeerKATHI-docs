@@ -12,9 +12,11 @@ masking
 .. toctree::
    :maxdepth: 1
  
-Create mask from catalog / merge with mask of extended source
+Create mask from catalog and/or merge with mask of extended source
 
 
+
+.. _masking_enable:
 
 -------------------------------------
 **enable**
@@ -26,6 +28,8 @@ Create mask from catalog / merge with mask of extended source
 
 
 
+.. _masking_order:
+
 -------------------------------------
 **order**
 -------------------------------------
@@ -36,15 +40,19 @@ Create mask from catalog / merge with mask of extended source
 
 
 
+.. _masking_centre_coord:
+
 -------------------------------------
 **centre_coord**
 -------------------------------------
 
-  *optional*
+  *list* *of str*, *optional*
 
   Coordinates of the centre of the field of view ["00:00:00","00:00:00"]
 
 
+
+.. _masking_mask_size:
 
 -------------------------------------
 **mask_size**
@@ -52,9 +60,11 @@ Create mask from catalog / merge with mask of extended source
 
   *int*, *optional*
 
-  Number of pixels in the mask (must be the same as img_npix in selfcal)
+  Number of pixels in the mask (must be the same as img_npix in selfcal worker)
 
 
+
+.. _masking_cell_size:
 
 -------------------------------------
 **cell_size**
@@ -62,9 +72,11 @@ Create mask from catalog / merge with mask of extended source
 
   *float*, *optional*
 
-  Size fo pixel in the mask (arcsecm, must be the same as img_cell in selfcal)
+  Size of pixel in the mask (arcsec, must be the same as img_cell in selfcal worker)
 
 
+
+.. _masking_name_mask:
 
 -------------------------------------
 **name_mask**
@@ -72,9 +84,11 @@ Create mask from catalog / merge with mask of extended source
 
   *str*, *optional*
 
-  Name of the output mask from SUMSS catalog
+  Name of the output mask generated from catalog
 
 
+
+.. _masking_extended_source_input:
 
 -------------------------------------
 **extended_source_input**
@@ -82,9 +96,11 @@ Create mask from catalog / merge with mask of extended source
 
   *str*, *optional*
 
-  Name of the output mask of Fornax A
+  Name of the input mask for particularly extended sources in the field
 
 
+
+.. _masking_final_mask:
 
 -------------------------------------
 **final_mask**
@@ -96,103 +112,125 @@ Create mask from catalog / merge with mask of extended source
 
 
 
+.. _masking_query_catalog:
+
 -------------------------------------
 **query_catalog**
 -------------------------------------
 
   Query catalog to select field/sources from which extract the mask
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this worker
+    *bool*, *optional*
 
-    **catalog**
-      *str*, *optional*
+    Execute this worker
 
-      Name of catalog to query, either NVSS or SUMSS
+  **catalog**
 
-    **width_image**
-      *str*, *optional*
+    *str*, *optional*
 
-      Width of the region of sky we want to mask (keep larger than dirty image)
+    Name of catalog to query [NVSS/SUMSS]
+
+  **width_image**
+
+    *str*, *optional*
+
+    Width of the region of sky we want to mask (keep larger than dirty image)
 
 
+
+.. _masking_pb_correction:
 
 -------------------------------------
 **pb_correction**
 -------------------------------------
 
-  Correct image for primary beam before exctracting mask
+  Correct input image for primary beam before exctracting mask
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this worker
+    *bool*, *optional*
 
-    **frequency**
-      *float*, *optional*
+    Execute this worker
 
-      Primary beam size changes with frequency, provide central frequency of dataset
+  **frequency**
+
+    *float*, *optional*
+
+    Primary beam size changes with frequency, provide central frequency of considered dataset
 
 
+
+.. _masking_make_mask:
 
 -------------------------------------
 **make_mask**
 -------------------------------------
 
-  Build mask from existing images
+  Build mask from existing image using SoFiA and/or threshold cutoff
 
-    **enable**
-      *bool*
+  **enable**
 
-      Execute this worker
+    *bool*
 
-    **mask_with**
-      *str*, *optional*
+    Execute this worker
 
-      Tool to use for masking
+  **mask_with**
 
-    **input_image**
-      *str*, *optional*
+    *{"thresh", "sofia"}*, *optional*
 
-      Input image where to create mask
+    Tool to use for masking
 
-    **thresh_lev**
-      *float*, *optional*
+  **input_image**
 
-      Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)
+    *{"pbcorr", "path_to_mask"}*, *optional*
 
-    **scale_noise_window**
-      *float*, *optional*
+    Input image where to create mask ???? what is this ???
 
-      window size where to measure local rms in pixels
+  **thresh_lev**
+
+    *float*, *optional*
+
+    Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)
+
+  **scale_noise_window**
+
+    *float*, *optional*
+
+    window size where SoFiA measures the local rms, units of pixels
 
 
+
+.. _masking_merge_with_extended:
 
 -------------------------------------
 **merge_with_extended**
 -------------------------------------
 
-  Merge with extedned map
+  Merge with mask of extended source
 
-    **enable**
-      *bool*
+  **enable**
 
-      Execute this worker
+    *bool*
 
-    **extended_source_input**
-      *str*, *optional*
+    Execute this worker
 
-      name of image of extended source
+  **extended_source_input**
 
-    **mask_with**
-      *str*, *optional*
+    *str*, *optional*
 
-      Tool to use for masking
+    name of image of extended source to merge with current image
 
-    **thresh_lev**
-      *float*, *optional*
+  **mask_with**
 
-      Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)
+    *{"thresh", "sofia"}*, *optional*
+
+    Tool to use for masking
+
+  **thresh_lev**
+
+    *float*, *optional*
+
+    Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)
 

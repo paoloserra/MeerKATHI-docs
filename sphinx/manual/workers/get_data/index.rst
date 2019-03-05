@@ -16,6 +16,8 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
 
 
+.. _get_data_order:
+
 -------------------------------------
 **order**
 -------------------------------------
@@ -26,15 +28,19 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
 
 
+.. _get_data_dataid:
+
 -------------------------------------
 **dataid**
 -------------------------------------
 
-  *optional*
+  *list* *of str*, *optional*
 
   Basename of MS. For MeerKAT data to be downloaded by MeerKATHI, this should be the data ID of the observation
 
 
+
+.. _get_data_mvftoms:
 
 -------------------------------------
 **mvftoms**
@@ -42,27 +48,33 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
   Convert HDF5/MVF files in data_path to MS files; the latter are written to msdir; also creates a MS.TAR file. (This only works for MeerKAT HDF5 files)
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this segment
+    *bool*, *optional*
 
-    **tar**
-      *bool*, *optional*
+    Execute this segment
 
-      Create a tarbal of the converted MS.
+  **tar**
 
-    **channel_range**
-      *str*, *optional*
+    *bool*, *optional*
 
-      Only exctract channels in this range (0-based, inclusive; comma seperated string)
+    Create a tarbal of the converted MS.
 
-    **full_poll**
-      *bool*, *optional*
+  **channel_range**
 
-      Extract all four correlations instead of only the XX,YY
+    *str*, *optional*
+
+    Only exctract channels in this range (0-based, inclusive; comma seperated string)
+
+  **full_poll**
+
+    *bool*, *optional*
+
+    Extract all four correlations instead of only the XX,YY
 
 
+
+.. _get_data_untar:
 
 -------------------------------------
 **untar**
@@ -70,17 +82,21 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
   Unarchive from MS from a archive file.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this segment
+    *bool*, *optional*
 
-    **tar_options**
-      *str*, *optional*
+    Execute this segment
 
-      Options to parse to 'tar' command
+  **tar_options**
+
+    *str*, *optional*
+
+    Options to parse to 'tar' command
 
 
+
+.. _get_data_combine:
 
 -------------------------------------
 **combine**
@@ -88,19 +104,47 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
   Virtually concatenate MSs and proceed with the combined MS
 
+  **enable**
+
+    *bool*, *optional*
+
+    Execute this section
+
+  **reset**
+
+    *bool*, *optional*
+
+    Delete concatenated MS if it exists. Else, proceed with existing MS
+
+  **tar**
+
+    Create a tarbal of the converted MS
+
     **enable**
+
       *bool*, *optional*
 
       Execute this section
 
-    **reset**
+    **tar_options**
+
+      *str*, *optional*
+
+      Options to parse to the tar command
+
+  **untar**
+
+    Unarchive from MS from a archive file.
+
+    **enable**
+
       *bool*, *optional*
 
-      Delete concatenated MS if it exists. Else, proceed with existing MS
+      Execute this section
 
-    **tar**
-      Create a tarbal of the converted MS
+    **tar_options**
 
-    **untar**
-      Unarchive from MS from a archive file.
+      *str*, *optional*
+
+      Options to parse to the tar command
 

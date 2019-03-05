@@ -16,6 +16,8 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 
 
+.. _inspect_data_enable:
+
 -------------------------------------
 **enable**
 -------------------------------------
@@ -25,6 +27,8 @@ Dignostic plots of the first-pass cross-calibrated data.
   Executes dignostic plotting of the first-pass cross-calibrated data.
 
 
+
+.. _inspect_data_order:
 
 -------------------------------------
 **order**
@@ -36,6 +40,8 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 
 
+.. _inspect_data_label:
+
 -------------------------------------
 **label**
 -------------------------------------
@@ -46,38 +52,59 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 
 
+.. _inspect_data_correlation:
+
+-------------------------------------
+**correlation**
+-------------------------------------
+
+  *str*, *optional*
+
+  Lable specyfying the correlations used XX,YY is default
+
+
+
+.. _inspect_data_real_imag:
+
 -------------------------------------
 **real_imag**
 -------------------------------------
 
   Plot real vs imaginary parts of data.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Executed the real v/s imaginary data plotting.
+    *bool*, *optional*
 
-    **fields**
-      *optional*
+    Executed the real v/s imaginary data plotting.
 
-      Fields to plot. Specify by field id, index or keys like, gcal, bpcal.
+  **fields**
 
-    **column**
-      *str*, *optional*
+    *list* *of str*, *optional*
 
-      Data column to plot.
+    Fields to plot. Specify by field id, index or keys like, gcal, bpcal.
 
-    **avgtime**
-      *str*, *optional*
+  **column**
 
-      Time to average for plotting, in seconds.
+    *str*, *optional*
 
-    **avgchannel**
-      *str*, *optional*
+    Data column to plot.
 
-      Number of channels to average for plotting.
+  **avgtime**
+
+    *str*, *optional*
+
+    Time to average for plotting, in seconds.
+
+  **avgchannel**
+
+    *str*, *optional*
+
+    Number of channels to average for plotting.
 
 
+
+.. _inspect_data_amp_phase:
 
 -------------------------------------
 **amp_phase**
@@ -85,32 +112,39 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   Plot Amplitude vs Phase for  data.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Executes the plotting of amplitude v/s phase for data.
+    *bool*, *optional*
 
-    **fields**
-      *optional*
+    Executes the plotting of amplitude v/s phase for data.
 
-      Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
+  **fields**
 
-    **column**
-      *str*, *optional*
+    *list* *of str*, *optional*
 
-      Data column to plot.
+    Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
 
-    **avgtime**
-      *str*, *optional*
+  **column**
 
-      Time to average for plotting, in seconds.
+    *str*, *optional*
 
-    **avgchannel**
-      *str*, *optional*
+    Data column to plot.
 
-      Number of channels to average for plotting.
+  **avgtime**
+
+    *str*, *optional*
+
+    Time to average for plotting, in seconds.
+
+  **avgchannel**
+
+    *str*, *optional*
+
+    Number of channels to average for plotting.
 
 
+
+.. _inspect_data_amp_uvwave:
 
 -------------------------------------
 **amp_uvwave**
@@ -118,32 +152,39 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   Plot data amplitude v/s  uvwave.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Executes plotting data amplitude as a function of uvwave.
+    *bool*, *optional*
 
-    **fields**
-      *optional*
+    Executes plotting data amplitude as a function of uvwave.
 
-      Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
+  **fields**
 
-    **column**
-      *str*, *optional*
+    *list* *of str*, *optional*
 
-      Data column to plot.
+    Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
 
-    **avgtime**
-      *str*, *optional*
+  **column**
 
-      Time to average for plotting, in seconds.
+    *str*, *optional*
 
-    **avgchannel**
-      *str*, *optional*
+    Data column to plot.
 
-      Number of channels to average for plotting.
+  **avgtime**
+
+    *str*, *optional*
+
+    Time to average for plotting, in seconds.
+
+  **avgchannel**
+
+    *str*, *optional*
+
+    Number of channels to average for plotting.
 
 
+
+.. _inspect_data_amp_ant:
 
 -------------------------------------
 **amp_ant**
@@ -151,32 +192,39 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   Plot data amplitde v/s antenna.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Executes plotting data amplitude v/s antennas.
+    *bool*, *optional*
 
-    **fields**
-      *optional*
+    Executes plotting data amplitude v/s antennas.
 
-      Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
+  **fields**
 
-    **column**
-      *str*, *optional*
+    *list* *of str*, *optional*
 
-      Data column to plot.
+    Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
 
-    **avgtime**
-      *str*, *optional*
+  **column**
 
-      Time to average for plotting, in seconds.
+    *str*, *optional*
 
-    **avgchannel**
-      *str*, *optional*
+    Data column to plot.
 
-      Number of channels to average for plotting.
+  **avgtime**
+
+    *str*, *optional*
+
+    Time to average for plotting, in seconds.
+
+  **avgchannel**
+
+    *str*, *optional*
+
+    Number of channels to average for plotting.
 
 
+
+.. _inspect_data_phase_uvwave:
 
 -------------------------------------
 **phase_uvwave**
@@ -184,32 +232,39 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   Plot data phase v/s uvwave.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Executes plotting data phase v/s uvwave.
+    *bool*, *optional*
 
-    **fields**
-      *optional*
+    Executes plotting data phase v/s uvwave.
 
-      Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
+  **fields**
 
-    **column**
-      *str*, *optional*
+    *list* *of str*, *optional*
 
-      Data column to plot.
+    Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
 
-    **avgtime**
-      *str*, *optional*
+  **column**
 
-      Time to average for plotting, in seconds.
+    *str*, *optional*
 
-    **avgchannel**
-      *str*, *optional*
+    Data column to plot.
 
-      Number of channels to average for plotting.
+  **avgtime**
+
+    *str*, *optional*
+
+    Time to average for plotting, in seconds.
+
+  **avgchannel**
+
+    *str*, *optional*
+
+    Number of channels to average for plotting.
 
 
+
+.. _inspect_data_amp_scan:
 
 -------------------------------------
 **amp_scan**
@@ -217,28 +272,33 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   Plot data amplitude v/s scan number.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Executes plotting data amplitude v/s scan number.
+    *bool*, *optional*
 
-    **fields**
-      *optional*
+    Executes plotting data amplitude v/s scan number.
 
-      Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
+  **fields**
 
-    **column**
-      *str*, *optional*
+    *list* *of str*, *optional*
 
-      Data column to plot.
+    Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
 
-    **avgtime**
-      *str*, *optional*
+  **column**
 
-      Time to average for plotting, in seconds.
+    *str*, *optional*
 
-    **avgchannel**
-      *str*, *optional*
+    Data column to plot.
 
-      Number of channels to average for plotting.
+  **avgtime**
+
+    *str*, *optional*
+
+    Time to average for plotting, in seconds.
+
+  **avgchannel**
+
+    *str*, *optional*
+
+    Number of channels to average for plotting.
 

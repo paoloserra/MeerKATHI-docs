@@ -12,6 +12,6 @@ Manual
  
    intro/index.rst
    configfile/index.rst
-   reduction/index.rst
    products/index.rst
+   reduction/index.rst
    workers/index.rst

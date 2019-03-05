@@ -16,6 +16,8 @@ Create HI data cube and detect sources therein
 
 
 
+.. _image_HI_enable:
+
 -------------------------------------
 **enable**
 -------------------------------------
@@ -25,6 +27,8 @@ Create HI data cube and detect sources therein
   Execute segment image_HI (yes/no). Default is yes.
 
 
+
+.. _image_HI_order:
 
 -------------------------------------
 **order**
@@ -36,6 +40,8 @@ Create HI data cube and detect sources therein
 
 
 
+.. _image_HI_label:
+
 -------------------------------------
 **label**
 -------------------------------------
@@ -45,6 +51,8 @@ Create HI data cube and detect sources therein
   Label of names of MS data sets to be used. MS data set names will always start with the data set id, followed by a hyphen, followed by desc. Default is corr.
 
 
+
+.. _image_HI_hires_label:
 
 -------------------------------------
 **hires_label**
@@ -56,6 +64,8 @@ Create HI data cube and detect sources therein
 
 
 
+.. _image_HI_use_hires_data:
+
 -------------------------------------
 **use_hires_data**
 -------------------------------------
@@ -65,6 +75,8 @@ Create HI data cube and detect sources therein
   Make use of high resolution data for HI imaging
 
 
+
+.. _image_HI_restfreq:
 
 -------------------------------------
 **restfreq**
@@ -76,15 +88,19 @@ Create HI data cube and detect sources therein
 
 
 
+.. _image_HI_npix:
+
 -------------------------------------
 **npix**
 -------------------------------------
 
-  *optional*
+  *list* *of int*, *optional*
 
   Default number of pixels (wherever npix is requested) in this worker. List of integers (width and height) or a single integer for square images. Default is 1024.
 
 
+
+.. _image_HI_cell:
 
 -------------------------------------
 **cell**
@@ -96,6 +112,8 @@ Create HI data cube and detect sources therein
 
 
 
+.. _image_HI_weight:
+
 -------------------------------------
 **weight**
 -------------------------------------
@@ -105,6 +123,8 @@ Create HI data cube and detect sources therein
   Default weight for the worker. Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition. Default is natural.
 
 
+
+.. _image_HI_robust:
 
 -------------------------------------
 **robust**
@@ -116,18 +136,23 @@ Create HI data cube and detect sources therein
 
 
 
+.. _image_HI_subtractmodelcol:
+
 -------------------------------------
 **subtractmodelcol**
 -------------------------------------
 
   Replace the column CORRECTED_DATA with the difference CORRECTED_DATA - MODEL_DATA. This is useful for continuum subtraction as it enables the subtraction of the most recent continuum clean model.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute segment subtractmodelcol. Default is False.
+    *bool*, *optional*
+
+    Execute segment subtractmodelcol. Default is False.
 
 
+
+.. _image_HI_mstransform:
 
 -------------------------------------
 **mstransform**
@@ -135,67 +160,81 @@ Create HI data cube and detect sources therein
 
   Perform UVLIN continuum subtraction and/or doppler tracking corrections
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute segment doppler correction (yes/no). Default is yes.
+    *bool*, *optional*
 
-    **telescope**
-      *str*, *optional*
+    Execute segment doppler correction (yes/no). Default is yes.
 
-      The name of the telescope from which observations were made. Default is the 'meerkat' telescope. Current options are gmrt, vla, wsrt, atca
+  **telescope**
 
-    **doppler**
-      *bool*, *optional*
+    *{"meerkat", "vla", "gmrt", "wsrt", "atca", "askap"}*, *optional*
 
-      Transform channel labels and visibilities to a different spectral reference frame. default is True
+    The name of the telescope from which observations were made. Default is the 'meerkat' telescope. Current options are gmrt, vla, wsrt, atca
 
-    **mode**
-      *str*, *optional*
+  **doppler**
 
-      Regridding mode (channel/velocity/frequency/channel_b). Default is 'frequency'
+    *bool*, *optional*
 
-    **outframe**
-      *str*, *optional*
+    Transform channel labels and visibilities to a different spectral reference frame. default is True
 
-      Output reference frame, options 'LSRK', 'LSRD', 'BARY', 'GALACTO', 'LGROUP', 'CMB', 'GEO', 'TOPO'. Defaut is 'BARY'
+  **mode**
 
-    **veltype**
-      *str*, *optional*
+    *str*, *optional*
 
-      Definition of velocity (as used in mode), radio or optical.  Default is 'radio'
+    Regridding mode (channel/velocity/frequency/channel_b). Default is 'frequency'
 
-    **outchangrid**
-      *str*, *optional*
+  **outframe**
 
-      Output channel grid for Doppler correction. Default is 'auto', and the pipeline will calculate the appropriate channel grid. If not 'auto' it must be in the format 'nchan,chan0,chanw' where nchan is an integer, and chan0 and chanw must include units appropriate for the chosen mode (see parameter 'mode' above)
+    *str*, *optional*
 
-    **uvlin**
-      *bool*, *optional*
+    Output reference frame, options 'LSRK', 'LSRD', 'BARY', 'GALACTO', 'LGROUP', 'CMB', 'GEO', 'TOPO'. Defaut is 'BARY'
 
-      Perform continuum subtraction as in task uvcontsub whilst regridding within mstransform. Default is false
+  **veltype**
 
-    **fitspw**
-      *str*, *optional*
+    *str*, *optional*
 
-      Spectral window channel selection for fitting the continuumSelection of line-free channels using CASA syntax (e.g. '0:0~100;150:300'). If set to null, a fit to all unflagges visibilities will be performed. (Defaults to null)
+    Definition of velocity (as used in mode), radio or optical.  Default is 'radio'
 
-    **fitorder**
-      *int*, *optional*
+  **outchangrid**
 
-      Polynomial order for the continuum fits
+    *str*, *optional*
 
-    **column**
-      *str*, *optional*
+    Output channel grid for Doppler correction. Default is 'auto', and the pipeline will calculate the appropriate channel grid. If not 'auto' it must be in the format 'nchan,chan0,chanw' where nchan is an integer, and chan0 and chanw must include units appropriate for the chosen mode (see parameter 'mode' above)
 
-      Data column to use.
+  **uvlin**
 
-    **obsinfo**
-      *bool*, *optional*
+    *bool*, *optional*
 
-      Create obsinfo.txt and obsinfo.json of MS file created by mstransform. Default true
+    Perform continuum subtraction as in task uvcontsub whilst regridding within mstransform. Default is false
+
+  **fitspw**
+
+    *str*, *optional*
+
+    Spectral window channel selection for fitting the continuumSelection of line-free channels using CASA syntax (e.g. '0:0~100;150:300'). If set to null, a fit to all unflagges visibilities will be performed. (Defaults to null)
+
+  **fitorder**
+
+    *int*, *optional*
+
+    Polynomial order for the continuum fits
+
+  **column**
+
+    *str*, *optional*
+
+    Data column to use.
+
+  **obsinfo**
+
+    *bool*, *optional*
+
+    Create obsinfo.txt and obsinfo.json of MS file created by mstransform. Default true
 
 
+
+.. _image_HI_sunblocker:
 
 -------------------------------------
 **sunblocker**
@@ -203,32 +242,39 @@ Create HI data cube and detect sources therein
 
   Use sunblocker to remove solar RFI. See description of sunblocker on github repository gigjozsa/sunblocker in method phazer of module sunblocker.py.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute segment sunblocker (yes/no). Default is yes.
+    *bool*, *optional*
 
-    **use_mstransform**
-      *bool*, *optional*
+    Execute segment sunblocker (yes/no). Default is yes.
 
-      Execute sunblocker on continuum-subtracted data (otherwise use non-continuum-subtracted data) (yes/no). Default is yes.
+  **use_mstransform**
 
-    **imsize**
-      *int*, *optional*
+    *bool*, *optional*
 
-      Image size (use the same as in wsclean_image or casa_image). Default is worker npix
+    Execute sunblocker on continuum-subtracted data (otherwise use non-continuum-subtracted data) (yes/no). Default is yes.
 
-    **cell**
-      *float*, *optional*
+  **imsize**
 
-      Cell size in arcsec (use the same as in wsclean_image or casa_image). Default is worker cell
+    *int*, *optional*
 
-    **threshold**
-      *float*, *optional*
+    Image size (use the same as in wsclean_image or casa_image). Default is worker npix
 
-      Distance from average beyond which data are flagged in units of sigma. Default is 4.
+  **cell**
+
+    *float*, *optional*
+
+    Cell size in arcsec (use the same as in wsclean_image or casa_image). Default is worker cell
+
+  **threshold**
+
+    *float*, *optional*
+
+    Distance from average beyond which data are flagged in units of sigma. Default is 4.
 
 
+
+.. _image_HI_wsclean_image:
 
 -------------------------------------
 **wsclean_image**
@@ -236,122 +282,147 @@ Create HI data cube and detect sources therein
 
   Use WSClean to create line data cube. See WSclean wiki on sourceforge.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute segment wsclean_image (yes/no). Default is yes.
+    *bool*, *optional*
 
-    **wscl_niter**
-      *int*, *optional*
+    Execute segment wsclean_image (yes/no). Default is yes.
 
-      Maximum number of rewsclean iterations to perform. Default is 2
+  **wscl_niter**
 
-    **rm_intcubes**
-      *bool*, *optional*
+    *int*, *optional*
 
-      If set to true it deletes intermediate cubes from the output directory, if set to false it keeps all the cubes from the wsclean loops
+    Maximum number of rewsclean iterations to perform. Default is 2
 
-    **use_mstransform**
-      *bool*, *optional*
+  **rm_intcubes**
 
-      Execute wsclean_image on continuum-subtracted data (otherwise use non-continuum-subtracted data) (yes/no). Default is yes.
+    *bool*, *optional*
 
-    **pol**
-      *str*, *optional*
+    If set to true it deletes intermediate cubes from the output directory, if set to false it keeps all the cubes from the wsclean loops
 
-      Polarizations in output cube (I,Q,U,V,XX,YY,XY,YX,RR,LL,RL,LR and combinations). Default is I.
+  **use_mstransform**
 
-    **spwid**
-      *int*, *optional*
+    *bool*, *optional*
 
-      Spectral window to use. Default is 0.
+    Execute wsclean_image on continuum-subtracted data (otherwise use non-continuum-subtracted data) (yes/no). Default is yes.
 
-    **nchans**
-      *text*, *optional*
+  **pol**
 
-      Number of channels of HI cube, 'all' or an integer number. Default is 'all'.
+    *str*, *optional*
 
-    **firstchan**
-      *int*, *optional*
+    Polarizations in output cube (I,Q,U,V,XX,YY,XY,YX,RR,LL,RL,LR and combinations). Default is I.
 
-      First channel of HI cube. Default is 0.
+  **spwid**
 
-    **binchans**
-      *int*, *optional*
+    *int*, *optional*
 
-      Integer binning of channels. Default is 1 (no binning).
+    Spectral window to use. Default is 0.
 
-    **npix**
-      *seq*, *optional*
+  **nchans**
 
-      Image size in pixels. List of integers (width and height) or a single integer for square images. Default is Worker default for npix.
+    *text*, *optional*
 
-    **padding**
-      *float*, *optional*
+    Number of channels of HI cube, 'all' or an integer number. Default is 'all'.
 
-      Images have initial size padding\*npix, and are later trimmed to npix. Default is 1.2.
+  **firstchan**
 
-    **mgain**
-      *float*, *optional*
+    *int*, *optional*
 
-      Cleaning gain for major iterations, Ratio of peak that will be subtracted in each major iteration. Default is 0.9.
+    First channel of HI cube. Default is 0.
 
-    **cell**
-      *text*, *optional*
+  **binchans**
 
-      Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. 'scale 20asec'. Default is Worker default for cell.
+    *int*, *optional*
 
-    **weight**
-      *str*, *optional*
+    Integer binning of channels. Default is 1 (no binning).
 
-      Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition. Default is Worker default for weight.
+  **npix**
 
-    **robust**
-      *float*, *optional*
+    *seq*, *optional*
 
-      Robust parameter in case of Briggs weighting. Default is 2.
+    Image size in pixels. List of integers (width and height) or a single integer for square images. Default is Worker default for npix.
 
-    **taper**
-      *float*, *optional*
+  **padding**
 
-      Gaussian taper FWHM in arcsec. Default is 0, no tapering.
+    *float*, *optional*
 
-    **niter**
-      *int*, *optional*
+    Images have initial size padding\*npix, and are later trimmed to npix. Default is 1.2.
 
-      Maximum number of clean iterations to perform. Default is 1000000.
+  **mgain**
 
-    **ownfitsmask**
-      *str*, *optional*
+    *float*, *optional*
 
-      Accepts a 3D-mask cleaning mask in fits format. Mask made by the user. Default is '' (an empty field)
+    Cleaning gain for major iterations, Ratio of peak that will be subtracted in each major iteration. Default is 0.9.
 
-    **automask**
-      *float*, *optional*
+  **cell**
 
-      Construct a mask from found components and when a threshold of sigma is reached, continue cleaning with the mask down to the normal threshold.
+    *text*, *optional*
 
-    **autothreshold**
-      *float*, *optional*
+    Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. 'scale 20asec'. Default is Worker default for cell.
 
-      Estimate noise level using a robust estimator and stop at sigma x stddev
+  **weight**
 
-    **cleanborder**
-      *float*, *optional*
+    *str*, *optional*
 
-      Set the border size in which no cleaning is performed, in percentage of the width/height of a plane. With an plane size of 1000 pixels and clean border of 1%, each border is 10 pixels. Default is 0.
+    Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition. Default is Worker default for weight.
 
-    **make_cube**
-      *bool*, *optional*
+  **robust**
 
-      If set to true the output is a data cube, if set to false the output is one fits file per spectral channel. Default is yes.
+    *float*, *optional*
 
-    **no_update_mod**
-      *bool*, *optional*
+    Robust parameter in case of Briggs weighting. Default is 2.
 
-      If set to true, will not store the clean model in MODEL_DATA. Relevant for HI.
+  **taper**
+
+    *float*, *optional*
+
+    Gaussian taper FWHM in arcsec. Default is 0, no tapering.
+
+  **niter**
+
+    *int*, *optional*
+
+    Maximum number of clean iterations to perform. Default is 1000000.
+
+  **ownfitsmask**
+
+    *str*, *optional*
+
+    Accepts a 3D-mask cleaning mask in fits format. Mask made by the user. Default is '' (an empty field)
+
+  **automask**
+
+    *float*, *optional*
+
+    Construct a mask from found components and when a threshold of sigma is reached, continue cleaning with the mask down to the normal threshold.
+
+  **autothreshold**
+
+    *float*, *optional*
+
+    Estimate noise level using a robust estimator and stop at sigma x stddev
+
+  **cleanborder**
+
+    *float*, *optional*
+
+    Set the border size in which no cleaning is performed, in percentage of the width/height of a plane. With an plane size of 1000 pixels and clean border of 1%, each border is 10 pixels. Default is 0.
+
+  **make_cube**
+
+    *bool*, *optional*
+
+    If set to true the output is a data cube, if set to false the output is one fits file per spectral channel. Default is yes.
+
+  **no_update_mod**
+
+    *bool*, *optional*
+
+    If set to true, will not store the clean model in MODEL_DATA. Relevant for HI.
 
 
+
+.. _image_HI_casa_image:
 
 -------------------------------------
 **casa_image**
@@ -359,70 +430,91 @@ Create HI data cube and detect sources therein
 
   Use CASA to create line data cube.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-    **use_mstransform**
-      *bool*, *optional*
+    *bool*, *optional*
 
-      Execute wsclean_image on continuum-subtracted data (otherwise use non-continuum-subtracted data) (yes/no). Default is yes.
+  **use_mstransform**
 
-    **pol**
-      *str*, *optional*
+    *bool*, *optional*
 
-      Polarizations in output cube (I,Q,U,V,XX,YY,XY,YX,RR,LL,RL,LR and combinations). Default is I.
+    Execute wsclean_image on continuum-subtracted data (otherwise use non-continuum-subtracted data) (yes/no). Default is yes.
 
-    **spwid**
-      *int*, *optional*
+  **pol**
 
-      Spectral window to use. Default is 0.
+    *str*, *optional*
 
-    **nchans**
-      *text*, *optional*
+    Polarizations in output cube (I,Q,U,V,XX,YY,XY,YX,RR,LL,RL,LR and combinations). Default is I.
 
-      Number of channels. If set to 'all', all channels are used. Otherwise provide the number of channels (starting with startchan, see below). Default is 'all'.
+  **taper**
 
-    **startchan**
-      *int*, *optional*
+    *str*, *optional*
 
-      Starting channel of the cube. Used in combination with nchans. Default is 0.
+    uvtaper as in casa clean either in arcsec of klambda.
 
-    **npix**
-      *seq*, *optional*
+  **spwid**
 
-      Image size in pixels. List of integers (width and height) or a single integer for square images. Default is worker npix.
+    *int*, *optional*
 
-    **cell**
-      *text*, *optional*
+    Spectral window to use. Default is 0.
 
-      Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. 'scale 20asec'. Default is worker cell.
+  **nchans**
 
-    **weight**
-      *str*, *optional*
+    *text*, *optional*
 
-      Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition. Default is worker weight.
+    Number of channels. If set to 'all', all channels are used. Otherwise provide the number of channels (starting with startchan, see below). Default is 'all'.
 
-    **robust**
-      *float*, *optional*
+  **startchan**
 
-      Robust parameter in case of Briggs weighting. Default is worker robust.
+    *int*, *optional*
 
-    **niter**
-      *int*, *optional*
+    Starting channel of the cube. Used in combination with nchans. Default is 0.
 
-      Maximum number of clean iterations to perform. Default is 1000000.
+  **npix**
 
-    **threshold**
-      *str*, *optional*
+    *seq*, *optional*
 
-      Flux level to stop cleaning, must include units, e.g. '1.0mJy'. Default is '10mJy'.
+    Image size in pixels. List of integers (width and height) or a single integer for square images. Default is worker npix.
 
-    **port2fits**
-      *bool*, *optional*
+  **cell**
 
-      Port output to fits files if yes. Default is yes.
+    *text*, *optional*
+
+    Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. 'scale 20asec'. Default is worker cell.
+
+  **weight**
+
+    *str*, *optional*
+
+    Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition. Default is worker weight.
+
+  **robust**
+
+    *float*, *optional*
+
+    Robust parameter in case of Briggs weighting. Default is worker robust.
+
+  **niter**
+
+    *int*, *optional*
+
+    Maximum number of clean iterations to perform. Default is 1000000.
+
+  **threshold**
+
+    *str*, *optional*
+
+    Flux level to stop cleaning, must include units, e.g. '1.0mJy'. Default is '10mJy'.
+
+  **port2fits**
+
+    *bool*, *optional*
+
+    Port output to fits files if yes. Default is yes.
 
 
+
+.. _image_HI_remove_stokes_axis:
 
 -------------------------------------
 **remove_stokes_axis**
@@ -430,12 +522,15 @@ Create HI data cube and detect sources therein
 
   Remove Stokes axis from HI cube
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this segment. Default is true
+    *bool*, *optional*
+
+    Execute this segment. Default is true
 
 
+
+.. _image_HI_pb_cube:
 
 -------------------------------------
 **pb_cube**
@@ -443,12 +538,15 @@ Create HI data cube and detect sources therein
 
   Make primary beam cube
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this segment. Default is false
+    *bool*, *optional*
+
+    Execute this segment. Default is false
 
 
+
+.. _image_HI_freq_to_vel:
 
 -------------------------------------
 **freq_to_vel**
@@ -456,12 +554,15 @@ Create HI data cube and detect sources therein
 
   Convert the spectral axis' header keys of the HI cube from frequency to velocity in the radio definition, v=c(1-obsfreq/restfreq). No change of spectra reference frame is performed.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute conversion. Default is true
+    *bool*, *optional*
+
+    Execute conversion. Default is true
 
 
+
+.. _image_HI_sofia:
 
 -------------------------------------
 **sofia**
@@ -469,67 +570,81 @@ Create HI data cube and detect sources therein
 
   Run SoFiA source finder to produce a source mask and a Moment-0 map
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute segment sofia (yes/no)? Default is yes.
+    *bool*, *optional*
 
-    **rmsMode**
-      *str*, *optional*
+    Execute segment sofia (yes/no)? Default is yes.
 
-      Method to determine rms ('mad' for using median absolute deviation, 'std' for using standard deviation, 'negative' for using Gaussian fit to negative voxels). Default is 'mad'
+  **rmsMode**
 
-    **threshold**
-      *float*, *optional*
+    *str*, *optional*
 
-      SoFiA source finding threshold. Default is 4.0.
+    Method to determine rms ('mad' for using median absolute deviation, 'std' for using standard deviation, 'negative' for using Gaussian fit to negative voxels). Default is 'mad'
 
-    **flag**
-      *bool*, *optional*
+  **threshold**
 
-      Use flag regions (yes/no)? Default is no.
+    *float*, *optional*
 
-    **flagregion**
-      *optional*
+    SoFiA source finding threshold. Default is 4.0.
 
-      Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], ...]. Default is [].
+  **flag**
 
-    **merge**
-      *bool*, *optional*
+    *bool*, *optional*
 
-      Use method to de-select and merge emission islands detected by any of SoFiA source finding algorithms. If turned on, pixels with a separation of less than mergeX pixels in x direction and less than mergeY pixels in y-direction and less than z pixels in z-direction will be merged and identified as a single object in the mask. Detections whose extent in x-direction is smaller than minSizeX, in y direction is smaller than minSizeY, and in z-direction is smaller than minSizeZ will be removed from the mask. Parameter merge determines if the merging should be applied (yes/no). Default is yes.
+    Use flag regions (yes/no)? Default is no.
 
-    **mergeX**
-      *int*, *optional*
+  **flagregion**
 
-      Merge-'radius' in x-direction. Default is 2
+    *list* *of int*, *optional*
 
-    **mergeY**
-      *int*, *optional*
+    Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], ...]. Default is [].
 
-      Merge-'radius' in y-direction. Default is 2
+  **merge**
 
-    **mergeZ**
-      *int*, *optional*
+    *bool*, *optional*
 
-      Merge-'radius' in z-direction (velocity direction). Default is 3
+    Use method to de-select and merge emission islands detected by any of SoFiA source finding algorithms. If turned on, pixels with a separation of less than mergeX pixels in x direction and less than mergeY pixels in y-direction and less than z pixels in z-direction will be merged and identified as a single object in the mask. Detections whose extent in x-direction is smaller than minSizeX, in y direction is smaller than minSizeY, and in z-direction is smaller than minSizeZ will be removed from the mask. Parameter merge determines if the merging should be applied (yes/no). Default is yes.
 
-    **minSizeX**
-      *int*, *optional*
+  **mergeX**
 
-      Minimum size in x-direction. Default is 3.
+    *int*, *optional*
 
-    **minSizeY**
-      *int*, *optional*
+    Merge-'radius' in x-direction. Default is 2
 
-      Minimum size in y-direction. Default is 3.
+  **mergeY**
 
-    **minSizeZ**
-      *int*, *optional*
+    *int*, *optional*
 
-      Minimum size in y-direction. Default is 5.
+    Merge-'radius' in y-direction. Default is 2
+
+  **mergeZ**
+
+    *int*, *optional*
+
+    Merge-'radius' in z-direction (velocity direction). Default is 3
+
+  **minSizeX**
+
+    *int*, *optional*
+
+    Minimum size in x-direction. Default is 3.
+
+  **minSizeY**
+
+    *int*, *optional*
+
+    Minimum size in y-direction. Default is 3.
+
+  **minSizeZ**
+
+    *int*, *optional*
+
+    Minimum size in y-direction. Default is 5.
 
 
+
+.. _image_HI_flagging_summary:
 
 -------------------------------------
 **flagging_summary**
@@ -537,8 +652,9 @@ Create HI data cube and detect sources therein
 
   Print out flagging summary.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute printing flagging summary.
+    *bool*, *optional*
+
+    Execute printing flagging summary.
 

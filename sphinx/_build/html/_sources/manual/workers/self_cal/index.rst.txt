@@ -16,6 +16,8 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_enable:
+
 -------------------------------------
 **enable**
 -------------------------------------
@@ -25,6 +27,8 @@ Perform Self calibration on the data
   Execute this segment
 
 
+
+.. _self_cal_label:
 
 -------------------------------------
 **label**
@@ -36,6 +40,8 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_order:
+
 -------------------------------------
 **order**
 -------------------------------------
@@ -45,6 +51,8 @@ Perform Self calibration on the data
   Workers are executed in ascedning order based on this value
 
 
+
+.. _self_cal_undo_subtractmodelcol:
 
 -------------------------------------
 **undo_subtractmodelcol**
@@ -56,6 +64,8 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_primary_beam:
+
 -------------------------------------
 **primary_beam**
 -------------------------------------
@@ -66,15 +76,19 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_calibrate_with:
+
 -------------------------------------
 **calibrate_with**
 -------------------------------------
 
-  *str*, *optional*
+  *{"meqtrees", "cubical"}*, *optional*
 
   Tool to use for calibration
 
 
+
+.. _self_cal_spwid:
 
 -------------------------------------
 **spwid**
@@ -86,6 +100,20 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_ncpu:
+
+-------------------------------------
+**ncpu**
+-------------------------------------
+
+  *int*, *optional*
+
+  number of cpu's to use
+
+
+
+.. _self_cal_img_npix:
+
 -------------------------------------
 **img_npix**
 -------------------------------------
@@ -95,6 +123,8 @@ Perform Self calibration on the data
   Number of pixels in output image
 
 
+
+.. _self_cal_img_padding:
 
 -------------------------------------
 **img_padding**
@@ -106,6 +136,8 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_img_mgain:
+
 -------------------------------------
 **img_mgain**
 -------------------------------------
@@ -115,6 +147,8 @@ Perform Self calibration on the data
   Image CLEANing gain
 
 
+
+.. _self_cal_img_cell:
 
 -------------------------------------
 **img_cell**
@@ -126,15 +160,19 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_img_weight:
+
 -------------------------------------
 **img_weight**
 -------------------------------------
 
-  *str*, *optional*
+  *{"briggs", "uniform", "natural"}*, *optional*
 
   Image weighting type
 
 
+
+.. _self_cal_img_robust:
 
 -------------------------------------
 **img_robust**
@@ -146,6 +184,20 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_img_uvtaper:
+
+-------------------------------------
+**img_uvtaper**
+-------------------------------------
+
+  *str*, *optional*
+
+  Taper for imaging
+
+
+
+.. _self_cal_img_niter:
+
 -------------------------------------
 **img_niter**
 -------------------------------------
@@ -155,6 +207,8 @@ Perform Self calibration on the data
   Number of cleaning iterations
 
 
+
+.. _self_cal_img_cleanborder:
 
 -------------------------------------
 **img_cleanborder**
@@ -166,6 +220,8 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_img_facets:
+
 -------------------------------------
 **img_facets**
 -------------------------------------
@@ -175,6 +231,8 @@ Perform Self calibration on the data
   Number facet to image
 
 
+
+.. _self_cal_img_nchans:
 
 -------------------------------------
 **img_nchans**
@@ -186,6 +244,8 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_img_joinchannels:
+
 -------------------------------------
 **img_joinchannels**
 -------------------------------------
@@ -195,6 +255,8 @@ Perform Self calibration on the data
   Join channels to create MFS image
 
 
+
+.. _self_cal_img_fit_spectral_pol:
 
 -------------------------------------
 **img_fit_spectral_pol**
@@ -206,6 +268,8 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_img_pol:
+
 -------------------------------------
 **img_pol**
 -------------------------------------
@@ -216,35 +280,7 @@ Perform Self calibration on the data
 
 
 
--------------------------------------
-**bjones**
--------------------------------------
-
-  *bool*, *optional*
-
-  Enable Bjones.
-
-
-
--------------------------------------
-**ddjones**
--------------------------------------
-
-  *bool*, *optional*
-
-  Enable direction dependent calibration, currently experimental.
-
-
-
--------------------------------------
-**cal_DDsols**
--------------------------------------
-
-  *optional*
-
-  Calibration solution intervals
-
-
+.. _self_cal_cal_gain_amplitude_clip_low:
 
 -------------------------------------
 **cal_gain_amplitude_clip_low**
@@ -256,6 +292,8 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_cal_gain_amplitude_clip_high:
+
 -------------------------------------
 **cal_gain_amplitude_clip_high**
 -------------------------------------
@@ -265,6 +303,8 @@ Perform Self calibration on the data
   Higher gain amplitude clipping
 
 
+
+.. _self_cal_cal_niter:
 
 -------------------------------------
 **cal_niter**
@@ -276,6 +316,8 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_start_at_iter:
+
 -------------------------------------
 **start_at_iter**
 -------------------------------------
@@ -286,38 +328,53 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_aimfast:
+
 -------------------------------------
 **aimfast**
 -------------------------------------
 
   Quality assessment parameter
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this segment
+    *bool*, *optional*
 
-    **tolerance**
-      *float*, *optional*
+    Execute this segment
 
-      Relative change in weighted mean of several indicators from aimfast.
+  **tolerance**
 
-    **convergence_criteria**
-      *optional*
+    *float*, *optional*
 
-      The residual statistic to check convergence against. Every criterium listed will be combined into a weighted mean. Options ["DR","SKEW","KURT","STDDev","MEAN"]. Note that when calibrate model_mode = 'vis_only' DR is not an option.
+    Relative change in weighted mean of several indicators from aimfast.
 
-    **area_factor**
-      *float*, *optional*
+  **convergence_criteria**
 
-      Peak flux source area multiplying factor i.e tot_area = psf-size\*af
+    *list* *of str*, *optional*
 
-    **normality_model**
-      *str*, *optional*
+    The residual statistic to check convergence against. Every criterium listed will be combined into a weighted mean. Options ["DR","SKEW","KURT","STDDev","MEAN"]. Note that when calibrate model_mode = 'vis_only' DR is not an option.
 
-      normality test model to use. Note that normaltest is the D'Agostino
+  **area_factor**
+
+    *float*, *optional*
+
+    Peak flux source area multiplying factor i.e tot_area = psf-size\*af
+
+  **normality_model**
+
+    *{"normaltest", "shapiro"}*, *optional*
+
+    normality test model to use. Note that normaltest is the D'Agostino
+
+  **plot**
+
+    *bool*, *optional*
+
+    Generate html plots for comparing catalogs and residuals
 
 
+
+.. _self_cal_image:
 
 -------------------------------------
 **image**
@@ -325,62 +382,75 @@ Perform Self calibration on the data
 
   Imaging parameter
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this segment
+    *bool*, *optional*
 
-    **auto_mask**
-      *optional*
+    Execute this segment
 
-      Auto masking threshold
+  **auto_mask**
 
-    **auto_threshold**
-      *optional*
+    *list* *of int*, *optional*
 
-      Auto clean threshold
+    Auto masking threshold
 
-    **column**
-      *optional*
+  **auto_threshold**
 
-      Column to image
+    *list* *of float*, *optional*
 
-    **mask_from_sky**
-      *bool*, *optional*
+    Auto clean threshold
 
-      switch on cleaning within mask from fits file
+  **column**
 
-    **fits_mask**
-      *optional*
+    *list* *of str*, *optional*
 
-      filename of fits mask (in output/masking folder)
+    Column to image
 
-    **multi_scale**
-      *bool*, *optional*
+  **mask_from_sky**
 
-      switch on multiscale cleaning
+    *bool*, *optional*
 
-    **multi_scale_scales**
-      *optional*
+    switch on cleaning within mask from fits file
 
-      scales of multiscale [0,10,20,etc, etc]
+  **fits_mask**
 
-    **no_update_model**
-      *bool*, *optional*
+    *list* *of str*, *optional*
 
-      do not update column MODEL_DATA after wsclean
+    filename of fits mask (in output/masking folder)
 
-    **minuvw_m**
-      *int*, *optional*
+  **multi_scale**
 
-      exclude short baselines [m]
+    *bool*, *optional*
 
-    **local_rms**
-      *bool*, *optional*
+    switch on multiscale cleaning
 
-      switch on local rms measurement for cleaning
+  **multi_scale_scales**
+
+    *list* *of int*, *optional*
+
+    scales of multiscale [0,10,20,etc, etc]
+
+  **no_update_model**
+
+    *bool*, *optional*
+
+    do not update column MODEL_DATA after wsclean
+
+  **minuvw_m**
+
+    *int*, *optional*
+
+    exclude short baselines [m]
+
+  **local_rms**
+
+    *bool*, *optional*
+
+    switch on local rms measurement for cleaning
 
 
+
+.. _self_cal_sofia_mask:
 
 -------------------------------------
 **sofia_mask**
@@ -388,62 +458,75 @@ Perform Self calibration on the data
 
   Run SoFiA source finder to produce a source mask and a Moment-0 map
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute segment sofia (yes/no)? Default is yes.
+    *bool*, *optional*
 
-    **threshold**
-      *float*, *optional*
+    Execute segment sofia (yes/no)? Default is yes.
 
-      SoFiA source finding threshold. Default is 4.0.
+  **threshold**
 
-    **flag**
-      *bool*, *optional*
+    *float*, *optional*
 
-      Use flag regions (yes/no)? Default is no.
+    SoFiA source finding threshold. Default is 4.0.
 
-    **flagregion**
-      *optional*
+  **flag**
 
-      Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], ...]. Default is [].
+    *bool*, *optional*
 
-    **inputmask**
-      *str*, *optional*
+    Use flag regions (yes/no)? Default is no.
 
-      input mask over which add Sofia's
+  **flagregion**
 
-    **kernels**
-      *optional*
+    *list* *of int*, *optional*
 
-      Kernels for mask
+    Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], ...]. Default is [].
 
-    **fornax_special**
-      *bool*, *optional*
+  **inputmask**
 
-      Activates masking of Fornax A using Sofia
+    *str*, *optional*
 
-    **fornax_thresh**
-      *optional*
+    input mask over which add Sofia's
 
-      SoFiA source finding threshold. Default is 4.0.
+  **kernels**
 
-    **use_sofia**
-      *bool*, *optional*
+    *list* *of int*, *optional*
 
-      use sofia for mask of Fornax A instead of Fomalont mask
+    Kernels for mask
 
-    **scale_noise_window**
-      *float*, *optional*
+  **fornax_special**
 
-      window size where to measure local rms in pixels
+    *bool*, *optional*
 
-    **positivity**
-      *bool*, *optional*
+    Activates masking of Fornax A using Sofia
 
-      merges only positive pixesl of sources in mask
+  **fornax_thresh**
+
+    *list* *of float*, *optional*
+
+    SoFiA source finding threshold. Default is 4.0.
+
+  **use_sofia**
+
+    *bool*, *optional*
+
+    use sofia for mask of Fornax A instead of Fomalont mask
+
+  **scale_noise_window**
+
+    *float*, *optional*
+
+    window size where to measure local rms in pixels
+
+  **positivity**
+
+    *bool*, *optional*
+
+    merges only positive pixesl of sources in mask
 
 
+
+.. _self_cal_extract_sources:
 
 -------------------------------------
 **extract_sources**
@@ -451,27 +534,45 @@ Perform Self calibration on the data
 
   Source finding parameters
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this segment
+    *bool*, *optional*
 
-    **spi**
-      *bool*, *optional*
+    Execute this segment
 
-      Extract source spectral index
+  **sourcefinder**
 
-    **thresh_pix**
-      *optional*
+    *str*, *optional*
 
-      Source finder pixel threshold
+    choose your favorite sourcefinder pybdsm, (pybdsf), sofia
 
-    **thresh_isl**
-      *optional*
+  **local_rms**
 
-      Source finder island threshold
+    *bool*, *optional*
+
+    Execute this segment
+
+  **spi**
+
+    *bool*, *optional*
+
+    Extract source spectral index
+
+  **thresh_pix**
+
+    *list* *of int*, *optional*
+
+    Source finder pixel threshold
+
+  **thresh_isl**
+
+    *list* *of int*, *optional*
+
+    Source finder island threshold
 
 
+
+.. _self_cal_calibrate:
 
 -------------------------------------
 **calibrate**
@@ -479,47 +580,105 @@ Perform Self calibration on the data
 
   Calibration parameters
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this segment
+    *bool*, *optional*
 
-    **model**
-      *optional*
+    Execute this segment
 
-      Model number to use [or combination e.g. '1+2' to use first and second models]
+  **model**
 
-    **output_data**
-      *optional*
+    *list* *of str*, *optional*
 
-      Data to output after calibration
+    Model number to use [or combination e.g. '1+2' to use first and second models]
 
-    **gain_matrix_type**
-      *optional*
+  **output_data**
 
-      Gain matrix type
+    *list* *of str*, *optional*
 
-    **model_mode**
-      *str*, *optional*
+    Data to output after calibration
 
-      pybdsm_vis, pybdsm_only,  vis_only are the possible options
+  **gain_matrix_type**
 
-    **add_vis_model**
-      *bool*, *optional*
+    *list* *of str*, *optional*
 
-      Add/Use clean components from latest imaging step to/as sky model for calibation
+    Gain matrix type
 
-    **Gsols_time**
-      *optional*
+  **model_mode**
 
-      Gsols for individual calibration steps, if not given will default to cal_Gsols
+    *str*, *optional*
 
-    **Gsols_channel**
-      *optional*
+    pybdsm_vis, pybdsm_only,  vis_only are the possible options
 
-      Gsols for individual calibration steps, if not given will default to cal_Gsols
+  **shared_memory**
+
+    *str*, *optional*
+
+    Set the amount of shared memory for cubical. Default '100Gb'
+
+  **two_step**
+
+    *bool*, *optional*
+
+    Trigger a two step calibration process where the phase only calibration is applied before continuing with amplitude + phase cal. When cubical is used this happens simultaneous and gain parameters can be used with DDsols parameters. Set DDsol_time to -1 one to avoid amplitude calibration in an itereation. The parameter DDjones should be set to false.
+
+  **add_vis_model**
+
+    *bool*, *optional*
+
+    Add/Use clean components from latest imaging step to/as sky model for calibation
+
+  **Gsols_time**
+
+    *list* *of float*, *optional*
+
+    Gsols for individual calibration steps, if not given will default to cal_Gsols
+
+  **Gsols_channel**
+
+    *list* *of float*, *optional*
+
+    Gsols for individual calibration steps, if not given will default to cal_Gsols
+
+  **Bjones**
+
+    *bool*, *optional*
+
+    Enable Bjones
+
+  **Bsols_time**
+
+    *list* *of float*, *optional*
+
+    Gsols for individual calibration steps, if not given will default to cal_Gsols
+
+  **Bsols_channel**
+
+    *list* *of float*, *optional*
+
+    Gsols for individual calibration steps, if not given will default to cal_Gsols
+
+  **DDjones**
+
+    *bool*, *optional*
+
+    Enable direction dependent calibration, currently experimental.
+
+  **DDsols_time**
+
+    *list* *of float*, *optional*
+
+    Calibration solution intervals
+
+  **DDsols_channel**
+
+    *list* *of float*, *optional*
+
+    Calibration solution intervals
 
 
+
+.. _self_cal_restore_model:
 
 -------------------------------------
 **restore_model**
@@ -527,22 +686,27 @@ Perform Self calibration on the data
 
   Restore modelled to final calibrated residual image
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this segment
+    *bool*, *optional*
 
-    **model**
-      *str*, *optional*
+    Execute this segment
 
-      Model number to use [or combination e.g. '1+2' to use first and second models]
+  **model**
 
-    **clean_model**
-      *str*, *optional*
+    *str*, *optional*
 
-      Clean model number to use [or combination e.g. '1+2' to use first and second models]
+    Model number to use [or combination e.g. '1+2' to use first and second models]
+
+  **clean_model**
+
+    *str*, *optional*
+
+    Clean model number to use [or combination e.g. '1+2' to use first and second models]
 
 
+
+.. _self_cal_flagging_summary:
 
 -------------------------------------
 **flagging_summary**
@@ -550,12 +714,15 @@ Perform Self calibration on the data
 
   Output the flagging summary
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this segment
+    *bool*, *optional*
+
+    Execute this segment
 
 
+
+.. _self_cal_gain_interpolation:
 
 -------------------------------------
 **gain_interpolation**
@@ -563,17 +730,21 @@ Perform Self calibration on the data
 
   Interpolate gains over the high frequency resolution data
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this segment
+    *bool*, *optional*
 
-    **hires_label**
-      *str*, *optional*
+    Execute this segment
 
-      label for high resolution data products in selfcal
+  **hires_label**
+
+    *str*, *optional*
+
+    label for high resolution data products in selfcal
 
 
+
+.. _self_cal_highfreqres_contim:
 
 -------------------------------------
 **highfreqres_contim**
@@ -581,58 +752,69 @@ Perform Self calibration on the data
 
   Make final continuum image and model at higher freq res, ideally using a clean mask based on the last round of continuum imging
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this segment
+    *bool*, *optional*
 
-    **chans**
-      *int*, *optional*
+    Execute this segment
 
-      output continuum channels
+  **chans**
 
-    **deconv_chans**
-      *int*, *optional*
+    *int*, *optional*
 
-      nr of channels used for deconvolution grouping together output continuum channels
+    output continuum channels
 
-    **fit_spectral_pol**
-      *int*, *optional*
+  **deconv_chans**
 
-      How many terms for the spectral polynomial fit of each clean component
+    *int*, *optional*
 
-    **fits_mask**
-      *str*, *optional*
+    nr of channels used for deconvolution grouping together output continuum channels
 
-      filename of fits mask (including folder if not input), default None
+  **fit_spectral_pol**
 
-    **auto_mask**
-      *float*, *optional*
+    *int*, *optional*
 
-      Auto masking threshold, default None
+    How many terms for the spectral polynomial fit of each clean component
 
-    **auto_threshold**
-      *float*, *optional*
+  **fits_mask**
 
-      Auto clean threshold, default 10
+    *str*, *optional*
 
-    **column**
-      *str*, *optional*
+    filename of fits mask (including folder if not input), default None
 
-      Column to image
+  **auto_mask**
 
-    **multi_scale**
-      *bool*, *optional*
+    *float*, *optional*
 
-      switch on multiscale cleaning
+    Auto masking threshold, default None
 
-    **multi_scale_scales**
-      *optional*
+  **auto_threshold**
 
-      scales of multiscale [0,10,20,etc, etc]
+    *float*, *optional*
 
-    **local_rms**
-      *bool*, *optional*
+    Auto clean threshold, default 10
 
-      switch on local rms measurement for cleaning
+  **column**
+
+    *str*, *optional*
+
+    Column to image
+
+  **multi_scale**
+
+    *bool*, *optional*
+
+    switch on multiscale cleaning
+
+  **multi_scale_scales**
+
+    *list* *of int*, *optional*
+
+    scales of multiscale [0,10,20,etc, etc]
+
+  **local_rms**
+
+    *bool*, *optional*
+
+    switch on local rms measurement for cleaning
 

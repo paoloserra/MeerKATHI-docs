@@ -86,8 +86,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data products</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reduction/index.html">Data reduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data Products</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Workers parameters</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../general/index.html">general</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">get_data</a><ul>
@@ -167,82 +167,102 @@
 </div>
 <p>Download and/or convert/unarchive data so that its in the MS format for further processing</p>
 <div class="section" id="order">
-<h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
+<span id="get-data-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Workers are executed in ascedning order based on this value.</p>
 </div></blockquote>
 </div>
 <div class="section" id="dataid">
-<h2><strong>dataid</strong><a class="headerlink" href="#dataid" title="Permalink to this headline">¶</a></h2>
+<span id="get-data-dataid"></span><h2><strong>dataid</strong><a class="headerlink" href="#dataid" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
 <p>Basename of MS. For MeerKAT data to be downloaded by MeerKATHI, this should be the data ID of the observation</p>
 </div></blockquote>
 </div>
 <div class="section" id="mvftoms">
-<h2><strong>mvftoms</strong><a class="headerlink" href="#mvftoms" title="Permalink to this headline">¶</a></h2>
+<span id="get-data-mvftoms"></span><h2><strong>mvftoms</strong><a class="headerlink" href="#mvftoms" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Convert HDF5/MVF files in data_path to MS files; the latter are written to msdir; also creates a MS.TAR file. (This only works for MeerKAT HDF5 files)</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this segment</p>
-</dd>
-<dt><strong>tar</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Create a tarbal of the converted MS.</p>
-</dd>
-<dt><strong>channel_range</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Only exctract channels in this range (0-based, inclusive; comma seperated string)</p>
-</dd>
-<dt><strong>full_poll</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Extract all four correlations instead of only the XX,YY</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this segment</p>
+</div></blockquote>
+<p><strong>tar</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Create a tarbal of the converted MS.</p>
+</div></blockquote>
+<p><strong>channel_range</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Only exctract channels in this range (0-based, inclusive; comma seperated string)</p>
+</div></blockquote>
+<p><strong>full_poll</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Extract all four correlations instead of only the XX,YY</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="untar">
-<h2><strong>untar</strong><a class="headerlink" href="#untar" title="Permalink to this headline">¶</a></h2>
+<span id="get-data-untar"></span><h2><strong>untar</strong><a class="headerlink" href="#untar" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Unarchive from MS from a archive file.</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this segment</p>
-</dd>
-<dt><strong>tar_options</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Options to parse to ‘tar’ command</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this segment</p>
+</div></blockquote>
+<p><strong>tar_options</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Options to parse to ‘tar’ command</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="combine">
-<h2><strong>combine</strong><a class="headerlink" href="#combine" title="Permalink to this headline">¶</a></h2>
+<span id="get-data-combine"></span><h2><strong>combine</strong><a class="headerlink" href="#combine" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Virtually concatenate MSs and proceed with the combined MS</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this section</p>
-</dd>
-<dt><strong>reset</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Delete concatenated MS if it exists. Else, proceed with existing MS</p>
-</dd>
-<dt><strong>tar</strong></dt>
-<dd>Create a tarbal of the converted MS</dd>
-<dt><strong>untar</strong></dt>
-<dd>Unarchive from MS from a archive file.</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this section</p>
+</div></blockquote>
+<p><strong>reset</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Delete concatenated MS if it exists. Else, proceed with existing MS</p>
+</div></blockquote>
+<p><strong>tar</strong></p>
+<blockquote>
+<div><p>Create a tarbal of the converted MS</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this section</p>
+</div></blockquote>
+<p><strong>tar_options</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Options to parse to the tar command</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>untar</strong></p>
+<blockquote>
+<div><p>Unarchive from MS from a archive file.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this section</p>
+</div></blockquote>
+<p><strong>tar_options</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Options to parse to the tar command</p>
+</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div>

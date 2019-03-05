@@ -86,8 +86,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data products</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reduction/index.html">Data reduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data Products</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Workers parameters</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../general/index.html">general</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../get_data/index.html">get_data</a></li>
@@ -167,58 +167,49 @@
 </div>
 <p>Prepare the data for calibration and imaging.</p>
 <div class="section" id="enable">
-<h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
+<span id="prepare-data-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Executes the data preparation step.</p>
 </div></blockquote>
 </div>
 <div class="section" id="order">
-<h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
+<span id="prepare-data-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Order in queue of workers.</p>
 </div></blockquote>
 </div>
 <div class="section" id="fixvis">
-<h2><strong>fixvis</strong><a class="headerlink" href="#fixvis" title="Permalink to this headline">¶</a></h2>
+<span id="prepare-data-fixvis"></span><h2><strong>fixvis</strong><a class="headerlink" href="#fixvis" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Fixes the UVW coordinates through the CASA task fixvis.</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Enable execution of fixvis.</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Enable execution of fixvis.</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="prepms">
-<h2><strong>prepms</strong><a class="headerlink" href="#prepms" title="Permalink to this headline">¶</a></h2>
+<span id="prepare-data-prepms"></span><h2><strong>prepms</strong><a class="headerlink" href="#prepms" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Add BITFLAG column to MS.</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Enable addition of BITFLAG column to MS.</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Enable addition of BITFLAG column to MS.</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="add-spectral-weights">
-<h2><strong>add_spectral_weights</strong><a class="headerlink" href="#add-spectral-weights" title="Permalink to this headline">¶</a></h2>
+<span id="prepare-data-add-spectral-weights"></span><h2><strong>add_spectral_weights</strong><a class="headerlink" href="#add-spectral-weights" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Add spectral weights column to the measurement set.</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Enables addition of spectral weights column to the measurement set.</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Enables addition of spectral weights column to the measurement set.</p>
 </div></blockquote>
 </div></blockquote>
 </div>

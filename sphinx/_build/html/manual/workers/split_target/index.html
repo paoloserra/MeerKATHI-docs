@@ -86,8 +86,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data products</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reduction/index.html">Data reduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data Products</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Workers parameters</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../general/index.html">general</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../get_data/index.html">get_data</a></li>
@@ -100,7 +100,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#enable"><strong>enable</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#order"><strong>order</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#label"><strong>label</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2"><strong>split_target</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#split-target-split-target"><strong>split_target</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#hires-split"><strong>hires_split</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#changecentre"><strong>changecentre</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#obsinfo"><strong>obsinfo</strong></a></li>
@@ -170,141 +170,138 @@
 </div>
 <p>Split and average target data</p>
 <div class="section" id="enable">
-<h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
+<span id="split-target-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Execute this worker</p>
 </div></blockquote>
 </div>
 <div class="section" id="order">
-<h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
+<span id="split-target-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Order of worker in queue</p>
 </div></blockquote>
 </div>
 <div class="section" id="label">
-<h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
+<span id="split-target-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
 <p>Label for new data set</p>
 </div></blockquote>
 </div>
-<div class="section" id="id2">
-<h2><strong>split_target</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="split-target-split-target">
+<span id="id2"></span><h2><strong>split_target</strong><a class="headerlink" href="#split-target-split-target" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Split data</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this section</p>
-</dd>
-<dt><strong>time_average</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Time averaging</p>
-</dd>
-<dt><strong>freq_average</strong></dt>
-<dd><p class="first"><em>int</em>, <em>optional</em></p>
-<p class="last">Frequency averaging</p>
-</dd>
-<dt><strong>column</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Column to split, default is ‘corrected’</p>
-</dd>
-<dt><strong>correlation</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Select correlations, default is ‘’ = all</p>
-</dd>
-<dt><strong>spw</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Select spectral windows and channels, default is ‘’ = all</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this section</p>
+</div></blockquote>
+<p><strong>time_average</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Time averaging</p>
+</div></blockquote>
+<p><strong>freq_average</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>Frequency averaging</p>
+</div></blockquote>
+<p><strong>column</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Column to split, default is ‘corrected’</p>
+</div></blockquote>
+<p><strong>correlation</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Select correlations, default is ‘’ = all</p>
+</div></blockquote>
+<p><strong>spw</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Select spectral windows and channels, default is ‘’ = all</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="hires-split">
-<h2><strong>hires_split</strong><a class="headerlink" href="#hires-split" title="Permalink to this headline">¶</a></h2>
+<span id="split-target-hires-split"></span><h2><strong>hires_split</strong><a class="headerlink" href="#hires-split" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Splits data while keeping the frequency resolution</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this section</p>
-</dd>
-<dt><strong>hires_label</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Label for high resolution data set</p>
-</dd>
-<dt><strong>hires_spwid</strong></dt>
-<dd><p class="first"><em>int</em>, <em>optional</em></p>
-<p class="last">SPW ID for full resolution data.</p>
-</dd>
-<dt><strong>hires_spw</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">SPW for full resolution data.</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this section</p>
+</div></blockquote>
+<p><strong>hires_label</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Label for high resolution data set</p>
+</div></blockquote>
+<p><strong>hires_spwid</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>SPW ID for full resolution data.</p>
+</div></blockquote>
+<p><strong>hires_spw</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>SPW for full resolution data.</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="changecentre">
-<h2><strong>changecentre</strong><a class="headerlink" href="#changecentre" title="Permalink to this headline">¶</a></h2>
+<span id="split-target-changecentre"></span><h2><strong>changecentre</strong><a class="headerlink" href="#changecentre" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>changes the phase centre</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this section</p>
-</dd>
-<dt><strong>ra</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">J2000 RA of new phase centre, format XXhXXmXX.XXs, default is empty string</p>
-</dd>
-<dt><strong>dec</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">J2000 Dec of new phase centre, format XXdXXmXX.XXs, default is empty string</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this section</p>
+</div></blockquote>
+<p><strong>ra</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>J2000 RA of new phase centre, format XXhXXmXX.XXs, default is empty string</p>
+</div></blockquote>
+<p><strong>dec</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>J2000 Dec of new phase centre, format XXdXXmXX.XXs, default is empty string</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="obsinfo">
-<h2><strong>obsinfo</strong><a class="headerlink" href="#obsinfo" title="Permalink to this headline">¶</a></h2>
+<span id="split-target-obsinfo"></span><h2><strong>obsinfo</strong><a class="headerlink" href="#obsinfo" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Get observation information</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this section</p>
-</dd>
-<dt><strong>listobs</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Run CASA listobs</p>
-</dd>
-<dt><strong>summary_json</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Run MSUtils function</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this section</p>
+</div></blockquote>
+<p><strong>listobs</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Run CASA listobs</p>
+</div></blockquote>
+<p><strong>summary_json</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Run MSUtils function</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="prepms">
-<h2><strong>prepms</strong><a class="headerlink" href="#prepms" title="Permalink to this headline">¶</a></h2>
+<span id="split-target-prepms"></span><h2><strong>prepms</strong><a class="headerlink" href="#prepms" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Run MSUtils prepms function</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Run this section</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Run this section</p>
 </div></blockquote>
 </div></blockquote>
 </div>

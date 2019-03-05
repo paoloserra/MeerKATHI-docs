@@ -16,6 +16,8 @@ Setup some basic observation information
 
 
 
+.. _observation_config_order:
+
 -------------------------------------
 **order**
 -------------------------------------
@@ -26,33 +28,53 @@ Setup some basic observation information
 
 
 
+.. _observation_config_obsinfo:
+
 -------------------------------------
 **obsinfo**
 -------------------------------------
 
   Get observation information
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this section
+    *bool*, *optional*
 
-    **listobs**
-      *bool*, *optional*
+    Execute this section
 
-      Run CASA listobs task to get observation information
+  **listobs**
 
-    **summary_json**
-      *bool*, *optional*
+    *bool*, *optional*
 
-      Run MSUtils summary function to get observation information as JSON file which can be used to automatically configure pipeline
+    Run CASA listobs task to get observation information
 
-    **vampirisms**
-      *bool*, *optional*
+  **summary_json**
 
-      Returns sun free time range
+    *bool*, *optional*
+
+    Run MSUtils summary function to get observation information as JSON file which can be used to automatically configure pipeline
+
+  **vampirisms**
+
+    *bool*, *optional*
+
+    Returns sun free time range
 
 
+
+.. _observation_config_Check_Cals:
+
+-------------------------------------
+**Check_Cals**
+-------------------------------------
+
+  *bool*, *optional*
+
+  Should the existence of the  calibrators be checked for or only the target. Setting this to false allows the pipeline to run on split datasets. Default True
+
+
+
+.. _observation_config_target:
 
 -------------------------------------
 **target**
@@ -64,6 +86,8 @@ Setup some basic observation information
 
 
 
+.. _observation_config_gcal:
+
 -------------------------------------
 **gcal**
 -------------------------------------
@@ -73,6 +97,8 @@ Setup some basic observation information
   Gain calibrator field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
 
 
+
+.. _observation_config_bpcal:
 
 -------------------------------------
 **bpcal**
@@ -84,6 +110,8 @@ Setup some basic observation information
 
 
 
+.. _observation_config_fcal:
+
 -------------------------------------
 **fcal**
 -------------------------------------
@@ -93,6 +121,8 @@ Setup some basic observation information
   Fluxscale calibrator field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
 
 
+
+.. _observation_config_reference_antenna:
 
 -------------------------------------
 **reference_antenna**
@@ -104,6 +134,8 @@ Setup some basic observation information
 
 
 
+.. _observation_config_nchans:
+
 -------------------------------------
 **nchans**
 -------------------------------------
@@ -113,6 +145,8 @@ Setup some basic observation information
   Number of channels. If set to 0 then will automatically set using metadata file (only for meerkat data)
 
 
+
+.. _observation_config_firstchanfreq:
 
 -------------------------------------
 **firstchanfreq**
@@ -124,6 +158,8 @@ Setup some basic observation information
 
 
 
+.. _observation_config_lastchanfreq:
+
 -------------------------------------
 **lastchanfreq**
 -------------------------------------
@@ -133,6 +169,8 @@ Setup some basic observation information
   Last frequency. If set to 0 then will automatically set using metadata file (only for meerkat data)
 
 
+
+.. _observation_config_chanwidth:
 
 -------------------------------------
 **chanwidth**
@@ -144,34 +182,41 @@ Setup some basic observation information
 
 
 
+.. _observation_config_primary_beam:
+
 -------------------------------------
 **primary_beam**
 -------------------------------------
 
   Generate primary beam model
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this section
+    *bool*, *optional*
 
-    **freq**
-      *str*, *optional*
+    Execute this section
 
-      A single freq, or the start, end freqs, and channel width in MHz
+  **freq**
 
-    **diameter**
-      *float*, *optional*
+    *str*, *optional*
 
-      Diameter of the required beam
+    A single freq, or the start, end freqs, and channel width in MHz
 
-    **pixels**
-      *int*, *optional*
+  **diameter**
 
-      Number of pixels on one side
+    *float*, *optional*
 
-    **coefficients_file**
-      *str*, *optional*
+    Diameter of the required beam
 
-      Coeficients file name
+  **pixels**
+
+    *int*, *optional*
+
+    Number of pixels on one side
+
+  **coefficients_file**
+
+    *str*, *optional*
+
+    Coeficients file name
 

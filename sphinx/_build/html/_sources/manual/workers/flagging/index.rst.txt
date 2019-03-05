@@ -16,6 +16,8 @@ Flagging of the data.
 
 
 
+.. _flagging_enable:
+
 -------------------------------------
 **enable**
 -------------------------------------
@@ -25,6 +27,8 @@ Flagging of the data.
   Execute flagging of the data.
 
 
+
+.. _flagging_order:
 
 -------------------------------------
 **order**
@@ -36,6 +40,8 @@ Flagging of the data.
 
 
 
+.. _flagging_label:
+
 -------------------------------------
 **label**
 -------------------------------------
@@ -45,6 +51,8 @@ Flagging of the data.
   The label is added to the input .MS file name to define the name of the .MS file that should be flagged, <input>-<label>.ms. Default is an empty string, i.e., the original .MS is flagged.
 
 
+
+.. _flagging_hires_label:
 
 -------------------------------------
 **hires_label**
@@ -56,6 +64,8 @@ Flagging of the data.
 
 
 
+.. _flagging_hires_flag:
+
 -------------------------------------
 **hires_flag**
 -------------------------------------
@@ -66,48 +76,59 @@ Flagging of the data.
 
 
 
+.. _flagging_autoflag_autocorr_powerspectra:
+
 -------------------------------------
 **autoflag_autocorr_powerspectra**
 -------------------------------------
 
   Flags antennas based on drifts in the scan average of the auto correlation spectra per field. This doesn't strictly require any calibration. It is also not field structure dependent, since it is just based on the DC of the field. Compares scan to median power of scans per field per channel. Also compares antenna to median of the array per scan per field per channel. This should catch any antenna with severe temperature problems.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Enables flagging of antennas based on drifts in the scan average of the auto correlation spectra per field.
+    *bool*, *optional*
 
-    **scan_to_scan_threshold**
-      *int*, *optional*
+    Enables flagging of antennas based on drifts in the scan average of the auto correlation spectra per field.
 
-      Threshold for flagging in sigma above the rest of the scans per field per channel.
+  **scan_to_scan_threshold**
 
-    **antenna_to_group_threshold**
-      *int*, *optional*
+    *int*, *optional*
 
-      Threshold for flagging in sigma above array median power spectra per scan per field per channel.
+    Threshold for flagging in sigma above the rest of the scans per field per channel.
 
-    **column**
-      *str*, *optional*
+  **antenna_to_group_threshold**
 
-      Data column to flag.
+    *int*, *optional*
 
-    **fields**
-      *str*, *optional*
+    Threshold for flagging in sigma above array median power spectra per scan per field per channel.
 
-      Fields to flag. Given as 'auto' or comma-seperated keys (keys in gcal, bpcal, target).
+  **column**
 
-    **calibrator_fields**
-      *str*, *optional*
+    *str*, *optional*
 
-      Calibrator fields. Given as 'auto' or comma-seperated keys (keys in gcal, bpcal).
+    Data column to flag.
 
-    **threads**
-      *int*, *optional*
+  **fields**
 
-      Number of threads to use.
+    *str*, *optional*
+
+    Fields to flag. Given as 'auto' or comma-seperated keys (keys in gcal, bpcal, target).
+
+  **calibrator_fields**
+
+    *str*, *optional*
+
+    Calibrator fields. Given as 'auto' or comma-seperated keys (keys in gcal, bpcal).
+
+  **threads**
+
+    *int*, *optional*
+
+    Number of threads to use.
 
 
+
+.. _flagging_flag_autocorr:
 
 -------------------------------------
 **flag_autocorr**
@@ -115,12 +136,15 @@ Flagging of the data.
 
   Flag autocorrelations. Through CASA flagdata task.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Enables flagging of autocorrelations.
+    *bool*, *optional*
+
+    Enables flagging of autocorrelations.
 
 
+
+.. _flagging_quack_flagging:
 
 -------------------------------------
 **quack_flagging**
@@ -128,22 +152,27 @@ Flagging of the data.
 
   Do quack flagging, i.e. flag the begining and/or end chunks of each scan. Again, through FLAGDATA.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Enable quack flagging.
+    *bool*, *optional*
 
-    **quackinterval**
-      *float*, *optional*
+    Enable quack flagging.
 
-      Time interval (in seconds) to flag.
+  **quackinterval**
 
-    **quackmode**
-      *str*, *optional*
+    *float*, *optional*
 
-      Quack flagging mode. Either 'beg', which flags scan begining, 'endb', which flags end of the scan, 'end', which flags everything but the first specified seconds of the scan and 'tail' which flags all but the last specified seconds of the scan.
+    Time interval (in seconds) to flag.
+
+  **quackmode**
+
+    *{"beg", "endb", "end", "tail"}*, *optional*
+
+    Quack flagging mode. Either 'beg', which flags scan begining, 'endb', which flags end of the scan, 'end', which flags everything but the first specified seconds of the scan and 'tail' which flags all but the last specified seconds of the scan.
 
 
+
+.. _flagging_flag_shadow:
 
 -------------------------------------
 **flag_shadow**
@@ -151,22 +180,27 @@ Flagging of the data.
 
   Flag shadowed antennas through the CASA task FLAGDATA.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Enables flagging of shadowed antennas.
+    *bool*, *optional*
 
-    **tolerance**
-      *float*, *optional*
+    Enables flagging of shadowed antennas.
 
-      Amounts of shadow allowed (in metres). Default is 0. A positive number allows antennas to overlap in projection. A negative number forces antennas apart in projection.
+  **tolerance**
 
-    **include_full_mk64**
-      *bool*, *optional*
+    *float*, *optional*
 
-      Consider all MeerKAT-64 antennas in the shadowing calculation even if only a subarray is used. Default is False.
+    Amounts of shadow allowed (in metres). Default is 0. A positive number allows antennas to overlap in projection. A negative number forces antennas apart in projection.
+
+  **include_full_mk64**
+
+    *bool*, *optional*
+
+    Consider all MeerKAT-64 antennas in the shadowing calculation even if only a subarray is used. Default is False.
 
 
+
+.. _flagging_flag_spw:
 
 -------------------------------------
 **flag_spw**
@@ -174,22 +208,27 @@ Flagging of the data.
 
   Flag spectral windows/channels. Of course, through FLAGDATA.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Enable flagging spectral windows/ channels.
+    *bool*, *optional*
 
-    **channels**
-      *str*, *optional*
+    Enable flagging spectral windows/ channels.
 
-      Channels to flag. Given as "spectral window index:start channel ~ end channel", e.g. "\*:856~880MHz". End channel not inclusive.
+  **channels**
 
-    **ensure_valid_selection**
-      *bool*, *optional*
+    *str*, *optional*
 
-      Check whether the channel selection returns any data. If it does not, FLAGDATA is not executed, preventing the pipeline from crashing. This check only works with the following spw formats (multiple, comma-separated selections allowed), "\*:firstchan~lastchan"; "firstspw~lastspw:firstchan~lastchan"; "spw:firstchan~lastchan"; "firstchan~lastchan". Channels are assumed to be in frequency (Hz, kHz, MHz, GHz allowed; if no units are given it assumes Hz).
+    Channels to flag. Given as "spectral window index:start channel ~ end channel", e.g. "\*:856~880MHz". End channel not inclusive.
+
+  **ensure_valid_selection**
+
+    *bool*, *optional*
+
+    Check whether the channel selection returns any data. If it does not, FLAGDATA is not executed, preventing the pipeline from crashing. This check only works with the following spw formats (multiple, comma-separated selections allowed), "\*:firstchan~lastchan"; "firstspw~lastspw:firstchan~lastchan"; "spw:firstchan~lastchan"; "firstchan~lastchan". Channels are assumed to be in frequency (Hz, kHz, MHz, GHz allowed; if no units are given it assumes Hz).
 
 
+
+.. _flagging_flag_time:
 
 -------------------------------------
 **flag_time**
@@ -197,17 +236,21 @@ Flagging of the data.
 
   Flag timerange in the data using CASA FLAGDATA task.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Enabla flagging timeranges.
+    *bool*, *optional*
 
-    **timerange**
-      *str*, *optional*
+    Enabla flagging timeranges.
 
-      Timerange to flag. Given in format 'YYYY/MM/DD/HH:MM:SS-YYYY/MM/DD/HH:MM:SS'.
+  **timerange**
+
+    *str*, *optional*
+
+    Timerange to flag. Given in format 'YYYY/MM/DD/HH:MM:SS-YYYY/MM/DD/HH:MM:SS'.
 
 
+
+.. _flagging_flag_antennas:
 
 -------------------------------------
 **flag_antennas**
@@ -215,22 +258,27 @@ Flagging of the data.
 
   Flag bad antennas. Or just the ones you have sworn a vendetta against.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Enables flagging of bad antennas.
+    *bool*, *optional*
 
-    **antennas**
-      *str*, *optional*
+    Enables flagging of bad antennas.
 
-      Antennas to flag. Follows the CASA Flagdata syntax.
+  **antennas**
 
-    **timerange**
-      *str*, *optional*
+    *str*, *optional*
 
-      Timerange to flag. Given in format 'YYYY/MM/DD/HH:MM:SS-YYYY/MM/DD/HH:MM:SS'.
+    Antennas to flag. Follows the CASA Flagdata syntax.
+
+  **timerange**
+
+    *str*, *optional*
+
+    Timerange to flag. Given in format 'YYYY/MM/DD/HH:MM:SS-YYYY/MM/DD/HH:MM:SS'.
 
 
+
+.. _flagging_flag_scan:
 
 -------------------------------------
 **flag_scan**
@@ -238,17 +286,21 @@ Flagging of the data.
 
   Flag bad scans. Uses CASA Flagdata task.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Enables flagging of bad scans.
+    *bool*, *optional*
 
-    **scans**
-      *str*, *optional*
+    Enables flagging of bad scans.
 
-      Scans to flag. CASA flagdata syntax.
+  **scans**
+
+    *str*, *optional*
+
+    Scans to flag. CASA flagdata syntax.
 
 
+
+.. _flagging_static_mask:
 
 -------------------------------------
 **static_mask**
@@ -256,22 +308,27 @@ Flagging of the data.
 
   Apply static mask to flag out known RFI, Meerkat specific.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Enables the application of static mask on the data.
+    *bool*, *optional*
 
-    **mask**
-      *str*, *optional*
+    Enables the application of static mask on the data.
 
-      The mask to apply.
+  **mask**
 
-    **uvrange**
-      *str*, *optional*
+    *str*, *optional*
 
-      UV range to select (CASA style range, e.g. lower~upper) for flagging. Leave blank for entire array.
+    The mask to apply.
+
+  **uvrange**
+
+    *str*, *optional*
+
+    UV range to select (CASA style range, e.g. lower~upper) for flagging. Leave blank for entire array.
 
 
+
+.. _flagging_autoflag_rfi:
 
 -------------------------------------
 **autoflag_rfi**
@@ -279,32 +336,39 @@ Flagging of the data.
 
   Flag RFI using AOFlagger software.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Enable RFI flagging with AOFlagger.
+    *bool*, *optional*
 
-    **strategy**
-      *str*, *optional*
+    Enable RFI flagging with AOFlagger.
 
-      The AOFlagger strategy file to use.
+  **strategy**
 
-    **column**
-      *str*, *optional*
+    *str*, *optional*
 
-      Specify column to flag
+    The AOFlagger strategy file to use.
 
-    **fields**
-      *str*, *optional*
+  **column**
 
-      comma separated list of (zero-indexed) field ids to process
+    *str*, *optional*
 
-    **bands**
-      *str*, *optional*
+    Specify column to flag
 
-      comma separated list of (zero-indexed) band ids to process
+  **fields**
+
+    *str*, *optional*
+
+    comma separated list of (zero-indexed) field ids to process
+
+  **bands**
+
+    *str*, *optional*
+
+    comma separated list of (zero-indexed) band ids to process
 
 
+
+.. _flagging_flagging_summary:
 
 -------------------------------------
 **flagging_summary**
@@ -312,8 +376,9 @@ Flagging of the data.
 
   Write flagging summary at the end of the pre-calibration flagging. Uses CASA FLAGDATA in "summary" mode.
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Enables the writing of flagging summary.
+    *bool*, *optional*
+
+    Enables the writing of flagging summary.
 

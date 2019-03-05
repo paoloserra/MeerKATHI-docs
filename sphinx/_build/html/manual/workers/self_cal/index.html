@@ -86,8 +86,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data products</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reduction/index.html">Data reduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data Products</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Workers parameters</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../general/index.html">general</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../get_data/index.html">get_data</a></li>
@@ -106,12 +106,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#primary-beam"><strong>primary_beam</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#calibrate-with"><strong>calibrate_with</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#spwid"><strong>spwid</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ncpu"><strong>ncpu</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-npix"><strong>img_npix</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-padding"><strong>img_padding</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-mgain"><strong>img_mgain</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-cell"><strong>img_cell</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-weight"><strong>img_weight</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-robust"><strong>img_robust</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#img-uvtaper"><strong>img_uvtaper</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-niter"><strong>img_niter</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-cleanborder"><strong>img_cleanborder</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-facets"><strong>img_facets</strong></a></li>
@@ -119,9 +121,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#img-joinchannels"><strong>img_joinchannels</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-fit-spectral-pol"><strong>img_fit_spectral_pol</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-pol"><strong>img_pol</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#bjones"><strong>bjones</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ddjones"><strong>ddjones</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cal-ddsols"><strong>cal_DDsols</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cal-gain-amplitude-clip-low"><strong>cal_gain_amplitude_clip_low</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cal-gain-amplitude-clip-high"><strong>cal_gain_amplitude_clip_high</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cal-niter"><strong>cal_niter</strong></a></li>
@@ -198,505 +197,573 @@
 </div>
 <p>Perform Self calibration on the data</p>
 <div class="section" id="enable">
-<h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Execute this segment</p>
 </div></blockquote>
 </div>
 <div class="section" id="label">
-<h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
 <p>Label to tag the output files</p>
 </div></blockquote>
 </div>
 <div class="section" id="order">
-<h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Workers are executed in ascedning order based on this value</p>
 </div></blockquote>
 </div>
 <div class="section" id="undo-subtractmodelcol">
-<h2><strong>undo_subtractmodelcol</strong><a class="headerlink" href="#undo-subtractmodelcol" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-undo-subtractmodelcol"></span><h2><strong>undo_subtractmodelcol</strong><a class="headerlink" href="#undo-subtractmodelcol" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>replace the corrected column with the sum of corrected and model columns to undo continuum subtraction that may have been done by the image HI worker. Default is false</p>
 </div></blockquote>
 </div>
 <div class="section" id="primary-beam">
-<h2><strong>primary_beam</strong><a class="headerlink" href="#primary-beam" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-primary-beam"></span><h2><strong>primary_beam</strong><a class="headerlink" href="#primary-beam" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Use primary beam</p>
 </div></blockquote>
 </div>
 <div class="section" id="calibrate-with">
-<h2><strong>calibrate_with</strong><a class="headerlink" href="#calibrate-with" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-calibrate-with"></span><h2><strong>calibrate_with</strong><a class="headerlink" href="#calibrate-with" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>{“meqtrees”, “cubical”}</em>, <em>optional</em></p>
 <p>Tool to use for calibration</p>
 </div></blockquote>
 </div>
 <div class="section" id="spwid">
-<h2><strong>spwid</strong><a class="headerlink" href="#spwid" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-spwid"></span><h2><strong>spwid</strong><a class="headerlink" href="#spwid" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Provide spectral window id</p>
 </div></blockquote>
 </div>
+<div class="section" id="ncpu">
+<span id="self-cal-ncpu"></span><h2><strong>ncpu</strong><a class="headerlink" href="#ncpu" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>number of cpu’s to use</p>
+</div></blockquote>
+</div>
 <div class="section" id="img-npix">
-<h2><strong>img_npix</strong><a class="headerlink" href="#img-npix" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-npix"></span><h2><strong>img_npix</strong><a class="headerlink" href="#img-npix" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Number of pixels in output image</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-padding">
-<h2><strong>img_padding</strong><a class="headerlink" href="#img-padding" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-padding"></span><h2><strong>img_padding</strong><a class="headerlink" href="#img-padding" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
 <p>Padding</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-mgain">
-<h2><strong>img_mgain</strong><a class="headerlink" href="#img-mgain" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-mgain"></span><h2><strong>img_mgain</strong><a class="headerlink" href="#img-mgain" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
 <p>Image CLEANing gain</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-cell">
-<h2><strong>img_cell</strong><a class="headerlink" href="#img-cell" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-cell"></span><h2><strong>img_cell</strong><a class="headerlink" href="#img-cell" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
 <p>Image pixel size (arcsec)</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-weight">
-<h2><strong>img_weight</strong><a class="headerlink" href="#img-weight" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-weight"></span><h2><strong>img_weight</strong><a class="headerlink" href="#img-weight" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>{“briggs”, “uniform”, “natural”}</em>, <em>optional</em></p>
 <p>Image weighting type</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-robust">
-<h2><strong>img_robust</strong><a class="headerlink" href="#img-robust" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-robust"></span><h2><strong>img_robust</strong><a class="headerlink" href="#img-robust" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
 <p>Briggs robust value</p>
 </div></blockquote>
 </div>
+<div class="section" id="img-uvtaper">
+<span id="self-cal-img-uvtaper"></span><h2><strong>img_uvtaper</strong><a class="headerlink" href="#img-uvtaper" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Taper for imaging</p>
+</div></blockquote>
+</div>
 <div class="section" id="img-niter">
-<h2><strong>img_niter</strong><a class="headerlink" href="#img-niter" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-niter"></span><h2><strong>img_niter</strong><a class="headerlink" href="#img-niter" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Number of cleaning iterations</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-cleanborder">
-<h2><strong>img_cleanborder</strong><a class="headerlink" href="#img-cleanborder" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-cleanborder"></span><h2><strong>img_cleanborder</strong><a class="headerlink" href="#img-cleanborder" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
 <p>Clean border</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-facets">
-<h2><strong>img_facets</strong><a class="headerlink" href="#img-facets" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-facets"></span><h2><strong>img_facets</strong><a class="headerlink" href="#img-facets" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Number facet to image</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-nchans">
-<h2><strong>img_nchans</strong><a class="headerlink" href="#img-nchans" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-nchans"></span><h2><strong>img_nchans</strong><a class="headerlink" href="#img-nchans" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Number of channesls in output image</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-joinchannels">
-<h2><strong>img_joinchannels</strong><a class="headerlink" href="#img-joinchannels" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-joinchannels"></span><h2><strong>img_joinchannels</strong><a class="headerlink" href="#img-joinchannels" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Join channels to create MFS image</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-fit-spectral-pol">
-<h2><strong>img_fit_spectral_pol</strong><a class="headerlink" href="#img-fit-spectral-pol" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-fit-spectral-pol"></span><h2><strong>img_fit_spectral_pol</strong><a class="headerlink" href="#img-fit-spectral-pol" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Fit a polynomial over frequency to each clean component</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-pol">
-<h2><strong>img_pol</strong><a class="headerlink" href="#img-pol" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-img-pol"></span><h2><strong>img_pol</strong><a class="headerlink" href="#img-pol" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
 <p>Stokes image to create</p>
 </div></blockquote>
 </div>
-<div class="section" id="bjones">
-<h2><strong>bjones</strong><a class="headerlink" href="#bjones" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
-<p>Enable Bjones.</p>
-</div></blockquote>
-</div>
-<div class="section" id="ddjones">
-<h2><strong>ddjones</strong><a class="headerlink" href="#ddjones" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
-<p>Enable direction dependent calibration, currently experimental.</p>
-</div></blockquote>
-</div>
-<div class="section" id="cal-ddsols">
-<h2><strong>cal_DDsols</strong><a class="headerlink" href="#cal-ddsols" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>optional</em></p>
-<p>Calibration solution intervals</p>
-</div></blockquote>
-</div>
 <div class="section" id="cal-gain-amplitude-clip-low">
-<h2><strong>cal_gain_amplitude_clip_low</strong><a class="headerlink" href="#cal-gain-amplitude-clip-low" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-cal-gain-amplitude-clip-low"></span><h2><strong>cal_gain_amplitude_clip_low</strong><a class="headerlink" href="#cal-gain-amplitude-clip-low" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
 <p>Lower gain amplitude clipping</p>
 </div></blockquote>
 </div>
 <div class="section" id="cal-gain-amplitude-clip-high">
-<h2><strong>cal_gain_amplitude_clip_high</strong><a class="headerlink" href="#cal-gain-amplitude-clip-high" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-cal-gain-amplitude-clip-high"></span><h2><strong>cal_gain_amplitude_clip_high</strong><a class="headerlink" href="#cal-gain-amplitude-clip-high" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
 <p>Higher gain amplitude clipping</p>
 </div></blockquote>
 </div>
 <div class="section" id="cal-niter">
-<h2><strong>cal_niter</strong><a class="headerlink" href="#cal-niter" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-cal-niter"></span><h2><strong>cal_niter</strong><a class="headerlink" href="#cal-niter" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Number of self-calibration iterations to perform</p>
 </div></blockquote>
 </div>
 <div class="section" id="start-at-iter">
-<h2><strong>start_at_iter</strong><a class="headerlink" href="#start-at-iter" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-start-at-iter"></span><h2><strong>start_at_iter</strong><a class="headerlink" href="#start-at-iter" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Start self-cal iteration loop at this start value</p>
 </div></blockquote>
 </div>
 <div class="section" id="aimfast">
-<h2><strong>aimfast</strong><a class="headerlink" href="#aimfast" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-aimfast"></span><h2><strong>aimfast</strong><a class="headerlink" href="#aimfast" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Quality assessment parameter</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this segment</p>
-</dd>
-<dt><strong>tolerance</strong></dt>
-<dd><p class="first"><em>float</em>, <em>optional</em></p>
-<p class="last">Relative change in weighted mean of several indicators from aimfast.</p>
-</dd>
-<dt><strong>convergence_criteria</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">The residual statistic to check convergence against. Every criterium listed will be combined into a weighted mean. Options [“DR”,”SKEW”,”KURT”,”STDDev”,”MEAN”]. Note that when calibrate model_mode = ‘vis_only’ DR is not an option.</p>
-</dd>
-<dt><strong>area_factor</strong></dt>
-<dd><p class="first"><em>float</em>, <em>optional</em></p>
-<p class="last">Peak flux source area multiplying factor i.e tot_area = psf-size*af</p>
-</dd>
-<dt><strong>normality_model</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">normality test model to use. Note that normaltest is the D’Agostino</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this segment</p>
+</div></blockquote>
+<p><strong>tolerance</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>Relative change in weighted mean of several indicators from aimfast.</p>
+</div></blockquote>
+<p><strong>convergence_criteria</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<p>The residual statistic to check convergence against. Every criterium listed will be combined into a weighted mean. Options [“DR”,”SKEW”,”KURT”,”STDDev”,”MEAN”]. Note that when calibrate model_mode = ‘vis_only’ DR is not an option.</p>
+</div></blockquote>
+<p><strong>area_factor</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>Peak flux source area multiplying factor i.e tot_area = psf-size*af</p>
+</div></blockquote>
+<p><strong>normality_model</strong></p>
+<blockquote>
+<div><p><em>{“normaltest”, “shapiro”}</em>, <em>optional</em></p>
+<p>normality test model to use. Note that normaltest is the D’Agostino</p>
+</div></blockquote>
+<p><strong>plot</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Generate html plots for comparing catalogs and residuals</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="image">
-<h2><strong>image</strong><a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-image"></span><h2><strong>image</strong><a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Imaging parameter</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this segment</p>
-</dd>
-<dt><strong>auto_mask</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">Auto masking threshold</p>
-</dd>
-<dt><strong>auto_threshold</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">Auto clean threshold</p>
-</dd>
-<dt><strong>column</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">Column to image</p>
-</dd>
-<dt><strong>mask_from_sky</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">switch on cleaning within mask from fits file</p>
-</dd>
-<dt><strong>fits_mask</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">filename of fits mask (in output/masking folder)</p>
-</dd>
-<dt><strong>multi_scale</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">switch on multiscale cleaning</p>
-</dd>
-<dt><strong>multi_scale_scales</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">scales of multiscale [0,10,20,etc, etc]</p>
-</dd>
-<dt><strong>no_update_model</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">do not update column MODEL_DATA after wsclean</p>
-</dd>
-<dt><strong>minuvw_m</strong></dt>
-<dd><p class="first"><em>int</em>, <em>optional</em></p>
-<p class="last">exclude short baselines [m]</p>
-</dd>
-<dt><strong>local_rms</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">switch on local rms measurement for cleaning</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this segment</p>
+</div></blockquote>
+<p><strong>auto_mask</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<p>Auto masking threshold</p>
+</div></blockquote>
+<p><strong>auto_threshold</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<p>Auto clean threshold</p>
+</div></blockquote>
+<p><strong>column</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<p>Column to image</p>
+</div></blockquote>
+<p><strong>mask_from_sky</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>switch on cleaning within mask from fits file</p>
+</div></blockquote>
+<p><strong>fits_mask</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<p>filename of fits mask (in output/masking folder)</p>
+</div></blockquote>
+<p><strong>multi_scale</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>switch on multiscale cleaning</p>
+</div></blockquote>
+<p><strong>multi_scale_scales</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<p>scales of multiscale [0,10,20,etc, etc]</p>
+</div></blockquote>
+<p><strong>no_update_model</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>do not update column MODEL_DATA after wsclean</p>
+</div></blockquote>
+<p><strong>minuvw_m</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>exclude short baselines [m]</p>
+</div></blockquote>
+<p><strong>local_rms</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>switch on local rms measurement for cleaning</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="sofia-mask">
-<h2><strong>sofia_mask</strong><a class="headerlink" href="#sofia-mask" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-sofia-mask"></span><h2><strong>sofia_mask</strong><a class="headerlink" href="#sofia-mask" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Run SoFiA source finder to produce a source mask and a Moment-0 map</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute segment sofia (yes/no)? Default is yes.</p>
-</dd>
-<dt><strong>threshold</strong></dt>
-<dd><p class="first"><em>float</em>, <em>optional</em></p>
-<p class="last">SoFiA source finding threshold. Default is 4.0.</p>
-</dd>
-<dt><strong>flag</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Use flag regions (yes/no)? Default is no.</p>
-</dd>
-<dt><strong>flagregion</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], …]. Default is [].</p>
-</dd>
-<dt><strong>inputmask</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">input mask over which add Sofia’s</p>
-</dd>
-<dt><strong>kernels</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">Kernels for mask</p>
-</dd>
-<dt><strong>fornax_special</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Activates masking of Fornax A using Sofia</p>
-</dd>
-<dt><strong>fornax_thresh</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">SoFiA source finding threshold. Default is 4.0.</p>
-</dd>
-<dt><strong>use_sofia</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">use sofia for mask of Fornax A instead of Fomalont mask</p>
-</dd>
-<dt><strong>scale_noise_window</strong></dt>
-<dd><p class="first"><em>float</em>, <em>optional</em></p>
-<p class="last">window size where to measure local rms in pixels</p>
-</dd>
-<dt><strong>positivity</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">merges only positive pixesl of sources in mask</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute segment sofia (yes/no)? Default is yes.</p>
+</div></blockquote>
+<p><strong>threshold</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>SoFiA source finding threshold. Default is 4.0.</p>
+</div></blockquote>
+<p><strong>flag</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Use flag regions (yes/no)? Default is no.</p>
+</div></blockquote>
+<p><strong>flagregion</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<p>Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], …]. Default is [].</p>
+</div></blockquote>
+<p><strong>inputmask</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>input mask over which add Sofia’s</p>
+</div></blockquote>
+<p><strong>kernels</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<p>Kernels for mask</p>
+</div></blockquote>
+<p><strong>fornax_special</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Activates masking of Fornax A using Sofia</p>
+</div></blockquote>
+<p><strong>fornax_thresh</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<p>SoFiA source finding threshold. Default is 4.0.</p>
+</div></blockquote>
+<p><strong>use_sofia</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>use sofia for mask of Fornax A instead of Fomalont mask</p>
+</div></blockquote>
+<p><strong>scale_noise_window</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>window size where to measure local rms in pixels</p>
+</div></blockquote>
+<p><strong>positivity</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>merges only positive pixesl of sources in mask</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="extract-sources">
-<h2><strong>extract_sources</strong><a class="headerlink" href="#extract-sources" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-extract-sources"></span><h2><strong>extract_sources</strong><a class="headerlink" href="#extract-sources" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Source finding parameters</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this segment</p>
-</dd>
-<dt><strong>spi</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Extract source spectral index</p>
-</dd>
-<dt><strong>thresh_pix</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">Source finder pixel threshold</p>
-</dd>
-<dt><strong>thresh_isl</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">Source finder island threshold</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this segment</p>
+</div></blockquote>
+<p><strong>sourcefinder</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>choose your favorite sourcefinder pybdsm, (pybdsf), sofia</p>
+</div></blockquote>
+<p><strong>local_rms</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this segment</p>
+</div></blockquote>
+<p><strong>spi</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Extract source spectral index</p>
+</div></blockquote>
+<p><strong>thresh_pix</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<p>Source finder pixel threshold</p>
+</div></blockquote>
+<p><strong>thresh_isl</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<p>Source finder island threshold</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="calibrate">
-<h2><strong>calibrate</strong><a class="headerlink" href="#calibrate" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-calibrate"></span><h2><strong>calibrate</strong><a class="headerlink" href="#calibrate" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Calibration parameters</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this segment</p>
-</dd>
-<dt><strong>model</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">Model number to use [or combination e.g. ‘1+2’ to use first and second models]</p>
-</dd>
-<dt><strong>output_data</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">Data to output after calibration</p>
-</dd>
-<dt><strong>gain_matrix_type</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">Gain matrix type</p>
-</dd>
-<dt><strong>model_mode</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">pybdsm_vis, pybdsm_only,  vis_only are the possible options</p>
-</dd>
-<dt><strong>add_vis_model</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Add/Use clean components from latest imaging step to/as sky model for calibation</p>
-</dd>
-<dt><strong>Gsols_time</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
-</dd>
-<dt><strong>Gsols_channel</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this segment</p>
+</div></blockquote>
+<p><strong>model</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<p>Model number to use [or combination e.g. ‘1+2’ to use first and second models]</p>
+</div></blockquote>
+<p><strong>output_data</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<p>Data to output after calibration</p>
+</div></blockquote>
+<p><strong>gain_matrix_type</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<p>Gain matrix type</p>
+</div></blockquote>
+<p><strong>model_mode</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>pybdsm_vis, pybdsm_only,  vis_only are the possible options</p>
+</div></blockquote>
+<p><strong>shared_memory</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Set the amount of shared memory for cubical. Default ‘100Gb’</p>
+</div></blockquote>
+<p><strong>two_step</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Trigger a two step calibration process where the phase only calibration is applied before continuing with amplitude + phase cal. When cubical is used this happens simultaneous and gain parameters can be used with DDsols parameters. Set DDsol_time to -1 one to avoid amplitude calibration in an itereation. The parameter DDjones should be set to false.</p>
+</div></blockquote>
+<p><strong>add_vis_model</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Add/Use clean components from latest imaging step to/as sky model for calibation</p>
+</div></blockquote>
+<p><strong>Gsols_time</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<p>Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
+</div></blockquote>
+<p><strong>Gsols_channel</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<p>Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
+</div></blockquote>
+<p><strong>Bjones</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Enable Bjones</p>
+</div></blockquote>
+<p><strong>Bsols_time</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<p>Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
+</div></blockquote>
+<p><strong>Bsols_channel</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<p>Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
+</div></blockquote>
+<p><strong>DDjones</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Enable direction dependent calibration, currently experimental.</p>
+</div></blockquote>
+<p><strong>DDsols_time</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<p>Calibration solution intervals</p>
+</div></blockquote>
+<p><strong>DDsols_channel</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<p>Calibration solution intervals</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="restore-model">
-<h2><strong>restore_model</strong><a class="headerlink" href="#restore-model" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-restore-model"></span><h2><strong>restore_model</strong><a class="headerlink" href="#restore-model" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Restore modelled to final calibrated residual image</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this segment</p>
-</dd>
-<dt><strong>model</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Model number to use [or combination e.g. ‘1+2’ to use first and second models]</p>
-</dd>
-<dt><strong>clean_model</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Clean model number to use [or combination e.g. ‘1+2’ to use first and second models]</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this segment</p>
+</div></blockquote>
+<p><strong>model</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Model number to use [or combination e.g. ‘1+2’ to use first and second models]</p>
+</div></blockquote>
+<p><strong>clean_model</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Clean model number to use [or combination e.g. ‘1+2’ to use first and second models]</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="flagging-summary">
-<h2><strong>flagging_summary</strong><a class="headerlink" href="#flagging-summary" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-flagging-summary"></span><h2><strong>flagging_summary</strong><a class="headerlink" href="#flagging-summary" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Output the flagging summary</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this segment</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this segment</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="gain-interpolation">
-<h2><strong>gain_interpolation</strong><a class="headerlink" href="#gain-interpolation" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-gain-interpolation"></span><h2><strong>gain_interpolation</strong><a class="headerlink" href="#gain-interpolation" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Interpolate gains over the high frequency resolution data</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this segment</p>
-</dd>
-<dt><strong>hires_label</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">label for high resolution data products in selfcal</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this segment</p>
+</div></blockquote>
+<p><strong>hires_label</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>label for high resolution data products in selfcal</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="highfreqres-contim">
-<h2><strong>highfreqres_contim</strong><a class="headerlink" href="#highfreqres-contim" title="Permalink to this headline">¶</a></h2>
+<span id="self-cal-highfreqres-contim"></span><h2><strong>highfreqres_contim</strong><a class="headerlink" href="#highfreqres-contim" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Make final continuum image and model at higher freq res, ideally using a clean mask based on the last round of continuum imging</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this segment</p>
-</dd>
-<dt><strong>chans</strong></dt>
-<dd><p class="first"><em>int</em>, <em>optional</em></p>
-<p class="last">output continuum channels</p>
-</dd>
-<dt><strong>deconv_chans</strong></dt>
-<dd><p class="first"><em>int</em>, <em>optional</em></p>
-<p class="last">nr of channels used for deconvolution grouping together output continuum channels</p>
-</dd>
-<dt><strong>fit_spectral_pol</strong></dt>
-<dd><p class="first"><em>int</em>, <em>optional</em></p>
-<p class="last">How many terms for the spectral polynomial fit of each clean component</p>
-</dd>
-<dt><strong>fits_mask</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">filename of fits mask (including folder if not input), default None</p>
-</dd>
-<dt><strong>auto_mask</strong></dt>
-<dd><p class="first"><em>float</em>, <em>optional</em></p>
-<p class="last">Auto masking threshold, default None</p>
-</dd>
-<dt><strong>auto_threshold</strong></dt>
-<dd><p class="first"><em>float</em>, <em>optional</em></p>
-<p class="last">Auto clean threshold, default 10</p>
-</dd>
-<dt><strong>column</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Column to image</p>
-</dd>
-<dt><strong>multi_scale</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">switch on multiscale cleaning</p>
-</dd>
-<dt><strong>multi_scale_scales</strong></dt>
-<dd><p class="first"><em>optional</em></p>
-<p class="last">scales of multiscale [0,10,20,etc, etc]</p>
-</dd>
-<dt><strong>local_rms</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">switch on local rms measurement for cleaning</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this segment</p>
+</div></blockquote>
+<p><strong>chans</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>output continuum channels</p>
+</div></blockquote>
+<p><strong>deconv_chans</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>nr of channels used for deconvolution grouping together output continuum channels</p>
+</div></blockquote>
+<p><strong>fit_spectral_pol</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>How many terms for the spectral polynomial fit of each clean component</p>
+</div></blockquote>
+<p><strong>fits_mask</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>filename of fits mask (including folder if not input), default None</p>
+</div></blockquote>
+<p><strong>auto_mask</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>Auto masking threshold, default None</p>
+</div></blockquote>
+<p><strong>auto_threshold</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>Auto clean threshold, default 10</p>
+</div></blockquote>
+<p><strong>column</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Column to image</p>
+</div></blockquote>
+<p><strong>multi_scale</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>switch on multiscale cleaning</p>
+</div></blockquote>
+<p><strong>multi_scale_scales</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<p>scales of multiscale [0,10,20,etc, etc]</p>
+</div></blockquote>
+<p><strong>local_rms</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>switch on local rms measurement for cleaning</p>
 </div></blockquote>
 </div></blockquote>
 </div>

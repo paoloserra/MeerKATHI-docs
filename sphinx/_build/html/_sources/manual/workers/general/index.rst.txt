@@ -16,6 +16,8 @@ General pipeline information, data IDs, prefixes for output
 
 
 
+.. _general_data_path:
+
 -------------------------------------
 **data_path**
 -------------------------------------
@@ -25,6 +27,8 @@ General pipeline information, data IDs, prefixes for output
   where MeerKATHI (over-) writes HDF5 files and JSON info files downloaded by get_data below
 
 
+
+.. _general_msdir:
 
 -------------------------------------
 **msdir**
@@ -36,6 +40,8 @@ General pipeline information, data IDs, prefixes for output
 
 
 
+.. _general_input:
+
 -------------------------------------
 **input**
 -------------------------------------
@@ -45,6 +51,8 @@ General pipeline information, data IDs, prefixes for output
   where MeerKATHI expects to find various input files (e.g., RFI flagging strategy files).
 
 
+
+.. _general_output:
 
 -------------------------------------
 **output**
@@ -56,6 +64,8 @@ General pipeline information, data IDs, prefixes for output
 
 
 
+.. _general_prefix:
+
 -------------------------------------
 **prefix**
 -------------------------------------
@@ -65,6 +75,8 @@ General pipeline information, data IDs, prefixes for output
   Prefix for MeerKATHI output products
 
 
+
+.. _general_init_pipeline:
 
 -------------------------------------
 **init_pipeline**

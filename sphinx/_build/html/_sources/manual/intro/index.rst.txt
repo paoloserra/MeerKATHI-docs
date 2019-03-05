@@ -17,7 +17,7 @@ MeerKATHI is a pipeline to reduce radio interferometry continuum and spectral li
 full polarisation. It works on data from any radio interferometer as long as they are in
 “measurement set” format.
 
-In the simplest terms, MeerKATHI is a collection of Stimela scripts.
+In the simplest terms, MeerKATHI is a collection of Python/Stimela scripts.
 `Stimela <https://github.com/SpheMakh/Stimela>`_ is a platform-independent radio
 interferometry scripting framework based on Python and Docker/Singularity.
 Stimela allows users to

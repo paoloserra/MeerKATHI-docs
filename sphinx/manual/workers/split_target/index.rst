@@ -16,6 +16,8 @@ Split and average target data
 
 
 
+.. _split_target_enable:
+
 -------------------------------------
 **enable**
 -------------------------------------
@@ -25,6 +27,8 @@ Split and average target data
   Execute this worker
 
 
+
+.. _split_target_order:
 
 -------------------------------------
 **order**
@@ -36,6 +40,8 @@ Split and average target data
 
 
 
+.. _split_target_label:
+
 -------------------------------------
 **label**
 -------------------------------------
@@ -46,43 +52,53 @@ Split and average target data
 
 
 
+.. _split_target_split_target:
+
 -------------------------------------
 **split_target**
 -------------------------------------
 
   Split data
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this section
+    *bool*, *optional*
 
-    **time_average**
-      *str*, *optional*
+    Execute this section
 
-      Time averaging
+  **time_average**
 
-    **freq_average**
-      *int*, *optional*
+    *str*, *optional*
 
-      Frequency averaging
+    Time averaging
 
-    **column**
-      *str*, *optional*
+  **freq_average**
 
-      Column to split, default is 'corrected'
+    *int*, *optional*
 
-    **correlation**
-      *str*, *optional*
+    Frequency averaging
 
-      Select correlations, default is '' = all
+  **column**
 
-    **spw**
-      *str*, *optional*
+    *str*, *optional*
 
-      Select spectral windows and channels, default is '' = all
+    Column to split, default is 'corrected'
+
+  **correlation**
+
+    *str*, *optional*
+
+    Select correlations, default is '' = all
+
+  **spw**
+
+    *str*, *optional*
+
+    Select spectral windows and channels, default is '' = all
 
 
+
+.. _split_target_hires_split:
 
 -------------------------------------
 **hires_split**
@@ -90,27 +106,33 @@ Split and average target data
 
   Splits data while keeping the frequency resolution
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this section
+    *bool*, *optional*
 
-    **hires_label**
-      *str*, *optional*
+    Execute this section
 
-      Label for high resolution data set
+  **hires_label**
 
-    **hires_spwid**
-      *int*, *optional*
+    *str*, *optional*
 
-      SPW ID for full resolution data.
+    Label for high resolution data set
 
-    **hires_spw**
-      *str*, *optional*
+  **hires_spwid**
 
-      SPW for full resolution data.
+    *int*, *optional*
+
+    SPW ID for full resolution data.
+
+  **hires_spw**
+
+    *str*, *optional*
+
+    SPW for full resolution data.
 
 
+
+.. _split_target_changecentre:
 
 -------------------------------------
 **changecentre**
@@ -118,22 +140,27 @@ Split and average target data
 
   changes the phase centre
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this section
+    *bool*, *optional*
 
-    **ra**
-      *str*, *optional*
+    Execute this section
 
-      J2000 RA of new phase centre, format XXhXXmXX.XXs, default is empty string
+  **ra**
 
-    **dec**
-      *str*, *optional*
+    *str*, *optional*
 
-      J2000 Dec of new phase centre, format XXdXXmXX.XXs, default is empty string
+    J2000 RA of new phase centre, format XXhXXmXX.XXs, default is empty string
+
+  **dec**
+
+    *str*, *optional*
+
+    J2000 Dec of new phase centre, format XXdXXmXX.XXs, default is empty string
 
 
+
+.. _split_target_obsinfo:
 
 -------------------------------------
 **obsinfo**
@@ -141,22 +168,27 @@ Split and average target data
 
   Get observation information
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Execute this section
+    *bool*, *optional*
 
-    **listobs**
-      *bool*, *optional*
+    Execute this section
 
-      Run CASA listobs
+  **listobs**
 
-    **summary_json**
-      *bool*, *optional*
+    *bool*, *optional*
 
-      Run MSUtils function
+    Run CASA listobs
+
+  **summary_json**
+
+    *bool*, *optional*
+
+    Run MSUtils function
 
 
+
+.. _split_target_prepms:
 
 -------------------------------------
 **prepms**
@@ -164,8 +196,9 @@ Split and average target data
 
   Run MSUtils prepms function
 
-    **enable**
-      *bool*, *optional*
+  **enable**
 
-      Run this section
+    *bool*, *optional*
+
+    Run this section
 

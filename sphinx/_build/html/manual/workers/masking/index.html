@@ -86,8 +86,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data products</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reduction/index.html">Data reduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data Products</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Workers parameters</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../general/index.html">general</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../get_data/index.html">get_data</a></li>
@@ -172,156 +172,154 @@
 <span id="id1"></span><h1>masking<a class="headerlink" href="#masking" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>Create mask from catalog / merge with mask of extended source</p>
+<p>Create mask from catalog and/or merge with mask of extended source</p>
 <div class="section" id="enable">
-<h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
+<span id="masking-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Execute this segment</p>
 </div></blockquote>
 </div>
 <div class="section" id="order">
-<h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
+<span id="masking-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Workers are executed in ascending order based on this value</p>
 </div></blockquote>
 </div>
 <div class="section" id="centre-coord">
-<h2><strong>centre_coord</strong><a class="headerlink" href="#centre-coord" title="Permalink to this headline">¶</a></h2>
+<span id="masking-centre-coord"></span><h2><strong>centre_coord</strong><a class="headerlink" href="#centre-coord" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
 <p>Coordinates of the centre of the field of view [“00:00:00”,”00:00:00”]</p>
 </div></blockquote>
 </div>
 <div class="section" id="mask-size">
-<h2><strong>mask_size</strong><a class="headerlink" href="#mask-size" title="Permalink to this headline">¶</a></h2>
+<span id="masking-mask-size"></span><h2><strong>mask_size</strong><a class="headerlink" href="#mask-size" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
-<p>Number of pixels in the mask (must be the same as img_npix in selfcal)</p>
+<p>Number of pixels in the mask (must be the same as img_npix in selfcal worker)</p>
 </div></blockquote>
 </div>
 <div class="section" id="cell-size">
-<h2><strong>cell_size</strong><a class="headerlink" href="#cell-size" title="Permalink to this headline">¶</a></h2>
+<span id="masking-cell-size"></span><h2><strong>cell_size</strong><a class="headerlink" href="#cell-size" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
-<p>Size fo pixel in the mask (arcsecm, must be the same as img_cell in selfcal)</p>
+<p>Size of pixel in the mask (arcsec, must be the same as img_cell in selfcal worker)</p>
 </div></blockquote>
 </div>
 <div class="section" id="name-mask">
-<h2><strong>name_mask</strong><a class="headerlink" href="#name-mask" title="Permalink to this headline">¶</a></h2>
+<span id="masking-name-mask"></span><h2><strong>name_mask</strong><a class="headerlink" href="#name-mask" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Name of the output mask from SUMSS catalog</p>
+<p>Name of the output mask generated from catalog</p>
 </div></blockquote>
 </div>
 <div class="section" id="extended-source-input">
-<h2><strong>extended_source_input</strong><a class="headerlink" href="#extended-source-input" title="Permalink to this headline">¶</a></h2>
+<span id="masking-extended-source-input"></span><h2><strong>extended_source_input</strong><a class="headerlink" href="#extended-source-input" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Name of the output mask of Fornax A</p>
+<p>Name of the input mask for particularly extended sources in the field</p>
 </div></blockquote>
 </div>
 <div class="section" id="final-mask">
-<h2><strong>final_mask</strong><a class="headerlink" href="#final-mask" title="Permalink to this headline">¶</a></h2>
+<span id="masking-final-mask"></span><h2><strong>final_mask</strong><a class="headerlink" href="#final-mask" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
 <p>Name of the output final mask</p>
 </div></blockquote>
 </div>
 <div class="section" id="query-catalog">
-<h2><strong>query_catalog</strong><a class="headerlink" href="#query-catalog" title="Permalink to this headline">¶</a></h2>
+<span id="masking-query-catalog"></span><h2><strong>query_catalog</strong><a class="headerlink" href="#query-catalog" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Query catalog to select field/sources from which extract the mask</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this worker</p>
-</dd>
-<dt><strong>catalog</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Name of catalog to query, either NVSS or SUMSS</p>
-</dd>
-<dt><strong>width_image</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Width of the region of sky we want to mask (keep larger than dirty image)</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this worker</p>
+</div></blockquote>
+<p><strong>catalog</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Name of catalog to query [NVSS/SUMSS]</p>
+</div></blockquote>
+<p><strong>width_image</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Width of the region of sky we want to mask (keep larger than dirty image)</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="pb-correction">
-<h2><strong>pb_correction</strong><a class="headerlink" href="#pb-correction" title="Permalink to this headline">¶</a></h2>
+<span id="masking-pb-correction"></span><h2><strong>pb_correction</strong><a class="headerlink" href="#pb-correction" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>Correct image for primary beam before exctracting mask</p>
+<div><p>Correct input image for primary beam before exctracting mask</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em>, <em>optional</em></p>
-<p class="last">Execute this worker</p>
-</dd>
-<dt><strong>frequency</strong></dt>
-<dd><p class="first"><em>float</em>, <em>optional</em></p>
-<p class="last">Primary beam size changes with frequency, provide central frequency of dataset</p>
-</dd>
-</dl>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this worker</p>
+</div></blockquote>
+<p><strong>frequency</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>Primary beam size changes with frequency, provide central frequency of considered dataset</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="make-mask">
-<h2><strong>make_mask</strong><a class="headerlink" href="#make-mask" title="Permalink to this headline">¶</a></h2>
+<span id="masking-make-mask"></span><h2><strong>make_mask</strong><a class="headerlink" href="#make-mask" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>Build mask from existing images</p>
+<div><p>Build mask from existing image using SoFiA and/or threshold cutoff</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em></p>
-<p class="last">Execute this worker</p>
-</dd>
-<dt><strong>mask_with</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Tool to use for masking</p>
-</dd>
-<dt><strong>input_image</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Input image where to create mask</p>
-</dd>
-<dt><strong>thresh_lev</strong></dt>
-<dd><p class="first"><em>float</em>, <em>optional</em></p>
-<p class="last">Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)</p>
-</dd>
-<dt><strong>scale_noise_window</strong></dt>
-<dd><p class="first"><em>float</em>, <em>optional</em></p>
-<p class="last">window size where to measure local rms in pixels</p>
-</dd>
-</dl>
+<div><p><em>bool</em></p>
+<p>Execute this worker</p>
+</div></blockquote>
+<p><strong>mask_with</strong></p>
+<blockquote>
+<div><p><em>{“thresh”, “sofia”}</em>, <em>optional</em></p>
+<p>Tool to use for masking</p>
+</div></blockquote>
+<p><strong>input_image</strong></p>
+<blockquote>
+<div><p><em>{“pbcorr”, “path_to_mask”}</em>, <em>optional</em></p>
+<p>Input image where to create mask ???? what is this ???</p>
+</div></blockquote>
+<p><strong>thresh_lev</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)</p>
+</div></blockquote>
+<p><strong>scale_noise_window</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>window size where SoFiA measures the local rms, units of pixels</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="merge-with-extended">
-<h2><strong>merge_with_extended</strong><a class="headerlink" href="#merge-with-extended" title="Permalink to this headline">¶</a></h2>
+<span id="masking-merge-with-extended"></span><h2><strong>merge_with_extended</strong><a class="headerlink" href="#merge-with-extended" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>Merge with extedned map</p>
+<div><p>Merge with mask of extended source</p>
+<p><strong>enable</strong></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>enable</strong></dt>
-<dd><p class="first"><em>bool</em></p>
-<p class="last">Execute this worker</p>
-</dd>
-<dt><strong>extended_source_input</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">name of image of extended source</p>
-</dd>
-<dt><strong>mask_with</strong></dt>
-<dd><p class="first"><em>str</em>, <em>optional</em></p>
-<p class="last">Tool to use for masking</p>
-</dd>
-<dt><strong>thresh_lev</strong></dt>
-<dd><p class="first"><em>float</em>, <em>optional</em></p>
-<p class="last">Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)</p>
-</dd>
-</dl>
+<div><p><em>bool</em></p>
+<p>Execute this worker</p>
+</div></blockquote>
+<p><strong>extended_source_input</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>name of image of extended source to merge with current image</p>
+</div></blockquote>
+<p><strong>mask_with</strong></p>
+<blockquote>
+<div><p><em>{“thresh”, “sofia”}</em>, <em>optional</em></p>
+<p>Tool to use for masking</p>
+</div></blockquote>
+<p><strong>thresh_lev</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)</p>
 </div></blockquote>
 </div></blockquote>
 </div>

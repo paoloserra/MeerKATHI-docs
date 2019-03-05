@@ -86,8 +86,11 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data products</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data reduction</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Prepare pipeline and data</a><ul class="simple">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Prepare pipeline and data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#directories-and-input-file-names">Directories and input file names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#metadata">Metadata</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../flag/index.html">Flag data</a></li>
@@ -96,7 +99,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../line/index.html">Spectral line imaging</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data Products</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../workers/index.html">Workers parameters</a></li>
 </ul>
 </li>
@@ -155,47 +157,66 @@
 <div class="toctree-wrapper compound">
 </div>
 <p><strong>[relevant workers:</strong> <a class="reference internal" href="../../workers/general/index.html#general"><span class="std std-ref">general</span></a>, <a class="reference internal" href="../../workers/get_data/index.html#get-data"><span class="std std-ref">get_data</span></a>, <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a><strong>]</strong></p>
+<div class="section" id="directories-and-input-file-names">
+<h2>Directories and input file names<a class="headerlink" href="#directories-and-input-file-names" title="Permalink to this headline">¶</a></h2>
 <p>A run of MeerKATHI must always start by setting up a number of directory and file
 names. This is done through the <a class="reference internal" href="../../workers/general/index.html#general"><span class="std std-ref">general</span></a> and <a class="reference internal" href="../../workers/get_data/index.html#get-data"><span class="std std-ref">get_data</span></a> workers.</p>
 <p>In the <a class="reference internal" href="../../workers/general/index.html#general"><span class="std std-ref">general</span></a> worker users give:</p>
 <ul class="simple">
-<li>if necessary, the directory where to find the files that should be converted to .MS
-format (<em>general:data_path</em>);</li>
-<li>the directory where to find/write the .MS files (<em>general:msdir</em>);</li>
-<li>the directory where to write all output data products (<em>general:output</em>);</li>
-<li>the directory where to find various input files, such as AOflagger strategies etc.
-(<em>general:input</em>);</li>
-<li>the prefix for the output data products (<em>general:prefix</em>).</li>
+<li>if necessary, the <em>data_path</em> directory where to find the files that should be converted to .MS
+format (<a class="reference internal" href="../../workers/general/index.html#general-data-path"><span class="std std-ref">general: data_path</span></a>);</li>
+<li>the <em>msdir</em> directory where to find/write .MS files (<a class="reference internal" href="../../workers/general/index.html#general-msdir"><span class="std std-ref">general: msdir</span></a>);</li>
+<li>the <em>output</em> directory where to write all output data products (<a class="reference internal" href="../../workers/general/index.html#general-output"><span class="std std-ref">general: output</span></a>);</li>
+<li>the <em>input</em> directory where to find various input files, such as AOflagger strategies etc.
+(<a class="reference internal" href="../../workers/general/index.html#general-input"><span class="std std-ref">general: input</span></a>);</li>
+<li>the prefix for the output data products (<a class="reference internal" href="../../workers/general/index.html#general-prefix"><span class="std std-ref">general: prefix</span></a>).</li>
 </ul>
 <p>If they do not exist yet, the above directories can be created by setting
-<em>general:init_pipeline</em> to <em>true</em>.</p>
+<a class="reference internal" href="../../workers/general/index.html#general-init-pipeline"><span class="std std-ref">general: init_pipeline</span></a> to <em>true</em>. This also copies
+files from the meerkathi/data/meerkat_files directory to the <em>input</em> directory set above.</p>
 <p>In the <a class="reference internal" href="../../workers/get_data/index.html#get-data"><span class="std std-ref">get_data</span></a> worker users give the name of the .MS files to be processed
-(<em>get_data:dataid</em>). Furthermore, the following optional steps are available:</p>
+(<a class="reference internal" href="../../workers/get_data/index.html#get-data-dataid"><span class="std std-ref">get_data: dataid</span></a>). Furthermore, the following optional steps are available:</p>
 <ul class="simple">
-<li>if conversion from HDF5/MVF format to .MS is necessary it can be enabled through the
-<em>get_data:mvftoms</em> parameter; further conversion options allow users to:<ul>
+<li>convert from HDF5/MVF format to .MS (<a class="reference internal" href="../../workers/get_data/index.html#get-data-mvftoms"><span class="std std-ref">get_data: mvftoms</span></a>);
+this step includes the following additional conversion options:<ul>
 <li>create a .MS.TAR file,</li>
-<li>convert only visibilities in a channel range,</li>
+<li>convert only visibilities in a selected channel range,</li>
 <li>discard cross-polarisation products;</li>
 </ul>
 </li>
-<li>if an .MS.TAR file already exists and should be untar-ed, this can be achieved with the
-<em>get_data:untar</em> parameter;</li>
-<li>if multiple .MS files are given as input, they can be virtually concatenated with
-<em>get_data:combine parameter</em>.</li>
+<li>untar an existing .MS.TAR file (<a class="reference internal" href="../../workers/get_data/index.html#get-data-untar"><span class="std std-ref">get_data: untar</span></a>);</li>
+<li>virtually concatenate all .MS input files (<a class="reference internal" href="../../workers/get_data/index.html#get-data-combine"><span class="std std-ref">get_data: combine</span></a>);
+optionally users can delete an existing concatenate file and tar/untar the concatenated file.</li>
 </ul>
-<p>Finally, before starting the actual data processing users need to provide some necessary
+</div>
+<div class="section" id="metadata">
+<h2>Metadata<a class="headerlink" href="#metadata" title="Permalink to this headline">¶</a></h2>
+<p>Finally, before starting the actual data processing users need to provide some
 info about the content of the input .MS files through the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
 (e.g., target and calibrators name, channelisation, etc.). In principle, this can be done
-by editing the relevant parameters of this worker. In fact, MeerKATHI can automatically extract
+by editing the relevant parameters of this worker:</p>
+<ul class="simple">
+<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-target"><span class="std std-ref">observation_config: target</span></a>;</li>
+<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-bpcal"><span class="std std-ref">observation_config: bpcal</span></a>;</li>
+<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-fcal"><span class="std std-ref">observation_config: fcal</span></a>;</li>
+<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-gcal"><span class="std std-ref">observation_config: gcal</span></a>;</li>
+<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-reference-antenna"><span class="std std-ref">observation_config: reference_antenna</span></a>;</li>
+<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-nchans"><span class="std std-ref">observation_config: nchans</span></a>;</li>
+<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-firstchanfreq"><span class="std std-ref">observation_config: firstchanfreq</span></a>;</li>
+<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-lastchanfreq"><span class="std std-ref">observation_config: lastchanfreq</span></a>;</li>
+<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-chanwidth"><span class="std std-ref">observation_config: chanwidth</span></a>.</li>
+</ul>
+<p>In fact, MeerKATHI can automatically extract
 most of these info from the .MS files themselves. To do so users should enable the
-<em>observation_config:obsinfo</em> parameter. This writes a .JSON and a .TXT file to disc. Once
-the .JSON file is on disc, parameters set to <em>auto</em> in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
+<a class="reference internal" href="../../workers/observation_config/index.html#observation-config-obsinfo"><span class="std std-ref">observation_config: obsinfo</span></a> parameter. This writes a .JSON and a .TXT file to disc. Once
+the .JSON file is on disc, parameters set to <em>auto</em> (or in some cases to 0) in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
 worker will be automatically read from that file.</p>
 <p>Note that the reference antenna information is often missing from the metadata. In those
 cases, users should carefully select a good reference antenna for calibration and set it
-with the <em>observation_config:reference_antenna</em> parameter.</p>
+with the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config-reference-antenna"><span class="std std-ref">observation_config: reference_antenna</span></a>
+parameter.</p>
 <p><strong>[missing from this page: vampirisms, primary beam]</strong></p>
+</div>
 </div>
 
 

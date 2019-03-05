@@ -6,7 +6,7 @@
 .. _products:
  
 =============
-Data Products
+Data products
 =============
  
 .. toctree::

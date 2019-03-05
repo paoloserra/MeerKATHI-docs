@@ -86,17 +86,24 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data products</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data reduction</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../prepare/index.html">Prepare pipeline and data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../flag/index.html">Flag data</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Cross-calibration</a><ul class="simple">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Cross-calibration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#preliminary-steps">Preliminary steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delay-calibration">Delay calibration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bandpass-calibration">Bandpass calibration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flux-scale-calibration">Flux scale calibration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gain-calibration">Gain calibration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flux-scale-bootstrapping">Flux scale bootstrapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#closure-errors">Closure errors</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../selfcal/index.html">Continuum imaging and self-calibration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../line/index.html">Spectral line imaging</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data Products</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../workers/index.html">Workers parameters</a></li>
 </ul>
 </li>
@@ -154,7 +161,120 @@
 <h1>Cross-calibration<a class="headerlink" href="#cross-calibration" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
+<p><strong>[relevant workers:</strong> <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal"><span class="std std-ref">cross_cal</span></a>, <a class="reference internal" href="../../workers/inspect_data/index.html#inspect-data"><span class="std std-ref">inspect_data</span></a><strong>]</strong></p>
+<p>Cross-calibration runs largely on CASA tasks. MeerKATHI allows users to solve for
+delays, bandpass, gains and flux scale in several different ways.</p>
+<div class="section" id="preliminary-steps">
+<h2>Preliminary steps<a class="headerlink" href="#preliminary-steps" title="Permalink to this headline">¶</a></h2>
+<p>Before starting users can take the following optional steps.</p>
+<ul class="simple">
+<li>Set up a label which will be appended to all
+cross-calibration products (i.e., tables and plots; <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-label"><span class="std std-ref">cross_cal: label</span></a>)</li>
+<li>Clear any existing calibration and initialise the .MS for
+calibration (<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-clear-cal"><span class="std std-ref">cross_cal: clear_cal</span></a>).</li>
+<li>Select the UV range that should be used to calibrate the data
+(<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-uvrange"><span class="std std-ref">cross_cal: uvrange</span></a>). This can be useful, for example,
+to exclude short baselines from the calibration.</li>
+<li>Fill the MODEL_DATA column based on a calibrator model
+(<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-set-model"><span class="std std-ref">cross_cal: set_model</span></a>). Additional
+options allow users to use a model of the PKS 1934-638 field which includes confusing
+sources and their spectral shape as seen through a frequency-dependent MeerKAT primary beam.</li>
+</ul>
+</div>
+<div class="section" id="delay-calibration">
+<h2>Delay calibration<a class="headerlink" href="#delay-calibration" title="Permalink to this headline">¶</a></h2>
+<p>Delay calibration is performed with the CASA task GAINCAL and results in the creation of a
+delay calibration table. Subsequent calibration steps (e.g., bandpass, gain and flux calibration)
+can apply the delay calibration table on the fly. This is achieved by setting
+<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-otfdelay"><span class="std std-ref">cross_cal: otfdelay</span></a> to <em>true</em>.</p>
+<p>In GAINCAL, the delay calibration is performed using only baselines with the reference antenna.
+The choice of reference antennas is therefore very important. For examples, reference antennas
+involved in short baselines should probably be avoided.</p>
+<p>The delay calibration options are set at <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-delay-cal"><span class="std std-ref">cross_cal: delay_cal</span></a>.
+Users can set the following parameters:</p>
+<ul class="simple">
+<li>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
+field code within MeerKATHI (“fcal”, “bpcal”, “gcal”; field codes are set by the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
+worker). Multiple fields can be used for the delay calibration.</li>
+<li>Solution interval (<em>solint</em>). Set this to ‘inf’ for time-independent delays. Note that for fully
+time-independent delays you may need to set the <em>combine</em> option below to an appropriate value.</li>
+<li>Whether and how to combine the data (<em>combine</em>). If this is an empty strings then data are not combined
+and at least one delay solution is calculated per observation, field, scan, spw (even for
+<em>solint=”inf”</em>).</li>
+<li>Minimum S/N ratio (<em>minsnr</em>). No delay is calculated for solution intervals with a S/N ratio
+below this value.</li>
+</ul>
+<p>Once a delay calibration has been obtaiend users can flag the data based on the delay solutions (<em>flag</em>).
+This is done with the CASA task FLAGDATA.
+For <em>mode=”clip”</em> all visibilities with a delay outside the <em>clipminmax</em> range are flagged.
+Other delay flagging modes are also available.</p>
+<p>Finally, the solutions can be plotted (<em>plot</em>). Normally all plotting options should be left to their
+default values.</p>
+</div>
+<div class="section" id="bandpass-calibration">
+<h2>Bandpass calibration<a class="headerlink" href="#bandpass-calibration" title="Permalink to this headline">¶</a></h2>
+<p>Bandpass calibration is performed with the CASA tasks BANDPASS and, optionally, GAINCAL.
+Its options are set at <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-bp-cal"><span class="std std-ref">cross_cal: bp_cal</span></a>.
+The following bandpass calibration options are similar to those for the delay calibration (see above):</p>
+<ul class="simple">
+<li>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
+field code within MeerKATHI (typically “bpcal”; field codes are set by the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
+worker). Multiple fields can be used for the bandpass calibration.</li>
+<li>Solution interval (<em>solint</em>). Set this to ‘inf’ for a time-independent bandpass. Note that for a fully
+time-independent bandpass you may need to set the <em>combine</em> option below to an appropriate value.</li>
+<li>Whether and how to combine the data (<em>combine</em>). If this is an empty strings then data are not combined
+and at least one bandpass solution is calculated per observation, field, scan (even for
+<em>solint=”inf”</em>).</li>
+<li>Minimum S/N ratio (<em>minsnr</em>). No bandpass is calculated for solution intervals with a S/N ratio
+below this value.</li>
+</ul>
+<p>Bandpass calibration has the following additional options:</p>
+<ul class="simple">
+<li>Minimum number of baselines (<em>minnrbl</em>). No bandpass is calculated for solution intervals
+with less antennas than this minimum number.</li>
+<li>Whether to set the reference antenna to the value given in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
+(<em>set_refant</em>). If <em>false</em> then CASA BANDPASS will decide which reference antenna to use.</li>
+<li>Whether to normalise the bandpass to have average amplitude and phase of 1 and 0, repsectively (<em>solnorm</em>).</li>
+</ul>
+<p>MeerKATHI can calibrate the bandpass with the above options in a single run of the CASA task BANDPASS.
+However, a single run of BANDPASS may not be ideal when calculating a time-independent bandpass from
+calibrator scans spread over a long time interval.
+This is because the vector time-average of the calibrator’s raw visibilities, which is calculated
+before solving for the time-independent bandpass, may be corrupted by the variation of
+the antenna gains with time. In this case it is better to correct for such gain variations <em>before</em>
+time-averaging the calibrator’s visibilities and calculating the time-independent bandpass.
+MeerKATHI allows users to do this through the parameter <em>remove_ph_time_var</em>.
+Setting this parameter to <em>true</em> results in the following thress steps (instead of a single run of BANDPASS):</p>
+<ul class="simple">
+<li>A first run of BANDPASS with the solution interval set by <em>solint</em> and with <em>combine=”“</em> (regardless of
+what users set <em>combine</em> to be). This results in a preliminary
+bandpass solution per observation, field, scan even for <em>solint=”inf”</em>.</li>
+<li>A run of the the CASA task GAINCAL applying the above bandpass on the fly and solving for
+time-dependent antenna gains. The use of the preliminary bandpass ensures a good quality of the
+time-dependent gain calibration.</li>
+<li>A second run of BANDPASS with the solution interval set by <em>solint</em> and combining the data as
+requested by the user with <em>combine</em>. The above gain calibration is applied on the fly, resulting in
+a more accurate time-independent bandpass.</li>
+</ul>
+<p>Finally, the solutions can be plotted (<em>plot</em>). Normally all plotting options should be left to their
+default values.</p>
+</div>
+<div class="section" id="flux-scale-calibration">
+<h2>Flux scale calibration<a class="headerlink" href="#flux-scale-calibration" title="Permalink to this headline">¶</a></h2>
 <p>TBD</p>
+</div>
+<div class="section" id="gain-calibration">
+<h2>Gain calibration<a class="headerlink" href="#gain-calibration" title="Permalink to this headline">¶</a></h2>
+<p>TBD</p>
+</div>
+<div class="section" id="flux-scale-bootstrapping">
+<h2>Flux scale bootstrapping<a class="headerlink" href="#flux-scale-bootstrapping" title="Permalink to this headline">¶</a></h2>
+<p>TBD</p>
+</div>
+<div class="section" id="closure-errors">
+<h2>Closure errors<a class="headerlink" href="#closure-errors" title="Permalink to this headline">¶</a></h2>
+<p>TBD</p>
+</div>
 </div>
 
 
