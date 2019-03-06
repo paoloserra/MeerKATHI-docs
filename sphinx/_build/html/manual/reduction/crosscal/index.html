@@ -97,7 +97,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#flux-scale-calibration">Flux scale calibration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gain-calibration">Gain calibration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flux-scale-bootstrapping">Flux scale bootstrapping</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#closure-errors">Closure errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apply-the-cross-calibration">Apply the cross-calibration</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../selfcal/index.html">Continuum imaging and self-calibration</a></li>
@@ -162,43 +162,65 @@
 <div class="toctree-wrapper compound">
 </div>
 <p><strong>[relevant workers:</strong> <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal"><span class="std std-ref">cross_cal</span></a>, <a class="reference internal" href="../../workers/inspect_data/index.html#inspect-data"><span class="std std-ref">inspect_data</span></a><strong>]</strong></p>
-<p>Cross-calibration runs largely on CASA tasks. MeerKATHI allows users to solve for
-delays, bandpass, gains and flux scale in several different ways.</p>
+<p>Cross-calibration runs largely on CASA tasks. Using these tasks, MeerKATHI allows users to
+solve for delays, bandpass, gains and flux scale in several different ways.</p>
+<p>Just as an example, it is possible to solve for:
+1) time-independent antenna delays and normalised bandpass based on the observation of a
+bandpass calibrator;
+2) time-dependent antenna flux scale based on the observation of a flux calibrator;
+3) time-dependent antenna gains based on the observation of a secondary calibrator;
+4) time-dependent antenna flux scale at fine time resolution obtained by scaling the gains
+from step 3 above to the gains from step 2 above.</p>
+<p>Variations on the above scheme are possible by tuning the parameters of the various
+steps. However, be aware that MeerKATHI does not check that the selected combination of
+settings makes physical sense.</p>
 <div class="section" id="preliminary-steps">
 <h2>Preliminary steps<a class="headerlink" href="#preliminary-steps" title="Permalink to this headline">¶</a></h2>
 <p>Before starting users can take the following optional steps.</p>
 <ul class="simple">
 <li>Set up a label which will be appended to all
 cross-calibration products (i.e., tables and plots; <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-label"><span class="std std-ref">cross_cal: label</span></a>)</li>
-<li>Clear any existing calibration and initialise the .MS for
-calibration (<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-clear-cal"><span class="std std-ref">cross_cal: clear_cal</span></a>).</li>
+<li>Reinitialise the .MS for calibration with the CASA task CLEARCAL
+(<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-clear-cal"><span class="std std-ref">cross_cal: clear_cal</span></a>). Given the users’ field selection
+for this task (with the <em>field</em> parameter) MeerKATHI sets the MODEL_DATA column
+to unity in total intensity and zero in polarization, sets the
+CORRECTED_DATA column equal to the DATA column, and optionally adds a MODEL_DATA
+column if not already present. Selected fields can be specified with the field number or name
+as it appears in the metadata, or with the field code within MeerKATHI (typically “fcal”, “bpcal”;
+field codes are set by the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker).
+Multiple fields can be selected.</li>
 <li>Select the UV range that should be used to calibrate the data
 (<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-uvrange"><span class="std std-ref">cross_cal: uvrange</span></a>). This can be useful, for example,
 to exclude short baselines from the calibration.</li>
-<li>Fill the MODEL_DATA column based on a calibrator model
-(<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-set-model"><span class="std std-ref">cross_cal: set_model</span></a>). Additional
-options allow users to use a model of the PKS 1934-638 field which includes confusing
-sources and their spectral shape as seen through a frequency-dependent MeerKAT primary beam.</li>
+<li>Fill the MODEL_DATA column based on a calibrator model with the CASA task SETJY
+(<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-set-model"><span class="std std-ref">cross_cal: set_model</span></a>). Various models are available
+and can be chosen using a number of additional parameters.
+For PKS 1934-638, users can choose a sky model which includes confusing
+sources and their spectral shape as seen through a frequency-dependent MeerKAT primary beam.
+This is recommended for MeerKAT observations. Alternatively, users can choose a point
+source model. When available, SARAO models are adopted. Alternatively, MeerKATHI uses the
+NRAO models.</li>
 </ul>
 </div>
 <div class="section" id="delay-calibration">
 <h2>Delay calibration<a class="headerlink" href="#delay-calibration" title="Permalink to this headline">¶</a></h2>
-<p>Delay calibration is performed with the CASA task GAINCAL and results in the creation of a
-delay calibration table. Subsequent calibration steps (e.g., bandpass, gain and flux calibration)
-can apply the delay calibration table on the fly. This is achieved by setting
-<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-otfdelay"><span class="std std-ref">cross_cal: otfdelay</span></a> to <em>true</em>.</p>
+<p>Antenna-based delay calibration is performed with the CASA task GAINCAL. It results in the creation of a
+delay calibration table, which subsequent calibration steps can apply the on the fly (e.g., bandpass,
+gain and flux calibration). In order to do this set <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-otfdelay"><span class="std std-ref">cross_cal: otfdelay</span></a> to <em>true</em>.</p>
 <p>In GAINCAL, the delay calibration is performed using only baselines with the reference antenna.
-The choice of reference antennas is therefore very important. For examples, reference antennas
-involved in short baselines should probably be avoided.</p>
+Therefore, the choice of reference antennas is very important. For example, reference antennas
+involved in short baselines should probably be avoided. Also, care should be taken that the reference
+antenna is not involved in heavily flagged baselines, as this could result in loss of a much larger
+fraction of the array due to missing delay calibration.</p>
 <p>The delay calibration options are set at <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-delay-cal"><span class="std std-ref">cross_cal: delay_cal</span></a>.
 Users can set the following parameters:</p>
 <ul class="simple">
 <li>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
 field code within MeerKATHI (“fcal”, “bpcal”, “gcal”; field codes are set by the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
 worker). Multiple fields can be used for the delay calibration.</li>
-<li>Solution interval (<em>solint</em>). Set this to ‘inf’ for time-independent delays. Note that for fully
+<li>Solution time interval (<em>solint</em>). Set this to ‘inf’ for time-independent delays. Note that for fully
 time-independent delays you may need to set the <em>combine</em> option below to an appropriate value.</li>
-<li>Whether and how to combine the data (<em>combine</em>). If this is an empty strings then data are not combined
+<li>Whether and how to combine the data (<em>combine</em>). If this is an empty string then data are not combined
 and at least one delay solution is calculated per observation, field, scan, spw (even for
 <em>solint=”inf”</em>).</li>
 <li>Minimum S/N ratio (<em>minsnr</em>). No delay is calculated for solution intervals with a S/N ratio
@@ -208,21 +230,21 @@ below this value.</li>
 This is done with the CASA task FLAGDATA.
 For <em>mode=”clip”</em> all visibilities with a delay outside the <em>clipminmax</em> range are flagged.
 Other delay flagging modes are also available.</p>
-<p>Finally, the solutions can be plotted (<em>plot</em>). Normally all plotting options should be left to their
+<p>Finally, the solutions can be plotted (<em>plot</em>). Normally, all plotting options can be kept to their
 default values.</p>
 </div>
 <div class="section" id="bandpass-calibration">
 <h2>Bandpass calibration<a class="headerlink" href="#bandpass-calibration" title="Permalink to this headline">¶</a></h2>
-<p>Bandpass calibration is performed with the CASA tasks BANDPASS and, optionally, GAINCAL.
+<p>Antenna-based bandpass calibration is performed with the CASA tasks BANDPASS and, optionally, GAINCAL.
 Its options are set at <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-bp-cal"><span class="std std-ref">cross_cal: bp_cal</span></a>.
 The following bandpass calibration options are similar to those for the delay calibration (see above):</p>
 <ul class="simple">
 <li>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
 field code within MeerKATHI (typically “bpcal”; field codes are set by the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
 worker). Multiple fields can be used for the bandpass calibration.</li>
-<li>Solution interval (<em>solint</em>). Set this to ‘inf’ for a time-independent bandpass. Note that for a fully
+<li>Solution time interval (<em>solint</em>). Set this to ‘inf’ for a time-independent bandpass. Note that for a fully
 time-independent bandpass you may need to set the <em>combine</em> option below to an appropriate value.</li>
-<li>Whether and how to combine the data (<em>combine</em>). If this is an empty strings then data are not combined
+<li>Whether and how to combine the data (<em>combine</em>). If this is an empty string then data are not combined
 and at least one bandpass solution is calculated per observation, field, scan (even for
 <em>solint=”inf”</em>).</li>
 <li>Minimum S/N ratio (<em>minsnr</em>). No bandpass is calculated for solution intervals with a S/N ratio
@@ -230,8 +252,8 @@ below this value.</li>
 </ul>
 <p>Bandpass calibration has the following additional options:</p>
 <ul class="simple">
-<li>Minimum number of baselines (<em>minnrbl</em>). No bandpass is calculated for solution intervals
-with less antennas than this minimum number.</li>
+<li>Minimum number of baselines (<em>minnrbl</em>). Given a solution interval, no bandpass is calculated for antennas
+with less baselines than this minimum number.</li>
 <li>Whether to set the reference antenna to the value given in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
 (<em>set_refant</em>). If <em>false</em> then CASA BANDPASS will decide which reference antenna to use.</li>
 <li>Whether to normalise the bandpass to have average amplitude and phase of 1 and 0, repsectively (<em>solnorm</em>).</li>
@@ -244,7 +266,7 @@ before solving for the time-independent bandpass, may be corrupted by the variat
 the antenna gains with time. In this case it is better to correct for such gain variations <em>before</em>
 time-averaging the calibrator’s visibilities and calculating the time-independent bandpass.
 MeerKATHI allows users to do this through the parameter <em>remove_ph_time_var</em>.
-Setting this parameter to <em>true</em> results in the following thress steps (instead of a single run of BANDPASS):</p>
+Setting this parameter to <em>true</em> results in the following three steps (instead of a single run of BANDPASS):</p>
 <ul class="simple">
 <li>A first run of BANDPASS with the solution interval set by <em>solint</em> and with <em>combine=”“</em> (regardless of
 what users set <em>combine</em> to be). This results in a preliminary
@@ -256,24 +278,93 @@ time-dependent gain calibration.</li>
 requested by the user with <em>combine</em>. The above gain calibration is applied on the fly, resulting in
 a more accurate time-independent bandpass.</li>
 </ul>
-<p>Finally, the solutions can be plotted (<em>plot</em>). Normally all plotting options should be left to their
+<p>Finally, the solutions can be plotted (<em>plot</em>). Normally, all plotting options can be kept to their
 default values.</p>
 </div>
 <div class="section" id="flux-scale-calibration">
 <h2>Flux scale calibration<a class="headerlink" href="#flux-scale-calibration" title="Permalink to this headline">¶</a></h2>
-<p>TBD</p>
+<p>Antenna-based flux scale calibration is performed with the CASA task GAINCAL. Its options are set at
+<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-gain-cal-flux"><span class="std std-ref">cross_cal: gain_cal_flux</span></a>.</p>
+<p>The flux scale calibration options are similar to those for the bandpass calibration (see above):</p>
+<ul class="simple">
+<li>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
+field code within MeerKATHI (typically “fcal”; field codes are set by the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
+worker). Multiple fields can be used for the flux scale calibration.</li>
+<li>Solution time interval (<em>solint</em>). Set this to ‘inf’ for a time-independent calibration. Note that for a fully
+time-independent calibration you may need to set the <em>combine</em> option below to an appropriate value.</li>
+<li>Whether and how to combine the data (<em>combine</em>). If this is an empty string then data are not combined
+and at least one flux scale solution is calculated per observation, field, scan, spw (even for
+<em>solint=”inf”</em>).</li>
+<li>Minimum S/N ratio (<em>minsnr</em>). No flux scale calibration is calculated for solution intervals with a S/N ratio
+below this value.</li>
+<li>Minimum number of baselines (<em>minnrbl</em>). Given a solution interval, no flux scale calibration is calculated for
+antennas with less baselines than this minimum number.</li>
+<li>Whether to set the reference antenna to the value given in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
+(<em>set_refant</em>). If <em>false</em> then CASA GAINCAL will decide which reference antenna to use.</li>
+</ul>
+<p>Finally, the solutions can be plotted (<em>plot</em>). Normally, all plotting options can be kept to their
+default values.</p>
 </div>
 <div class="section" id="gain-calibration">
 <h2>Gain calibration<a class="headerlink" href="#gain-calibration" title="Permalink to this headline">¶</a></h2>
-<p>TBD</p>
+<p>Antenna-based gain calibration is performed with the CASA task GAINCAL. Its options are set at
+<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-gain-cal-gain"><span class="std std-ref">cross_cal: gain_cal_gain</span></a>.</p>
+<p>The gain scale calibration options are identical to those for the flux calibration (see above):</p>
+<ul class="simple">
+<li>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
+field code within MeerKATHI (typically “gcal”; field codes are set by the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
+worker). Multiple fields can be used for the gain calibration.</li>
+<li>Solution time interval (<em>solint</em>). Set this to ‘inf’ for a time-independent calibration. Note that for a fully
+time-independent calibration you may need to set the <em>combine</em> option below to an appropriate value.</li>
+<li>Whether and how to combine the data (<em>combine</em>). If this is an empty string then data are not combined
+and at least one gain solution is calculated per observation, field, scan, spw (even for
+<em>solint=”inf”</em>). This is probably the mode of interest in most cases.</li>
+<li>Minimum S/N ratio (<em>minsnr</em>). No gain calibration is calculated for solution intervals with a S/N ratio
+below this value.</li>
+<li>Minimum number of baselines (<em>minnrbl</em>). Given a solution interval, no gain calibration is calculated for
+antennas with less baselines than this minimum number.</li>
+<li>Whether to set the reference antenna to the value given in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
+(<em>set_refant</em>). If <em>false</em> then CASA GAINCAL will decide which reference antenna to use.</li>
+</ul>
+<p>Finally, the gain solutions can be plotted (<em>plot</em>). Normally, all plotting options can be kept to their
+default values.</p>
 </div>
 <div class="section" id="flux-scale-bootstrapping">
 <h2>Flux scale bootstrapping<a class="headerlink" href="#flux-scale-bootstrapping" title="Permalink to this headline">¶</a></h2>
-<p>TBD</p>
+<p>Typically, the calibrator used for the flux scale calibration above is observed at low cadence. This
+results in a coarse time resolution (if any) for the flux calibration. Higher resolution mapping
+of the variation of the gain amplitude with time might be provided by the gain calibration step above,
+which is based on the typically more frequent observation of a gain calibrator.
+These gain amplitudes do not give a reliable, absolute flux scale, but can be scaled to the gain
+amplitudes obtained from the flux calibrator. Within MeerKATHI, this step is performed with the CASA
+task FLUXSCALE. Its options are set at <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-transfer-fluxscale"><span class="std std-ref">cross_cal: transfer_fluxscale</span></a>.</p>
+<p>The only availabel options are the field(s) from which the flux scale was derived (<em>reference</em>) and those
+whose gains should be scaled (<em>transfer</em>). As for all other steps above, fields can be specified
+with the field number or name as it appears in the metadata, or the field code within MeerKATHI. Typically
+this will be <em>reference=”fcal”</em> and <em>transfer=”gcal”</em>.</p>
+<p>The CASA FLUXSCALE algorithm works initially on each antenna and each polarisation product separately.
+It calculates the ratio <em>R</em> ( <em>i</em> , <em>x</em> ) between the time-averaged gain amplitude derived from the flux calibrator
+and the time-averaged gain amplitude derived from the gain calibrator for antenna <em>i</em> and polarisation product <em>x</em>.
+This results in <em>N</em> (ant) x <em>N</em> (pol) values of the ratio <em>R</em> ( <em>i</em> , <em>x</em> ). The algorithm then takes the median of all such values,
+<em>F</em> = MEDIAN[ <em>R</em> ( <em>i</em> , <em>x</em> )]. Finally, all values of the gain amplitude derived from the gain calibrator for all antennas
+and polarisation products are multiplied by <em>F</em>. This means that the bootstrapping is done globally for the array
+as a whole, and not individually for each antenna and each polarisation product.</p>
+<p>The final flux scale solutions can be plotted (<em>plot</em>). Normally, all plotting options can be kept to their
+default values.</p>
 </div>
-<div class="section" id="closure-errors">
-<h2>Closure errors<a class="headerlink" href="#closure-errors" title="Permalink to this headline">¶</a></h2>
-<p>TBD</p>
+<div class="section" id="apply-the-cross-calibration">
+<h2>Apply the cross-calibration<a class="headerlink" href="#apply-the-cross-calibration" title="Permalink to this headline">¶</a></h2>
+<p>MeerKATHI can apply the cross calibration tables to all calibrators (useful for diagnostics) and to the science
+target. In doing so it will use the following interpolation rules:</p>
+<ul class="simple">
+<li>Delay calibration: applied to the fields bpcal, gcal, target with nearest, linear, linear interpolation, respectively.</li>
+<li>Bandpass calibration: applied to the fields bpcal, gcal, target with nearest, linear, linear interpolation, respectively.</li>
+<li>Gain calibration before bootstrapping the flux scale: applied to the fields bpcal, gcal, target
+with linear, linear, linear interpolation, respectively.</li>
+<li>Gain calibration after bootstrapping the flux scale: applied to the fields bpcal, gcal, target
+with linear, nearest, linear interpolation, repsectively.</li>
+</ul>
+<p><strong>[missing from this page: flag on closure errors and flag statistics]</strong></p>
 </div>
 </div>
 
