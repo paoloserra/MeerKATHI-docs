@@ -89,7 +89,7 @@ weights based on Tsys measurements.
 
 This worker flags the data and returns statistics on the flags. As all other
 workers, it can be run multiple times within a single MeerKATHI run as explained at
-:ref: `configfile` (though this feature is not necessarily useful for many other workers).
+:ref:`configfile` (though this feature is not necessarily useful for many other workers).
 It can flag data based on, e.g., channel-, antenna- and time selection, or using automated
 algorithms that run on autocorrelations (to catch antennas with clear problems) or
 crosscorrelations.
