@@ -82,7 +82,8 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html#download-install">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
@@ -132,11 +133,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#calibrate"><strong>calibrate</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#restore-model"><strong>restore_model</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flagging-summary"><strong>flagging_summary</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gain-interpolation"><strong>gain_interpolation</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transfer-apply-gains"><strong>transfer_apply_gains</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transfer-model"><strong>transfer_model</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#highfreqres-contim"><strong>highfreqres_contim</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../image_HI/index.html">image_HI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 </ul>
 </li>
 </ul>
@@ -656,6 +659,40 @@
 <div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
 <p>Calibration solution intervals</p>
 </div></blockquote>
+<p><strong>ragavi_plot</strong></p>
+<blockquote>
+<div><p>Plotting dignostics plots for delay correction calibration.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Enables plotting dignostics</p>
+</div></blockquote>
+<p><strong>table_name</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<p>List of gain tables to plot</p>
+</div></blockquote>
+<p><strong>gaintype</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<p>List of gain solution types</p>
+</div></blockquote>
+<p><strong>field</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<p>Fields to plot. Specify by field id, index.</p>
+</div></blockquote>
+<p><strong>corr</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Correlation to plot. E.g. X/Y or H/V</p>
+</div></blockquote>
+<p><strong>htmlname</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Output HTML file name</p>
+</div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="restore-model">
@@ -690,8 +727,8 @@
 </div></blockquote>
 </div></blockquote>
 </div>
-<div class="section" id="gain-interpolation">
-<span id="self-cal-gain-interpolation"></span><h2><strong>gain_interpolation</strong><a class="headerlink" href="#gain-interpolation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="transfer-apply-gains">
+<span id="self-cal-transfer-apply-gains"></span><h2><strong>transfer_apply_gains</strong><a class="headerlink" href="#transfer-apply-gains" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Interpolate gains over the high frequency resolution data</p>
 <p><strong>enable</strong></p>
@@ -699,10 +736,36 @@
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Execute this segment</p>
 </div></blockquote>
-<p><strong>hires_label</strong></p>
+<p><strong>transfer_to_label</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>label for high resolution data products in selfcal</p>
+<p>label of cross-calibrated .ms file to which to transfer and apply the selfcal gains</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="transfer-model">
+<span id="self-cal-transfer-model"></span><h2><strong>transfer_model</strong><a class="headerlink" href="#transfer-model" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Transfer model from last WSclean imaging run to the MODEL_DATA column of another .MS</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute this segment (default False)</p>
+</div></blockquote>
+<p><strong>transfer_to_label</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>label of .ms file to which to transfer the model</p>
+</div></blockquote>
+<p><strong>model</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Name of the sky model file (currently the only supported format is that of WSclean component lists). Default is ‘auto’, in which case MeerKATHI will build the file name from the input parameters of the selfcal loop. The file is assumed to be in the ‘output’ directory.</p>
+</div></blockquote>
+<p><strong>spectra</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Model sources as non-flat spectra. The spectral coefficients and reference frequency must be present in the sky model. Default is False.</p>
 </div></blockquote>
 </div></blockquote>
 </div>

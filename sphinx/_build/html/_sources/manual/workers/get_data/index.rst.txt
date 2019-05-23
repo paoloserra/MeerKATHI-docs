@@ -18,9 +18,9 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
 .. _get_data_order:
 
--------------------------------------
+--------------------------------------------------
 **order**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -30,9 +30,9 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
 .. _get_data_dataid:
 
--------------------------------------
+--------------------------------------------------
 **dataid**
--------------------------------------
+--------------------------------------------------
 
   *list* *of str*, *optional*
 
@@ -42,9 +42,9 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
 .. _get_data_mvftoms:
 
--------------------------------------
+--------------------------------------------------
 **mvftoms**
--------------------------------------
+--------------------------------------------------
 
   Convert HDF5/MVF files in data_path to MS files; the latter are written to msdir; also creates a MS.TAR file. (This only works for MeerKAT HDF5 files)
 
@@ -76,9 +76,9 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
 .. _get_data_untar:
 
--------------------------------------
+--------------------------------------------------
 **untar**
--------------------------------------
+--------------------------------------------------
 
   Unarchive from MS from a archive file.
 
@@ -98,9 +98,9 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
 .. _get_data_combine:
 
--------------------------------------
+--------------------------------------------------
 **combine**
--------------------------------------
+--------------------------------------------------
 
   Virtually concatenate MSs and proceed with the combined MS
 

@@ -154,9 +154,9 @@ def writeWorkersIndex(srtWrks,wrkDr,schms,schDr):
       f.write('\n\n')
       f.write('.. _{0:s}_{1:s}:\n'.format(wrk,parLev1))
       f.write('\n')
-      f.write('-------------------------------------\n')
+      f.write('--------------------------------------------------\n')
       f.write('**{0:s}**\n'.format(parLev1))
-      f.write('-------------------------------------\n\n')
+      f.write('--------------------------------------------------\n\n')
       writeWorkerLevel(f,schm[parLev1],indentLevel='  ')
 
       if 'type' in schm[parLev1] and schm[parLev1]['type']=='map':

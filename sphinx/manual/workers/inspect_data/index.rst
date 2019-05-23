@@ -18,9 +18,9 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 .. _inspect_data_enable:
 
--------------------------------------
+--------------------------------------------------
 **enable**
--------------------------------------
+--------------------------------------------------
 
   *bool*, *optional*
 
@@ -30,9 +30,9 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 .. _inspect_data_order:
 
--------------------------------------
+--------------------------------------------------
 **order**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -42,9 +42,9 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 .. _inspect_data_label:
 
--------------------------------------
+--------------------------------------------------
 **label**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -54,9 +54,9 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 .. _inspect_data_correlation:
 
--------------------------------------
+--------------------------------------------------
 **correlation**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -66,9 +66,9 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 .. _inspect_data_real_imag:
 
--------------------------------------
+--------------------------------------------------
 **real_imag**
--------------------------------------
+--------------------------------------------------
 
   Plot real vs imaginary parts of data.
 
@@ -106,9 +106,9 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 .. _inspect_data_amp_phase:
 
--------------------------------------
+--------------------------------------------------
 **amp_phase**
--------------------------------------
+--------------------------------------------------
 
   Plot Amplitude vs Phase for  data.
 
@@ -146,9 +146,9 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 .. _inspect_data_amp_uvwave:
 
--------------------------------------
+--------------------------------------------------
 **amp_uvwave**
--------------------------------------
+--------------------------------------------------
 
   Plot data amplitude v/s  uvwave.
 
@@ -186,9 +186,9 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 .. _inspect_data_amp_ant:
 
--------------------------------------
+--------------------------------------------------
 **amp_ant**
--------------------------------------
+--------------------------------------------------
 
   Plot data amplitde v/s antenna.
 
@@ -226,9 +226,9 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 .. _inspect_data_phase_uvwave:
 
--------------------------------------
+--------------------------------------------------
 **phase_uvwave**
--------------------------------------
+--------------------------------------------------
 
   Plot data phase v/s uvwave.
 
@@ -266,9 +266,9 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 .. _inspect_data_amp_scan:
 
--------------------------------------
+--------------------------------------------------
 **amp_scan**
--------------------------------------
+--------------------------------------------------
 
   Plot data amplitude v/s scan number.
 

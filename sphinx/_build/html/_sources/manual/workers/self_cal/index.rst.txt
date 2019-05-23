@@ -18,9 +18,9 @@ Perform Self calibration on the data
 
 .. _self_cal_enable:
 
--------------------------------------
+--------------------------------------------------
 **enable**
--------------------------------------
+--------------------------------------------------
 
   *bool*, *optional*
 
@@ -30,9 +30,9 @@ Perform Self calibration on the data
 
 .. _self_cal_label:
 
--------------------------------------
+--------------------------------------------------
 **label**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -42,9 +42,9 @@ Perform Self calibration on the data
 
 .. _self_cal_order:
 
--------------------------------------
+--------------------------------------------------
 **order**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -54,9 +54,9 @@ Perform Self calibration on the data
 
 .. _self_cal_undo_subtractmodelcol:
 
--------------------------------------
+--------------------------------------------------
 **undo_subtractmodelcol**
--------------------------------------
+--------------------------------------------------
 
   *bool*, *optional*
 
@@ -66,9 +66,9 @@ Perform Self calibration on the data
 
 .. _self_cal_primary_beam:
 
--------------------------------------
+--------------------------------------------------
 **primary_beam**
--------------------------------------
+--------------------------------------------------
 
   *bool*, *optional*
 
@@ -78,9 +78,9 @@ Perform Self calibration on the data
 
 .. _self_cal_calibrate_with:
 
--------------------------------------
+--------------------------------------------------
 **calibrate_with**
--------------------------------------
+--------------------------------------------------
 
   *{"meqtrees", "cubical"}*, *optional*
 
@@ -90,9 +90,9 @@ Perform Self calibration on the data
 
 .. _self_cal_spwid:
 
--------------------------------------
+--------------------------------------------------
 **spwid**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -102,9 +102,9 @@ Perform Self calibration on the data
 
 .. _self_cal_ncpu:
 
--------------------------------------
+--------------------------------------------------
 **ncpu**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -114,9 +114,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_npix:
 
--------------------------------------
+--------------------------------------------------
 **img_npix**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -126,9 +126,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_padding:
 
--------------------------------------
+--------------------------------------------------
 **img_padding**
--------------------------------------
+--------------------------------------------------
 
   *float*, *optional*
 
@@ -138,9 +138,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_mgain:
 
--------------------------------------
+--------------------------------------------------
 **img_mgain**
--------------------------------------
+--------------------------------------------------
 
   *float*, *optional*
 
@@ -150,9 +150,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_cell:
 
--------------------------------------
+--------------------------------------------------
 **img_cell**
--------------------------------------
+--------------------------------------------------
 
   *float*, *optional*
 
@@ -162,9 +162,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_weight:
 
--------------------------------------
+--------------------------------------------------
 **img_weight**
--------------------------------------
+--------------------------------------------------
 
   *{"briggs", "uniform", "natural"}*, *optional*
 
@@ -174,9 +174,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_robust:
 
--------------------------------------
+--------------------------------------------------
 **img_robust**
--------------------------------------
+--------------------------------------------------
 
   *float*, *optional*
 
@@ -186,9 +186,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_uvtaper:
 
--------------------------------------
+--------------------------------------------------
 **img_uvtaper**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -198,9 +198,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_niter:
 
--------------------------------------
+--------------------------------------------------
 **img_niter**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -210,9 +210,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_cleanborder:
 
--------------------------------------
+--------------------------------------------------
 **img_cleanborder**
--------------------------------------
+--------------------------------------------------
 
   *float*, *optional*
 
@@ -222,9 +222,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_facets:
 
--------------------------------------
+--------------------------------------------------
 **img_facets**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -234,9 +234,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_nchans:
 
--------------------------------------
+--------------------------------------------------
 **img_nchans**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -246,9 +246,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_joinchannels:
 
--------------------------------------
+--------------------------------------------------
 **img_joinchannels**
--------------------------------------
+--------------------------------------------------
 
   *bool*, *optional*
 
@@ -258,9 +258,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_fit_spectral_pol:
 
--------------------------------------
+--------------------------------------------------
 **img_fit_spectral_pol**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -270,9 +270,9 @@ Perform Self calibration on the data
 
 .. _self_cal_img_pol:
 
--------------------------------------
+--------------------------------------------------
 **img_pol**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -282,9 +282,9 @@ Perform Self calibration on the data
 
 .. _self_cal_cal_gain_amplitude_clip_low:
 
--------------------------------------
+--------------------------------------------------
 **cal_gain_amplitude_clip_low**
--------------------------------------
+--------------------------------------------------
 
   *float*, *optional*
 
@@ -294,9 +294,9 @@ Perform Self calibration on the data
 
 .. _self_cal_cal_gain_amplitude_clip_high:
 
--------------------------------------
+--------------------------------------------------
 **cal_gain_amplitude_clip_high**
--------------------------------------
+--------------------------------------------------
 
   *float*, *optional*
 
@@ -306,9 +306,9 @@ Perform Self calibration on the data
 
 .. _self_cal_cal_niter:
 
--------------------------------------
+--------------------------------------------------
 **cal_niter**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -318,9 +318,9 @@ Perform Self calibration on the data
 
 .. _self_cal_start_at_iter:
 
--------------------------------------
+--------------------------------------------------
 **start_at_iter**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -330,9 +330,9 @@ Perform Self calibration on the data
 
 .. _self_cal_aimfast:
 
--------------------------------------
+--------------------------------------------------
 **aimfast**
--------------------------------------
+--------------------------------------------------
 
   Quality assessment parameter
 
@@ -376,9 +376,9 @@ Perform Self calibration on the data
 
 .. _self_cal_image:
 
--------------------------------------
+--------------------------------------------------
 **image**
--------------------------------------
+--------------------------------------------------
 
   Imaging parameter
 
@@ -452,9 +452,9 @@ Perform Self calibration on the data
 
 .. _self_cal_sofia_mask:
 
--------------------------------------
+--------------------------------------------------
 **sofia_mask**
--------------------------------------
+--------------------------------------------------
 
   Run SoFiA source finder to produce a source mask and a Moment-0 map
 
@@ -528,9 +528,9 @@ Perform Self calibration on the data
 
 .. _self_cal_extract_sources:
 
--------------------------------------
+--------------------------------------------------
 **extract_sources**
--------------------------------------
+--------------------------------------------------
 
   Source finding parameters
 
@@ -574,9 +574,9 @@ Perform Self calibration on the data
 
 .. _self_cal_calibrate:
 
--------------------------------------
+--------------------------------------------------
 **calibrate**
--------------------------------------
+--------------------------------------------------
 
   Calibration parameters
 
@@ -676,13 +676,53 @@ Perform Self calibration on the data
 
     Calibration solution intervals
 
+  **ragavi_plot**
+
+    Plotting dignostics plots for delay correction calibration.
+
+    **enable**
+
+      *bool*, *optional*
+
+      Enables plotting dignostics
+
+    **table_name**
+
+      *list* *of str*, *optional*
+
+      List of gain tables to plot
+
+    **gaintype**
+
+      *list* *of str*, *optional*
+
+      List of gain solution types
+
+    **field**
+
+      *list* *of int*, *optional*
+
+      Fields to plot. Specify by field id, index.
+
+    **corr**
+
+      *str*, *optional*
+
+      Correlation to plot. E.g. X/Y or H/V
+
+    **htmlname**
+
+      *str*, *optional*
+
+      Output HTML file name
+
 
 
 .. _self_cal_restore_model:
 
--------------------------------------
+--------------------------------------------------
 **restore_model**
--------------------------------------
+--------------------------------------------------
 
   Restore modelled to final calibrated residual image
 
@@ -708,9 +748,9 @@ Perform Self calibration on the data
 
 .. _self_cal_flagging_summary:
 
--------------------------------------
+--------------------------------------------------
 **flagging_summary**
--------------------------------------
+--------------------------------------------------
 
   Output the flagging summary
 
@@ -722,11 +762,11 @@ Perform Self calibration on the data
 
 
 
-.. _self_cal_gain_interpolation:
+.. _self_cal_transfer_apply_gains:
 
--------------------------------------
-**gain_interpolation**
--------------------------------------
+--------------------------------------------------
+**transfer_apply_gains**
+--------------------------------------------------
 
   Interpolate gains over the high frequency resolution data
 
@@ -736,19 +776,53 @@ Perform Self calibration on the data
 
     Execute this segment
 
-  **hires_label**
+  **transfer_to_label**
 
     *str*, *optional*
 
-    label for high resolution data products in selfcal
+    label of cross-calibrated .ms file to which to transfer and apply the selfcal gains
+
+
+
+.. _self_cal_transfer_model:
+
+--------------------------------------------------
+**transfer_model**
+--------------------------------------------------
+
+  Transfer model from last WSclean imaging run to the MODEL_DATA column of another .MS
+
+  **enable**
+
+    *bool*, *optional*
+
+    Execute this segment (default False)
+
+  **transfer_to_label**
+
+    *str*, *optional*
+
+    label of .ms file to which to transfer the model
+
+  **model**
+
+    *str*, *optional*
+
+    Name of the sky model file (currently the only supported format is that of WSclean component lists). Default is 'auto', in which case MeerKATHI will build the file name from the input parameters of the selfcal loop. The file is assumed to be in the 'output' directory.
+
+  **spectra**
+
+    *bool*, *optional*
+
+    Model sources as non-flat spectra. The spectral coefficients and reference frequency must be present in the sky model. Default is False.
 
 
 
 .. _self_cal_highfreqres_contim:
 
--------------------------------------
+--------------------------------------------------
 **highfreqres_contim**
--------------------------------------
+--------------------------------------------------
 
   Make final continuum image and model at higher freq res, ideally using a clean mask based on the last round of continuum imging
 

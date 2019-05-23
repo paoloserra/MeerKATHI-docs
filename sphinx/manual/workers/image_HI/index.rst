@@ -18,9 +18,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_enable:
 
--------------------------------------
+--------------------------------------------------
 **enable**
--------------------------------------
+--------------------------------------------------
 
   *bool*, *optional*
 
@@ -30,9 +30,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_order:
 
--------------------------------------
+--------------------------------------------------
 **order**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -42,9 +42,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_label:
 
--------------------------------------
+--------------------------------------------------
 **label**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -54,9 +54,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_hires_label:
 
--------------------------------------
+--------------------------------------------------
 **hires_label**
--------------------------------------
+--------------------------------------------------
 
   *str*
 
@@ -66,9 +66,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_use_hires_data:
 
--------------------------------------
+--------------------------------------------------
 **use_hires_data**
--------------------------------------
+--------------------------------------------------
 
   *bool*, *optional*
 
@@ -78,9 +78,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_restfreq:
 
--------------------------------------
+--------------------------------------------------
 **restfreq**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -90,9 +90,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_npix:
 
--------------------------------------
+--------------------------------------------------
 **npix**
--------------------------------------
+--------------------------------------------------
 
   *list* *of int*, *optional*
 
@@ -102,9 +102,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_cell:
 
--------------------------------------
+--------------------------------------------------
 **cell**
--------------------------------------
+--------------------------------------------------
 
   *float*, *optional*
 
@@ -114,9 +114,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_weight:
 
--------------------------------------
+--------------------------------------------------
 **weight**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -126,9 +126,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_robust:
 
--------------------------------------
+--------------------------------------------------
 **robust**
--------------------------------------
+--------------------------------------------------
 
   *float*, *optional*
 
@@ -138,9 +138,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_subtractmodelcol:
 
--------------------------------------
+--------------------------------------------------
 **subtractmodelcol**
--------------------------------------
+--------------------------------------------------
 
   Replace the column CORRECTED_DATA with the difference CORRECTED_DATA - MODEL_DATA. This is useful for continuum subtraction as it enables the subtraction of the most recent continuum clean model.
 
@@ -154,9 +154,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_mstransform:
 
--------------------------------------
+--------------------------------------------------
 **mstransform**
--------------------------------------
+--------------------------------------------------
 
   Perform UVLIN continuum subtraction and/or doppler tracking corrections
 
@@ -236,9 +236,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_sunblocker:
 
--------------------------------------
+--------------------------------------------------
 **sunblocker**
--------------------------------------
+--------------------------------------------------
 
   Use sunblocker to remove solar RFI. See description of sunblocker on github repository gigjozsa/sunblocker in method phazer of module sunblocker.py.
 
@@ -276,9 +276,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_wsclean_image:
 
--------------------------------------
+--------------------------------------------------
 **wsclean_image**
--------------------------------------
+--------------------------------------------------
 
   Use WSClean to create line data cube. See WSclean wiki on sourceforge.
 
@@ -436,9 +436,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_casa_image:
 
--------------------------------------
+--------------------------------------------------
 **casa_image**
--------------------------------------
+--------------------------------------------------
 
   Use CASA to create line data cube.
 
@@ -528,9 +528,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_remove_stokes_axis:
 
--------------------------------------
+--------------------------------------------------
 **remove_stokes_axis**
--------------------------------------
+--------------------------------------------------
 
   Remove Stokes axis from HI cube
 
@@ -544,9 +544,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_pb_cube:
 
--------------------------------------
+--------------------------------------------------
 **pb_cube**
--------------------------------------
+--------------------------------------------------
 
   Make primary beam cube
 
@@ -560,9 +560,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_freq_to_vel:
 
--------------------------------------
+--------------------------------------------------
 **freq_to_vel**
--------------------------------------
+--------------------------------------------------
 
   Convert the spectral axis' header keys of the HI cube from frequency to velocity in the radio definition, v=c(1-obsfreq/restfreq). No change of spectra reference frame is performed.
 
@@ -582,9 +582,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_sofia:
 
--------------------------------------
+--------------------------------------------------
 **sofia**
--------------------------------------
+--------------------------------------------------
 
   Run SoFiA source finder to produce a source mask and a Moment-0 map
 
@@ -664,9 +664,9 @@ Create HI data cube and detect sources therein
 
 .. _image_HI_flagging_summary:
 
--------------------------------------
+--------------------------------------------------
 **flagging_summary**
--------------------------------------
+--------------------------------------------------
 
   Print out flagging summary.
 

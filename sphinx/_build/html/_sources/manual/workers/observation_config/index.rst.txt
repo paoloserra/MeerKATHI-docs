@@ -18,9 +18,9 @@ Setup some basic observation information
 
 .. _observation_config_order:
 
--------------------------------------
+--------------------------------------------------
 **order**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -30,9 +30,9 @@ Setup some basic observation information
 
 .. _observation_config_obsinfo:
 
--------------------------------------
+--------------------------------------------------
 **obsinfo**
--------------------------------------
+--------------------------------------------------
 
   Get observation information
 
@@ -64,9 +64,9 @@ Setup some basic observation information
 
 .. _observation_config_Check_Cals:
 
--------------------------------------
+--------------------------------------------------
 **Check_Cals**
--------------------------------------
+--------------------------------------------------
 
   *bool*, *optional*
 
@@ -76,9 +76,9 @@ Setup some basic observation information
 
 .. _observation_config_target:
 
--------------------------------------
+--------------------------------------------------
 **target**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -88,9 +88,9 @@ Setup some basic observation information
 
 .. _observation_config_gcal:
 
--------------------------------------
+--------------------------------------------------
 **gcal**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -100,9 +100,9 @@ Setup some basic observation information
 
 .. _observation_config_bpcal:
 
--------------------------------------
+--------------------------------------------------
 **bpcal**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -112,9 +112,9 @@ Setup some basic observation information
 
 .. _observation_config_fcal:
 
--------------------------------------
+--------------------------------------------------
 **fcal**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -122,71 +122,35 @@ Setup some basic observation information
 
 
 
+.. _observation_config_xcal:
+
+--------------------------------------------------
+**xcal**
+--------------------------------------------------
+
+  *str*, *optional*
+
+  Crosshand phase angle calibrator. This calibrator must be linearly polarized and have a non-zero parallactic angle coverage at the time of observation to solve for the X-Y offsets in digitizers and the absolute polarization angle of the system. Successful calibration derotates U from V.
+
+
+
 .. _observation_config_reference_antenna:
 
--------------------------------------
+--------------------------------------------------
 **reference_antenna**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
-  Reference antenna. If set to 'auto' then will automatically set using metadata file (only for meerkat data)
-
-
-
-.. _observation_config_nchans:
-
--------------------------------------
-**nchans**
--------------------------------------
-
-  *int*, *optional*
-
-  Number of channels. If set to 0 then will automatically set using metadata file (only for meerkat data)
-
-
-
-.. _observation_config_firstchanfreq:
-
--------------------------------------
-**firstchanfreq**
--------------------------------------
-
-  *str*, *optional*
-
-  First frequency channel. If set to 0 then will automatically set using metadata file (only for meerkat data)
-
-
-
-.. _observation_config_lastchanfreq:
-
--------------------------------------
-**lastchanfreq**
--------------------------------------
-
-  *str*, *optional*
-
-  Last frequency. If set to 0 then will automatically set using metadata file (only for meerkat data)
-
-
-
-.. _observation_config_chanwidth:
-
--------------------------------------
-**chanwidth**
--------------------------------------
-
-  *str*, *optional*
-
-  Channel width. If set to 0 then will automatically set using metadata file (only for meerkat data)
+  Reference antenna. If 'auto' then MeerKATHI will automatically pick the reference antenna from the .JSON metadata file if available. The file name is the same as the input .MS file but with .JSON extension. This file is typically available only for old (ROACH2) MeerKAT data. For all other data the pipeline will likely throw an error and gracefully terminate. In that case the reference antenna should be set manually.
 
 
 
 .. _observation_config_primary_beam:
 
--------------------------------------
+--------------------------------------------------
 **primary_beam**
--------------------------------------
+--------------------------------------------------
 
   Generate primary beam model
 

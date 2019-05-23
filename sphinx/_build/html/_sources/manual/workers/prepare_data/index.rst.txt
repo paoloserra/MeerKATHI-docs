@@ -18,9 +18,9 @@ Prepare the data for calibration and imaging.
 
 .. _prepare_data_enable:
 
--------------------------------------
+--------------------------------------------------
 **enable**
--------------------------------------
+--------------------------------------------------
 
   *bool*, *optional*
 
@@ -30,9 +30,9 @@ Prepare the data for calibration and imaging.
 
 .. _prepare_data_order:
 
--------------------------------------
+--------------------------------------------------
 **order**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -42,9 +42,9 @@ Prepare the data for calibration and imaging.
 
 .. _prepare_data_fixvis:
 
--------------------------------------
+--------------------------------------------------
 **fixvis**
--------------------------------------
+--------------------------------------------------
 
   Fixes the UVW coordinates through the CASA task fixvis.
 
@@ -58,9 +58,9 @@ Prepare the data for calibration and imaging.
 
 .. _prepare_data_prepms:
 
--------------------------------------
+--------------------------------------------------
 **prepms**
--------------------------------------
+--------------------------------------------------
 
   Add BITFLAG column to MS.
 
@@ -74,9 +74,9 @@ Prepare the data for calibration and imaging.
 
 .. _prepare_data_add_spectral_weights:
 
--------------------------------------
+--------------------------------------------------
 **add_spectral_weights**
--------------------------------------
+--------------------------------------------------
 
   Add spectral weights column to the measurement set.
 

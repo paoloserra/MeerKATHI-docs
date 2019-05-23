@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Download &amp; Install &mdash; MeerKATHI  documentation</title>
+  <title>Install &mdash; MeerKATHI  documentation</title>
   
 
   
@@ -81,7 +81,8 @@
             
             
                 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Download &amp; Install</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#download-install">Download &amp; Install</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#on-linux">On Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#on-mac">On Mac</a></li>
 </ul>
@@ -119,7 +120,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Download &amp; Install</li>
+    <li>Install</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -133,7 +134,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="download-install">
+  <p><a class="reference external" href="https://jenkins.meqtrees.net/job/meerkathi-cron/"><img alt="https://jenkins.meqtrees.net/job/meerkathi-cron/badge/icon" src="https://jenkins.meqtrees.net/job/meerkathi-cron/badge/icon" />Jenkins build Status</a></p>
+<div class="section" id="install">
+<h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="download-install">
 <h1>Download &amp; Install<a class="headerlink" href="#download-install" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="on-linux">
 <h2>On Linux<a class="headerlink" href="#on-linux" title="Permalink to this headline">¶</a></h2>
@@ -169,13 +174,12 @@ $ pip install pip wheel setuptools -U
 <ol class="simple">
 <li>Install meerKATHI</li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install &lt;absolute path to meerkathi folder&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install &lt;absolute path to meerkathi folder&gt;[extra_diagnostics]
 $ export PYTHONPATH=&#39;&#39; # Ensure that you use venv Python
 </pre></div>
 </div>
-<ol class="simple">
-<li>Build Stimela</li>
-</ol>
+<p>If the requirements cannot be installed on your system you may omit [extra_diagnostics]. This will disable report rendering.
+5. Build Stimela</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela build
 </pre></div>
 </div>

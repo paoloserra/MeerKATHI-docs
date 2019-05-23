@@ -18,9 +18,9 @@ Create mask from catalog and/or merge with mask of extended source
 
 .. _masking_enable:
 
--------------------------------------
+--------------------------------------------------
 **enable**
--------------------------------------
+--------------------------------------------------
 
   *bool*, *optional*
 
@@ -30,9 +30,9 @@ Create mask from catalog and/or merge with mask of extended source
 
 .. _masking_order:
 
--------------------------------------
+--------------------------------------------------
 **order**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -42,9 +42,9 @@ Create mask from catalog and/or merge with mask of extended source
 
 .. _masking_centre_coord:
 
--------------------------------------
+--------------------------------------------------
 **centre_coord**
--------------------------------------
+--------------------------------------------------
 
   *list* *of str*, *optional*
 
@@ -54,9 +54,9 @@ Create mask from catalog and/or merge with mask of extended source
 
 .. _masking_mask_size:
 
--------------------------------------
+--------------------------------------------------
 **mask_size**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -66,9 +66,9 @@ Create mask from catalog and/or merge with mask of extended source
 
 .. _masking_cell_size:
 
--------------------------------------
+--------------------------------------------------
 **cell_size**
--------------------------------------
+--------------------------------------------------
 
   *float*, *optional*
 
@@ -78,9 +78,9 @@ Create mask from catalog and/or merge with mask of extended source
 
 .. _masking_name_mask:
 
--------------------------------------
+--------------------------------------------------
 **name_mask**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -90,9 +90,9 @@ Create mask from catalog and/or merge with mask of extended source
 
 .. _masking_extended_source_input:
 
--------------------------------------
+--------------------------------------------------
 **extended_source_input**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -102,9 +102,9 @@ Create mask from catalog and/or merge with mask of extended source
 
 .. _masking_final_mask:
 
--------------------------------------
+--------------------------------------------------
 **final_mask**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -114,9 +114,9 @@ Create mask from catalog and/or merge with mask of extended source
 
 .. _masking_query_catalog:
 
--------------------------------------
+--------------------------------------------------
 **query_catalog**
--------------------------------------
+--------------------------------------------------
 
   Query catalog to select field/sources from which extract the mask
 
@@ -142,9 +142,9 @@ Create mask from catalog and/or merge with mask of extended source
 
 .. _masking_pb_correction:
 
--------------------------------------
+--------------------------------------------------
 **pb_correction**
--------------------------------------
+--------------------------------------------------
 
   Correct input image for primary beam before exctracting mask
 
@@ -164,9 +164,9 @@ Create mask from catalog and/or merge with mask of extended source
 
 .. _masking_make_mask:
 
--------------------------------------
+--------------------------------------------------
 **make_mask**
--------------------------------------
+--------------------------------------------------
 
   Build mask from existing image using SoFiA and/or threshold cutoff
 
@@ -204,9 +204,9 @@ Create mask from catalog and/or merge with mask of extended source
 
 .. _masking_merge_with_extended:
 
--------------------------------------
+--------------------------------------------------
 **merge_with_extended**
--------------------------------------
+--------------------------------------------------
 
   Merge with mask of extended source
 

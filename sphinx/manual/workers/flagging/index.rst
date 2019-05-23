@@ -18,9 +18,9 @@ Flagging of the data.
 
 .. _flagging_enable:
 
--------------------------------------
+--------------------------------------------------
 **enable**
--------------------------------------
+--------------------------------------------------
 
   *bool*, *optional*
 
@@ -30,9 +30,9 @@ Flagging of the data.
 
 .. _flagging_order:
 
--------------------------------------
+--------------------------------------------------
 **order**
--------------------------------------
+--------------------------------------------------
 
   *int*, *optional*
 
@@ -42,9 +42,9 @@ Flagging of the data.
 
 .. _flagging_label:
 
--------------------------------------
+--------------------------------------------------
 **label**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -54,9 +54,9 @@ Flagging of the data.
 
 .. _flagging_hires_label:
 
--------------------------------------
+--------------------------------------------------
 **hires_label**
--------------------------------------
+--------------------------------------------------
 
   *str*, *optional*
 
@@ -66,9 +66,9 @@ Flagging of the data.
 
 .. _flagging_hires_flag:
 
--------------------------------------
+--------------------------------------------------
 **hires_flag**
--------------------------------------
+--------------------------------------------------
 
   *bool*, *optional*
 
@@ -78,9 +78,9 @@ Flagging of the data.
 
 .. _flagging_autoflag_autocorr_powerspectra:
 
--------------------------------------
+--------------------------------------------------
 **autoflag_autocorr_powerspectra**
--------------------------------------
+--------------------------------------------------
 
   Flags antennas based on drifts in the scan average of the auto correlation spectra per field. This doesn't strictly require any calibration. It is also not field structure dependent, since it is just based on the DC of the field. Compares scan to median power of scans per field per channel. Also compares antenna to median of the array per scan per field per channel. This should catch any antenna with severe temperature problems.
 
@@ -130,9 +130,9 @@ Flagging of the data.
 
 .. _flagging_flag_autocorr:
 
--------------------------------------
+--------------------------------------------------
 **flag_autocorr**
--------------------------------------
+--------------------------------------------------
 
   Flag autocorrelations. Through CASA flagdata task.
 
@@ -146,9 +146,9 @@ Flagging of the data.
 
 .. _flagging_quack_flagging:
 
--------------------------------------
+--------------------------------------------------
 **quack_flagging**
--------------------------------------
+--------------------------------------------------
 
   Do quack flagging, i.e. flag the begining and/or end chunks of each scan. Again, through FLAGDATA.
 
@@ -174,9 +174,9 @@ Flagging of the data.
 
 .. _flagging_flag_shadow:
 
--------------------------------------
+--------------------------------------------------
 **flag_shadow**
--------------------------------------
+--------------------------------------------------
 
   Flag shadowed antennas through the CASA task FLAGDATA.
 
@@ -202,9 +202,9 @@ Flagging of the data.
 
 .. _flagging_flag_spw:
 
--------------------------------------
+--------------------------------------------------
 **flag_spw**
--------------------------------------
+--------------------------------------------------
 
   Flag spectral windows/channels. Of course, through FLAGDATA.
 
@@ -230,9 +230,9 @@ Flagging of the data.
 
 .. _flagging_flag_time:
 
--------------------------------------
+--------------------------------------------------
 **flag_time**
--------------------------------------
+--------------------------------------------------
 
   Flag timerange in the data using CASA FLAGDATA task.
 
@@ -252,9 +252,9 @@ Flagging of the data.
 
 .. _flagging_flag_antennas:
 
--------------------------------------
+--------------------------------------------------
 **flag_antennas**
--------------------------------------
+--------------------------------------------------
 
   Flag bad antennas. Or just the ones you have sworn a vendetta against.
 
@@ -280,9 +280,9 @@ Flagging of the data.
 
 .. _flagging_flag_scan:
 
--------------------------------------
+--------------------------------------------------
 **flag_scan**
--------------------------------------
+--------------------------------------------------
 
   Flag bad scans. Uses CASA Flagdata task.
 
@@ -302,9 +302,9 @@ Flagging of the data.
 
 .. _flagging_static_mask:
 
--------------------------------------
+--------------------------------------------------
 **static_mask**
--------------------------------------
+--------------------------------------------------
 
   Apply static mask to flag out known RFI, Meerkat specific.
 
@@ -330,9 +330,9 @@ Flagging of the data.
 
 .. _flagging_autoflag_rfi:
 
--------------------------------------
+--------------------------------------------------
 **autoflag_rfi**
--------------------------------------
+--------------------------------------------------
 
   Flag RFI using AOFlagger software.
 
@@ -370,9 +370,9 @@ Flagging of the data.
 
 .. _flagging_rfinder:
 
--------------------------------------
+--------------------------------------------------
 **rfinder**
--------------------------------------
+--------------------------------------------------
 
   A tool to investigate the presence of RFI
 
@@ -434,9 +434,9 @@ Flagging of the data.
 
 .. _flagging_flagging_summary:
 
--------------------------------------
+--------------------------------------------------
 **flagging_summary**
--------------------------------------
+--------------------------------------------------
 
   Write flagging summary at the end of the pre-calibration flagging. Uses CASA FLAGDATA in "summary" mode.
 
