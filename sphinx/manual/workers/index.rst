@@ -23,3 +23,4 @@ Workers parameters
    masking/index.rst
    self_cal/index.rst
    image_HI/index.rst
+   polcal/index.rst

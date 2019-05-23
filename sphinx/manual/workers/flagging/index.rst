@@ -368,6 +368,70 @@ Flagging of the data.
 
 
 
+.. _flagging_rfinder:
+
+-------------------------------------
+**rfinder**
+-------------------------------------
+
+  A tool to investigate the presence of RFI
+
+  **enable**
+
+    *bool*, *optional*
+
+    Enable invsetigation of rfi with rfinder
+
+  **telescope**
+
+    *str*, *optional*
+
+    Name of telescope
+
+  **field**
+
+    *int*, *optional*
+
+    Field ID of target
+
+  **polarization**
+
+    *{"xx", "XX", "yy", "YY", "xy", "XY", "yx", "YX", "q", "Q"}*, *optional*
+
+    Select polarisation e.g. xx, yy, xy, yx, q (also in CAPS)
+
+  **spw_enable**
+
+    *bool*, *optional*
+
+    Enable spw for rebinning
+
+  **spw_width**
+
+    *int*, *optional*
+
+    Channel width of rebinned output table (MHz)
+
+  **time_enable**
+
+    *bool*, *optional*
+
+    Enable time chunking
+
+  **time_step**
+
+    *int*, *optional*
+
+    Time chunks in minutes
+
+  **movies_in_report**
+
+    *bool*, *optional*
+
+    Generate movies in a repo
+
+
+
 .. _flagging_flagging_summary:
 
 -------------------------------------

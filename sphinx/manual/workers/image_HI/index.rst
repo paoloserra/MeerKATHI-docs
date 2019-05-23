@@ -420,6 +420,18 @@ Create HI data cube and detect sources therein
 
     If set to true, will not store the clean model in MODEL_DATA. Relevant for HI.
 
+  **multi_scale**
+
+    *bool*, *optional*
+
+    switch on multiscale cleaning
+
+  **multi_scale_scales**
+
+    *list* *of int*, *optional*
+
+    scales of multiscale [0,10,20,etc, etc]
+
 
 
 .. _image_HI_casa_image:
@@ -559,6 +571,12 @@ Create HI data cube and detect sources therein
     *bool*, *optional*
 
     Execute conversion. Default is true
+
+  **reverse**
+
+    *bool*, *optional*
+
+    Perform the inverse transformation and change the cube 3rd axis from velocity to frequency. Default is false.
 
 
 

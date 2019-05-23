@@ -676,6 +676,46 @@ Perform Self calibration on the data
 
     Calibration solution intervals
 
+  **ragavi_plot**
+
+    Plotting dignostics plots for delay correction calibration.
+
+    **enable**
+
+      *bool*, *optional*
+
+      Enables plotting dignostics
+
+    **table_name**
+
+      *list* *of str*, *optional*
+
+      List of gain tables to plot
+
+    **gaintype**
+
+      *list* *of str*, *optional*
+
+      List of gain solution types
+
+    **field**
+
+      *list* *of int*, *optional*
+
+      Fields to plot. Specify by field id, index.
+
+    **corr**
+
+      *str*, *optional*
+
+      Correlation to plot. E.g. X/Y or H/V
+
+    **htmlname**
+
+      *str*, *optional*
+
+      Output HTML file name
+
 
 
 .. _self_cal_restore_model:
@@ -722,10 +762,10 @@ Perform Self calibration on the data
 
 
 
-.. _self_cal_gain_interpolation:
+.. _self_cal_transfer_apply_gains:
 
 -------------------------------------
-**gain_interpolation**
+**transfer_apply_gains**
 -------------------------------------
 
   Interpolate gains over the high frequency resolution data
@@ -736,11 +776,45 @@ Perform Self calibration on the data
 
     Execute this segment
 
-  **hires_label**
+  **transfer_to_label**
 
     *str*, *optional*
 
-    label for high resolution data products in selfcal
+    label of cross-calibrated .ms file to which to transfer and apply the selfcal gains
+
+
+
+.. _self_cal_transfer_model:
+
+-------------------------------------
+**transfer_model**
+-------------------------------------
+
+  Transfer model from last WSclean imaging run to the MODEL_DATA column of another .MS
+
+  **enable**
+
+    *bool*, *optional*
+
+    Execute this segment (default False)
+
+  **transfer_to_label**
+
+    *str*, *optional*
+
+    label of .ms file to which to transfer the model
+
+  **model**
+
+    *str*, *optional*
+
+    Name of the sky model file (currently the only supported format is that of WSclean component lists). Default is 'auto', in which case MeerKATHI will build the file name from the input parameters of the selfcal loop. The file is assumed to be in the 'output' directory.
+
+  **spectra**
+
+    *bool*, *optional*
+
+    Model sources as non-flat spectra. The spectral coefficients and reference frequency must be present in the sky model. Default is False.
 
 
 

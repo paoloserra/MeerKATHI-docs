@@ -122,6 +122,18 @@ Setup some basic observation information
 
 
 
+.. _observation_config_xcal:
+
+-------------------------------------
+**xcal**
+-------------------------------------
+
+  *str*, *optional*
+
+  Crosshand phase angle calibrator. This calibrator must be linearly polarized and have a non-zero parallactic angle coverage at the time of observation to solve for the X-Y offsets in digitizers and the absolute polarization angle of the system. Successful calibration derotates U from V.
+
+
+
 .. _observation_config_reference_antenna:
 
 -------------------------------------
@@ -130,55 +142,7 @@ Setup some basic observation information
 
   *str*, *optional*
 
-  Reference antenna. If set to 'auto' then will automatically set using metadata file (only for meerkat data)
-
-
-
-.. _observation_config_nchans:
-
--------------------------------------
-**nchans**
--------------------------------------
-
-  *int*, *optional*
-
-  Number of channels. If set to 0 then will automatically set using metadata file (only for meerkat data)
-
-
-
-.. _observation_config_firstchanfreq:
-
--------------------------------------
-**firstchanfreq**
--------------------------------------
-
-  *str*, *optional*
-
-  First frequency channel. If set to 0 then will automatically set using metadata file (only for meerkat data)
-
-
-
-.. _observation_config_lastchanfreq:
-
--------------------------------------
-**lastchanfreq**
--------------------------------------
-
-  *str*, *optional*
-
-  Last frequency. If set to 0 then will automatically set using metadata file (only for meerkat data)
-
-
-
-.. _observation_config_chanwidth:
-
--------------------------------------
-**chanwidth**
--------------------------------------
-
-  *str*, *optional*
-
-  Channel width. If set to 0 then will automatically set using metadata file (only for meerkat data)
+  Reference antenna. If 'auto' then MeerKATHI will automatically pick the reference antenna from the .JSON metadata file if available. The file name is the same as the input .MS file but with .JSON extension. This file is typically available only for old (ROACH2) MeerKAT data. For all other data the pipeline will likely throw an error and gracefully terminate. In that case the reference antenna should be set manually.
 
 
 

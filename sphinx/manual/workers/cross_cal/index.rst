@@ -170,12 +170,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     Solution interval for delay-correction calibration.
 
-  **minnrbl**
-
-    *int*, *optional*
-
-    Minimum number of baselines required (per antenna) for solving.
-
   **minsnr**
 
     *int*, *optional*
@@ -314,6 +308,28 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     Remove large temporal phase variations from bandpass calibrator before solving.
 
+  **flag**
+
+    Flagging based on bandpass amplitude solutions.
+
+    **enable**
+
+      *bool*, *optional*
+
+      Enable flagging based on delay correction solutions via CASA FLAGDATA task. Default is False.
+
+    **mode**
+
+      *{"list", "manual", "clip", "quack", "shadow", "elevation", "tfcrop", "antint", "extend", "unflag", "summary"}*, *optional*
+
+      Mode to set for flagging based on delay correction gains. Default is "clip". If you want to use other modes, specify the relevant keywords from Flagdata.
+
+    **clipminmax**
+
+      *list* *of float*, *optional*
+
+      Specifies the minimum and maximum delay to keep, e.g. [0.1, 10].
+
   **plot**
 
     Plotting dignostics plots for bandpass correction calibration.
@@ -406,6 +422,28 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     Should a reference antenna be used for this calibration
 
+  **flag**
+
+    Flagging based on flux-scale amplitude solutions.
+
+    **enable**
+
+      *bool*, *optional*
+
+      Enable flagging based on delay correction solutions via CASA FLAGDATA task. Default is False.
+
+    **mode**
+
+      *{"list", "manual", "clip", "quack", "shadow", "elevation", "tfcrop", "antint", "extend", "unflag", "summary"}*, *optional*
+
+      Mode to set for flagging based on delay correction gains. Default is "clip". If you want to use other modes, specify the relevant keywords from Flagdata.
+
+    **clipminmax**
+
+      *list* *of float*, *optional*
+
+      Specifies the minimum and maximum delay to keep, e.g. [0.1, 10].
+
   **plot**
 
     Plotting dignostics plots for flux calibrator corrections.
@@ -497,6 +535,28 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
     *bool*
 
     Should a reference antenna be used for this calibration
+
+  **flag**
+
+    Flagging based on gain amplitudes.
+
+    **enable**
+
+      *bool*, *optional*
+
+      Enable flagging based on delay correction solutions via CASA FLAGDATA task. Default is False.
+
+    **mode**
+
+      *{"list", "manual", "clip", "quack", "shadow", "elevation", "tfcrop", "antint", "extend", "unflag", "summary"}*, *optional*
+
+      Mode to set for flagging based on delay correction gains. Default is "clip". If you want to use other modes, specify the relevant keywords from Flagdata.
+
+    **clipminmax**
+
+      *list* *of float*, *optional*
+
+      Specifies the minimum and maximum delay to keep, e.g. [0.1, 10].
 
   **plot**
 
