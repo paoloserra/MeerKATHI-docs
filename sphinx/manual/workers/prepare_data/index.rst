@@ -22,7 +22,7 @@ Prepare the data for calibration and imaging.
 **enable**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*
 
   Executes the data preparation step.
 
@@ -38,7 +38,7 @@ Prepare the data for calibration and imaging.
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Enable execution of fixvis.
 
@@ -54,25 +54,25 @@ Prepare the data for calibration and imaging.
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = true*
 
     enable this section
 
   **add_bitflag_column**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = true*
 
     Add BITFLAG and BITFLAG_ROW columns
 
   **init_legacy_flagset**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = true*
 
     Save all current flags in a legacy flagset if it does not exist
 
   **remove_flagsets**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = true*
 
     Remove all existing flagsets, except legacy flags
 
@@ -88,31 +88,31 @@ Prepare the data for calibration and imaging.
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = false*
 
     Enables addition of spectral weights column to the measurement set.
 
   **weight_columns**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = WEIGHT, WEIGHT_SPECTRUM*
 
     column names
 
   **noise_columns**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = SIGMA, SIGMA_SPECTRUM*
 
     column names for noise
 
   **write_to_ms**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = true*
 
     write columns to file
 
   **stats_data**
 
-    *str*, *optional*
+    *str*, *optional*, *default = use_package_meerkat_spec*
 
     which statistics for the file.
 

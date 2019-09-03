@@ -102,6 +102,11 @@ gains and flux scale. The calibration can be applied to the calibrators' visibil
 future inspection. Numerous parameters are available for users to decide how to calibrate.
 Flagging based on closure errors is available in this worker.
 
+:ref:`polcal`
+^^^^^^^^^^^^^^^^
+
+TBD
+
 :ref:`inspect_data`
 ^^^^^^^^^^^^^^^^^^^
 

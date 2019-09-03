@@ -22,7 +22,7 @@ General pipeline information, data IDs, prefixes for output
 **data_path**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = ' '*
 
   where MeerKATHI (over-) writes HDF5 files and JSON info files downloaded by get_data below
 
@@ -34,7 +34,7 @@ General pipeline information, data IDs, prefixes for output
 **msdir**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = msdir*
 
   where MeerKATHI will write and expect to find measurement set (MS) files
 
@@ -46,7 +46,7 @@ General pipeline information, data IDs, prefixes for output
 **input**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = input*
 
   where MeerKATHI expects to find various input files (e.g., RFI flagging strategy files).
 
@@ -58,7 +58,7 @@ General pipeline information, data IDs, prefixes for output
 **output**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = output*
 
   where MeerKATHI writes output products
 
@@ -70,7 +70,7 @@ General pipeline information, data IDs, prefixes for output
 **prefix**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = meerkathi*
 
   Prefix for MeerKATHI output products
 
@@ -82,7 +82,7 @@ General pipeline information, data IDs, prefixes for output
 **init_pipeline**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*, *optional*, *default = True*
 
   Initialise pipeline by copying input files (meerkat specific; flagging strategies, beam model, etc.)
 

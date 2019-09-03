@@ -82,8 +82,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html#download-install">Download &amp; Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
@@ -176,28 +175,28 @@
 <div class="section" id="enable">
 <span id="inspect-data-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em></p>
 <p>Executes dignostic plotting of the first-pass cross-calibrated data.</p>
 </div></blockquote>
 </div>
 <div class="section" id="label">
 <span id="inspect-data-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Label for output products (plots etc.) for this step.</p>
 </div></blockquote>
 </div>
 <div class="section" id="correlation">
 <span id="inspect-data-correlation"></span><h2><strong>correlation</strong><a class="headerlink" href="#correlation" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = XX, YY</em></p>
 <p>Label specyfying the correlations (default all).</p>
 </div></blockquote>
 </div>
 <div class="section" id="uvrange">
 <span id="inspect-data-uvrange"></span><h2><strong>uvrange</strong><a class="headerlink" href="#uvrange" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Set the U-V range for data selection, e.g. ‘&gt;50’.</p>
 </div></blockquote>
 </div>
@@ -207,27 +206,27 @@
 <div><p>Plot real vs imaginary parts of data.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Executed the real v/s imaginary data plotting.</p>
 </div></blockquote>
 <p><strong>fields</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal</em></p>
 <p>Fields to plot. Specify by field id, index or keys like, gcal, bpcal.</p>
 </div></blockquote>
 <p><strong>column</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corrected</em></p>
 <p>Data column to plot.</p>
 </div></blockquote>
 <p><strong>avgtime</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Time to average for plotting, in seconds.</p>
 </div></blockquote>
 <p><strong>avgchannel</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Number of channels to average for plotting.</p>
 </div></blockquote>
 </div></blockquote>
@@ -238,27 +237,27 @@
 <div><p>Plot Amplitude vs Phase for  data.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Executes the plotting of amplitude v/s phase for data.</p>
 </div></blockquote>
 <p><strong>fields</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal</em></p>
 <p>Fields to plot. Specify by field id, index or keys like: gcal, bpcal.</p>
 </div></blockquote>
 <p><strong>column</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corrected</em></p>
 <p>Data column to plot.</p>
 </div></blockquote>
 <p><strong>avgtime</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Time to average for plotting, in seconds.</p>
 </div></blockquote>
 <p><strong>avgchannel</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Number of channels to average for plotting.</p>
 </div></blockquote>
 </div></blockquote>
@@ -269,27 +268,27 @@
 <div><p>Plot data amplitude v/s  uvwave.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Executes plotting data amplitude as a function of uvwave.</p>
 </div></blockquote>
 <p><strong>fields</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal</em></p>
 <p>Fields to plot. Specify by field id, index or keys like: gcal, bpcal.</p>
 </div></blockquote>
 <p><strong>column</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corrected</em></p>
 <p>Data column to plot.</p>
 </div></blockquote>
 <p><strong>avgtime</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Time to average for plotting, in seconds.</p>
 </div></blockquote>
 <p><strong>avgchannel</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Number of channels to average for plotting.</p>
 </div></blockquote>
 </div></blockquote>
@@ -300,27 +299,27 @@
 <div><p>Plot data amplitde v/s antenna.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Executes plotting data amplitude v/s antennas.</p>
 </div></blockquote>
 <p><strong>fields</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal</em></p>
 <p>Fields to plot. Specify by field id, index or keys like: gcal, bpcal.</p>
 </div></blockquote>
 <p><strong>column</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corrected</em></p>
 <p>Data column to plot.</p>
 </div></blockquote>
 <p><strong>avgtime</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Time to average for plotting, in seconds.</p>
 </div></blockquote>
 <p><strong>avgchannel</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Number of channels to average for plotting.</p>
 </div></blockquote>
 </div></blockquote>
@@ -331,27 +330,27 @@
 <div><p>Plot data phase v/s uvwave.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Executes plotting data phase v/s uvwave.</p>
 </div></blockquote>
 <p><strong>fields</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal</em></p>
 <p>Fields to plot. Specify by field id, index or keys like: gcal, bpcal.</p>
 </div></blockquote>
 <p><strong>column</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corrected</em></p>
 <p>Data column to plot.</p>
 </div></blockquote>
 <p><strong>avgtime</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Time to average for plotting, in seconds.</p>
 </div></blockquote>
 <p><strong>avgchannel</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Number of channels to average for plotting.</p>
 </div></blockquote>
 </div></blockquote>
@@ -362,27 +361,27 @@
 <div><p>Plot data amplitude v/s scan number.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Executes plotting data amplitude v/s scan number.</p>
 </div></blockquote>
 <p><strong>fields</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, target</em></p>
 <p>Fields to plot. Specify by field id, index or keys like: gcal, bpcal.</p>
 </div></blockquote>
 <p><strong>column</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corrected</em></p>
 <p>Data column to plot.</p>
 </div></blockquote>
 <p><strong>avgtime</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Time to average for plotting, in seconds.</p>
 </div></blockquote>
 <p><strong>avgchannel</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Number of channels to average for plotting.</p>
 </div></blockquote>
 </div></blockquote>

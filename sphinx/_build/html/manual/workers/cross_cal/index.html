@@ -82,8 +82,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html#download-install">Download &amp; Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
@@ -183,28 +182,28 @@
 <div class="section" id="enable">
 <span id="cross-cal-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em></p>
 <p>Execute this segment.</p>
 </div></blockquote>
 </div>
 <div class="section" id="otfdelay">
 <span id="cross-cal-otfdelay"></span><h2><strong>otfdelay</strong><a class="headerlink" href="#otfdelay" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Set whether to apply the delay calibration on the fly when solving for other calibration terms.</p>
 </div></blockquote>
 </div>
 <div class="section" id="uvrange">
 <span id="cross-cal-uvrange"></span><h2><strong>uvrange</strong><a class="headerlink" href="#uvrange" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = &gt;50</em></p>
 <p>Set the U-V range for data selection, e.g. ‘&gt;50’.</p>
 </div></blockquote>
 </div>
 <div class="section" id="label">
 <span id="cross-cal-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 1gc1</em></p>
 <p>Label for output files.</p>
 </div></blockquote>
 </div>
@@ -214,17 +213,17 @@
 <div><p>Initializes dataset for calibration using CASA</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em></p>
 <p>Execute intialization step</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = fcal, bpcal, gcal, xcal, target</em></p>
 <p>fields to initialize</p>
 </div></blockquote>
 <p><strong>addmodel</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Intializes scratch MODEL_DATA column</p>
 </div></blockquote>
 </div></blockquote>
@@ -235,27 +234,27 @@
 <div><p>Essentially setjy task from CASA.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute the setjy task.</p>
 </div></blockquote>
 <p><strong>meerkathi_model</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Force disable built-in models in MeerKATHI (NOT RECOMMENDED!)</p>
 </div></blockquote>
 <p><strong>no_verify</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Enables setting standard manually.</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = fcal</em></p>
 <p>Set the field to carry out setjy on. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</p>
 </div></blockquote>
 <p><strong>threads</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 8</em></p>
 <p>Set the number of threads to use when predicting local sky model using MeqTrees.</p>
 </div></blockquote>
 </div></blockquote>
@@ -266,27 +265,27 @@
 <div><p>Carry out delay correction calibration (using gaincal task from CASA).</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute delay correction calibration.</p>
 </div></blockquote>
 <p><strong>combine</strong></p>
 <blockquote>
-<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em></p>
+<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Parameter to combine different data axis for solving.</p>
 </div></blockquote>
 <p><strong>solint</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
 <p>Solution interval for delay-correction calibration.</p>
 </div></blockquote>
 <p><strong>minsnr</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
 <p>Minimum required SNR for solutions.</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal</em></p>
 <p>Set the field to estimate the delay correction from. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</p>
 </div></blockquote>
 <p><strong>plot</strong></p>
@@ -294,27 +293,27 @@
 <div><p>Plotting dignostics plots for delay correction calibration.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Enables plotting dignostics</p>
 </div></blockquote>
 <p><strong>gaintype</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = K</em></p>
 <p>Type of gain solution table</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal</em></p>
 <p>Fields to plot. Specify by field id, index.</p>
 </div></blockquote>
 <p><strong>corr</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = X</em></p>
 <p>Correlation to plot. E.g. X/Y or H/V</p>
 </div></blockquote>
 <p><strong>htmlname</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Output HTML file name</p>
 </div></blockquote>
 </div></blockquote>
@@ -323,17 +322,17 @@
 <div><p>Flagging based on delay correction solutions.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Enable flagging based on delay correction solutions via CASA FLAGDATA task.</p>
 </div></blockquote>
 <p><strong>mode</strong></p>
 <blockquote>
-<div><p><em>{“list”, “manual”, “clip”, “quack”, “shadow”, “elevation”, “tfcrop”, “antint”, “extend”, “unflag”, “summary”}</em>, <em>optional</em></p>
+<div><p><em>{“list”, “manual”, “clip”, “quack”, “shadow”, “elevation”, “tfcrop”, “antint”, “extend”, “unflag”, “summary”}</em>, <em>optional</em>, <em>default = clip</em></p>
 <p>Mode to set for flagging based on delay correction gains. Default used is “clip”. If you want to use other modes, specify the relevant keywords from Flagdata.</p>
 </div></blockquote>
 <p><strong>clipminmax</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = -60.0, 60.0</em></p>
 <p>Specifies the minimum and maximum delay to keep, e.g. [-60, 60]. Execute order 66 on the rest.</p>
 </div></blockquote>
 </div></blockquote>
@@ -345,47 +344,47 @@
 <div><p>Carry out bandpass calibration (using bandpass task from CASA)</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Executes bandpass calibration.</p>
 </div></blockquote>
 <p><strong>combine</strong></p>
 <blockquote>
-<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em></p>
+<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Parameter to combine different data axis for solving.</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal</em></p>
 <p>Set the field to estimate the bandpass from. Specify either the field number, name or even as ‘bpcal’ corresponding to field specification in observation config.</p>
 </div></blockquote>
 <p><strong>minnrbl</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 4</em></p>
 <p>Minimum number of baselines required (per antenna) for solving.</p>
 </div></blockquote>
 <p><strong>minsnr</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 5</em></p>
 <p>Minimum required SNR for solutions.</p>
 </div></blockquote>
 <p><strong>solnorm</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Normalize average solution amplitudes to unity.</p>
 </div></blockquote>
 <p><strong>solint</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
 <p>Solution interval for delay-correction calibration.</p>
 </div></blockquote>
 <p><strong>set_refant</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Should a reference antenna be used for this calibration</p>
 </div></blockquote>
 <p><strong>remove_ph_time_var</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Remove large temporal phase variations from bandpass calibrator before solving.</p>
 </div></blockquote>
 <p><strong>flag</strong></p>
@@ -393,17 +392,17 @@
 <div><p>Flagging based on bandpass amplitude solutions.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Enable flagging based on Bandpass correction solutions via CASA FLAGDATA task.</p>
 </div></blockquote>
 <p><strong>mode</strong></p>
 <blockquote>
-<div><p><em>{“list”, “manual”, “clip”, “quack”, “shadow”, “elevation”, “tfcrop”, “antint”, “extend”, “unflag”, “summary”}</em>, <em>optional</em></p>
+<div><p><em>{“list”, “manual”, “clip”, “quack”, “shadow”, “elevation”, “tfcrop”, “antint”, “extend”, “unflag”, “summary”}</em>, <em>optional</em>, <em>default = clip</em></p>
 <p>Mode to set for flagging based on delay correction gains. Default is “clip”. If you want to use other modes, specify the relevant keywords from Flagdata.</p>
 </div></blockquote>
 <p><strong>clipminmax</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 0.1,10.0</em></p>
 <p>Specifies the minimum and maximum gain to keep, e.g. [0.1, 10].</p>
 </div></blockquote>
 </div></blockquote>
@@ -412,27 +411,27 @@
 <div><p>Plotting dignostics plots for bandpass correction calibration.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Enables plotting dignostics</p>
 </div></blockquote>
 <p><strong>gaintype</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = B</em></p>
 <p>Type of gain solution table</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal</em></p>
 <p>Fields to plot. Specify by field id, index.</p>
 </div></blockquote>
 <p><strong>corr</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = X</em></p>
 <p>Correlation to plot. E.g. X/Y or H/V</p>
 </div></blockquote>
 <p><strong>htmlname</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Output HTML file name</p>
 </div></blockquote>
 </div></blockquote>
@@ -444,37 +443,37 @@
 <div><p>Carry out gain calibration on the flux calibrator field.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute gain calibration on the flux calibrator field.</p>
 </div></blockquote>
 <p><strong>combine</strong></p>
 <blockquote>
-<div><p><em>{“”, “obs”, “scan”, “spw”, “field”}</em>, <em>optional</em></p>
+<div><p><em>{“”, “obs”, “scan”, “spw”, “field”}</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Parameter to combine different data axis for solving.</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = fcal</em></p>
 <p>Set the field to estimate the gain from. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</p>
 </div></blockquote>
 <p><strong>minnrbl</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 4</em></p>
 <p>Minimum number of baselines required (per antenna) for solving.</p>
 </div></blockquote>
 <p><strong>minsnr</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 5</em></p>
 <p>Minimum required SNR for solutions.</p>
 </div></blockquote>
 <p><strong>solint</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
 <p>Time solution interval</p>
 </div></blockquote>
 <p><strong>set_refant</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Should a reference antenna be used for this calibration</p>
 </div></blockquote>
 <p><strong>flag</strong></p>
@@ -482,17 +481,17 @@
 <div><p>Flagging based on flux-scale amplitude solutions.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Enable flagging based on delay correction solutions via CASA FLAGDATA task. Default is False.</p>
 </div></blockquote>
 <p><strong>mode</strong></p>
 <blockquote>
-<div><p><em>{“list”, “manual”, “clip”, “quack”, “shadow”, “elevation”, “tfcrop”, “antint”, “extend”, “unflag”, “summary”}</em>, <em>optional</em></p>
+<div><p><em>{“list”, “manual”, “clip”, “quack”, “shadow”, “elevation”, “tfcrop”, “antint”, “extend”, “unflag”, “summary”}</em>, <em>optional</em>, <em>default = clip</em></p>
 <p>Mode to set for flagging based on delay correction gains. Default is “clip”. If you want to use other modes, specify the relevant keywords from Flagdata.</p>
 </div></blockquote>
 <p><strong>clipminmax</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 0.1, 10.0</em></p>
 <p>Specifies the minimum and maximum delay to keep, e.g. [0.1, 10].</p>
 </div></blockquote>
 </div></blockquote>
@@ -501,27 +500,27 @@
 <div><p>Plotting dignostics plots for flux calibrator corrections.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Enables plotting dignostics</p>
 </div></blockquote>
 <p><strong>gaintype</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = G</em></p>
 <p>Type of gain solution table</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = fcal</em></p>
 <p>Fields to plot. Specify by field id, index.</p>
 </div></blockquote>
 <p><strong>corr</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = X</em></p>
 <p>Correlation to plot. E.g. X/Y or H/V</p>
 </div></blockquote>
 <p><strong>htmlname</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Output HTML file name</p>
 </div></blockquote>
 </div></blockquote>
@@ -533,37 +532,37 @@
 <div><p>Carry out gain calibration on the gain calibrator field.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute gain calibration on the gain calibrator field.</p>
 </div></blockquote>
 <p><strong>combine</strong></p>
 <blockquote>
-<div><p><em>{“”, “obs”, “scan”, “spw”, “field”}</em>, <em>optional</em></p>
+<div><p><em>{“”, “obs”, “scan”, “spw”, “field”}</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Parameter to combine different data axis for solving.</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = gcal</em></p>
 <p>Set the field to estimate the gain from. Specify either the field number, name or even as ‘gcal’ corresponding to field specification in observation config.</p>
 </div></blockquote>
 <p><strong>minnrbl</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 4</em></p>
 <p>Minimum number of baselines required (per antenna) for solving.</p>
 </div></blockquote>
 <p><strong>minsnr</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
 <p>Minimum required SNR for solutions.</p>
 </div></blockquote>
 <p><strong>solint</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
 <p>Time solution interval</p>
 </div></blockquote>
 <p><strong>set_refant</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Should a reference antenna be used for this calibration</p>
 </div></blockquote>
 <p><strong>flag</strong></p>
@@ -571,17 +570,17 @@
 <div><p>Flagging based on gain amplitudes.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Enable flagging based on delay correction solutions via CASA FLAGDATA task. Default is False.</p>
 </div></blockquote>
 <p><strong>mode</strong></p>
 <blockquote>
-<div><p><em>{“list”, “manual”, “clip”, “quack”, “shadow”, “elevation”, “tfcrop”, “antint”, “extend”, “unflag”, “summary”}</em>, <em>optional</em></p>
+<div><p><em>{“list”, “manual”, “clip”, “quack”, “shadow”, “elevation”, “tfcrop”, “antint”, “extend”, “unflag”, “summary”}</em>, <em>optional</em>, <em>default = clip</em></p>
 <p>Mode to set for flagging based on delay correction gains. Default is “clip”. If you want to use other modes, specify the relevant keywords from Flagdata.</p>
 </div></blockquote>
 <p><strong>clipminmax</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 0.1, 10.0</em></p>
 <p>Specifies the minimum and maximum delay to keep, e.g. [0.1, 10].</p>
 </div></blockquote>
 </div></blockquote>
@@ -590,27 +589,27 @@
 <div><p>Plotting dignostics plots for gain calibrator corrections.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Enables plotting dignostics</p>
 </div></blockquote>
 <p><strong>gaintype</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = G</em></p>
 <p>Type of gain solution table</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = gcal</em></p>
 <p>Fields to plot. Specify by field id, index.</p>
 </div></blockquote>
 <p><strong>corr</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = X</em></p>
 <p>Correlation to plot. E.g. X/Y or H/V</p>
 </div></blockquote>
 <p><strong>htmlname</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Output HTML file name</p>
 </div></blockquote>
 </div></blockquote>
@@ -622,17 +621,17 @@
 <div><p>Transfers fluxscale from the flux calibrator field to the gain calibrator.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Executes transferring flux scale.</p>
 </div></blockquote>
 <p><strong>reference</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = fcal</em></p>
 <p>Field to transfer flux sale from. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</p>
 </div></blockquote>
 <p><strong>transfer</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = gcal</em></p>
 <p>Field to transfer flux scale to. Specify either the field number, name or even as ‘gcal’ corresponding to field specification in observation config.</p>
 </div></blockquote>
 <p><strong>plot</strong></p>
@@ -640,27 +639,27 @@
 <div><p>Enables plotting gain amplitudes for Flux and Gain calibrator field.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Enables plotting dignostics</p>
 </div></blockquote>
 <p><strong>gaintype</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = G</em></p>
 <p>Type of gain solution table</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = gcal</em></p>
 <p>Fields to plot. Specify by field id, index.</p>
 </div></blockquote>
 <p><strong>corr</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = X</em></p>
 <p>Correlation to plot. E.g. X/Y or H/V</p>
 </div></blockquote>
 <p><strong>htmlname</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Output HTML file name</p>
 </div></blockquote>
 </div></blockquote>
@@ -672,22 +671,22 @@
 <div><p>Apply the delay correction calibration table to specified fields via the CASA applycal task.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Executes application of delay correction calibration table.</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal</em></p>
 <p>Field to select in the delay correction calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal’.</p>
 </div></blockquote>
 <p><strong>applyto</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, target, xcal</em></p>
 <p>Field(s) to apply the delay correction calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
 </div></blockquote>
 <p><strong>applymode</strong></p>
 <blockquote>
-<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em></p>
+<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em>, <em>default = calflag</em></p>
 <p>Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
 </div></blockquote>
 </div></blockquote>
@@ -698,22 +697,22 @@
 <div><p>Apply the bandpass table to specified fields via the CASA applycal task.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Executes application of bandpass table.</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal</em></p>
 <p>Field to select in the bandpass table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal’.</p>
 </div></blockquote>
 <p><strong>applyto</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, target, xcal</em></p>
 <p>Field(s) to apply the bandpass table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
 </div></blockquote>
 <p><strong>applymode</strong></p>
 <blockquote>
-<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em></p>
+<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em>, <em>default = calflag</em></p>
 <p>Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
 </div></blockquote>
 </div></blockquote>
@@ -724,22 +723,22 @@
 <div><p>Apply the gain calibration table to specified fields via the CASA applycal task.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Executes application of gain calibration table.</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = gcal</em></p>
 <p>Field to select in the gain calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘gcal’.</p>
 </div></blockquote>
 <p><strong>applyto</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, target, xcal</em></p>
 <p>Field(s) to apply the gain calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
 </div></blockquote>
 <p><strong>applymode</strong></p>
 <blockquote>
-<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em></p>
+<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em>, <em>default = calflag</em></p>
 <p>Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
 </div></blockquote>
 </div></blockquote>
@@ -750,22 +749,22 @@
 <div><p>Apply the fluxscale table to specified fields via the CASA applycal task.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Executes application of fluxscale table.</p>
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = gcal</em></p>
 <p>Field to select in the fluxscale table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘gcal’.</p>
 </div></blockquote>
 <p><strong>applyto</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, target, xcal</em></p>
 <p>Field(s) to apply the fluxscale table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
 </div></blockquote>
 <p><strong>applymode</strong></p>
 <blockquote>
-<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em></p>
+<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em>, <em>default = calflag</em></p>
 <p>Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
 </div></blockquote>
 </div></blockquote>
@@ -776,37 +775,37 @@
 <div><p>Flag closure errors and systematic issues based on calibrated calibrator phase.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute flagging closure errors etc.</p>
 </div></blockquote>
 <p><strong>scan_to_scan_threshold</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
 <p>Sigma spread above the rest of the scans per field per channel.</p>
 </div></blockquote>
 <p><strong>baseline_to_group_threshold</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
 <p>Sigma above array median phase spread per scan per field per channel.</p>
 </div></blockquote>
 <p><strong>column</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = CORRECTED_DATA</em></p>
 <p>MS column to use.</p>
 </div></blockquote>
 <p><strong>fields</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
 <p>Fields to flag. Either set ‘auto’ or specify as ‘gcal, bpcal, target’</p>
 </div></blockquote>
 <p><strong>calibrator_fields</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
 <p>Calibrator fields to estimate the closure errors etc. from.</p>
 </div></blockquote>
 <p><strong>threads</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1</em></p>
 <p>Number of cores to use to carry out this process.</p>
 </div></blockquote>
 </div></blockquote>
@@ -817,7 +816,7 @@
 <div><p>Prints out the buther’s bill, i.e. data flagging summary at the end of cross calibration process.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute printing flagging summary.</p>
 </div></blockquote>
 </div></blockquote>

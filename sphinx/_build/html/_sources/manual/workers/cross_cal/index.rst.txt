@@ -22,7 +22,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 **enable**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*
 
   Execute this segment.
 
@@ -34,7 +34,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 **otfdelay**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*, *optional*, *default = True*
 
   Set whether to apply the delay calibration on the fly when solving for other calibration terms.
 
@@ -46,7 +46,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 **uvrange**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = >50*
 
   Set the U-V range for data selection, e.g. '>50'.
 
@@ -58,7 +58,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 **label**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = 1gc1*
 
   Label for output files.
 
@@ -74,19 +74,19 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*
 
     Execute intialization step
 
   **field**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = fcal, bpcal, gcal, xcal, target*
 
     fields to initialize
 
   **addmodel**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Intializes scratch MODEL_DATA column
 
@@ -102,31 +102,31 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Execute the setjy task.
 
   **meerkathi_model**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Force disable built-in models in MeerKATHI (NOT RECOMMENDED!)
 
   **no_verify**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Enables setting standard manually.
 
   **field**
 
-    *str*, *optional*
+    *str*, *optional*, *default = fcal*
 
     Set the field to carry out setjy on. Specify either the field number, name or even as 'fcal' corresponding to field specification in observation config.
 
   **threads**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 8*
 
     Set the number of threads to use when predicting local sky model using MeqTrees.
 
@@ -142,31 +142,31 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Execute delay correction calibration.
 
   **combine**
 
-    *{"", "obs", "scan", "spw", "field", "obs,scan", "scan,obs"}*, *optional*
+    *{"", "obs", "scan", "spw", "field", "obs,scan", "scan,obs"}*, *optional*, *default = ' '*
 
     Parameter to combine different data axis for solving.
 
   **solint**
 
-    *str*, *optional*
+    *str*, *optional*, *default = inf*
 
     Solution interval for delay-correction calibration.
 
   **minsnr**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 3*
 
     Minimum required SNR for solutions.
 
   **field**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = bpcal*
 
     Set the field to estimate the delay correction from. Specify either the field number, name or even as 'fcal' corresponding to field specification in observation config.
 
@@ -176,31 +176,31 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
 
-      *bool*, *optional*
+      *bool*, *optional*, *default = True*
 
       Enables plotting dignostics
 
     **gaintype**
 
-      *str*, *optional*
+      *str*, *optional*, *default = K*
 
       Type of gain solution table
 
     **field**
 
-      *list* *of str*, *optional*
+      *list* *of str*, *optional*, *default = bpcal*
 
       Fields to plot. Specify by field id, index.
 
     **corr**
 
-      *str*, *optional*
+      *str*, *optional*, *default = X*
 
       Correlation to plot. E.g. X/Y or H/V
 
     **htmlname**
 
-      *str*, *optional*
+      *str*, *optional*, *default = ' '*
 
       Output HTML file name
 
@@ -210,19 +210,19 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
 
-      *bool*, *optional*
+      *bool*, *optional*, *default = True*
 
       Enable flagging based on delay correction solutions via CASA FLAGDATA task.
 
     **mode**
 
-      *{"list", "manual", "clip", "quack", "shadow", "elevation", "tfcrop", "antint", "extend", "unflag", "summary"}*, *optional*
+      *{"list", "manual", "clip", "quack", "shadow", "elevation", "tfcrop", "antint", "extend", "unflag", "summary"}*, *optional*, *default = clip*
 
       Mode to set for flagging based on delay correction gains. Default used is "clip". If you want to use other modes, specify the relevant keywords from Flagdata.
 
     **clipminmax**
 
-      *list* *of float*, *optional*
+      *list* *of float*, *optional*, *default = -60.0, 60.0*
 
       Specifies the minimum and maximum delay to keep, e.g. [-60, 60]. Execute order 66 on the rest.
 
@@ -238,55 +238,55 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Executes bandpass calibration.
 
   **combine**
 
-    *{"", "obs", "scan", "spw", "field", "obs,scan", "scan,obs"}*, *optional*
+    *{"", "obs", "scan", "spw", "field", "obs,scan", "scan,obs"}*, *optional*, *default = ' '*
 
     Parameter to combine different data axis for solving.
 
   **field**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = bpcal*
 
     Set the field to estimate the bandpass from. Specify either the field number, name or even as 'bpcal' corresponding to field specification in observation config.
 
   **minnrbl**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 4*
 
     Minimum number of baselines required (per antenna) for solving.
 
   **minsnr**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 5*
 
     Minimum required SNR for solutions.
 
   **solnorm**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Normalize average solution amplitudes to unity.
 
   **solint**
 
-    *str*, *optional*
+    *str*, *optional*, *default = inf*
 
     Solution interval for delay-correction calibration.
 
   **set_refant**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Should a reference antenna be used for this calibration
 
   **remove_ph_time_var**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Remove large temporal phase variations from bandpass calibrator before solving.
 
@@ -296,19 +296,19 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
 
-      *bool*, *optional*
+      *bool*, *optional*, *default = False*
 
       Enable flagging based on Bandpass correction solutions via CASA FLAGDATA task.
 
     **mode**
 
-      *{"list", "manual", "clip", "quack", "shadow", "elevation", "tfcrop", "antint", "extend", "unflag", "summary"}*, *optional*
+      *{"list", "manual", "clip", "quack", "shadow", "elevation", "tfcrop", "antint", "extend", "unflag", "summary"}*, *optional*, *default = clip*
 
       Mode to set for flagging based on delay correction gains. Default is "clip". If you want to use other modes, specify the relevant keywords from Flagdata.
 
     **clipminmax**
 
-      *list* *of float*, *optional*
+      *list* *of float*, *optional*, *default = 0.1,10.0*
 
       Specifies the minimum and maximum gain to keep, e.g. [0.1, 10].
 
@@ -318,31 +318,31 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
 
-      *bool*, *optional*
+      *bool*, *optional*, *default = True*
 
       Enables plotting dignostics
 
     **gaintype**
 
-      *str*, *optional*
+      *str*, *optional*, *default = B*
 
       Type of gain solution table
 
     **field**
 
-      *list* *of str*, *optional*
+      *list* *of str*, *optional*, *default = bpcal*
 
       Fields to plot. Specify by field id, index.
 
     **corr**
 
-      *str*, *optional*
+      *str*, *optional*, *default = X*
 
       Correlation to plot. E.g. X/Y or H/V
 
     **htmlname**
 
-      *str*, *optional*
+      *str*, *optional*, *default = ' '*
 
       Output HTML file name
 
@@ -358,43 +358,43 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Execute gain calibration on the flux calibrator field.
 
   **combine**
 
-    *{"", "obs", "scan", "spw", "field"}*, *optional*
+    *{"", "obs", "scan", "spw", "field"}*, *optional*, *default = ' '*
 
     Parameter to combine different data axis for solving.
 
   **field**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = fcal*
 
     Set the field to estimate the gain from. Specify either the field number, name or even as 'fcal' corresponding to field specification in observation config.
 
   **minnrbl**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 4*
 
     Minimum number of baselines required (per antenna) for solving.
 
   **minsnr**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 5*
 
     Minimum required SNR for solutions.
 
   **solint**
 
-    *str*, *optional*
+    *str*, *optional*, *default = inf*
 
     Time solution interval
 
   **set_refant**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Should a reference antenna be used for this calibration
 
@@ -404,19 +404,19 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
 
-      *bool*, *optional*
+      *bool*, *optional*, *default = False*
 
       Enable flagging based on delay correction solutions via CASA FLAGDATA task. Default is False.
 
     **mode**
 
-      *{"list", "manual", "clip", "quack", "shadow", "elevation", "tfcrop", "antint", "extend", "unflag", "summary"}*, *optional*
+      *{"list", "manual", "clip", "quack", "shadow", "elevation", "tfcrop", "antint", "extend", "unflag", "summary"}*, *optional*, *default = clip*
 
       Mode to set for flagging based on delay correction gains. Default is "clip". If you want to use other modes, specify the relevant keywords from Flagdata.
 
     **clipminmax**
 
-      *list* *of float*, *optional*
+      *list* *of float*, *optional*, *default = 0.1, 10.0*
 
       Specifies the minimum and maximum delay to keep, e.g. [0.1, 10].
 
@@ -426,31 +426,31 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
 
-      *bool*, *optional*
+      *bool*, *optional*, *default = True*
 
       Enables plotting dignostics
 
     **gaintype**
 
-      *str*, *optional*
+      *str*, *optional*, *default = G*
 
       Type of gain solution table
 
     **field**
 
-      *list* *of str*, *optional*
+      *list* *of str*, *optional*, *default = fcal*
 
       Fields to plot. Specify by field id, index.
 
     **corr**
 
-      *str*, *optional*
+      *str*, *optional*, *default = X*
 
       Correlation to plot. E.g. X/Y or H/V
 
     **htmlname**
 
-      *str*, *optional*
+      *str*, *optional*, *default = ' '*
 
       Output HTML file name
 
@@ -466,43 +466,43 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Execute gain calibration on the gain calibrator field.
 
   **combine**
 
-    *{"", "obs", "scan", "spw", "field"}*, *optional*
+    *{"", "obs", "scan", "spw", "field"}*, *optional*, *default = ' '*
 
     Parameter to combine different data axis for solving.
 
   **field**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = gcal*
 
     Set the field to estimate the gain from. Specify either the field number, name or even as 'gcal' corresponding to field specification in observation config.
 
   **minnrbl**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 4*
 
     Minimum number of baselines required (per antenna) for solving.
 
   **minsnr**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 3*
 
     Minimum required SNR for solutions.
 
   **solint**
 
-    *str*, *optional*
+    *str*, *optional*, *default = inf*
 
     Time solution interval
 
   **set_refant**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Should a reference antenna be used for this calibration
 
@@ -512,19 +512,19 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
 
-      *bool*, *optional*
+      *bool*, *optional*, *default = False*
 
       Enable flagging based on delay correction solutions via CASA FLAGDATA task. Default is False.
 
     **mode**
 
-      *{"list", "manual", "clip", "quack", "shadow", "elevation", "tfcrop", "antint", "extend", "unflag", "summary"}*, *optional*
+      *{"list", "manual", "clip", "quack", "shadow", "elevation", "tfcrop", "antint", "extend", "unflag", "summary"}*, *optional*, *default = clip*
 
       Mode to set for flagging based on delay correction gains. Default is "clip". If you want to use other modes, specify the relevant keywords from Flagdata.
 
     **clipminmax**
 
-      *list* *of float*, *optional*
+      *list* *of float*, *optional*, *default = 0.1, 10.0*
 
       Specifies the minimum and maximum delay to keep, e.g. [0.1, 10].
 
@@ -534,31 +534,31 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
 
-      *bool*, *optional*
+      *bool*, *optional*, *default = True*
 
       Enables plotting dignostics
 
     **gaintype**
 
-      *str*, *optional*
+      *str*, *optional*, *default = G*
 
       Type of gain solution table
 
     **field**
 
-      *list* *of str*, *optional*
+      *list* *of str*, *optional*, *default = gcal*
 
       Fields to plot. Specify by field id, index.
 
     **corr**
 
-      *str*, *optional*
+      *str*, *optional*, *default = X*
 
       Correlation to plot. E.g. X/Y or H/V
 
     **htmlname**
 
-      *str*, *optional*
+      *str*, *optional*, *default = ' '*
 
       Output HTML file name
 
@@ -574,19 +574,19 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Executes transferring flux scale.
 
   **reference**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = fcal*
 
     Field to transfer flux sale from. Specify either the field number, name or even as 'fcal' corresponding to field specification in observation config.
 
   **transfer**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = gcal*
 
     Field to transfer flux scale to. Specify either the field number, name or even as 'gcal' corresponding to field specification in observation config.
 
@@ -596,31 +596,31 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **enable**
 
-      *bool*, *optional*
+      *bool*, *optional*, *default = True*
 
       Enables plotting dignostics
 
     **gaintype**
 
-      *str*, *optional*
+      *str*, *optional*, *default = G*
 
       Type of gain solution table
 
     **field**
 
-      *list* *of str*, *optional*
+      *list* *of str*, *optional*, *default = gcal*
 
       Fields to plot. Specify by field id, index.
 
     **corr**
 
-      *str*, *optional*
+      *str*, *optional*, *default = X*
 
       Correlation to plot. E.g. X/Y or H/V
 
     **htmlname**
 
-      *str*, *optional*
+      *str*, *optional*, *default = ' '*
 
       Output HTML file name
 
@@ -636,25 +636,25 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Executes application of delay correction calibration table.
 
   **field**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = bpcal*
 
     Field to select in the delay correction calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal'.
 
   **applyto**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = bpcal, gcal, target, xcal*
 
     Field(s) to apply the delay correction calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
   **applymode**
 
-    *{"=", "calflag", "calflagstrict", "trial", "flagonly", "flagonlystrict"}*, *optional*
+    *{"=", "calflag", "calflagstrict", "trial", "flagonly", "flagonlystrict"}*, *optional*, *default = calflag*
 
     Calibration mode, the default being "calflag" - calibrates and applies flags from solutions. See CASA documentation for info on other modes.
 
@@ -670,25 +670,25 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Executes application of bandpass table.
 
   **field**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = bpcal*
 
     Field to select in the bandpass table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal'.
 
   **applyto**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = bpcal, gcal, target, xcal*
 
     Field(s) to apply the bandpass table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
   **applymode**
 
-    *{"=", "calflag", "calflagstrict", "trial", "flagonly", "flagonlystrict"}*, *optional*
+    *{"=", "calflag", "calflagstrict", "trial", "flagonly", "flagonlystrict"}*, *optional*, *default = calflag*
 
     Calibration mode, the default being "calflag" - calibrates and applies flags from solutions. See CASA documentation for info on other modes.
 
@@ -704,25 +704,25 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Executes application of gain calibration table.
 
   **field**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = gcal*
 
     Field to select in the gain calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'gcal'.
 
   **applyto**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = bpcal, gcal, target, xcal*
 
     Field(s) to apply the gain calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
   **applymode**
 
-    *{"=", "calflag", "calflagstrict", "trial", "flagonly", "flagonlystrict"}*, *optional*
+    *{"=", "calflag", "calflagstrict", "trial", "flagonly", "flagonlystrict"}*, *optional*, *default = calflag*
 
     Calibration mode, the default being "calflag" - calibrates and applies flags from solutions. See CASA documentation for info on other modes.
 
@@ -738,25 +738,25 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Executes application of fluxscale table.
 
   **field**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = gcal*
 
     Field to select in the fluxscale table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'gcal'.
 
   **applyto**
 
-    *list* *of str*, *optional*
+    *list* *of str*, *optional*, *default = bpcal, gcal, target, xcal*
 
     Field(s) to apply the fluxscale table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
   **applymode**
 
-    *{"=", "calflag", "calflagstrict", "trial", "flagonly", "flagonlystrict"}*, *optional*
+    *{"=", "calflag", "calflagstrict", "trial", "flagonly", "flagonlystrict"}*, *optional*, *default = calflag*
 
     Calibration mode, the default being "calflag" - calibrates and applies flags from solutions. See CASA documentation for info on other modes.
 
@@ -772,43 +772,43 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Execute flagging closure errors etc.
 
   **scan_to_scan_threshold**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 3*
 
     Sigma spread above the rest of the scans per field per channel.
 
   **baseline_to_group_threshold**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 3*
 
     Sigma above array median phase spread per scan per field per channel.
 
   **column**
 
-    *str*, *optional*
+    *str*, *optional*, *default = CORRECTED_DATA*
 
     MS column to use.
 
   **fields**
 
-    *str*, *optional*
+    *str*, *optional*, *default = auto*
 
     Fields to flag. Either set 'auto' or specify as 'gcal, bpcal, target'
 
   **calibrator_fields**
 
-    *str*, *optional*
+    *str*, *optional*, *default = auto*
 
     Calibrator fields to estimate the closure errors etc. from.
 
   **threads**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 1*
 
     Number of cores to use to carry out this process.
 
@@ -824,7 +824,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Execute printing flagging summary.
 

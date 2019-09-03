@@ -82,8 +82,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html#download-install">Download &amp; Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
@@ -184,70 +183,70 @@
 <div class="section" id="enable">
 <span id="polcal-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em></p>
 <p>Execute this segment.</p>
 </div></blockquote>
 </div>
 <div class="section" id="label">
 <span id="polcal-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = pol</em></p>
 <p>Label for this worker and its associated datasets</p>
 </div></blockquote>
 </div>
 <div class="section" id="solve-uvdist">
 <span id="polcal-solve-uvdist"></span><h2><strong>solve_uvdist</strong><a class="headerlink" href="#solve-uvdist" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 100~100000000m</em></p>
 <p>UV cutoff for solver. This should be large enough to wash out RFI</p>
 </div></blockquote>
 </div>
 <div class="section" id="preaverage-time">
 <span id="polcal-preaverage-time"></span><h2><strong>preaverage_time</strong><a class="headerlink" href="#preaverage-time" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 30s</em></p>
 <p>Preaveraging time interval (like 30s) used in solving for X, D and plots</p>
 </div></blockquote>
 </div>
 <div class="section" id="preaverage-freq">
 <span id="polcal-preaverage-freq"></span><h2><strong>preaverage_freq</strong><a class="headerlink" href="#preaverage-freq" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 4</em></p>
 <p>Preaveraging channel interval (like 4) used in solving for X, D and plots</p>
 </div></blockquote>
 </div>
 <div class="section" id="timesol-solfreqsel">
 <span id="polcal-timesol-solfreqsel"></span><h2><strong>timesol_solfreqsel</strong><a class="headerlink" href="#timesol-solfreqsel" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Subband selection to be used whenever solving for the DC component of either X or D. This could be picked to avoid RFI</p>
 </div></blockquote>
 </div>
 <div class="section" id="timesol-soltime">
 <span id="polcal-timesol-soltime"></span><h2><strong>timesol_soltime</strong><a class="headerlink" href="#timesol-soltime" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
 <p>Time solution interval to be used whenever solving for the DC component of either X or D</p>
 </div></blockquote>
 </div>
 <div class="section" id="freqsol-soltime">
 <span id="polcal-freqsol-soltime"></span><h2><strong>freqsol_soltime</strong><a class="headerlink" href="#freqsol-soltime" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
 <p>Time solution interval to be used when solving for per channel solutions for either X or D. This ought to be as long as possible</p>
 </div></blockquote>
 </div>
 <div class="section" id="feed-angle-rotation">
 <span id="polcal-feed-angle-rotation"></span><h2><strong>feed_angle_rotation</strong><a class="headerlink" href="#feed-angle-rotation" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = -90.</em></p>
 <p>Apply feed angle rotation matrix to all stations. MeerKAT X and Y feeds are flipped, so apply a -90 offset here</p>
 </div></blockquote>
 </div>
 <div class="section" id="do-dump-precalibration-leakage-reports">
 <span id="polcal-do-dump-precalibration-leakage-reports"></span><h2><strong>do_dump_precalibration_leakage_reports</strong><a class="headerlink" href="#do-dump-precalibration-leakage-reports" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Write out report estimating residual quadrature leakages prior to crosshand calibration</p>
 </div></blockquote>
 </div>
@@ -257,17 +256,17 @@
 <div><p>Predict model for calibrators into preaveraged dataset</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute this segment.</p>
 </div></blockquote>
 <p><strong>meerkathi_model</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Use model, if available full-sky model, built into southern calibrators database, instead of any NRAO model</p>
 </div></blockquote>
 <p><strong>threads</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 8</em></p>
 <p>When predicting full sky model (lsm) use these many threads in MeqServer</p>
 </div></blockquote>
 </div></blockquote>
@@ -275,42 +274,42 @@
 <div class="section" id="do-phaseup-crosshand-calibrator">
 <span id="polcal-do-phaseup-crosshand-calibrator"></span><h2><strong>do_phaseup_crosshand_calibrator</strong><a class="headerlink" href="#do-phaseup-crosshand-calibrator" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Phaseup diagonal of calibrator that is used to calibrate crosshand phase prior to solving for slope and offset in crosshand phase</p>
 </div></blockquote>
 </div>
 <div class="section" id="do-solve-crosshand-slope">
 <span id="polcal-do-solve-crosshand-slope"></span><h2><strong>do_solve_crosshand_slope</strong><a class="headerlink" href="#do-solve-crosshand-slope" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Solve for a frequency slope (X-Y digitizer delay) on the crosshand. This requires SNR on the crosshands.</p>
 </div></blockquote>
 </div>
 <div class="section" id="do-solve-crosshand-phase">
 <span id="polcal-do-solve-crosshand-phase"></span><h2><strong>do_solve_crosshand_phase</strong><a class="headerlink" href="#do-solve-crosshand-phase" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Solve for an absolute phase on the crosshand, necessary for polarization angle measurements and to derotate U from V. This requires SNR on the crosshands.</p>
 </div></blockquote>
 </div>
 <div class="section" id="do-solve-leakages">
 <span id="polcal-do-solve-leakages"></span><h2><strong>do_solve_leakages</strong><a class="headerlink" href="#do-solve-leakages" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Solve for leakages from I into U and V. If your calibrator polarization model for your flux scale reference is accurate this shouldalways be enabled.</p>
 </div></blockquote>
 </div>
 <div class="section" id="do-apply-xd">
 <span id="polcal-do-apply-xd"></span><h2><strong>do_apply_XD</strong><a class="headerlink" href="#do-apply-xd" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Apply off-diagonal corrections</p>
 </div></blockquote>
 </div>
 <div class="section" id="do-dump-postcalibration-leakage-reports">
 <span id="polcal-do-dump-postcalibration-leakage-reports"></span><h2><strong>do_dump_postcalibration_leakage_reports</strong><a class="headerlink" href="#do-dump-postcalibration-leakage-reports" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Write out report estimating residual quadrature leakages post crosshand calibration</p>
 </div></blockquote>
 </div>
@@ -320,7 +319,7 @@
 <div><p>Summarize data flagged at the end of crosshand calibration</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute this segment.</p>
 </div></blockquote>
 </div></blockquote>

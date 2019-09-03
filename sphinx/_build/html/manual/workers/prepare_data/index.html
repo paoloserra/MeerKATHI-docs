@@ -82,8 +82,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html#download-install">Download &amp; Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
@@ -170,7 +169,7 @@
 <div class="section" id="enable">
 <span id="prepare-data-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em></p>
 <p>Executes the data preparation step.</p>
 </div></blockquote>
 </div>
@@ -180,7 +179,7 @@
 <div><p>Fixes the UVW coordinates through the CASA task fixvis.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Enable execution of fixvis.</p>
 </div></blockquote>
 </div></blockquote>
@@ -191,22 +190,22 @@
 <div><p>Manage MS flags</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = true</em></p>
 <p>enable this section</p>
 </div></blockquote>
 <p><strong>add_bitflag_column</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = true</em></p>
 <p>Add BITFLAG and BITFLAG_ROW columns</p>
 </div></blockquote>
 <p><strong>init_legacy_flagset</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = true</em></p>
 <p>Save all current flags in a legacy flagset if it does not exist</p>
 </div></blockquote>
 <p><strong>remove_flagsets</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = true</em></p>
 <p>Remove all existing flagsets, except legacy flags</p>
 </div></blockquote>
 </div></blockquote>
@@ -217,27 +216,27 @@
 <div><p>Add spectral weights column to the measurement set.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = false</em></p>
 <p>Enables addition of spectral weights column to the measurement set.</p>
 </div></blockquote>
 <p><strong>weight_columns</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = WEIGHT, WEIGHT_SPECTRUM</em></p>
 <p>column names</p>
 </div></blockquote>
 <p><strong>noise_columns</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = SIGMA, SIGMA_SPECTRUM</em></p>
 <p>column names for noise</p>
 </div></blockquote>
 <p><strong>write_to_ms</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = true</em></p>
 <p>write columns to file</p>
 </div></blockquote>
 <p><strong>stats_data</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = use_package_meerkat_spec</em></p>
 <p>which statistics for the file.</p>
 </div></blockquote>
 </div></blockquote>

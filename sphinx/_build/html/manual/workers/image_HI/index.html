@@ -82,8 +82,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html#download-install">Download &amp; Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
@@ -184,49 +183,49 @@
 <div class="section" id="enable">
 <span id="image-hi-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em></p>
 <p>Execute segment image_HI (yes/no).</p>
 </div></blockquote>
 </div>
 <div class="section" id="label">
 <span id="image-hi-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corr</em></p>
 <p>Label of names of MS data sets to be used. MS data set names will always start with the data set id, followed by a hyphen, followed by desc.</p>
 </div></blockquote>
 </div>
 <div class="section" id="restfreq">
 <span id="image-hi-restfreq"></span><h2><strong>restfreq</strong><a class="headerlink" href="#restfreq" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 1.420405752GHz</em></p>
 <p>Rest frequency default value for this worker.</p>
 </div></blockquote>
 </div>
 <div class="section" id="npix">
 <span id="image-hi-npix"></span><h2><strong>npix</strong><a class="headerlink" href="#npix" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 360</em></p>
 <p>Default number of pixels (wherever npix is requested) in this worker. List of integers (width and height) or a single integer for square images.</p>
 </div></blockquote>
 </div>
 <div class="section" id="cell">
 <span id="image-hi-cell"></span><h2><strong>cell</strong><a class="headerlink" href="#cell" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 5</em></p>
 <p>Default scale of a pixel in arcsec.</p>
 </div></blockquote>
 </div>
 <div class="section" id="weight">
 <span id="image-hi-weight"></span><h2><strong>weight</strong><a class="headerlink" href="#weight" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = briggs</em></p>
 <p>Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition.</p>
 </div></blockquote>
 </div>
 <div class="section" id="robust">
 <span id="image-hi-robust"></span><h2><strong>robust</strong><a class="headerlink" href="#robust" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 2</em></p>
 <p>Default robust parameter in case of Briggs weighting.</p>
 </div></blockquote>
 </div>
@@ -236,7 +235,7 @@
 <div><p>Replace the column CORRECTED_DATA with the difference CORRECTED_DATA - MODEL_DATA. This is useful for continuum subtraction as it enables the subtraction of the most recent continuum clean model.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute segment subtractmodelcol.</p>
 </div></blockquote>
 </div></blockquote>
@@ -247,62 +246,62 @@
 <div><p>Perform UVLIN continuum subtraction and/or doppler tracking corrections</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute segment doppler correction (yes/no).</p>
 </div></blockquote>
 <p><strong>telescope</strong></p>
 <blockquote>
-<div><p><em>{“meerkat”, “vla”, “gmrt”, “wsrt”, “atca”, “askap”}</em>, <em>optional</em></p>
+<div><p><em>{“meerkat”, “vla”, “gmrt”, “wsrt”, “atca”, “askap”}</em>, <em>optional</em>, <em>default = meerkat</em></p>
 <p>The name of the telescope from which observations were made. Default is the ‘meerkat’ telescope. Current options are gmrt, vla, wsrt, atca.</p>
 </div></blockquote>
 <p><strong>doppler</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Transform channel labels and visibilities to a different spectral reference frame.</p>
 </div></blockquote>
 <p><strong>mode</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = frequency</em></p>
 <p>Regridding mode (channel/velocity/frequency/channel_b).</p>
 </div></blockquote>
 <p><strong>outframe</strong></p>
 <blockquote>
-<div><p><em>{“”, “topo”, “geo”, “lsrk”, “lsrd”, “bary”, “galacto”, “lgroup”, “cmb”, “source”}</em>, <em>optional</em></p>
+<div><p><em>{“”, “topo”, “geo”, “lsrk”, “lsrd”, “bary”, “galacto”, “lgroup”, “cmb”, “source”}</em>, <em>optional</em>, <em>default = bary</em></p>
 <p>Output reference frame, options ‘’, ‘topo’, ‘geo’, ‘lsrk’, ‘lsrd’, ‘bary’, ‘galacto’, ‘lgroup’, ‘cmb’, ‘source’</p>
 </div></blockquote>
 <p><strong>veltype</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = radio</em></p>
 <p>Definition of velocity (as used in mode), radio or optical.</p>
 </div></blockquote>
 <p><strong>outchangrid</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
 <p>Output channel grid for Doppler correction. Default is ‘auto’, and the pipeline will calculate the appropriate channel grid. If not ‘auto’ it must be in the format ‘nchan,chan0,chanw’ where nchan is an integer, and chan0 and chanw must include units appropriate for the chosen mode (see parameter ‘mode’ above)</p>
 </div></blockquote>
 <p><strong>uvlin</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Perform continuum subtraction as in task uvcontsub whilst regridding within mstransform.</p>
 </div></blockquote>
 <p><strong>fitspw</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Spectral window channel selection for fitting the continuumSelection of line-free channels using CASA syntax (e.g. ‘0:0~100;150:300’). If set to null, a fit to all unflagges visibilities will be performed.</p>
 </div></blockquote>
 <p><strong>fitorder</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1</em></p>
 <p>Polynomial order for the continuum fits</p>
 </div></blockquote>
 <p><strong>column</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corrected</em></p>
 <p>Data column to use.</p>
 </div></blockquote>
 <p><strong>obsinfo</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Create obsinfo.txt and obsinfo.json of MS file created by mstransform.</p>
 </div></blockquote>
 </div></blockquote>
@@ -313,42 +312,42 @@
 <div><p>Use sunblocker to remove solar RFI. See description of sunblocker on github repository gigjozsa/sunblocker in method phazer of module sunblocker.py.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute segment sunblocker (yes/no). Default is yes.</p>
 </div></blockquote>
 <p><strong>use_mstransform</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute sunblocker on continuum-subtracted data (otherwise use non-continuum-subtracted data) (yes/no). Default is yes.</p>
 </div></blockquote>
 <p><strong>imsize</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1000</em></p>
 <p>Image size (use the same as in wsclean_image or casa_image). Default is worker npix</p>
 </div></blockquote>
 <p><strong>cell</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 7.</em></p>
 <p>Cell size in arcsec (use the same as in wsclean_image or casa_image). Default is worker cell</p>
 </div></blockquote>
 <p><strong>threshold</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 4.</em></p>
 <p>Distance from average beyond which data are flagged in units of sigma. Default is 4.</p>
 </div></blockquote>
 <p><strong>vampirisms</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Apply only to data taken during day time (defaults to true)</p>
 </div></blockquote>
 <p><strong>uvmax</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 2000</em></p>
 <p>Maximum uvdistance in wavelength to be analysed (defaults to 2000)</p>
 </div></blockquote>
 <p><strong>uvmin</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0.</em></p>
 <p>Minimum uvdistance in wavelength to be analysed (defaults to 0)</p>
 </div></blockquote>
 </div></blockquote>
@@ -359,132 +358,132 @@
 <div><p>Use WSClean to create line data cube. See WSclean wiki on sourceforge.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute segment wsclean_image (yes/no). Default is yes.</p>
 </div></blockquote>
 <p><strong>wscl_niter</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 2</em></p>
 <p>Maximum number of rewsclean iterations to perform. Default is 2</p>
 </div></blockquote>
 <p><strong>tol</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 3.</em></p>
 <p>Relative change in the noise.</p>
 </div></blockquote>
 <p><strong>rm_intcubes</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>If set to true it deletes intermediate cubes from the output directory, if set to false it keeps all the cubes from the wsclean loops</p>
 </div></blockquote>
 <p><strong>use_mstransform</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute wsclean_image on continuum-subtracted data (otherwise use non-continuum-subtracted data) (yes/no). Default is yes.</p>
 </div></blockquote>
 <p><strong>pol</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = I</em></p>
 <p>Polarizations in output cube (I,Q,U,V,XX,YY,XY,YX,RR,LL,RL,LR and combinations). Default is I.</p>
 </div></blockquote>
 <p><strong>spwid</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Spectral window to use. Default is 0.</p>
 </div></blockquote>
 <p><strong>nchans</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = all</em></p>
 <p>Number of channels of HI cube, ‘all’ or an integer number. Default is ‘all’.</p>
 </div></blockquote>
 <p><strong>firstchan</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>First channel of HI cube. Default is 0.</p>
 </div></blockquote>
 <p><strong>binchans</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1</em></p>
 <p>Integer binning of channels. Default is 1 (no binning).</p>
 </div></blockquote>
 <p><strong>npix</strong></p>
 <blockquote>
-<div><p><em>seq</em>, <em>optional</em></p>
+<div><p><em>seq</em>, <em>optional</em>, <em>default = 1000 , 1000</em></p>
 <p>Image size in pixels. List of integers (width and height) or a single integer for square images. Default is Worker default for npix.</p>
 </div></blockquote>
 <p><strong>padding</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 1.2</em></p>
 <p>Images have initial size padding*npix, and are later trimmed to npix. Default is 1.2.</p>
 </div></blockquote>
 <p><strong>mgain</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 1.0</em></p>
 <p>Cleaning gain for major iterations, Ratio of peak that will be subtracted in each major iteration. Default is 0.9.</p>
 </div></blockquote>
 <p><strong>cell</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 7</em></p>
 <p>Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. ‘scale 20asec’. Default is Worker default for cell.</p>
 </div></blockquote>
 <p><strong>weight</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = briggs</em></p>
 <p>Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition. Default is Worker default for weight.</p>
 </div></blockquote>
 <p><strong>robust</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 2</em></p>
 <p>Robust parameter in case of Briggs weighting. Default is 2.</p>
 </div></blockquote>
 <p><strong>taper</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Gaussian taper FWHM in arcsec. Default is 0, no tapering.</p>
 </div></blockquote>
 <p><strong>niter</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1000000</em></p>
 <p>Maximum number of clean iterations to perform. Default is 1000000.</p>
 </div></blockquote>
 <p><strong>ownfitsmask</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>filename of fits mask (in output/masking folder)</p>
 </div></blockquote>
 <p><strong>auto_mask</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 10</em></p>
 <p>Construct a mask from found components and when a threshold of sigma is reached, continue cleaning with the mask down to the normal threshold.</p>
 </div></blockquote>
 <p><strong>auto_threshold</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0.5</em></p>
 <p>Auto clean threshold</p>
 </div></blockquote>
 <p><strong>cleanborder</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Set the border size in which no cleaning is performed, in percentage of the width/height of a plane. With an plane size of 1000 pixels and clean border of 1%, each border is 10 pixels. Default is 0.</p>
 </div></blockquote>
 <p><strong>make_cube</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>If set to true the output is a data cube, if set to false the output is one fits file per spectral channel. Default is yes.</p>
 </div></blockquote>
 <p><strong>no_update_mod</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>If set to true, will not store the clean model in MODEL_DATA. Relevant for HI.</p>
 </div></blockquote>
 <p><strong>multi_scale</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>switch on multiscale cleaning</p>
 </div></blockquote>
 <p><strong>multi_scale_scales</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 0, 10, 20, 30</em></p>
 <p>scales of multiscale [0,10,20,etc, etc]</p>
 </div></blockquote>
 </div></blockquote>
@@ -495,70 +494,70 @@
 <div><p>Use CASA to create line data cube.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><em>bool</em>, <em>optional</em></div></blockquote>
+<div><em>bool</em>, <em>optional</em>, <em>default = False</em></div></blockquote>
 <p><strong>use_mstransform</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute wsclean_image on continuum-subtracted data (otherwise use non-continuum-subtracted data) (yes/no). Default is yes.</p>
 </div></blockquote>
 <p><strong>pol</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = I</em></p>
 <p>Polarizations in output cube (I,Q,U,V,XX,YY,XY,YX,RR,LL,RL,LR and combinations). Default is I.</p>
 </div></blockquote>
 <p><strong>taper</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>uvtaper as in casa clean either in arcsec of klambda.</p>
 </div></blockquote>
 <p><strong>spwid</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Spectral window to use. Default is 0.</p>
 </div></blockquote>
 <p><strong>nchans</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = all</em></p>
 <p>Number of channels. If set to ‘all’, all channels are used. Otherwise provide the number of channels (starting with startchan, see below). Default is ‘all’.</p>
 </div></blockquote>
 <p><strong>startchan</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Starting channel of the cube. Used in combination with nchans. Default is 0.</p>
 </div></blockquote>
 <p><strong>npix</strong></p>
 <blockquote>
-<div><p><em>seq</em>, <em>optional</em></p>
+<div><p><em>seq</em>, <em>optional</em>, <em>default = 1000, 1000</em></p>
 <p>Image size in pixels. List of integers (width and height) or a single integer for square images. Default is worker npix.</p>
 </div></blockquote>
 <p><strong>cell</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 7</em></p>
 <p>Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. ‘scale 20asec’. Default is worker cell.</p>
 </div></blockquote>
 <p><strong>weight</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = briggs</em></p>
 <p>Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition. Default is worker weight.</p>
 </div></blockquote>
 <p><strong>robust</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0.5</em></p>
 <p>Robust parameter in case of Briggs weighting. Default is worker robust.</p>
 </div></blockquote>
 <p><strong>niter</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1000000</em></p>
 <p>Maximum number of clean iterations to perform. Default is 1000000.</p>
 </div></blockquote>
 <p><strong>threshold</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10mJy</em></p>
 <p>Flux level to stop cleaning, must include units, e.g. ‘1.0mJy’. Default is ‘10mJy’.</p>
 </div></blockquote>
 <p><strong>port2fits</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Port output to fits files if yes. Default is yes.</p>
 </div></blockquote>
 </div></blockquote>
@@ -569,7 +568,7 @@
 <div><p>Remove Stokes axis from HI cube</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute this segment. Default is true</p>
 </div></blockquote>
 </div></blockquote>
@@ -580,7 +579,7 @@
 <div><p>Make primary beam cube</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute this segment. Default is false</p>
 </div></blockquote>
 </div></blockquote>
@@ -591,12 +590,12 @@
 <div><p>Convert the spectral axis’ header keys of the HI cube from frequency to velocity in the radio definition, v=c(1-obsfreq/restfreq). No change of spectra reference frame is performed.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute conversion. Default is true</p>
 </div></blockquote>
 <p><strong>reverse</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Perform the inverse transformation and change the cube 3rd axis from velocity to frequency. Default is false.</p>
 </div></blockquote>
 </div></blockquote>
@@ -607,77 +606,77 @@
 <div><p>Run SoFiA source finder to produce a source mask and a Moment-0 map</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute segment sofia (yes/no)? Default is yes.</p>
 </div></blockquote>
 <p><strong>rmsMode</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = mad</em></p>
 <p>Method to determine rms (‘mad’ for using median absolute deviation, ‘std’ for using standard deviation, ‘negative’ for using Gaussian fit to negative voxels). Default is ‘mad’</p>
 </div></blockquote>
 <p><strong>threshold</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 4.0</em></p>
 <p>SoFiA source finding threshold. Default is 4.0.</p>
 </div></blockquote>
 <p><strong>flag</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Use flag regions (yes/no)? Default is no.</p>
 </div></blockquote>
 <p><strong>flagregion</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 10, 10</em></p>
 <p>Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], …]. Default is [].</p>
 </div></blockquote>
 <p><strong>merge</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Use method to de-select and merge emission islands detected by any of SoFiA source finding algorithms. If turned on, pixels with a separation of less than mergeX pixels in x direction and less than mergeY pixels in y-direction and less than z pixels in z-direction will be merged and identified as a single object in the mask. Detections whose extent in x-direction is smaller than minSizeX, in y direction is smaller than minSizeY, and in z-direction is smaller than minSizeZ will be removed from the mask. Parameter merge determines if the merging should be applied (yes/no). Default is yes.</p>
 </div></blockquote>
 <p><strong>mergeX</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 2</em></p>
 <p>Merge-‘radius’ in x-direction. Default is 2</p>
 </div></blockquote>
 <p><strong>mergeY</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 2</em></p>
 <p>Merge-‘radius’ in y-direction. Default is 2</p>
 </div></blockquote>
 <p><strong>mergeZ</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
 <p>Merge-‘radius’ in z-direction (velocity direction). Default is 3</p>
 </div></blockquote>
 <p><strong>minSizeX</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
 <p>Minimum size in x-direction. Default is 3.</p>
 </div></blockquote>
 <p><strong>minSizeY</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
 <p>Minimum size in y-direction. Default is 3.</p>
 </div></blockquote>
 <p><strong>minSizeZ</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
 <p>Minimum size in y-direction. Default is 5.</p>
 </div></blockquote>
 <p><strong>do_cubelets</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Create cubelets of HI sources.</p>
 </div></blockquote>
 <p><strong>do_mom0</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Create moment 0 map.</p>
 </div></blockquote>
 <p><strong>do_mom1</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Create moment 1 map.</p>
 </div></blockquote>
 </div></blockquote>
@@ -688,37 +687,37 @@
 <div><p>Run sharpener to extract spectrum of all continuum sources against the lines of sight. The spectra are then plotted.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute sharpener (yes/no)? Default is yes</p>
 </div></blockquote>
 <p><strong>catalog</strong></p>
 <blockquote>
-<div><p><em>{“NVSS”, “PYBDSF”}</em>, <em>optional</em></p>
+<div><p><em>{“NVSS”, “PYBDSF”}</em></p>
 <p>Type of catalog to use (PYBDSF/NVSS). Default is ‘PYBDSF’</p>
 </div></blockquote>
 <p><strong>catalog_file</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = catalog_contSources.lsm.html</em></p>
 <p>Catalog file where to store sources from online surveys (NVSS)</p>
 </div></blockquote>
 <p><strong>channels_per_plot</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 50</em></p>
 <p>Number of channels to plot per detail plot. Default is 50</p>
 </div></blockquote>
 <p><strong>thresh</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 20</em></p>
 <p>Threshold to select sources in online catalogs (mJy). Default is ‘20’</p>
 </div></blockquote>
 <p><strong>width</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 1.0d</em></p>
 <p>Field of view of output catalog (degrees). Default is ‘1.0d’</p>
 </div></blockquote>
 <p><strong>label</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Prefix label of plot names and titles. Default is ‘pipeline.prefix’</p>
 </div></blockquote>
 </div></blockquote>
@@ -729,7 +728,7 @@
 <div><p>Print out flagging summary.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute printing flagging summary.</p>
 </div></blockquote>
 </div></blockquote>

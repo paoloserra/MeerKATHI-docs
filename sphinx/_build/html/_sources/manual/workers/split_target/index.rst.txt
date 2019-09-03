@@ -22,7 +22,7 @@ Split and average target data
 **enable**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*
 
   Execute this worker
 
@@ -34,7 +34,7 @@ Split and average target data
 **label_in**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = ' '*
 
   Label of the input dataset
 
@@ -46,7 +46,7 @@ Split and average target data
 **label_out**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = corr*
 
   Label of the output dataset
 
@@ -62,37 +62,37 @@ Split and average target data
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Execute this section
 
   **time_average**
 
-    *str*, *optional*
+    *str*, *optional*, *default = ' '*
 
     Time averaging
 
   **freq_average**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 1*
 
     Frequency averaging
 
   **column**
 
-    *str*, *optional*
+    *str*, *optional*, *default = corrected*
 
     Column to split, default is 'data'. Which means use otf calibration.
 
   **correlation**
 
-    *str*, *optional*
+    *str*, *optional*, *default = ' '*
 
     Select correlations
 
   **spw**
 
-    *str*, *optional*
+    *str*, *optional*, *default = ' '*
 
     Select spectral windows and channels
 
@@ -102,13 +102,13 @@ Split and average target data
 
     **enable**
 
-      *bool*, *optional*
+      *bool*, *optional*, *default = False*
 
       Execute this section
 
     **callabel**
 
-      *str*, *optional*
+      *str*, *optional*, *default = 1gc1*
 
       Label of calibration tables to be used
 
@@ -116,17 +116,65 @@ Split and average target data
 
       Apply the delay correction calibration table to specified fields via the CASA applycal task.
 
+      **enable**
+
+        *bool*, *optional*, *default = True*
+
+        Executes application of delay correction calibration table.
+
+      **field**
+
+        *list* *of str*
+
+        Field to select in the delay correction calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal'.
+
     **apply_bp_cal**
 
       Apply the bandpass table to specified fields via the CASA applycal task.
+
+      **enable**
+
+        *bool*, *optional*, *default = True*
+
+        Executes application of bandpass table.
+
+      **field**
+
+        *list* *of str*
+
+        Field to select in the bandpass table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal'.
 
     **apply_gain_cal_gain**
 
       Apply the gain calibration table to specified fields via the CASA applycal task.
 
+      **enable**
+
+        *bool*, *optional*, *default = False*
+
+        Executes application of gain calibration table.
+
+      **field**
+
+        *list* *of str*
+
+        Field to select in the gain calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'gcal'.
+
     **apply_transfer_fluxscale**
 
       Apply the fluxscale table to specified fields via the CASA applycal task.
+
+      **enable**
+
+        *bool*, *optional*, *default = True*
+
+        Executes application of fluxscale table.
+
+      **field**
+
+        *list* *of str*, *optional*, *default = gcal*
+
+        Field to select in the fluxscale table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'gcal'.
 
 
 
@@ -140,19 +188,19 @@ Split and average target data
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Execute this section
 
   **ra**
 
-    *str*, *optional*
+    *str*, *optional*, *default = 0h0m0.0s*
 
     J2000 RA of new phase centre, format XXhXXmXX.XXs, default is empty string
 
   **dec**
 
-    *str*, *optional*
+    *str*, *optional*, *default = 0d0m0.0s*
 
     J2000 Dec of new phase centre, format XXdXXmXX.XXs, default is empty string
 
@@ -168,19 +216,19 @@ Split and average target data
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Execute this section
 
   **listobs**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Run CASA listobs
 
   **summary_json**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Run MSUtils function
 
@@ -196,7 +244,7 @@ Split and average target data
 
   **enable**
 
-    *bool*, *optional*
+    *bool*
 
     Run this section
 

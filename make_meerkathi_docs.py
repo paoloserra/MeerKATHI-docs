@@ -40,11 +40,12 @@ def getMeerkathiReadme(mrkthiDr,dcsDr):
   readme=f.readlines()
   f.close()
   f=open(dcsDr+'meerkathiREADME.md','w')
-  nn=0
+  nn=readme.index('## Download & Install\n')
   while nn<len(readme) and '## Running the pipeline' not in readme[nn]:
     f.write(readme[nn])
     nn+=1
   f.close()
+
 
 # Write the worker general page index.rst files
 def writeWorkerPageIndex(srtWrks,wrkDr):
@@ -75,6 +76,8 @@ def writeWorkerPageIndex(srtWrks,wrkDr):
 
 # Write documentation for a given nested level of a worker's schema
 def writeWorkerLevel(writeFile,parameter,indentLevel=''):
+
+  # write parameter type, required, default
   if 'enum' in parameter:
     writeFile.write('{0:s}*{{'.format(indentLevel))
     for ee in range(len(parameter['enum'])):
@@ -83,25 +86,39 @@ def writeWorkerLevel(writeFile,parameter,indentLevel=''):
       elif parameter['type']=='str': writeFile.write('"{0:s}"'.format(parameter['enum'][ee]))
       else: writeFile.write('{0:s}'.format(parameter['enum'][ee]))
     writeFile.write('}*')
-    if 'required' in parameter and parameter['required']!='false':
+    if 'required' in parameter and not parameter['required']:
       writeFile.write(', *optional*')
+      if 'example' in parameter:
+        if len(parameter['example']): writeFile.write(', *default = {0}*'.format(parameter['example']))
+        else:  writeFile.write(', *default = \' \'*')
     writeFile.write('\n\n')
   elif 'type' in parameter and parameter['type']!='map':
     writeFile.write('{1:s}*{0:s}*'.format(parameter['type'],indentLevel))
-    if 'required' in parameter and parameter['required']!='false':
+    if 'required' in parameter and not parameter['required']:
       writeFile.write(', *optional*')
+      if 'example' in parameter:
+        if len(parameter['example']): writeFile.write(', *default = {0}*'.format(parameter['example']))
+        else:  writeFile.write(', *default = \' \'*')
     writeFile.write('\n\n')
   elif 'seq' in parameter:
     writeFile.write('{0:s}*list*'.format(indentLevel))
     for ee in parameter['seq']:
       if 'type' in ee:
         writeFile.write(' *of {0:s}*'.format(ee['type']))
-    if 'required' in parameter and parameter['required']!='false':
+    if 'required' in parameter and not parameter['required']:
       writeFile.write(', *optional*')
+      if 'example' in parameter:
+        if len(parameter['example']): writeFile.write(', *default = {0}*'.format(parameter['example']))
+        else:  writeFile.write(', *default = \' \'*')
     writeFile.write('\n\n')
-  elif 'required' in parameter and parameter['required']!='false':
+  elif 'required' in parameter and not parameter['required']:
     writeFile.write('{0:s}*optional*'.format(indentLevel))
+    if 'example' in parameter:
+      if len(parameter['example']): writeFile.write('*default = {0}*'.format(parameter['example']))
+      else:  writeFile.write(', *default = \' \'*')
     writeFile.write('\n\n')
+
+  # write parameter description
   if 'desc' in parameter: writeFile.write('{1:s}{0:s}\n\n'.format(parameter['desc'].replace('*','\*'),indentLevel))
 
 
@@ -143,14 +160,20 @@ def writeWorkersIndex(srtWrks,wrkDr,schms,schDr):
     else: matchingSchema=matchingSchema[0]
     print('        {0:s}{1:s}'.format(schDr,matchingSchema))
     
+    # write worker description
     schm=ruamel.yaml.load(open(schDr+matchingSchema), ruamel.yaml.RoundTripLoader)['mapping'][wrk]
     f.write('{0:s}\n\n'.format(schm['desc']))
+
+    # the initial type must be 'map'
+    # if that's the case proceed reading the parameters
+    # if that's not the case throw an error
     if 'type' in schm and schm['type']=='map':
       schm=schm['mapping']
     else:
       print('  ERROR: type of {0:s} in {1:s} is not "mapping", or no type was found; no idea what to do with this!'.format(wrk,matchingSchema))
       sys.exit()
 
+    # enter the nested structure of the schema and get all relevant info
     for parLev1 in schm:
       f.write('\n\n')
       f.write('.. _{0:s}_{1:s}:\n'.format(wrk,parLev1))
@@ -170,116 +193,12 @@ def writeWorkersIndex(srtWrks,wrkDr,schms,schDr):
               f.write('    **{0:s}**\n\n'.format(parLev3))
               writeWorkerLevel(f,schm[parLev1]['mapping'][parLev2]['mapping'][parLev3],indentLevel='      ')
 
-    f.close()
+              if 'type' in schm[parLev1]['mapping'][parLev2]['mapping'][parLev3] and schm[parLev1]['mapping'][parLev2]['mapping'][parLev3]['type']=='map':
+                for parLev4 in schm[parLev1]['mapping'][parLev2]['mapping'][parLev3]['mapping']:
+                  f.write('      **{0:s}**\n\n'.format(parLev4))
+                  writeWorkerLevel(f,schm[parLev1]['mapping'][parLev2]['mapping'][parLev3]['mapping'][parLev4],indentLevel='        ')
 
-# Write the homepage index.rst file
-# [OBSOLETE; THIS index.rst FILE IS STATIC AND NO LONGER USES INPUT FROM THE MEERKATHI REPOSITORY]
-# [IT DOES NOT NEED TO BE UPDATED AUTOMATICALLY]
-# def writeHomeIndex(dcsDr):
-#   print('  INFO: Writing homepage index.rst file ...')
-#   writeLines=[
-#     '.. meerkathi documentation master file, created by',
-#     '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
-#     '   You can adapt this file completely to your liking, but it should at least',
-#     '   contain the root `toctree` directive.',
-#     ' ',
-#     '=========',
-#     'MeerKATHI',
-#     '=========',
-#     ' ',
-#     'Welcome to the MeerKATHI documentation.',
-#     '',
-#     'This documentation is work in progress. Please bear with us.',
-#     ' ',
-#     '====================',
-#     'download & install',
-#     '====================',
-#     ' ',
-#     '.. toctree::',
-#     '   :maxdepth: 1',
-#     ' ',
-#     '   install/index.rst',
-#     ' ',
-#     '========================',
-#     'manual',
-#     '========================',
-#     ' ',
-#     '.. toctree::',
-#     '   :maxdepth: 1',
-#     ' ',
-#     '   manual/index.rst',
-#     ' ',
-#     '========================',
-#     'documentation on workers',
-#     '========================',
-#     ' ',
-#     '.. toctree::',
-#     '   :maxdepth: 1',
-#     ' ',
-#     '   workers/index.rst',
-#     ' ',
-#     '================',
-#     'acknowledgements',
-#     '================',
-#     ' ',
-#     'The MeerKATHI team acnkowledges support from the following institutes and funding',
-#     ' ',
-#     '* A',
-#     '* B',
-#     ' ',
-#     ]
-#   f=open(dcsDr+'index.rst','w')
-#   for ll in writeLines: f.write(ll+'\n')
-#   f.close()
-#
-# Write the install page index.rst files
-# [OBSOLETE; THIS index.rst FILE IS MADE AUTOMATICALLY FROM THE GITHUB README]
-# def writeInstallIndex(instDr):
-#   print('  INFO: Writing install index.rst ...')
-#   writeLines=[
-#     '.. meerkathi documentation master file, created by',
-#     '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
-#     '   You can adapt this file completely to your liking, but it should at least',
-#     '   contain the root `toctree` directive.',
-#     ' ',
-#     '==================',
-#     'Download & Install',
-#     '==================',
-#     ' ',
-#     '.. toctree::',
-#     '   :maxdepth: 1',
-#     ' ',
-#     '   meerkathiREADME.md',
-#     ' ',
-#     ]
-#   f=open(instDr+'index.rst','w')
-#   for ll in writeLines: f.write(ll+'\n')
-#   f.close()
-#
-# Write the manual page index.rst files
-# [OBSOLETE; THIS index.rst FILE IS STATIC AND NO LONGER USES INPUT FROM THE MEERKATHI REPOSITORY]
-# [IT DOES NOT NEED TO BE UPDATED AUTOMATICALLY]
-# def writeManualIndex(manDr):
-#   print('  INFO: Writing manual index.rst ...')
-#   writeLines=[
-#     '.. meerkathi documentation master file, created by',
-#     '   sphinx-quickstart on Mon Feb 18 15:04:26 2019.',
-#     '   You can adapt this file completely to your liking, but it should at least',
-#     '   contain the root `toctree` directive.',
-#     ' ',
-#     '=======',
-#     'Manual',
-#     '=======',
-#     ' ',
-#     '.. toctree::',
-#     '   :maxdepth: 1',
-#     ' ',
-#     'TBD',
-#     ' ',
-#     ]
-#   f=open(manDr+'index.rst','w')
-#   for ll in writeLines: f.write(ll+'\n')
-#   f.close()
+    f.close()
 
 
 

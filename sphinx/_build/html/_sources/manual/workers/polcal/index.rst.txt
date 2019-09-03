@@ -22,7 +22,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **enable**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*
 
   Execute this segment.
 
@@ -34,7 +34,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **label**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = pol*
 
   Label for this worker and its associated datasets
 
@@ -46,7 +46,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **solve_uvdist**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = 100~100000000m*
 
   UV cutoff for solver. This should be large enough to wash out RFI
 
@@ -58,7 +58,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **preaverage_time**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = 30s*
 
   Preaveraging time interval (like 30s) used in solving for X, D and plots
 
@@ -70,7 +70,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **preaverage_freq**
 --------------------------------------------------
 
-  *int*, *optional*
+  *int*, *optional*, *default = 4*
 
   Preaveraging channel interval (like 4) used in solving for X, D and plots
 
@@ -82,7 +82,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **timesol_solfreqsel**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = ' '*
 
   Subband selection to be used whenever solving for the DC component of either X or D. This could be picked to avoid RFI
 
@@ -94,7 +94,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **timesol_soltime**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = inf*
 
   Time solution interval to be used whenever solving for the DC component of either X or D
 
@@ -106,7 +106,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **freqsol_soltime**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = inf*
 
   Time solution interval to be used when solving for per channel solutions for either X or D. This ought to be as long as possible
 
@@ -118,7 +118,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **feed_angle_rotation**
 --------------------------------------------------
 
-  *float*, *optional*
+  *float*, *optional*, *default = -90.*
 
   Apply feed angle rotation matrix to all stations. MeerKAT X and Y feeds are flipped, so apply a -90 offset here
 
@@ -130,7 +130,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **do_dump_precalibration_leakage_reports**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*, *optional*, *default = False*
 
   Write out report estimating residual quadrature leakages prior to crosshand calibration
 
@@ -146,19 +146,19 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Execute this segment.
 
   **meerkathi_model**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Use model, if available full-sky model, built into southern calibrators database, instead of any NRAO model
 
   **threads**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 8*
 
     When predicting full sky model (lsm) use these many threads in MeqServer
 
@@ -170,7 +170,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **do_phaseup_crosshand_calibrator**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*, *optional*, *default = True*
 
   Phaseup diagonal of calibrator that is used to calibrate crosshand phase prior to solving for slope and offset in crosshand phase
 
@@ -182,7 +182,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **do_solve_crosshand_slope**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*, *optional*, *default = True*
 
   Solve for a frequency slope (X-Y digitizer delay) on the crosshand. This requires SNR on the crosshands.
 
@@ -194,7 +194,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **do_solve_crosshand_phase**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*, *optional*, *default = True*
 
   Solve for an absolute phase on the crosshand, necessary for polarization angle measurements and to derotate U from V. This requires SNR on the crosshands.
 
@@ -206,7 +206,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **do_solve_leakages**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*, *optional*, *default = True*
 
   Solve for leakages from I into U and V. If your calibrator polarization model for your flux scale reference is accurate this shouldalways be enabled.
 
@@ -218,7 +218,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **do_apply_XD**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*, *optional*, *default = True*
 
   Apply off-diagonal corrections
 
@@ -230,7 +230,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 **do_dump_postcalibration_leakage_reports**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*, *optional*, *default = True*
 
   Write out report estimating residual quadrature leakages post crosshand calibration
 
@@ -246,7 +246,7 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Execute this segment.
 

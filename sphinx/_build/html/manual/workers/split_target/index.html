@@ -82,8 +82,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html#download-install">Download &amp; Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
@@ -173,21 +172,21 @@
 <div class="section" id="enable">
 <span id="split-target-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em></p>
 <p>Execute this worker</p>
 </div></blockquote>
 </div>
 <div class="section" id="label-in">
 <span id="split-target-label-in"></span><h2><strong>label_in</strong><a class="headerlink" href="#label-in" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Label of the input dataset</p>
 </div></blockquote>
 </div>
 <div class="section" id="label-out">
 <span id="split-target-label-out"></span><h2><strong>label_out</strong><a class="headerlink" href="#label-out" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corr</em></p>
 <p>Label of the output dataset</p>
 </div></blockquote>
 </div>
@@ -197,32 +196,32 @@
 <div><p>Split data</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute this section</p>
 </div></blockquote>
 <p><strong>time_average</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Time averaging</p>
 </div></blockquote>
 <p><strong>freq_average</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1</em></p>
 <p>Frequency averaging</p>
 </div></blockquote>
 <p><strong>column</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corrected</em></p>
 <p>Column to split, default is ‘data’. Which means use otf calibration.</p>
 </div></blockquote>
 <p><strong>correlation</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Select correlations</p>
 </div></blockquote>
 <p><strong>spw</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Select spectral windows and channels</p>
 </div></blockquote>
 <p><strong>otfcal</strong></p>
@@ -230,26 +229,70 @@
 <div><p>Apply OTF calibration</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute this section</p>
 </div></blockquote>
 <p><strong>callabel</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 1gc1</em></p>
 <p>Label of calibration tables to be used</p>
 </div></blockquote>
 <p><strong>apply_delay_cal</strong></p>
 <blockquote>
-<div>Apply the delay correction calibration table to specified fields via the CASA applycal task.</div></blockquote>
+<div><p>Apply the delay correction calibration table to specified fields via the CASA applycal task.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Executes application of delay correction calibration table.</p>
+</div></blockquote>
+<p><strong>field</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em></p>
+<p>Field to select in the delay correction calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal’.</p>
+</div></blockquote>
+</div></blockquote>
 <p><strong>apply_bp_cal</strong></p>
 <blockquote>
-<div>Apply the bandpass table to specified fields via the CASA applycal task.</div></blockquote>
+<div><p>Apply the bandpass table to specified fields via the CASA applycal task.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Executes application of bandpass table.</p>
+</div></blockquote>
+<p><strong>field</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em></p>
+<p>Field to select in the bandpass table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal’.</p>
+</div></blockquote>
+</div></blockquote>
 <p><strong>apply_gain_cal_gain</strong></p>
 <blockquote>
-<div>Apply the gain calibration table to specified fields via the CASA applycal task.</div></blockquote>
+<div><p>Apply the gain calibration table to specified fields via the CASA applycal task.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Executes application of gain calibration table.</p>
+</div></blockquote>
+<p><strong>field</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em></p>
+<p>Field to select in the gain calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘gcal’.</p>
+</div></blockquote>
+</div></blockquote>
 <p><strong>apply_transfer_fluxscale</strong></p>
 <blockquote>
-<div>Apply the fluxscale table to specified fields via the CASA applycal task.</div></blockquote>
+<div><p>Apply the fluxscale table to specified fields via the CASA applycal task.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Executes application of fluxscale table.</p>
+</div></blockquote>
+<p><strong>field</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = gcal</em></p>
+<p>Field to select in the fluxscale table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘gcal’.</p>
+</div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -259,17 +302,17 @@
 <div><p>changes the phase centre</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute this section</p>
 </div></blockquote>
 <p><strong>ra</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 0h0m0.0s</em></p>
 <p>J2000 RA of new phase centre, format XXhXXmXX.XXs, default is empty string</p>
 </div></blockquote>
 <p><strong>dec</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 0d0m0.0s</em></p>
 <p>J2000 Dec of new phase centre, format XXdXXmXX.XXs, default is empty string</p>
 </div></blockquote>
 </div></blockquote>
@@ -280,17 +323,17 @@
 <div><p>Get observation information</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute this section</p>
 </div></blockquote>
 <p><strong>listobs</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Run CASA listobs</p>
 </div></blockquote>
 <p><strong>summary_json</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Run MSUtils function</p>
 </div></blockquote>
 </div></blockquote>
@@ -301,7 +344,7 @@
 <div><p>Save existing flags to legacy flagset</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em></p>
 <p>Run this section</p>
 </div></blockquote>
 </div></blockquote>

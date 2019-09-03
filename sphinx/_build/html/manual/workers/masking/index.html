@@ -82,8 +82,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html#download-install">Download &amp; Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
@@ -178,56 +177,56 @@
 <div class="section" id="enable">
 <span id="masking-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em></p>
 <p>Execute this segment</p>
 </div></blockquote>
 </div>
 <div class="section" id="centre-coord">
 <span id="masking-centre-coord"></span><h2><strong>centre_coord</strong><a class="headerlink" href="#centre-coord" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = HH:MM:SS , DD:MM:SS</em></p>
 <p>Coordinates of the centre of the field of view read from reference_dir by default</p>
 </div></blockquote>
 </div>
 <div class="section" id="label">
 <span id="masking-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corr</em></p>
 <p>Label of the .MS file where to find information about the target</p>
 </div></blockquote>
 </div>
 <div class="section" id="mask-size">
 <span id="masking-mask-size"></span><h2><strong>mask_size</strong><a class="headerlink" href="#mask-size" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 900</em></p>
 <p>Number of pixels in the mask (must be the same as img_npix in selfcal worker)</p>
 </div></blockquote>
 </div>
 <div class="section" id="cell-size">
 <span id="masking-cell-size"></span><h2><strong>cell_size</strong><a class="headerlink" href="#cell-size" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 2.</em></p>
 <p>Size of pixel in the mask (arcsec, must be the same as img_cell in selfcal worker)</p>
 </div></blockquote>
 </div>
 <div class="section" id="name-mask">
 <span id="masking-name-mask"></span><h2><strong>name_mask</strong><a class="headerlink" href="#name-mask" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = catalog_mask.fits</em></p>
 <p>Name of the output mask generated from catalog</p>
 </div></blockquote>
 </div>
 <div class="section" id="extended-source-input">
 <span id="masking-extended-source-input"></span><h2><strong>extended_source_input</strong><a class="headerlink" href="#extended-source-input" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = Fornaxa_vla.FITS</em></p>
 <p>Name of the input mask for particularly extended sources in the field</p>
 </div></blockquote>
 </div>
 <div class="section" id="final-mask">
 <span id="masking-final-mask"></span><h2><strong>final_mask</strong><a class="headerlink" href="#final-mask" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = final_mask.fits</em></p>
 <p>Name of the output final mask</p>
 </div></blockquote>
 </div>
@@ -237,22 +236,22 @@
 <div><p>Query catalog to select field/sources from which extract the mask</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = true</em></p>
 <p>Execute this worker</p>
 </div></blockquote>
 <p><strong>catalog</strong></p>
 <blockquote>
-<div><p><em>{“NVSS”, “SUMSS”}</em>, <em>optional</em></p>
+<div><p><em>{“NVSS”, “SUMSS”}</em>, <em>optional</em>, <em>default = SUMSS</em></p>
 <p>Name of catalog to query [NVSS/SUMSS]</p>
 </div></blockquote>
 <p><strong>width_image</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 1.2d</em></p>
 <p>Width of the region of sky we want to mask (keep larger than dirty image)</p>
 </div></blockquote>
 <p><strong>thresh_nvss</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 10e-3</em></p>
 <p>Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy) or cutoff in sigmas for sofia source finder</p>
 </div></blockquote>
 </div></blockquote>
@@ -263,12 +262,12 @@
 <div><p>Correct input image for primary beam before exctracting mask</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = true</em></p>
 <p>Execute this worker</p>
 </div></blockquote>
 <p><strong>frequency</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 1.420405752</em></p>
 <p>Primary beam size changes with frequency, provide central frequency of considered dataset</p>
 </div></blockquote>
 </div></blockquote>
@@ -279,27 +278,27 @@
 <div><p>Build mask from existing image using SoFiA and/or threshold cutoff</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = true</em></p>
 <p>Execute this worker</p>
 </div></blockquote>
 <p><strong>mask_with</strong></p>
 <blockquote>
-<div><p><em>{“thresh”, “sofia”}</em>, <em>optional</em></p>
+<div><p><em>{“thresh”, “sofia”}</em>, <em>optional</em>, <em>default = sofia</em></p>
 <p>Tool to use for masking</p>
 </div></blockquote>
 <p><strong>input_image</strong></p>
 <blockquote>
-<div><p><em>{“pbcorr”, “path_to_mask”}</em>, <em>optional</em></p>
+<div><p><em>{“pbcorr”, “path_to_mask”}</em>, <em>optional</em>, <em>default = pbcorr</em></p>
 <p>Input image where to create mask ???? what is this ???</p>
 </div></blockquote>
 <p><strong>thresh_lev</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 5</em></p>
 <p>Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy) or cutoff in sigmas for sofia source finder</p>
 </div></blockquote>
 <p><strong>scale_noise_window</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 101</em></p>
 <p>window size where SoFiA measures the local rms, units of pixels</p>
 </div></blockquote>
 </div></blockquote>
@@ -310,22 +309,22 @@
 <div><p>Merge with mask of extended source</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute this worker</p>
 </div></blockquote>
 <p><strong>extended_source_input</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = extended_mask.fits</em></p>
 <p>name of image of extended source to merge with current image</p>
 </div></blockquote>
 <p><strong>mask_with</strong></p>
 <blockquote>
-<div><p><em>{“thresh”, “sofia”}</em>, <em>optional</em></p>
+<div><p><em>{“thresh”, “sofia”}</em>, <em>optional</em>, <em>default = thresh</em></p>
 <p>Tool to use for masking</p>
 </div></blockquote>
 <p><strong>thresh_lev</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 8e-2</em></p>
 <p>Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy) or cutoff in sigmas for sofia source finder</p>
 </div></blockquote>
 </div></blockquote>

@@ -26,25 +26,25 @@ Setup some basic observation information
 
   **enable**
 
-    *bool*, *optional*
+    *bool*
 
     Execute this section
 
   **listobs**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Run CASA listobs task to get observation information
 
   **summary_json**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = True*
 
     Run MSUtils summary function to get observation information as JSON file which can be used to automatically configure pipeline
 
   **vampirisms**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Returns sun free time range
 
@@ -56,7 +56,7 @@ Setup some basic observation information
 **Check_Cals**
 --------------------------------------------------
 
-  *bool*, *optional*
+  *bool*, *optional*, *default = True*
 
   Should the existence of the  calibrators be checked for or only the target. Setting this to false allows the pipeline to run on split datasets. Default True
 
@@ -68,7 +68,7 @@ Setup some basic observation information
 **target**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = auto*
 
   Target field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
 
@@ -80,7 +80,7 @@ Setup some basic observation information
 **gcal**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = auto*
 
   Gain calibrator field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
 
@@ -92,7 +92,7 @@ Setup some basic observation information
 **bpcal**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = auto*
 
   Bandpass calibrator field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
 
@@ -104,7 +104,7 @@ Setup some basic observation information
 **fcal**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = auto*
 
   Fluxscale calibrator field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
 
@@ -116,7 +116,7 @@ Setup some basic observation information
 **xcal**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = auto*
 
   Crosshand phase angle calibrator. This calibrator must be linearly polarized and have a non-zero parallactic angle coverage at the time of observation to solve for the X-Y offsets in digitizers and the absolute polarization angle of the system. Successful calibration derotates U from V.
 
@@ -128,7 +128,7 @@ Setup some basic observation information
 **reference_antenna**
 --------------------------------------------------
 
-  *str*, *optional*
+  *str*, *optional*, *default = auto*
 
   Reference antenna. If 'auto' then MeerKATHI will automatically pick the reference antenna from the .JSON metadata file if available. The file name is the same as the input .MS file but with .JSON extension. This file is typically available only for old (ROACH2) MeerKAT data. For all other data the pipeline will likely throw an error and gracefully terminate. In that case the reference antenna should be set manually.
 
@@ -144,31 +144,31 @@ Setup some basic observation information
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Execute this section
 
   **freq**
 
-    *str*, *optional*
+    *str*, *optional*, *default = 855 1760 16*
 
     A single freq, or the start, end freqs, and channel width in MHz
 
   **diameter**
 
-    *float*, *optional*
+    *float*, *optional*, *default = 6.0*
 
     Diameter of the required beam
 
   **pixels**
 
-    *int*, *optional*
+    *int*, *optional*, *default = 256*
 
     Number of pixels on one side
 
   **coefficients**
 
-    *{"me", "mh"}*, *optional*
+    *{"me", "mh"}*, *optional*, *default = me*
 
     Coeficients file name
 

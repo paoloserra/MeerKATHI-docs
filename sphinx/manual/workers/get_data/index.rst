@@ -22,7 +22,7 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 **dataid**
 --------------------------------------------------
 
-  *list* *of str*, *optional*
+  *list* *of str*
 
   Basename of MS. For MeerKAT data to be downloaded by MeerKATHI, this should be the data ID of the observation
 
@@ -38,25 +38,25 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Execute this segment
 
   **tar**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Create a tarbal of the converted MS.
 
   **channel_range**
 
-    *str*, *optional*
+    *str*, *optional*, *default = all*
 
     Only exctract channels in this range (0-based, inclusive; comma seperated string)
 
   **full_poll**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Extract all four correlations instead of only the XX,YY
 
@@ -72,13 +72,13 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Execute this segment
 
   **tar_options**
 
-    *str*, *optional*
+    *str*, *optional*, *default = -xvf*
 
     Options to parse to 'tar' command
 
@@ -94,13 +94,13 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
   **enable**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Execute this section
 
   **reset**
 
-    *bool*, *optional*
+    *bool*, *optional*, *default = False*
 
     Delete concatenated MS if it exists. Else, proceed with existing MS
 
@@ -110,13 +110,13 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
     **enable**
 
-      *bool*, *optional*
+      *bool*, *optional*, *default = False*
 
       Execute this section
 
     **tar_options**
 
-      *str*, *optional*
+      *str*, *optional*, *default = -cvf*
 
       Options to parse to the tar command
 
@@ -126,13 +126,13 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
     **enable**
 
-      *bool*, *optional*
+      *bool*, *optional*, *default = False*
 
       Execute this section
 
     **tar_options**
 
-      *str*, *optional*
+      *str*, *optional*, *default = -xvf*
 
       Options to parse to the tar command
 

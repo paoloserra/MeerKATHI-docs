@@ -82,8 +82,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html#download-install">Download &amp; Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
@@ -170,7 +169,7 @@
 <div class="section" id="dataid">
 <span id="get-data-dataid"></span><h2><strong>dataid</strong><a class="headerlink" href="#dataid" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em></p>
 <p>Basename of MS. For MeerKAT data to be downloaded by MeerKATHI, this should be the data ID of the observation</p>
 </div></blockquote>
 </div>
@@ -180,22 +179,22 @@
 <div><p>Convert HDF5/MVF files in data_path to MS files; the latter are written to msdir; also creates a MS.TAR file. (This only works for MeerKAT HDF5 files)</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute this segment</p>
 </div></blockquote>
 <p><strong>tar</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Create a tarbal of the converted MS.</p>
 </div></blockquote>
 <p><strong>channel_range</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = all</em></p>
 <p>Only exctract channels in this range (0-based, inclusive; comma seperated string)</p>
 </div></blockquote>
 <p><strong>full_poll</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Extract all four correlations instead of only the XX,YY</p>
 </div></blockquote>
 </div></blockquote>
@@ -206,12 +205,12 @@
 <div><p>Unarchive from MS from a archive file.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute this segment</p>
 </div></blockquote>
 <p><strong>tar_options</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = -xvf</em></p>
 <p>Options to parse to ‘tar’ command</p>
 </div></blockquote>
 </div></blockquote>
@@ -222,12 +221,12 @@
 <div><p>Virtually concatenate MSs and proceed with the combined MS</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute this section</p>
 </div></blockquote>
 <p><strong>reset</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Delete concatenated MS if it exists. Else, proceed with existing MS</p>
 </div></blockquote>
 <p><strong>tar</strong></p>
@@ -235,12 +234,12 @@
 <div><p>Create a tarbal of the converted MS</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute this section</p>
 </div></blockquote>
 <p><strong>tar_options</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = -cvf</em></p>
 <p>Options to parse to the tar command</p>
 </div></blockquote>
 </div></blockquote>
@@ -249,12 +248,12 @@
 <div><p>Unarchive from MS from a archive file.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute this section</p>
 </div></blockquote>
 <p><strong>tar_options</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = -xvf</em></p>
 <p>Options to parse to the tar command</p>
 </div></blockquote>
 </div></blockquote>

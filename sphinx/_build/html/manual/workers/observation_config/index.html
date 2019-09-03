@@ -82,8 +82,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html#download-install">Download &amp; Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
@@ -178,22 +177,22 @@
 <div><p>Get observation information</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em></p>
 <p>Execute this section</p>
 </div></blockquote>
 <p><strong>listobs</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Run CASA listobs task to get observation information</p>
 </div></blockquote>
 <p><strong>summary_json</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Run MSUtils summary function to get observation information as JSON file which can be used to automatically configure pipeline</p>
 </div></blockquote>
 <p><strong>vampirisms</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Returns sun free time range</p>
 </div></blockquote>
 </div></blockquote>
@@ -201,49 +200,49 @@
 <div class="section" id="check-cals">
 <span id="observation-config-check-cals"></span><h2><strong>Check_Cals</strong><a class="headerlink" href="#check-cals" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Should the existence of the  calibrators be checked for or only the target. Setting this to false allows the pipeline to run on split datasets. Default True</p>
 </div></blockquote>
 </div>
 <div class="section" id="target">
 <span id="observation-config-target"></span><h2><strong>target</strong><a class="headerlink" href="#target" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
 <p>Target field. If set to ‘auto’ then will automatically set using JSON file from ‘obsinfo’</p>
 </div></blockquote>
 </div>
 <div class="section" id="gcal">
 <span id="observation-config-gcal"></span><h2><strong>gcal</strong><a class="headerlink" href="#gcal" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
 <p>Gain calibrator field. If set to ‘auto’ then will automatically set using JSON file from ‘obsinfo’</p>
 </div></blockquote>
 </div>
 <div class="section" id="bpcal">
 <span id="observation-config-bpcal"></span><h2><strong>bpcal</strong><a class="headerlink" href="#bpcal" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
 <p>Bandpass calibrator field. If set to ‘auto’ then will automatically set using JSON file from ‘obsinfo’</p>
 </div></blockquote>
 </div>
 <div class="section" id="fcal">
 <span id="observation-config-fcal"></span><h2><strong>fcal</strong><a class="headerlink" href="#fcal" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
 <p>Fluxscale calibrator field. If set to ‘auto’ then will automatically set using JSON file from ‘obsinfo’</p>
 </div></blockquote>
 </div>
 <div class="section" id="xcal">
 <span id="observation-config-xcal"></span><h2><strong>xcal</strong><a class="headerlink" href="#xcal" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
 <p>Crosshand phase angle calibrator. This calibrator must be linearly polarized and have a non-zero parallactic angle coverage at the time of observation to solve for the X-Y offsets in digitizers and the absolute polarization angle of the system. Successful calibration derotates U from V.</p>
 </div></blockquote>
 </div>
 <div class="section" id="reference-antenna">
 <span id="observation-config-reference-antenna"></span><h2><strong>reference_antenna</strong><a class="headerlink" href="#reference-antenna" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
 <p>Reference antenna. If ‘auto’ then MeerKATHI will automatically pick the reference antenna from the .JSON metadata file if available. The file name is the same as the input .MS file but with .JSON extension. This file is typically available only for old (ROACH2) MeerKAT data. For all other data the pipeline will likely throw an error and gracefully terminate. In that case the reference antenna should be set manually.</p>
 </div></blockquote>
 </div>
@@ -253,27 +252,27 @@
 <div><p>Generate primary beam model</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute this section</p>
 </div></blockquote>
 <p><strong>freq</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 855 1760 16</em></p>
 <p>A single freq, or the start, end freqs, and channel width in MHz</p>
 </div></blockquote>
 <p><strong>diameter</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 6.0</em></p>
 <p>Diameter of the required beam</p>
 </div></blockquote>
 <p><strong>pixels</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 256</em></p>
 <p>Number of pixels on one side</p>
 </div></blockquote>
 <p><strong>coefficients</strong></p>
 <blockquote>
-<div><p><em>{“me”, “mh”}</em>, <em>optional</em></p>
+<div><p><em>{“me”, “mh”}</em>, <em>optional</em>, <em>default = me</em></p>
 <p>Coeficients file name</p>
 </div></blockquote>
 </div></blockquote>
