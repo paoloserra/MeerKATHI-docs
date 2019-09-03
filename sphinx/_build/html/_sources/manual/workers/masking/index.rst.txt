@@ -28,18 +28,6 @@ Create mask from catalog and/or merge with mask of extended source
 
 
 
-.. _masking_order:
-
---------------------------------------------------
-**order**
---------------------------------------------------
-
-  *int*, *optional*
-
-  Workers are executed in ascending order based on this value
-
-
-
 .. _masking_centre_coord:
 
 --------------------------------------------------
@@ -48,7 +36,19 @@ Create mask from catalog and/or merge with mask of extended source
 
   *list* *of str*, *optional*
 
-  Coordinates of the centre of the field of view ["00:00:00","00:00:00"]
+  Coordinates of the centre of the field of view read from reference_dir by default
+
+
+
+.. _masking_label:
+
+--------------------------------------------------
+**label**
+--------------------------------------------------
+
+  *str*, *optional*
+
+  Label of the .MS file where to find information about the target
 
 
 
@@ -128,7 +128,7 @@ Create mask from catalog and/or merge with mask of extended source
 
   **catalog**
 
-    *str*, *optional*
+    *{"NVSS", "SUMSS"}*, *optional*
 
     Name of catalog to query [NVSS/SUMSS]
 
@@ -137,6 +137,12 @@ Create mask from catalog and/or merge with mask of extended source
     *str*, *optional*
 
     Width of the region of sky we want to mask (keep larger than dirty image)
+
+  **thresh_nvss**
+
+    *float*, *optional*
+
+    Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy) or cutoff in sigmas for sofia source finder
 
 
 
@@ -172,7 +178,7 @@ Create mask from catalog and/or merge with mask of extended source
 
   **enable**
 
-    *bool*
+    *bool*, *optional*
 
     Execute this worker
 
@@ -190,13 +196,13 @@ Create mask from catalog and/or merge with mask of extended source
 
   **thresh_lev**
 
-    *float*, *optional*
+    *int*, *optional*
 
-    Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)
+    Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy) or cutoff in sigmas for sofia source finder
 
   **scale_noise_window**
 
-    *float*, *optional*
+    *int*, *optional*
 
     window size where SoFiA measures the local rms, units of pixels
 
@@ -212,7 +218,7 @@ Create mask from catalog and/or merge with mask of extended source
 
   **enable**
 
-    *bool*
+    *bool*, *optional*
 
     Execute this worker
 
@@ -232,5 +238,5 @@ Create mask from catalog and/or merge with mask of extended source
 
     *float*, *optional*
 
-    Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)
+    Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy) or cutoff in sigmas for sofia source finder
 

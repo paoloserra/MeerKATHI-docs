@@ -96,22 +96,21 @@
 <li class="toctree-l3"><a class="reference internal" href="../prepare_data/index.html">prepare_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../flagging/index.html">flagging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cross_cal/index.html">cross_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../inspect_data/index.html">inspect_data</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">split_target</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enable"><strong>enable</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#order"><strong>order</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#label"><strong>label</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#label-in"><strong>label_in</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#label-out"><strong>label_out</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#split-target-split-target"><strong>split_target</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#hires-split"><strong>hires_split</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#changecentre"><strong>changecentre</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#obsinfo"><strong>obsinfo</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#prepms"><strong>prepms</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#init-legacy-flagset"><strong>init_legacy_flagset</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../image_HI/index.html">image_HI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 </ul>
 </li>
 </ul>
@@ -178,18 +177,18 @@
 <p>Execute this worker</p>
 </div></blockquote>
 </div>
-<div class="section" id="order">
-<span id="split-target-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
-<p>Order of worker in queue</p>
-</div></blockquote>
-</div>
-<div class="section" id="label">
-<span id="split-target-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="label-in">
+<span id="split-target-label-in"></span><h2><strong>label_in</strong><a class="headerlink" href="#label-in" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Label for new data set</p>
+<p>Label of the input dataset</p>
+</div></blockquote>
+</div>
+<div class="section" id="label-out">
+<span id="split-target-label-out"></span><h2><strong>label_out</strong><a class="headerlink" href="#label-out" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Label of the output dataset</p>
 </div></blockquote>
 </div>
 <div class="section" id="split-target-split-target">
@@ -214,43 +213,43 @@
 <p><strong>column</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Column to split, default is ‘corrected’</p>
+<p>Column to split, default is ‘data’. Which means use otf calibration.</p>
 </div></blockquote>
 <p><strong>correlation</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Select correlations, default is ‘’ = all</p>
+<p>Select correlations</p>
 </div></blockquote>
 <p><strong>spw</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Select spectral windows and channels, default is ‘’ = all</p>
+<p>Select spectral windows and channels</p>
 </div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="hires-split">
-<span id="split-target-hires-split"></span><h2><strong>hires_split</strong><a class="headerlink" href="#hires-split" title="Permalink to this headline">¶</a></h2>
+<p><strong>otfcal</strong></p>
 <blockquote>
-<div><p>Splits data while keeping the frequency resolution</p>
+<div><p>Apply OTF calibration</p>
 <p><strong>enable</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Execute this section</p>
 </div></blockquote>
-<p><strong>hires_label</strong></p>
+<p><strong>callabel</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Label for high resolution data set</p>
+<p>Label of calibration tables to be used</p>
 </div></blockquote>
-<p><strong>hires_spwid</strong></p>
+<p><strong>apply_delay_cal</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
-<p>SPW ID for full resolution data.</p>
-</div></blockquote>
-<p><strong>hires_spw</strong></p>
+<div>Apply the delay correction calibration table to specified fields via the CASA applycal task.</div></blockquote>
+<p><strong>apply_bp_cal</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
-<p>SPW for full resolution data.</p>
+<div>Apply the bandpass table to specified fields via the CASA applycal task.</div></blockquote>
+<p><strong>apply_gain_cal_gain</strong></p>
+<blockquote>
+<div>Apply the gain calibration table to specified fields via the CASA applycal task.</div></blockquote>
+<p><strong>apply_transfer_fluxscale</strong></p>
+<blockquote>
+<div>Apply the fluxscale table to specified fields via the CASA applycal task.</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -296,10 +295,10 @@
 </div></blockquote>
 </div></blockquote>
 </div>
-<div class="section" id="prepms">
-<span id="split-target-prepms"></span><h2><strong>prepms</strong><a class="headerlink" href="#prepms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="init-legacy-flagset">
+<span id="split-target-init-legacy-flagset"></span><h2><strong>init_legacy_flagset</strong><a class="headerlink" href="#init-legacy-flagset" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>Run MSUtils prepms function</p>
+<div><p>Save existing flags to legacy flagset</p>
 <p><strong>enable</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>

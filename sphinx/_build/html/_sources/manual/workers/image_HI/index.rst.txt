@@ -24,19 +24,7 @@ Create HI data cube and detect sources therein
 
   *bool*, *optional*
 
-  Execute segment image_HI (yes/no). Default is yes.
-
-
-
-.. _image_HI_order:
-
---------------------------------------------------
-**order**
---------------------------------------------------
-
-  *int*, *optional*
-
-  Order in queue of workers. Default is 11.
+  Execute segment image_HI (yes/no).
 
 
 
@@ -48,31 +36,7 @@ Create HI data cube and detect sources therein
 
   *str*, *optional*
 
-  Label of names of MS data sets to be used. MS data set names will always start with the data set id, followed by a hyphen, followed by desc. Default is corr.
-
-
-
-.. _image_HI_hires_label:
-
---------------------------------------------------
-**hires_label**
---------------------------------------------------
-
-  *str*
-
-  Label of names of High frequency resolution MS data sets to be used. MS data set names will always start with the data set id, followed by a hyphen, followed by desc. Default is hires.
-
-
-
-.. _image_HI_use_hires_data:
-
---------------------------------------------------
-**use_hires_data**
---------------------------------------------------
-
-  *bool*, *optional*
-
-  Make use of high resolution data for HI imaging
+  Label of names of MS data sets to be used. MS data set names will always start with the data set id, followed by a hyphen, followed by desc.
 
 
 
@@ -84,7 +48,7 @@ Create HI data cube and detect sources therein
 
   *str*, *optional*
 
-  Rest frequency default value for this worker. Default is '1.420405752GHz'.
+  Rest frequency default value for this worker.
 
 
 
@@ -96,7 +60,7 @@ Create HI data cube and detect sources therein
 
   *list* *of int*, *optional*
 
-  Default number of pixels (wherever npix is requested) in this worker. List of integers (width and height) or a single integer for square images. Default is 1024.
+  Default number of pixels (wherever npix is requested) in this worker. List of integers (width and height) or a single integer for square images.
 
 
 
@@ -108,7 +72,7 @@ Create HI data cube and detect sources therein
 
   *float*, *optional*
 
-  Default scale of a pixel in arcsec. Default is 7.
+  Default scale of a pixel in arcsec.
 
 
 
@@ -120,7 +84,7 @@ Create HI data cube and detect sources therein
 
   *str*, *optional*
 
-  Default weight for the worker. Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition. Default is natural.
+  Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition.
 
 
 
@@ -132,7 +96,7 @@ Create HI data cube and detect sources therein
 
   *float*, *optional*
 
-  Default robust parameter in case of Briggs weighting. Default is 2.
+  Default robust parameter in case of Briggs weighting.
 
 
 
@@ -148,7 +112,7 @@ Create HI data cube and detect sources therein
 
     *bool*, *optional*
 
-    Execute segment subtractmodelcol. Default is False.
+    Execute segment subtractmodelcol.
 
 
 
@@ -164,37 +128,37 @@ Create HI data cube and detect sources therein
 
     *bool*, *optional*
 
-    Execute segment doppler correction (yes/no). Default is yes.
+    Execute segment doppler correction (yes/no).
 
   **telescope**
 
     *{"meerkat", "vla", "gmrt", "wsrt", "atca", "askap"}*, *optional*
 
-    The name of the telescope from which observations were made. Default is the 'meerkat' telescope. Current options are gmrt, vla, wsrt, atca
+    The name of the telescope from which observations were made. Default is the 'meerkat' telescope. Current options are gmrt, vla, wsrt, atca.
 
   **doppler**
 
     *bool*, *optional*
 
-    Transform channel labels and visibilities to a different spectral reference frame. default is True
+    Transform channel labels and visibilities to a different spectral reference frame.
 
   **mode**
 
     *str*, *optional*
 
-    Regridding mode (channel/velocity/frequency/channel_b). Default is 'frequency'
+    Regridding mode (channel/velocity/frequency/channel_b).
 
   **outframe**
 
-    *str*, *optional*
+    *{"", "topo", "geo", "lsrk", "lsrd", "bary", "galacto", "lgroup", "cmb", "source"}*, *optional*
 
-    Output reference frame, options 'LSRK', 'LSRD', 'BARY', 'GALACTO', 'LGROUP', 'CMB', 'GEO', 'TOPO'. Defaut is 'BARY'
+    Output reference frame, options '', 'topo', 'geo', 'lsrk', 'lsrd', 'bary', 'galacto', 'lgroup', 'cmb', 'source'
 
   **veltype**
 
     *str*, *optional*
 
-    Definition of velocity (as used in mode), radio or optical.  Default is 'radio'
+    Definition of velocity (as used in mode), radio or optical.
 
   **outchangrid**
 
@@ -206,13 +170,13 @@ Create HI data cube and detect sources therein
 
     *bool*, *optional*
 
-    Perform continuum subtraction as in task uvcontsub whilst regridding within mstransform. Default is false
+    Perform continuum subtraction as in task uvcontsub whilst regridding within mstransform.
 
   **fitspw**
 
     *str*, *optional*
 
-    Spectral window channel selection for fitting the continuumSelection of line-free channels using CASA syntax (e.g. '0:0~100;150:300'). If set to null, a fit to all unflagges visibilities will be performed. (Defaults to null)
+    Spectral window channel selection for fitting the continuumSelection of line-free channels using CASA syntax (e.g. '0:0~100;150:300'). If set to null, a fit to all unflagges visibilities will be performed.
 
   **fitorder**
 
@@ -230,7 +194,7 @@ Create HI data cube and detect sources therein
 
     *bool*, *optional*
 
-    Create obsinfo.txt and obsinfo.json of MS file created by mstransform. Default true
+    Create obsinfo.txt and obsinfo.json of MS file created by mstransform.
 
 
 
@@ -272,6 +236,24 @@ Create HI data cube and detect sources therein
 
     Distance from average beyond which data are flagged in units of sigma. Default is 4.
 
+  **vampirisms**
+
+    *bool*, *optional*
+
+    Apply only to data taken during day time (defaults to true)
+
+  **uvmax**
+
+    *float*, *optional*
+
+    Maximum uvdistance in wavelength to be analysed (defaults to 2000)
+
+  **uvmin**
+
+    *float*, *optional*
+
+    Minimum uvdistance in wavelength to be analysed (defaults to 0)
+
 
 
 .. _image_HI_wsclean_image:
@@ -293,6 +275,12 @@ Create HI data cube and detect sources therein
     *int*, *optional*
 
     Maximum number of rewsclean iterations to perform. Default is 2
+
+  **tol**
+
+    *float*, *optional*
+
+    Relative change in the noise.
 
   **rm_intcubes**
 
@@ -320,7 +308,7 @@ Create HI data cube and detect sources therein
 
   **nchans**
 
-    *text*, *optional*
+    *str*, *optional*
 
     Number of channels of HI cube, 'all' or an integer number. Default is 'all'.
 
@@ -356,7 +344,7 @@ Create HI data cube and detect sources therein
 
   **cell**
 
-    *text*, *optional*
+    *float*, *optional*
 
     Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. 'scale 20asec'. Default is Worker default for cell.
 
@@ -388,19 +376,19 @@ Create HI data cube and detect sources therein
 
     *str*, *optional*
 
-    Accepts a 3D-mask cleaning mask in fits format. Mask made by the user. Default is '' (an empty field)
+    filename of fits mask (in output/masking folder)
 
-  **automask**
+  **auto_mask**
 
     *float*, *optional*
 
     Construct a mask from found components and when a threshold of sigma is reached, continue cleaning with the mask down to the normal threshold.
 
-  **autothreshold**
+  **auto_threshold**
 
     *float*, *optional*
 
-    Estimate noise level using a robust estimator and stop at sigma x stddev
+    Auto clean threshold
 
   **cleanborder**
 
@@ -472,7 +460,7 @@ Create HI data cube and detect sources therein
 
   **nchans**
 
-    *text*, *optional*
+    *str*, *optional*
 
     Number of channels. If set to 'all', all channels are used. Otherwise provide the number of channels (starting with startchan, see below). Default is 'all'.
 
@@ -490,7 +478,7 @@ Create HI data cube and detect sources therein
 
   **cell**
 
-    *text*, *optional*
+    *float*, *optional*
 
     Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. 'scale 20asec'. Default is worker cell.
 
@@ -659,6 +647,76 @@ Create HI data cube and detect sources therein
     *int*, *optional*
 
     Minimum size in y-direction. Default is 5.
+
+  **do_cubelets**
+
+    *bool*, *optional*
+
+    Create cubelets of HI sources.
+
+  **do_mom0**
+
+    *bool*, *optional*
+
+    Create moment 0 map.
+
+  **do_mom1**
+
+    *bool*, *optional*
+
+    Create moment 1 map.
+
+
+
+.. _image_HI_sharpener:
+
+--------------------------------------------------
+**sharpener**
+--------------------------------------------------
+
+  Run sharpener to extract spectrum of all continuum sources against the lines of sight. The spectra are then plotted.
+
+  **enable**
+
+    *bool*, *optional*
+
+    Execute sharpener (yes/no)? Default is yes
+
+  **catalog**
+
+    *{"NVSS", "PYBDSF"}*, *optional*
+
+    Type of catalog to use (PYBDSF/NVSS). Default is 'PYBDSF'
+
+  **catalog_file**
+
+    *str*, *optional*
+
+    Catalog file where to store sources from online surveys (NVSS)
+
+  **channels_per_plot**
+
+    *int*, *optional*
+
+    Number of channels to plot per detail plot. Default is 50
+
+  **thresh**
+
+    *float*, *optional*
+
+    Threshold to select sources in online catalogs (mJy). Default is '20'
+
+  **width**
+
+    *str*, *optional*
+
+    Field of view of output catalog (degrees). Default is '1.0d'
+
+  **label**
+
+    *str*, *optional*
+
+    Prefix label of plot names and titles. Default is 'pipeline.prefix'
 
 
 

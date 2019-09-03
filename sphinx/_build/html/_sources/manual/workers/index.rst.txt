@@ -18,9 +18,9 @@ Workers parameters
    prepare_data/index.rst
    flagging/index.rst
    cross_cal/index.rst
+   polcal/index.rst
    inspect_data/index.rst
    split_target/index.rst
    masking/index.rst
    self_cal/index.rst
    image_HI/index.rst
-   polcal/index.rst

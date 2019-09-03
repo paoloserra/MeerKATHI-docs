@@ -19,6 +19,7 @@ sortedWorkers = [
   'prepare_data',
   'flagging',
   'cross_cal',
+  'polcal',
   'inspect_data',
   'split_target',
   'masking',
@@ -298,11 +299,12 @@ import ruamel.yaml
 ##############
 
 schemaDir=meerkathiDir+'/meerkathi/schema/'
+schemaVersion='0.2.0'
 
 
 print('  INFO: Browsing MeerKATHI schema directory {0:s} ...'.format(schemaDir))
 # Get list of workers and their .yml files from the schema directory
-schemas=[ww.replace(schemaDir,'') for ww in glob(schemaDir+'*')]
+schemas=[ww.replace(schemaDir,'') for ww in glob(schemaDir+'*'+schemaVersion+'.yml')]
 workers=[ww.split('_schema')[0] for ww in schemas]
 
 # Remove from the sortedWorkers list all workers not in the current schema directory
@@ -331,9 +333,6 @@ for ww in sortedWorkers: os.mkdir(workersDir+ww)
 getMeerkathiReadme(meerkathiDir,docsDir)
 
 # Write index.rst files
-#writeHomeIndex(docsDir)       [OBSOLETE. THIS FILE IS STATIC AND NO LONGER NEEDS UPDATES]
-#writeInstallIndex(installDir) [OBSOLETE. INSTALL DOCS COME FROM MEERKATHI README]
-#writeManualIndex(manualDir)   [OBSOLETE. THIS FILE IS STATIC AND NO LONGER NEEDS UPDATES]
 writeWorkerPageIndex(sortedWorkers,workersDir)
 writeWorkersIndex(sortedWorkers,workersDir,schemas,schemaDir)
 

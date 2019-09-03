@@ -93,7 +93,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../general/index.html">general</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../get_data/index.html">get_data</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">observation_config</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#order"><strong>order</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#obsinfo"><strong>obsinfo</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#check-cals"><strong>Check_Cals</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#target"><strong>target</strong></a></li>
@@ -108,12 +107,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../prepare_data/index.html">prepare_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../flagging/index.html">flagging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cross_cal/index.html">cross_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../inspect_data/index.html">inspect_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../split_target/index.html">split_target</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../image_HI/index.html">image_HI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 </ul>
 </li>
 </ul>
@@ -173,13 +172,6 @@
 <div class="toctree-wrapper compound">
 </div>
 <p>Setup some basic observation information</p>
-<div class="section" id="order">
-<span id="observation-config-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
-<p>Order in queue of workers</p>
-</div></blockquote>
-</div>
 <div class="section" id="obsinfo">
 <span id="observation-config-obsinfo"></span><h2><strong>obsinfo</strong><a class="headerlink" href="#obsinfo" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -279,9 +271,9 @@
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Number of pixels on one side</p>
 </div></blockquote>
-<p><strong>coefficients_file</strong></p>
+<p><strong>coefficients</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>{“me”, “mh”}</em>, <em>optional</em></p>
 <p>Coeficients file name</p>
 </div></blockquote>
 </div></blockquote>

@@ -28,18 +28,6 @@ Prepare the data for calibration and imaging.
 
 
 
-.. _prepare_data_order:
-
---------------------------------------------------
-**order**
---------------------------------------------------
-
-  *int*, *optional*
-
-  Order in queue of workers.
-
-
-
 .. _prepare_data_fixvis:
 
 --------------------------------------------------
@@ -56,19 +44,37 @@ Prepare the data for calibration and imaging.
 
 
 
-.. _prepare_data_prepms:
+.. _prepare_data_manage_flags:
 
 --------------------------------------------------
-**prepms**
+**manage_flags**
 --------------------------------------------------
 
-  Add BITFLAG column to MS.
+  Manage MS flags
 
   **enable**
 
     *bool*, *optional*
 
-    Enable addition of BITFLAG column to MS.
+    enable this section
+
+  **add_bitflag_column**
+
+    *bool*, *optional*
+
+    Add BITFLAG and BITFLAG_ROW columns
+
+  **init_legacy_flagset**
+
+    *bool*, *optional*
+
+    Save all current flags in a legacy flagset if it does not exist
+
+  **remove_flagsets**
+
+    *bool*, *optional*
+
+    Remove all existing flagsets, except legacy flags
 
 
 
@@ -85,4 +91,28 @@ Prepare the data for calibration and imaging.
     *bool*, *optional*
 
     Enables addition of spectral weights column to the measurement set.
+
+  **weight_columns**
+
+    *list* *of str*, *optional*
+
+    column names
+
+  **noise_columns**
+
+    *list* *of str*, *optional*
+
+    column names for noise
+
+  **write_to_ms**
+
+    *bool*, *optional*
+
+    write columns to file
+
+  **stats_data**
+
+    *str*, *optional*
+
+    which statistics for the file.
 

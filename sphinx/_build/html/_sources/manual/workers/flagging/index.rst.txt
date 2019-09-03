@@ -28,18 +28,6 @@ Flagging of the data.
 
 
 
-.. _flagging_order:
-
---------------------------------------------------
-**order**
---------------------------------------------------
-
-  *int*, *optional*
-
-  Order in queue of workers. Generally a non-negative integer.
-
-
-
 .. _flagging_label:
 
 --------------------------------------------------
@@ -49,30 +37,6 @@ Flagging of the data.
   *str*, *optional*
 
   The label is added to the input .MS file name to define the name of the .MS file that should be flagged, <input>-<label>.ms. Default is an empty string, i.e., the original .MS is flagged.
-
-
-
-.. _flagging_hires_label:
-
---------------------------------------------------
-**hires_label**
---------------------------------------------------
-
-  *str*, *optional*
-
-  Label for high frequency resolution data.
-
-
-
-.. _flagging_hires_flag:
-
---------------------------------------------------
-**hires_flag**
---------------------------------------------------
-
-  *bool*, *optional*
-
-  Enables AOFlagger run on high frequency resolution data.
 
 
 
@@ -218,13 +182,13 @@ Flagging of the data.
 
     *str*, *optional*
 
-    Channels to flag. Given as "spectral window index:start channel ~ end channel", e.g. "\*:856~880MHz". End channel not inclusive.
+    Channels to flag. Given as "spectral window index:start channel ~ end channel" e.g. "\*:856~880MHz". End channel not inclusive.
 
   **ensure_valid_selection**
 
     *bool*, *optional*
 
-    Check whether the channel selection returns any data. If it does not, FLAGDATA is not executed, preventing the pipeline from crashing. This check only works with the following spw formats (multiple, comma-separated selections allowed), "\*:firstchan~lastchan"; "firstspw~lastspw:firstchan~lastchan"; "spw:firstchan~lastchan"; "firstchan~lastchan". Channels are assumed to be in frequency (Hz, kHz, MHz, GHz allowed; if no units are given it assumes Hz).
+    Check whether the channel selection returns any data. If it does not FLAGDATA is not executed preventing the pipeline from crashing. This check only works with the following spw formats (multiple, comma-separated selections allowed), "\*:firstchan~lastchan"; "firstspw~lastspw:firstchan~lastchan"; "spw:firstchan~lastchan"; "firstchan~lastchan". Channels are assumed to be in frequency (Hz, kHz, MHz, GHz allowed; if no units are given it assumes Hz).
 
 
 
@@ -340,7 +304,13 @@ Flagging of the data.
 
     *bool*, *optional*
 
-    Enable RFI flagging with AOFlagger.
+    Enable RFI flagging with AOFlagger or tricolour (not active yet)
+
+  **flagger**
+
+    *{"aoflagger", "tricolour"}*, *optional*
+
+    Choose flagger for automatic flagging
 
   **strategy**
 
@@ -355,6 +325,12 @@ Flagging of the data.
     Specify column to flag
 
   **fields**
+
+    *str*, *optional*
+
+    comma separated list of (zero-indexed) field ids to process
+
+  **calibrator_fields**
 
     *str*, *optional*
 
@@ -390,9 +366,9 @@ Flagging of the data.
 
   **field**
 
-    *int*, *optional*
+    *str*, *optional*
 
-    Field ID of target
+    Field to get flag stats. Given as a key (key in [gcal, bpcal, target]).
 
   **polarization**
 

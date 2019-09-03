@@ -96,13 +96,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../prepare_data/index.html">prepare_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../flagging/index.html">flagging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cross_cal/index.html">cross_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../inspect_data/index.html">inspect_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../split_target/index.html">split_target</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">self_cal</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enable"><strong>enable</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#label"><strong>label</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#order"><strong>order</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#undo-subtractmodelcol"><strong>undo_subtractmodelcol</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#primary-beam"><strong>primary_beam</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#calibrate-with"><strong>calibrate_with</strong></a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#img-uvtaper"><strong>img_uvtaper</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-niter"><strong>img_niter</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-cleanborder"><strong>img_cleanborder</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#img-facets"><strong>img_facets</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-nchans"><strong>img_nchans</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-joinchannels"><strong>img_joinchannels</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-fit-spectral-pol"><strong>img_fit_spectral_pol</strong></a></li>
@@ -126,6 +125,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#cal-gain-amplitude-clip-high"><strong>cal_gain_amplitude_clip_high</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cal-niter"><strong>cal_niter</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#start-at-iter"><strong>start_at_iter</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cal-time-chunk"><strong>cal_time_chunk</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#aimfast"><strong>aimfast</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#image"><strong>image</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sofia-mask"><strong>sofia_mask</strong></a></li>
@@ -139,7 +139,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../image_HI/index.html">image_HI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 </ul>
 </li>
 </ul>
@@ -210,21 +209,14 @@
 <span id="self-cal-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Label to tag the output files</p>
-</div></blockquote>
-</div>
-<div class="section" id="order">
-<span id="self-cal-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
-<p>Workers are executed in ascedning order based on this value</p>
+<p>Label of the .MS files to process</p>
 </div></blockquote>
 </div>
 <div class="section" id="undo-subtractmodelcol">
 <span id="self-cal-undo-subtractmodelcol"></span><h2><strong>undo_subtractmodelcol</strong><a class="headerlink" href="#undo-subtractmodelcol" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>replace the corrected column with the sum of corrected and model columns to undo continuum subtraction that may have been done by the image HI worker. Default is false</p>
+<p>replace the corrected column with the sum of corrected and model columns to undo continuum subtraction that may have been done by the image HI worker.</p>
 </div></blockquote>
 </div>
 <div class="section" id="primary-beam">
@@ -266,7 +258,7 @@
 <span id="self-cal-img-padding"></span><h2><strong>img_padding</strong><a class="headerlink" href="#img-padding" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
-<p>Padding</p>
+<p>Padding in WSclean</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-mgain">
@@ -287,7 +279,7 @@
 <span id="self-cal-img-weight"></span><h2><strong>img_weight</strong><a class="headerlink" href="#img-weight" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>{“briggs”, “uniform”, “natural”}</em>, <em>optional</em></p>
-<p>Image weighting type</p>
+<p>Image weighting type. If Briggs, set the img robust parameter</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-robust">
@@ -301,7 +293,7 @@
 <span id="self-cal-img-uvtaper"></span><h2><strong>img_uvtaper</strong><a class="headerlink" href="#img-uvtaper" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Taper for imaging</p>
+<p>Taper for imaging (arcsec)</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-niter">
@@ -316,13 +308,6 @@
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
 <p>Clean border</p>
-</div></blockquote>
-</div>
-<div class="section" id="img-facets">
-<span id="self-cal-img-facets"></span><h2><strong>img_facets</strong><a class="headerlink" href="#img-facets" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
-<p>Number facet to image</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-nchans">
@@ -343,7 +328,7 @@
 <span id="self-cal-img-fit-spectral-pol"></span><h2><strong>img_fit_spectral_pol</strong><a class="headerlink" href="#img-fit-spectral-pol" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
-<p>Fit a polynomial over frequency to each clean component</p>
+<p>Number of spectral polynomial terms to fit to each clean component. This is equal to the order of the polynomial plus 1.</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-pol">
@@ -378,7 +363,14 @@
 <span id="self-cal-start-at-iter"></span><h2><strong>start_at_iter</strong><a class="headerlink" href="#start-at-iter" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
-<p>Start self-cal iteration loop at this start value</p>
+<p>Start self-cal iteration loop at this start value, 1-based.</p>
+</div></blockquote>
+</div>
+<div class="section" id="cal-time-chunk">
+<span id="self-cal-cal-time-chunk"></span><h2><strong>cal_time_chunk</strong><a class="headerlink" href="#cal-time-chunk" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>int</em></p>
+<p>chunk in time for calibration (seconds)</p>
 </div></blockquote>
 </div>
 <div class="section" id="aimfast">
@@ -428,7 +420,7 @@
 </div></blockquote>
 <p><strong>auto_mask</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
 <p>Auto masking threshold</p>
 </div></blockquote>
 <p><strong>auto_threshold</strong></p>
@@ -459,7 +451,7 @@
 <p><strong>multi_scale_scales</strong></p>
 <blockquote>
 <div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
-<p>scales of multiscale [0,10,20,etc, etc]</p>
+<p>scales of multiscale [0,10,20,etc, etc] in pixels</p>
 </div></blockquote>
 <p><strong>no_update_model</strong></p>
 <blockquote>
@@ -485,32 +477,27 @@
 <p><strong>enable</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Execute segment sofia (yes/no)? Default is yes.</p>
+<p>Execute segment sofia (yes/no)?</p>
 </div></blockquote>
 <p><strong>threshold</strong></p>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
-<p>SoFiA source finding threshold. Default is 4.0.</p>
+<p>SoFiA source finding threshold.</p>
 </div></blockquote>
 <p><strong>flag</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Use flag regions (yes/no)? Default is no.</p>
+<p>Use flag regions (yes/no)?</p>
 </div></blockquote>
 <p><strong>flagregion</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
-<p>Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], …]. Default is [].</p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<p>Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], …].</p>
 </div></blockquote>
 <p><strong>inputmask</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
 <p>input mask over which add Sofia’s</p>
-</div></blockquote>
-<p><strong>kernels</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
-<p>Kernels for mask</p>
 </div></blockquote>
 <p><strong>fornax_special</strong></p>
 <blockquote>
@@ -529,7 +516,7 @@
 </div></blockquote>
 <p><strong>scale_noise_window</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em></p>
 <p>window size where to measure local rms in pixels</p>
 </div></blockquote>
 <p><strong>positivity</strong></p>
@@ -636,7 +623,7 @@
 </div></blockquote>
 <p><strong>Bsols_time</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
 <p>Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
 </div></blockquote>
 <p><strong>Bsols_channel</strong></p>
@@ -659,6 +646,21 @@
 <div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
 <p>Calibration solution intervals</p>
 </div></blockquote>
+<p><strong>weight_column</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Column with weights</p>
+</div></blockquote>
+<p><strong>madmax_flagging</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Flags based on maximum of mad</p>
+</div></blockquote>
+<p><strong>madmax_flag_thresh</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<p>Threshold for madmax flagging</p>
+</div></blockquote>
 <p><strong>ragavi_plot</strong></p>
 <blockquote>
 <div><p>Plotting dignostics plots for delay correction calibration.</p>
@@ -666,11 +668,6 @@
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Enables plotting dignostics</p>
-</div></blockquote>
-<p><strong>table_name</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
-<p>List of gain tables to plot</p>
 </div></blockquote>
 <p><strong>gaintype</strong></p>
 <blockquote>
@@ -686,11 +683,6 @@
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
 <p>Correlation to plot. E.g. X/Y or H/V</p>
-</div></blockquote>
-<p><strong>htmlname</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
-<p>Output HTML file name</p>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
@@ -760,19 +752,54 @@
 <p><strong>model</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Name of the sky model file (currently the only supported format is that of WSclean component lists). Default is ‘auto’, in which case MeerKATHI will build the file name from the input parameters of the selfcal loop. The file is assumed to be in the ‘output’ directory.</p>
+<p>Name of the sky model file (currently the only supported format is that of WSclean component lists). When ‘auto’, the pipeline builds the file name from the input parameters of the selfcal loop. The file is assumed to be in the ‘output’ directory.</p>
 </div></blockquote>
 <p><strong>spectra</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Model sources as non-flat spectra. The spectral coefficients and reference frequency must be present in the sky model. Default is False.</p>
+<p>Model sources as non-flat spectra. The spectral coefficients and reference frequency must be present in the sky model.</p>
+</div></blockquote>
+<p><strong>row-chunks</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>Number of rows of input .MS that are processed in a single chunk.</p>
+</div></blockquote>
+<p><strong>model-chunks</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>Number of sky model components that are processed in a single chunk.</p>
+</div></blockquote>
+<p><strong>invert-uvw</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Invert UVW coordinates. Useful if we want compare our visibilities against MeqTrees.</p>
+</div></blockquote>
+<p><strong>within</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Give JS9 region file. Only sources within those regions will be included.</p>
+</div></blockquote>
+<p><strong>points-only</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Select only point-only sources. Default is False.</p>
+</div></blockquote>
+<p><strong>num-sources</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>Select only N brightest sources. Default is 0</p>
+</div></blockquote>
+<p><strong>num-workers</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>Explicitly set the number of worker threads. Default is None</p>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="highfreqres-contim">
 <span id="self-cal-highfreqres-contim"></span><h2><strong>highfreqres_contim</strong><a class="headerlink" href="#highfreqres-contim" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>Make final continuum image and model at higher freq res, ideally using a clean mask based on the last round of continuum imging</p>
+<div><p>Make final continuum image and model at higher frequency resolution, ideally using a clean mask based on the last round of continuum imaging</p>
 <p><strong>enable</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
@@ -821,7 +848,7 @@
 <p><strong>multi_scale_scales</strong></p>
 <blockquote>
 <div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
-<p>scales of multiscale [0,10,20,etc, etc]</p>
+<p>scales of multiscale [0,10,20,etc, etc] in pixel</p>
 </div></blockquote>
 <p><strong>local_rms</strong></p>
 <blockquote>

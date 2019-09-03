@@ -16,18 +16,6 @@ Setup some basic observation information
 
 
 
-.. _observation_config_order:
-
---------------------------------------------------
-**order**
---------------------------------------------------
-
-  *int*, *optional*
-
-  Order in queue of workers
-
-
-
 .. _observation_config_obsinfo:
 
 --------------------------------------------------
@@ -178,9 +166,9 @@ Setup some basic observation information
 
     Number of pixels on one side
 
-  **coefficients_file**
+  **coefficients**
 
-    *str*, *optional*
+    *{"me", "mh"}*, *optional*
 
     Coeficients file name
 

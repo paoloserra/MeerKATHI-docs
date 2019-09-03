@@ -95,20 +95,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../observation_config/index.html">observation_config</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">prepare_data</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enable"><strong>enable</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#order"><strong>order</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#fixvis"><strong>fixvis</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#prepms"><strong>prepms</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manage-flags"><strong>manage_flags</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#add-spectral-weights"><strong>add_spectral_weights</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../flagging/index.html">flagging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cross_cal/index.html">cross_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../inspect_data/index.html">inspect_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../split_target/index.html">split_target</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../image_HI/index.html">image_HI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 </ul>
 </li>
 </ul>
@@ -175,13 +174,6 @@
 <p>Executes the data preparation step.</p>
 </div></blockquote>
 </div>
-<div class="section" id="order">
-<span id="prepare-data-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
-<p>Order in queue of workers.</p>
-</div></blockquote>
-</div>
 <div class="section" id="fixvis">
 <span id="prepare-data-fixvis"></span><h2><strong>fixvis</strong><a class="headerlink" href="#fixvis" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -193,14 +185,29 @@
 </div></blockquote>
 </div></blockquote>
 </div>
-<div class="section" id="prepms">
-<span id="prepare-data-prepms"></span><h2><strong>prepms</strong><a class="headerlink" href="#prepms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="manage-flags">
+<span id="prepare-data-manage-flags"></span><h2><strong>manage_flags</strong><a class="headerlink" href="#manage-flags" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>Add BITFLAG column to MS.</p>
+<div><p>Manage MS flags</p>
 <p><strong>enable</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Enable addition of BITFLAG column to MS.</p>
+<p>enable this section</p>
+</div></blockquote>
+<p><strong>add_bitflag_column</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Add BITFLAG and BITFLAG_ROW columns</p>
+</div></blockquote>
+<p><strong>init_legacy_flagset</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Save all current flags in a legacy flagset if it does not exist</p>
+</div></blockquote>
+<p><strong>remove_flagsets</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Remove all existing flagsets, except legacy flags</p>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -212,6 +219,26 @@
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Enables addition of spectral weights column to the measurement set.</p>
+</div></blockquote>
+<p><strong>weight_columns</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<p>column names</p>
+</div></blockquote>
+<p><strong>noise_columns</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<p>column names for noise</p>
+</div></blockquote>
+<p><strong>write_to_ms</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>write columns to file</p>
+</div></blockquote>
+<p><strong>stats_data</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>which statistics for the file.</p>
 </div></blockquote>
 </div></blockquote>
 </div>

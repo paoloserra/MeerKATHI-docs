@@ -56,15 +56,11 @@ info about the content of the input .MS files through the :ref:`observation_conf
 (e.g., target and calibrators name, channelisation, etc.). In principle, this can be done
 by editing the relevant parameters of this worker:
 
-* :ref:`observation_config: target <observation_config_target>`;
-* :ref:`observation_config: bpcal <observation_config_bpcal>`;
-* :ref:`observation_config: fcal <observation_config_fcal>`;
-* :ref:`observation_config: gcal <observation_config_gcal>`;
-* :ref:`observation_config: reference_antenna <observation_config_reference_antenna>`;
-* :ref:`observation_config: nchans <observation_config_nchans>`;
-* :ref:`observation_config: firstchanfreq <observation_config_firstchanfreq>`;
-* :ref:`observation_config: lastchanfreq <observation_config_lastchanfreq>`;
-* :ref:`observation_config: chanwidth <observation_config_chanwidth>`.
+* :ref:`observation_config: target <observation_config_target>`
+* :ref:`observation_config: bpcal <observation_config_bpcal>`
+* :ref:`observation_config: fcal <observation_config_fcal>`
+* :ref:`observation_config: gcal <observation_config_gcal>`
+* :ref:`observation_config: reference_antenna <observation_config_reference_antenna>`
 
 In fact, MeerKATHI can automatically extract
 most of these info from the .MS files themselves. To do so users should enable the

@@ -36,19 +36,7 @@ Perform Self calibration on the data
 
   *str*, *optional*
 
-  Label to tag the output files
-
-
-
-.. _self_cal_order:
-
---------------------------------------------------
-**order**
---------------------------------------------------
-
-  *int*, *optional*
-
-  Workers are executed in ascedning order based on this value
+  Label of the .MS files to process
 
 
 
@@ -60,7 +48,7 @@ Perform Self calibration on the data
 
   *bool*, *optional*
 
-  replace the corrected column with the sum of corrected and model columns to undo continuum subtraction that may have been done by the image HI worker. Default is false
+  replace the corrected column with the sum of corrected and model columns to undo continuum subtraction that may have been done by the image HI worker.
 
 
 
@@ -132,7 +120,7 @@ Perform Self calibration on the data
 
   *float*, *optional*
 
-  Padding
+  Padding in WSclean
 
 
 
@@ -168,7 +156,7 @@ Perform Self calibration on the data
 
   *{"briggs", "uniform", "natural"}*, *optional*
 
-  Image weighting type
+  Image weighting type. If Briggs, set the img robust parameter
 
 
 
@@ -192,7 +180,7 @@ Perform Self calibration on the data
 
   *str*, *optional*
 
-  Taper for imaging
+  Taper for imaging (arcsec)
 
 
 
@@ -217,18 +205,6 @@ Perform Self calibration on the data
   *float*, *optional*
 
   Clean border
-
-
-
-.. _self_cal_img_facets:
-
---------------------------------------------------
-**img_facets**
---------------------------------------------------
-
-  *int*, *optional*
-
-  Number facet to image
 
 
 
@@ -264,7 +240,7 @@ Perform Self calibration on the data
 
   *int*, *optional*
 
-  Fit a polynomial over frequency to each clean component
+  Number of spectral polynomial terms to fit to each clean component. This is equal to the order of the polynomial plus 1.
 
 
 
@@ -324,7 +300,19 @@ Perform Self calibration on the data
 
   *int*, *optional*
 
-  Start self-cal iteration loop at this start value
+  Start self-cal iteration loop at this start value, 1-based.
+
+
+
+.. _self_cal_cal_time_chunk:
+
+--------------------------------------------------
+**cal_time_chunk**
+--------------------------------------------------
+
+  *int*
+
+  chunk in time for calibration (seconds)
 
 
 
@@ -390,7 +378,7 @@ Perform Self calibration on the data
 
   **auto_mask**
 
-    *list* *of int*, *optional*
+    *list* *of float*, *optional*
 
     Auto masking threshold
 
@@ -428,7 +416,7 @@ Perform Self calibration on the data
 
     *list* *of int*, *optional*
 
-    scales of multiscale [0,10,20,etc, etc]
+    scales of multiscale [0,10,20,etc, etc] in pixels
 
   **no_update_model**
 
@@ -462,37 +450,31 @@ Perform Self calibration on the data
 
     *bool*, *optional*
 
-    Execute segment sofia (yes/no)? Default is yes.
+    Execute segment sofia (yes/no)?
 
   **threshold**
 
     *float*, *optional*
 
-    SoFiA source finding threshold. Default is 4.0.
+    SoFiA source finding threshold.
 
   **flag**
 
     *bool*, *optional*
 
-    Use flag regions (yes/no)? Default is no.
+    Use flag regions (yes/no)?
 
   **flagregion**
 
-    *list* *of int*, *optional*
+    *list* *of str*, *optional*
 
-    Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], ...]. Default is [].
+    Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], ...].
 
   **inputmask**
 
     *str*, *optional*
 
     input mask over which add Sofia's
-
-  **kernels**
-
-    *list* *of int*, *optional*
-
-    Kernels for mask
 
   **fornax_special**
 
@@ -514,7 +496,7 @@ Perform Self calibration on the data
 
   **scale_noise_window**
 
-    *float*, *optional*
+    *int*, *optional*
 
     window size where to measure local rms in pixels
 
@@ -648,7 +630,7 @@ Perform Self calibration on the data
 
   **Bsols_time**
 
-    *list* *of float*, *optional*
+    *list* *of int*, *optional*
 
     Gsols for individual calibration steps, if not given will default to cal_Gsols
 
@@ -676,6 +658,24 @@ Perform Self calibration on the data
 
     Calibration solution intervals
 
+  **weight_column**
+
+    *str*, *optional*
+
+    Column with weights
+
+  **madmax_flagging**
+
+    *bool*, *optional*
+
+    Flags based on maximum of mad
+
+  **madmax_flag_thresh**
+
+    *list* *of int*, *optional*
+
+    Threshold for madmax flagging
+
   **ragavi_plot**
 
     Plotting dignostics plots for delay correction calibration.
@@ -685,12 +685,6 @@ Perform Self calibration on the data
       *bool*, *optional*
 
       Enables plotting dignostics
-
-    **table_name**
-
-      *list* *of str*, *optional*
-
-      List of gain tables to plot
 
     **gaintype**
 
@@ -709,12 +703,6 @@ Perform Self calibration on the data
       *str*, *optional*
 
       Correlation to plot. E.g. X/Y or H/V
-
-    **htmlname**
-
-      *str*, *optional*
-
-      Output HTML file name
 
 
 
@@ -808,13 +796,55 @@ Perform Self calibration on the data
 
     *str*, *optional*
 
-    Name of the sky model file (currently the only supported format is that of WSclean component lists). Default is 'auto', in which case MeerKATHI will build the file name from the input parameters of the selfcal loop. The file is assumed to be in the 'output' directory.
+    Name of the sky model file (currently the only supported format is that of WSclean component lists). When 'auto', the pipeline builds the file name from the input parameters of the selfcal loop. The file is assumed to be in the 'output' directory.
 
   **spectra**
 
     *bool*, *optional*
 
-    Model sources as non-flat spectra. The spectral coefficients and reference frequency must be present in the sky model. Default is False.
+    Model sources as non-flat spectra. The spectral coefficients and reference frequency must be present in the sky model.
+
+  **row-chunks**
+
+    *int*, *optional*
+
+    Number of rows of input .MS that are processed in a single chunk.
+
+  **model-chunks**
+
+    *int*, *optional*
+
+    Number of sky model components that are processed in a single chunk.
+
+  **invert-uvw**
+
+    *bool*, *optional*
+
+    Invert UVW coordinates. Useful if we want compare our visibilities against MeqTrees.
+
+  **within**
+
+    *str*, *optional*
+
+    Give JS9 region file. Only sources within those regions will be included.
+
+  **points-only**
+
+    *bool*, *optional*
+
+    Select only point-only sources. Default is False.
+
+  **num-sources**
+
+    *int*, *optional*
+
+    Select only N brightest sources. Default is 0
+
+  **num-workers**
+
+    *int*, *optional*
+
+    Explicitly set the number of worker threads. Default is None
 
 
 
@@ -824,7 +854,7 @@ Perform Self calibration on the data
 **highfreqres_contim**
 --------------------------------------------------
 
-  Make final continuum image and model at higher freq res, ideally using a clean mask based on the last round of continuum imging
+  Make final continuum image and model at higher frequency resolution, ideally using a clean mask based on the last round of continuum imaging
 
   **enable**
 
@@ -884,7 +914,7 @@ Perform Self calibration on the data
 
     *list* *of int*, *optional*
 
-    scales of multiscale [0,10,20,etc, etc]
+    scales of multiscale [0,10,20,etc, etc] in pixel
 
   **local_rms**
 

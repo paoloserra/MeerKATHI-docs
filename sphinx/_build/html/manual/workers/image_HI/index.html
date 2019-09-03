@@ -35,7 +35,7 @@
         <link rel="search" title="Search" href="../../../search.html"/>
     <link rel="top" title="MeerKATHI  documentation" href="../../../index.html"/>
         <link rel="up" title="Workers parameters" href="../index.html"/>
-        <link rel="next" title="polcal" href="../polcal/index.html"/>
+        <link rel="next" title="Tutorial" href="../../../tutorial/index.html"/>
         <link rel="prev" title="self_cal" href="../self_cal/index.html"/> 
 
   
@@ -96,16 +96,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../prepare_data/index.html">prepare_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../flagging/index.html">flagging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cross_cal/index.html">cross_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../inspect_data/index.html">inspect_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../split_target/index.html">split_target</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">image_HI</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enable"><strong>enable</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#order"><strong>order</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#label"><strong>label</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#hires-label"><strong>hires_label</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#use-hires-data"><strong>use_hires_data</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#restfreq"><strong>restfreq</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#npix"><strong>npix</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cell"><strong>cell</strong></a></li>
@@ -120,10 +118,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#pb-cube"><strong>pb_cube</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#freq-to-vel"><strong>freq_to_vel</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sofia"><strong>sofia</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sharpener"><strong>sharpener</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flagging-summary"><strong>flagging_summary</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 </ul>
 </li>
 </ul>
@@ -187,70 +185,49 @@
 <span id="image-hi-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Execute segment image_HI (yes/no). Default is yes.</p>
-</div></blockquote>
-</div>
-<div class="section" id="order">
-<span id="image-hi-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
-<p>Order in queue of workers. Default is 11.</p>
+<p>Execute segment image_HI (yes/no).</p>
 </div></blockquote>
 </div>
 <div class="section" id="label">
 <span id="image-hi-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Label of names of MS data sets to be used. MS data set names will always start with the data set id, followed by a hyphen, followed by desc. Default is corr.</p>
-</div></blockquote>
-</div>
-<div class="section" id="hires-label">
-<span id="image-hi-hires-label"></span><h2><strong>hires_label</strong><a class="headerlink" href="#hires-label" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>str</em></p>
-<p>Label of names of High frequency resolution MS data sets to be used. MS data set names will always start with the data set id, followed by a hyphen, followed by desc. Default is hires.</p>
-</div></blockquote>
-</div>
-<div class="section" id="use-hires-data">
-<span id="image-hi-use-hires-data"></span><h2><strong>use_hires_data</strong><a class="headerlink" href="#use-hires-data" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
-<p>Make use of high resolution data for HI imaging</p>
+<p>Label of names of MS data sets to be used. MS data set names will always start with the data set id, followed by a hyphen, followed by desc.</p>
 </div></blockquote>
 </div>
 <div class="section" id="restfreq">
 <span id="image-hi-restfreq"></span><h2><strong>restfreq</strong><a class="headerlink" href="#restfreq" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Rest frequency default value for this worker. Default is ‘1.420405752GHz’.</p>
+<p>Rest frequency default value for this worker.</p>
 </div></blockquote>
 </div>
 <div class="section" id="npix">
 <span id="image-hi-npix"></span><h2><strong>npix</strong><a class="headerlink" href="#npix" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
-<p>Default number of pixels (wherever npix is requested) in this worker. List of integers (width and height) or a single integer for square images. Default is 1024.</p>
+<p>Default number of pixels (wherever npix is requested) in this worker. List of integers (width and height) or a single integer for square images.</p>
 </div></blockquote>
 </div>
 <div class="section" id="cell">
 <span id="image-hi-cell"></span><h2><strong>cell</strong><a class="headerlink" href="#cell" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
-<p>Default scale of a pixel in arcsec. Default is 7.</p>
+<p>Default scale of a pixel in arcsec.</p>
 </div></blockquote>
 </div>
 <div class="section" id="weight">
 <span id="image-hi-weight"></span><h2><strong>weight</strong><a class="headerlink" href="#weight" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Default weight for the worker. Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition. Default is natural.</p>
+<p>Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition.</p>
 </div></blockquote>
 </div>
 <div class="section" id="robust">
 <span id="image-hi-robust"></span><h2><strong>robust</strong><a class="headerlink" href="#robust" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
-<p>Default robust parameter in case of Briggs weighting. Default is 2.</p>
+<p>Default robust parameter in case of Briggs weighting.</p>
 </div></blockquote>
 </div>
 <div class="section" id="subtractmodelcol">
@@ -260,7 +237,7 @@
 <p><strong>enable</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Execute segment subtractmodelcol. Default is False.</p>
+<p>Execute segment subtractmodelcol.</p>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -271,32 +248,32 @@
 <p><strong>enable</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Execute segment doppler correction (yes/no). Default is yes.</p>
+<p>Execute segment doppler correction (yes/no).</p>
 </div></blockquote>
 <p><strong>telescope</strong></p>
 <blockquote>
 <div><p><em>{“meerkat”, “vla”, “gmrt”, “wsrt”, “atca”, “askap”}</em>, <em>optional</em></p>
-<p>The name of the telescope from which observations were made. Default is the ‘meerkat’ telescope. Current options are gmrt, vla, wsrt, atca</p>
+<p>The name of the telescope from which observations were made. Default is the ‘meerkat’ telescope. Current options are gmrt, vla, wsrt, atca.</p>
 </div></blockquote>
 <p><strong>doppler</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Transform channel labels and visibilities to a different spectral reference frame. default is True</p>
+<p>Transform channel labels and visibilities to a different spectral reference frame.</p>
 </div></blockquote>
 <p><strong>mode</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Regridding mode (channel/velocity/frequency/channel_b). Default is ‘frequency’</p>
+<p>Regridding mode (channel/velocity/frequency/channel_b).</p>
 </div></blockquote>
 <p><strong>outframe</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
-<p>Output reference frame, options ‘LSRK’, ‘LSRD’, ‘BARY’, ‘GALACTO’, ‘LGROUP’, ‘CMB’, ‘GEO’, ‘TOPO’. Defaut is ‘BARY’</p>
+<div><p><em>{“”, “topo”, “geo”, “lsrk”, “lsrd”, “bary”, “galacto”, “lgroup”, “cmb”, “source”}</em>, <em>optional</em></p>
+<p>Output reference frame, options ‘’, ‘topo’, ‘geo’, ‘lsrk’, ‘lsrd’, ‘bary’, ‘galacto’, ‘lgroup’, ‘cmb’, ‘source’</p>
 </div></blockquote>
 <p><strong>veltype</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Definition of velocity (as used in mode), radio or optical.  Default is ‘radio’</p>
+<p>Definition of velocity (as used in mode), radio or optical.</p>
 </div></blockquote>
 <p><strong>outchangrid</strong></p>
 <blockquote>
@@ -306,12 +283,12 @@
 <p><strong>uvlin</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Perform continuum subtraction as in task uvcontsub whilst regridding within mstransform. Default is false</p>
+<p>Perform continuum subtraction as in task uvcontsub whilst regridding within mstransform.</p>
 </div></blockquote>
 <p><strong>fitspw</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Spectral window channel selection for fitting the continuumSelection of line-free channels using CASA syntax (e.g. ‘0:0~100;150:300’). If set to null, a fit to all unflagges visibilities will be performed. (Defaults to null)</p>
+<p>Spectral window channel selection for fitting the continuumSelection of line-free channels using CASA syntax (e.g. ‘0:0~100;150:300’). If set to null, a fit to all unflagges visibilities will be performed.</p>
 </div></blockquote>
 <p><strong>fitorder</strong></p>
 <blockquote>
@@ -326,7 +303,7 @@
 <p><strong>obsinfo</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Create obsinfo.txt and obsinfo.json of MS file created by mstransform. Default true</p>
+<p>Create obsinfo.txt and obsinfo.json of MS file created by mstransform.</p>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -359,6 +336,21 @@
 <div><p><em>float</em>, <em>optional</em></p>
 <p>Distance from average beyond which data are flagged in units of sigma. Default is 4.</p>
 </div></blockquote>
+<p><strong>vampirisms</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Apply only to data taken during day time (defaults to true)</p>
+</div></blockquote>
+<p><strong>uvmax</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>Maximum uvdistance in wavelength to be analysed (defaults to 2000)</p>
+</div></blockquote>
+<p><strong>uvmin</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>Minimum uvdistance in wavelength to be analysed (defaults to 0)</p>
+</div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="wsclean-image">
@@ -374,6 +366,11 @@
 <blockquote>
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Maximum number of rewsclean iterations to perform. Default is 2</p>
+</div></blockquote>
+<p><strong>tol</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>Relative change in the noise.</p>
 </div></blockquote>
 <p><strong>rm_intcubes</strong></p>
 <blockquote>
@@ -397,7 +394,7 @@
 </div></blockquote>
 <p><strong>nchans</strong></p>
 <blockquote>
-<div><p><em>text</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em></p>
 <p>Number of channels of HI cube, ‘all’ or an integer number. Default is ‘all’.</p>
 </div></blockquote>
 <p><strong>firstchan</strong></p>
@@ -427,7 +424,7 @@
 </div></blockquote>
 <p><strong>cell</strong></p>
 <blockquote>
-<div><p><em>text</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em></p>
 <p>Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. ‘scale 20asec’. Default is Worker default for cell.</p>
 </div></blockquote>
 <p><strong>weight</strong></p>
@@ -453,17 +450,17 @@
 <p><strong>ownfitsmask</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Accepts a 3D-mask cleaning mask in fits format. Mask made by the user. Default is ‘’ (an empty field)</p>
+<p>filename of fits mask (in output/masking folder)</p>
 </div></blockquote>
-<p><strong>automask</strong></p>
+<p><strong>auto_mask</strong></p>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
 <p>Construct a mask from found components and when a threshold of sigma is reached, continue cleaning with the mask down to the normal threshold.</p>
 </div></blockquote>
-<p><strong>autothreshold</strong></p>
+<p><strong>auto_threshold</strong></p>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
-<p>Estimate noise level using a robust estimator and stop at sigma x stddev</p>
+<p>Auto clean threshold</p>
 </div></blockquote>
 <p><strong>cleanborder</strong></p>
 <blockquote>
@@ -521,7 +518,7 @@
 </div></blockquote>
 <p><strong>nchans</strong></p>
 <blockquote>
-<div><p><em>text</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em></p>
 <p>Number of channels. If set to ‘all’, all channels are used. Otherwise provide the number of channels (starting with startchan, see below). Default is ‘all’.</p>
 </div></blockquote>
 <p><strong>startchan</strong></p>
@@ -536,7 +533,7 @@
 </div></blockquote>
 <p><strong>cell</strong></p>
 <blockquote>
-<div><p><em>text</em>, <em>optional</em></p>
+<div><p><em>float</em>, <em>optional</em></p>
 <p>Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. ‘scale 20asec’. Default is worker cell.</p>
 </div></blockquote>
 <p><strong>weight</strong></p>
@@ -668,6 +665,62 @@
 <div><p><em>int</em>, <em>optional</em></p>
 <p>Minimum size in y-direction. Default is 5.</p>
 </div></blockquote>
+<p><strong>do_cubelets</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Create cubelets of HI sources.</p>
+</div></blockquote>
+<p><strong>do_mom0</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Create moment 0 map.</p>
+</div></blockquote>
+<p><strong>do_mom1</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Create moment 1 map.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="sharpener">
+<span id="image-hi-sharpener"></span><h2><strong>sharpener</strong><a class="headerlink" href="#sharpener" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Run sharpener to extract spectrum of all continuum sources against the lines of sight. The spectra are then plotted.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em></p>
+<p>Execute sharpener (yes/no)? Default is yes</p>
+</div></blockquote>
+<p><strong>catalog</strong></p>
+<blockquote>
+<div><p><em>{“NVSS”, “PYBDSF”}</em>, <em>optional</em></p>
+<p>Type of catalog to use (PYBDSF/NVSS). Default is ‘PYBDSF’</p>
+</div></blockquote>
+<p><strong>catalog_file</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Catalog file where to store sources from online surveys (NVSS)</p>
+</div></blockquote>
+<p><strong>channels_per_plot</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>Number of channels to plot per detail plot. Default is 50</p>
+</div></blockquote>
+<p><strong>thresh</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>Threshold to select sources in online catalogs (mJy). Default is ‘20’</p>
+</div></blockquote>
+<p><strong>width</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Field of view of output catalog (degrees). Default is ‘1.0d’</p>
+</div></blockquote>
+<p><strong>label</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Prefix label of plot names and titles. Default is ‘pipeline.prefix’</p>
+</div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="flagging-summary">
@@ -690,7 +743,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../polcal/index.html" class="btn btn-neutral float-right" title="polcal" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../../tutorial/index.html" class="btn btn-neutral float-right" title="Tutorial" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../self_cal/index.html" class="btn btn-neutral" title="self_cal" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

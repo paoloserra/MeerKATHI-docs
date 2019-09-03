@@ -96,10 +96,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../prepare_data/index.html">prepare_data</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">flagging</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enable"><strong>enable</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#order"><strong>order</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#label"><strong>label</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#hires-label"><strong>hires_label</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#hires-flag"><strong>hires_flag</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#autoflag-autocorr-powerspectra"><strong>autoflag_autocorr_powerspectra</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flag-autocorr"><strong>flag_autocorr</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#quack-flagging"><strong>quack_flagging</strong></a></li>
@@ -115,12 +112,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cross_cal/index.html">cross_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../inspect_data/index.html">inspect_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../split_target/index.html">split_target</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../image_HI/index.html">image_HI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 </ul>
 </li>
 </ul>
@@ -187,32 +184,11 @@
 <p>Execute flagging of the data.</p>
 </div></blockquote>
 </div>
-<div class="section" id="order">
-<span id="flagging-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
-<p>Order in queue of workers. Generally a non-negative integer.</p>
-</div></blockquote>
-</div>
 <div class="section" id="label">
 <span id="flagging-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
 <p>The label is added to the input .MS file name to define the name of the .MS file that should be flagged, &lt;input&gt;-&lt;label&gt;.ms. Default is an empty string, i.e., the original .MS is flagged.</p>
-</div></blockquote>
-</div>
-<div class="section" id="hires-label">
-<span id="flagging-hires-label"></span><h2><strong>hires_label</strong><a class="headerlink" href="#hires-label" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
-<p>Label for high frequency resolution data.</p>
-</div></blockquote>
-</div>
-<div class="section" id="hires-flag">
-<span id="flagging-hires-flag"></span><h2><strong>hires_flag</strong><a class="headerlink" href="#hires-flag" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em></p>
-<p>Enables AOFlagger run on high frequency resolution data.</p>
 </div></blockquote>
 </div>
 <div class="section" id="autoflag-autocorr-powerspectra">
@@ -321,12 +297,12 @@
 <p><strong>channels</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
-<p>Channels to flag. Given as “spectral window index:start channel ~ end channel”, e.g. “*:856~880MHz”. End channel not inclusive.</p>
+<p>Channels to flag. Given as “spectral window index:start channel ~ end channel” e.g. “*:856~880MHz”. End channel not inclusive.</p>
 </div></blockquote>
 <p><strong>ensure_valid_selection</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Check whether the channel selection returns any data. If it does not, FLAGDATA is not executed, preventing the pipeline from crashing. This check only works with the following spw formats (multiple, comma-separated selections allowed), “*:firstchan~lastchan”; “firstspw~lastspw:firstchan~lastchan”; “spw:firstchan~lastchan”; “firstchan~lastchan”. Channels are assumed to be in frequency (Hz, kHz, MHz, GHz allowed; if no units are given it assumes Hz).</p>
+<p>Check whether the channel selection returns any data. If it does not FLAGDATA is not executed preventing the pipeline from crashing. This check only works with the following spw formats (multiple, comma-separated selections allowed), “*:firstchan~lastchan”; “firstspw~lastspw:firstchan~lastchan”; “spw:firstchan~lastchan”; “firstchan~lastchan”. Channels are assumed to be in frequency (Hz, kHz, MHz, GHz allowed; if no units are given it assumes Hz).</p>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -411,7 +387,12 @@
 <p><strong>enable</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Enable RFI flagging with AOFlagger.</p>
+<p>Enable RFI flagging with AOFlagger or tricolour (not active yet)</p>
+</div></blockquote>
+<p><strong>flagger</strong></p>
+<blockquote>
+<div><p><em>{“aoflagger”, “tricolour”}</em>, <em>optional</em></p>
+<p>Choose flagger for automatic flagging</p>
 </div></blockquote>
 <p><strong>strategy</strong></p>
 <blockquote>
@@ -424,6 +405,11 @@
 <p>Specify column to flag</p>
 </div></blockquote>
 <p><strong>fields</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>comma separated list of (zero-indexed) field ids to process</p>
+</div></blockquote>
+<p><strong>calibrator_fields</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
 <p>comma separated list of (zero-indexed) field ids to process</p>
@@ -451,8 +437,8 @@
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
-<p>Field ID of target</p>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Field to get flag stats. Given as a key (key in [gcal, bpcal, target]).</p>
 </div></blockquote>
 <p><strong>polarization</strong></p>
 <blockquote>

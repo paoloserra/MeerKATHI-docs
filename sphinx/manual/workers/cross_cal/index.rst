@@ -28,18 +28,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
 
 
-.. _cross_cal_order:
-
---------------------------------------------------
-**order**
---------------------------------------------------
-
-  *int*, *optional*
-
-  Workers are executed in ascending order based on this value.
-
-
-
 .. _cross_cal_otfdelay:
 
 --------------------------------------------------
@@ -132,7 +120,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **field**
 
-    *list* *of str*, *optional*
+    *str*, *optional*
 
     Set the field to carry out setjy on. Specify either the field number, name or even as 'fcal' corresponding to field specification in observation config.
 
@@ -192,12 +180,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
       Enables plotting dignostics
 
-    **table_name**
-
-      *str*, *optional*
-
-      Table to plot
-
     **gaintype**
 
       *str*, *optional*
@@ -206,7 +188,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **field**
 
-      *list* *of int*, *optional*
+      *list* *of str*, *optional*
 
       Fields to plot. Specify by field id, index.
 
@@ -298,7 +280,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **set_refant**
 
-    *bool*
+    *bool*, *optional*
 
     Should a reference antenna be used for this calibration
 
@@ -316,7 +298,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
       *bool*, *optional*
 
-      Enable flagging based on delay correction solutions via CASA FLAGDATA task. Default is False.
+      Enable flagging based on Bandpass correction solutions via CASA FLAGDATA task.
 
     **mode**
 
@@ -328,7 +310,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
       *list* *of float*, *optional*
 
-      Specifies the minimum and maximum delay to keep, e.g. [0.1, 10].
+      Specifies the minimum and maximum gain to keep, e.g. [0.1, 10].
 
   **plot**
 
@@ -340,12 +322,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
       Enables plotting dignostics
 
-    **table_name**
-
-      *str*, *optional*
-
-      Table to plot
-
     **gaintype**
 
       *str*, *optional*
@@ -354,7 +330,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **field**
 
-      *list* *of int*, *optional*
+      *list* *of str*, *optional*
 
       Fields to plot. Specify by field id, index.
 
@@ -454,12 +430,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
       Enables plotting dignostics
 
-    **table_name**
-
-      *str*, *optional*
-
-      Table to plot
-
     **gaintype**
 
       *str*, *optional*
@@ -468,7 +438,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **field**
 
-      *list* *of int*, *optional*
+      *list* *of str*, *optional*
 
       Fields to plot. Specify by field id, index.
 
@@ -532,7 +502,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **set_refant**
 
-    *bool*
+    *bool*, *optional*
 
     Should a reference antenna be used for this calibration
 
@@ -568,12 +538,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
       Enables plotting dignostics
 
-    **table_name**
-
-      *str*, *optional*
-
-      Table to plot
-
     **gaintype**
 
       *str*, *optional*
@@ -582,7 +546,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **field**
 
-      *list* *of int*, *optional*
+      *list* *of str*, *optional*
 
       Fields to plot. Specify by field id, index.
 
@@ -618,7 +582,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     *list* *of str*, *optional*
 
-    Field to transfer flux sale from. Specify either the field number, name or even as 'gcal' corresponding to field specification in observation config.
+    Field to transfer flux sale from. Specify either the field number, name or even as 'fcal' corresponding to field specification in observation config.
 
   **transfer**
 
@@ -636,12 +600,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
       Enables plotting dignostics
 
-    **table_name**
-
-      *str*, *optional*
-
-      Table to plot
-
     **gaintype**
 
       *str*, *optional*
@@ -650,7 +608,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     **field**
 
-      *list* *of int*, *optional*
+      *list* *of str*, *optional*
 
       Fields to plot. Specify by field id, index.
 
@@ -718,7 +676,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **field**
 
-    *list* *of str*
+    *list* *of str*, *optional*
 
     Field to select in the bandpass table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal'.
 
@@ -752,7 +710,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **field**
 
-    *list* *of str*
+    *list* *of str*, *optional*
 
     Field to select in the gain calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'gcal'.
 
@@ -786,7 +744,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **field**
 
-    *list* *of str*
+    *list* *of str*, *optional*
 
     Field to select in the fluxscale table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'gcal'.
 

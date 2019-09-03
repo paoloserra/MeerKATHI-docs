@@ -16,18 +16,6 @@ Download and/or convert/unarchive data so that its in the MS format for further 
 
 
 
-.. _get_data_order:
-
---------------------------------------------------
-**order**
---------------------------------------------------
-
-  *int*, *optional*
-
-  Workers are executed in ascedning order based on this value.
-
-
-
 .. _get_data_dataid:
 
 --------------------------------------------------

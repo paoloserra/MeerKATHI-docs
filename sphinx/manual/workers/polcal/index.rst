@@ -28,18 +28,6 @@ Carry out crosshand calibration of the data (X and D) on boresight, after parall
 
 
 
-.. _polcal_order:
-
---------------------------------------------------
-**order**
---------------------------------------------------
-
-  *int*, *optional*
-
-  Workers are executed in ascending order based on this value.
-
-
-
 .. _polcal_label:
 
 --------------------------------------------------

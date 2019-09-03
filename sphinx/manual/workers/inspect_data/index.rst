@@ -28,18 +28,6 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 
 
-.. _inspect_data_order:
-
---------------------------------------------------
-**order**
---------------------------------------------------
-
-  *int*, *optional*
-
-  The order in which this step will be executed in the pipeline.
-
-
-
 .. _inspect_data_label:
 
 --------------------------------------------------
@@ -48,7 +36,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   *str*, *optional*
 
-  Lable for output products (plots etc.) for this step.
+  Label for output products (plots etc.) for this step.
 
 
 
@@ -60,7 +48,19 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   *str*, *optional*
 
-  Lable specyfying the correlations used XX,YY is default
+  Label specyfying the correlations (default all).
+
+
+
+.. _inspect_data_uvrange:
+
+--------------------------------------------------
+**uvrange**
+--------------------------------------------------
+
+  *str*, *optional*
+
+  Set the U-V range for data selection, e.g. '>50'.
 
 
 

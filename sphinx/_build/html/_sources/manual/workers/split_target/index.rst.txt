@@ -28,27 +28,27 @@ Split and average target data
 
 
 
-.. _split_target_order:
+.. _split_target_label_in:
 
 --------------------------------------------------
-**order**
---------------------------------------------------
-
-  *int*, *optional*
-
-  Order of worker in queue
-
-
-
-.. _split_target_label:
-
---------------------------------------------------
-**label**
+**label_in**
 --------------------------------------------------
 
   *str*, *optional*
 
-  Label for new data set
+  Label of the input dataset
+
+
+
+.. _split_target_label_out:
+
+--------------------------------------------------
+**label_out**
+--------------------------------------------------
+
+  *str*, *optional*
+
+  Label of the output dataset
 
 
 
@@ -82,53 +82,51 @@ Split and average target data
 
     *str*, *optional*
 
-    Column to split, default is 'corrected'
+    Column to split, default is 'data'. Which means use otf calibration.
 
   **correlation**
 
     *str*, *optional*
 
-    Select correlations, default is '' = all
+    Select correlations
 
   **spw**
 
     *str*, *optional*
 
-    Select spectral windows and channels, default is '' = all
+    Select spectral windows and channels
 
+  **otfcal**
 
+    Apply OTF calibration
 
-.. _split_target_hires_split:
+    **enable**
 
---------------------------------------------------
-**hires_split**
---------------------------------------------------
+      *bool*, *optional*
 
-  Splits data while keeping the frequency resolution
+      Execute this section
 
-  **enable**
+    **callabel**
 
-    *bool*, *optional*
+      *str*, *optional*
 
-    Execute this section
+      Label of calibration tables to be used
 
-  **hires_label**
+    **apply_delay_cal**
 
-    *str*, *optional*
+      Apply the delay correction calibration table to specified fields via the CASA applycal task.
 
-    Label for high resolution data set
+    **apply_bp_cal**
 
-  **hires_spwid**
+      Apply the bandpass table to specified fields via the CASA applycal task.
 
-    *int*, *optional*
+    **apply_gain_cal_gain**
 
-    SPW ID for full resolution data.
+      Apply the gain calibration table to specified fields via the CASA applycal task.
 
-  **hires_spw**
+    **apply_transfer_fluxscale**
 
-    *str*, *optional*
-
-    SPW for full resolution data.
+      Apply the fluxscale table to specified fields via the CASA applycal task.
 
 
 
@@ -188,13 +186,13 @@ Split and average target data
 
 
 
-.. _split_target_prepms:
+.. _split_target_init_legacy_flagset:
 
 --------------------------------------------------
-**prepms**
+**init_legacy_flagset**
 --------------------------------------------------
 
-  Run MSUtils prepms function
+  Save existing flags to legacy flagset
 
   **enable**
 

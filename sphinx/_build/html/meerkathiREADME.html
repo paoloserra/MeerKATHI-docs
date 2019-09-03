@@ -146,14 +146,8 @@
 <li>Clone this repository
 Use https and your github credentials, then go to the pipeline folder ‘meerkathi’.</li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ska</span><span class="o">-</span><span class="n">sa</span><span class="o">/</span><span class="n">meerkathi</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">meerkathi</span>
-</pre></div>
-</div>
-<ol class="simple">
-<li>Check out submodules</li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span> <span class="o">--</span><span class="n">recursive</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/ska-sa/meerkathi.git
+$ cd meerkathi
 </pre></div>
 </div>
 <ol class="simple">
@@ -178,28 +172,55 @@ $ pip install pip wheel setuptools -U
 $ export PYTHONPATH=&#39;&#39; # Ensure that you use venv Python
 </pre></div>
 </div>
-<p>If the requirements cannot be installed on your system you may omit [extra_diagnostics]. This will disable report rendering.
-5. Build Stimela</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela build
+<p>If the requirements cannot be installed on your system you may omit [extra_diagnostics]. This will disable report rendering.</p>
+<ol class="simple">
+<li>Pull and/or build stimela images</li>
+</ol>
+<ul>
+<li><p class="first"><strong>uDocker</strong>[Recomended]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela pull
 </pre></div>
 </div>
+</li>
+<li><p class="first"><strong>Singularity</strong>[Recomeded]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela pull --singularity --pull-folder &lt;folder to store stimela singularity images&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>Docker</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela pull
+$ stimela build
+</pre></div>
+</div>
+</li>
+</ul>
+<ol class="simple">
+<li>run meerkathi</li>
+</ol>
+<ul class="simple">
+<li><strong>uDocker</strong>[Recomended]
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">meerkathi</span> <span class="pre">-c</span> <span class="pre">path_to_configuration_file</span> <span class="pre">--container-tech</span> <span class="pre">udocker</span></code></li>
+<li><strong>Singularity</strong>[Recomended]
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">meerkathi</span> <span class="pre">-c</span> <span class="pre">path_to_configuration_file</span> <span class="pre">--container-tech</span> <span class="pre">singularity</span> <span class="pre">-sid</span> <span class="pre">&lt;folder</span> <span class="pre">where</span> <span class="pre">singularity</span> <span class="pre">images</span> <span class="pre">are</span> <span class="pre">stored&gt;</span></code></li>
+<li><strong>Docker</strong>
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">meerkathi</span> <span class="pre">-c&lt;</span> <span class="pre">path</span> <span class="pre">to</span> <span class="pre">configuration</span> <span class="pre">file&gt;</span></code></li>
+</ul>
 </div>
 <div class="section" id="on-mac">
 <h2>On Mac<a class="headerlink" href="#on-mac" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li>create a python environment</li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">env</span> <span class="pre">--name</span> <span class="pre">meer_venv</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">conda</span> <span class="pre">create</span> <span class="pre">env</span> <span class="pre">--name</span> <span class="pre">meer_venv</span></code></p>
 <ol class="simple">
 <li>activate environment</li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">meer_venv</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">source</span> <span class="pre">activate</span> <span class="pre">meer_venv</span></code></p>
 <ol class="simple">
 <li>clone <code class="docutils literal notranslate"><span class="pre">meerkathi</span></code></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ska</span><span class="o">-</span><span class="n">sa</span><span class="o">/</span><span class="n">meerkathi</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">meerkathi</span>
-<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span> <span class="o">--</span><span class="n">recursive</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/ska-sa/meerkathi.git
+$ cd meerkathi
 </pre></div>
 </div>
 <ol class="simple">
@@ -224,20 +245,37 @@ $ export PYTHONPATH=&#39;&#39; # Ensure that you use venv Python
 </pre></div>
 </div>
 <ol class="simple">
-<li>Build stimela</li>
+<li>Pull and/or build stimela images</li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">stimela</span> <span class="pre">build</span></code></p>
+<ul>
+<li><p class="first"><strong>uDocker</strong>[Recommended]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela pull
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>Singularity</strong>[Recommeded]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela pull --singularity --pull-folder &lt;folder to store stimela singularity images&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>Docker</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela pull
+$ stimela build
+</pre></div>
+</div>
+</li>
+</ul>
 <ol class="simple">
 <li>run meerkathi</li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">meerkathi</span> <span class="pre">-c</span> <span class="pre">path_to_configuration_file</span></code></p>
-<p>WARNING: if <code class="docutils literal notranslate"><span class="pre">/etc/shadow</span></code> is not found:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">SpheMakh</span><span class="o">/</span><span class="n">Stimela</span><span class="o">.</span><span class="n">git</span><span class="nd">@issue</span><span class="o">-</span><span class="mi">241</span>
-<span class="n">stimela</span> <span class="n">clean</span> <span class="o">-</span><span class="n">ac</span>
-<span class="n">stimela</span> <span class="n">clean</span> <span class="o">-</span><span class="n">aC</span>
-<span class="n">stimela</span> <span class="n">build</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span>
-</pre></div>
-</div>
+<ul class="simple">
+<li><strong>uDocker</strong>[Recommended]
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">meerkathi</span> <span class="pre">-c</span> <span class="pre">path_to_configuration_file</span> <span class="pre">--container-tech</span> <span class="pre">udocker</span></code></li>
+<li><strong>Singularity</strong>[Recommended]
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">meerkathi</span> <span class="pre">-c</span> <span class="pre">path_to_configuration_file</span> <span class="pre">--container-tech</span> <span class="pre">singularity</span> <span class="pre">-sid</span> <span class="pre">&lt;folder</span> <span class="pre">where</span> <span class="pre">singularity</span> <span class="pre">images</span> <span class="pre">are</span> <span class="pre">stored&gt;</span></code></li>
+<li><strong>Docker</strong>
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">meerkathi</span> <span class="pre">-c&lt;</span> <span class="pre">path</span> <span class="pre">to</span> <span class="pre">configuration</span> <span class="pre">file&gt;</span></code></li>
+</ul>
 </div>
 </div>
 

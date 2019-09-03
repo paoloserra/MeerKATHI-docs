@@ -96,12 +96,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../prepare_data/index.html">prepare_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../flagging/index.html">flagging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cross_cal/index.html">cross_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../inspect_data/index.html">inspect_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../split_target/index.html">split_target</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">masking</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enable"><strong>enable</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#order"><strong>order</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#centre-coord"><strong>centre_coord</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#label"><strong>label</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mask-size"><strong>mask_size</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cell-size"><strong>cell_size</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#name-mask"><strong>name_mask</strong></a></li>
@@ -115,7 +116,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../image_HI/index.html">image_HI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 </ul>
 </li>
 </ul>
@@ -182,18 +182,18 @@
 <p>Execute this segment</p>
 </div></blockquote>
 </div>
-<div class="section" id="order">
-<span id="masking-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
-<p>Workers are executed in ascending order based on this value</p>
-</div></blockquote>
-</div>
 <div class="section" id="centre-coord">
 <span id="masking-centre-coord"></span><h2><strong>centre_coord</strong><a class="headerlink" href="#centre-coord" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
-<p>Coordinates of the centre of the field of view [“00:00:00”,”00:00:00”]</p>
+<p>Coordinates of the centre of the field of view read from reference_dir by default</p>
+</div></blockquote>
+</div>
+<div class="section" id="label">
+<span id="masking-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em></p>
+<p>Label of the .MS file where to find information about the target</p>
 </div></blockquote>
 </div>
 <div class="section" id="mask-size">
@@ -242,13 +242,18 @@
 </div></blockquote>
 <p><strong>catalog</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
+<div><p><em>{“NVSS”, “SUMSS”}</em>, <em>optional</em></p>
 <p>Name of catalog to query [NVSS/SUMSS]</p>
 </div></blockquote>
 <p><strong>width_image</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
 <p>Width of the region of sky we want to mask (keep larger than dirty image)</p>
+</div></blockquote>
+<p><strong>thresh_nvss</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em></p>
+<p>Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy) or cutoff in sigmas for sofia source finder</p>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -274,7 +279,7 @@
 <div><p>Build mask from existing image using SoFiA and/or threshold cutoff</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em></p>
+<div><p><em>bool</em>, <em>optional</em></p>
 <p>Execute this worker</p>
 </div></blockquote>
 <p><strong>mask_with</strong></p>
@@ -289,12 +294,12 @@
 </div></blockquote>
 <p><strong>thresh_lev</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
-<p>Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)</p>
+<div><p><em>int</em>, <em>optional</em></p>
+<p>Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy) or cutoff in sigmas for sofia source finder</p>
 </div></blockquote>
 <p><strong>scale_noise_window</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em></p>
+<div><p><em>int</em>, <em>optional</em></p>
 <p>window size where SoFiA measures the local rms, units of pixels</p>
 </div></blockquote>
 </div></blockquote>
@@ -305,7 +310,7 @@
 <div><p>Merge with mask of extended source</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em></p>
+<div><p><em>bool</em>, <em>optional</em></p>
 <p>Execute this worker</p>
 </div></blockquote>
 <p><strong>extended_source_input</strong></p>
@@ -321,7 +326,7 @@
 <p><strong>thresh_lev</strong></p>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em></p>
-<p>Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy)</p>
+<p>Cutoff to select sources in the SUMSS map, corrected for the primary beam (Jy) or cutoff in sigmas for sofia source finder</p>
 </div></blockquote>
 </div></blockquote>
 </div>

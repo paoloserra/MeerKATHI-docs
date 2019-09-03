@@ -35,7 +35,7 @@
         <link rel="search" title="Search" href="../../../search.html"/>
     <link rel="top" title="MeerKATHI  documentation" href="../../../index.html"/>
         <link rel="up" title="Workers parameters" href="../index.html"/>
-        <link rel="next" title="inspect_data" href="../inspect_data/index.html"/>
+        <link rel="next" title="polcal" href="../polcal/index.html"/>
         <link rel="prev" title="flagging" href="../flagging/index.html"/> 
 
   
@@ -97,7 +97,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../flagging/index.html">flagging</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">cross_cal</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enable"><strong>enable</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#order"><strong>order</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#otfdelay"><strong>otfdelay</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#uvrange"><strong>uvrange</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#label"><strong>label</strong></a></li>
@@ -116,12 +115,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#flagging-summary"><strong>flagging_summary</strong></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../inspect_data/index.html">inspect_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../split_target/index.html">split_target</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../image_HI/index.html">image_HI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
 </ul>
 </li>
 </ul>
@@ -188,13 +187,6 @@
 <p>Execute this segment.</p>
 </div></blockquote>
 </div>
-<div class="section" id="order">
-<span id="cross-cal-order"></span><h2><strong>order</strong><a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em></p>
-<p>Workers are executed in ascending order based on this value.</p>
-</div></blockquote>
-</div>
 <div class="section" id="otfdelay">
 <span id="cross-cal-otfdelay"></span><h2><strong>otfdelay</strong><a class="headerlink" href="#otfdelay" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -258,7 +250,7 @@
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
+<div><p><em>str</em>, <em>optional</em></p>
 <p>Set the field to carry out setjy on. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</p>
 </div></blockquote>
 <p><strong>threads</strong></p>
@@ -305,11 +297,6 @@
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Enables plotting dignostics</p>
 </div></blockquote>
-<p><strong>table_name</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
-<p>Table to plot</p>
-</div></blockquote>
 <p><strong>gaintype</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
@@ -317,7 +304,7 @@
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
 <p>Fields to plot. Specify by field id, index.</p>
 </div></blockquote>
 <p><strong>corr</strong></p>
@@ -393,7 +380,7 @@
 </div></blockquote>
 <p><strong>set_refant</strong></p>
 <blockquote>
-<div><p><em>bool</em></p>
+<div><p><em>bool</em>, <em>optional</em></p>
 <p>Should a reference antenna be used for this calibration</p>
 </div></blockquote>
 <p><strong>remove_ph_time_var</strong></p>
@@ -407,7 +394,7 @@
 <p><strong>enable</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em></p>
-<p>Enable flagging based on delay correction solutions via CASA FLAGDATA task. Default is False.</p>
+<p>Enable flagging based on Bandpass correction solutions via CASA FLAGDATA task.</p>
 </div></blockquote>
 <p><strong>mode</strong></p>
 <blockquote>
@@ -417,7 +404,7 @@
 <p><strong>clipminmax</strong></p>
 <blockquote>
 <div><p><em>list</em> <em>of float</em>, <em>optional</em></p>
-<p>Specifies the minimum and maximum delay to keep, e.g. [0.1, 10].</p>
+<p>Specifies the minimum and maximum gain to keep, e.g. [0.1, 10].</p>
 </div></blockquote>
 </div></blockquote>
 <p><strong>plot</strong></p>
@@ -428,11 +415,6 @@
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Enables plotting dignostics</p>
 </div></blockquote>
-<p><strong>table_name</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
-<p>Table to plot</p>
-</div></blockquote>
 <p><strong>gaintype</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
@@ -440,7 +422,7 @@
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
 <p>Fields to plot. Specify by field id, index.</p>
 </div></blockquote>
 <p><strong>corr</strong></p>
@@ -522,11 +504,6 @@
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Enables plotting dignostics</p>
 </div></blockquote>
-<p><strong>table_name</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
-<p>Table to plot</p>
-</div></blockquote>
 <p><strong>gaintype</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
@@ -534,7 +511,7 @@
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
 <p>Fields to plot. Specify by field id, index.</p>
 </div></blockquote>
 <p><strong>corr</strong></p>
@@ -586,7 +563,7 @@
 </div></blockquote>
 <p><strong>set_refant</strong></p>
 <blockquote>
-<div><p><em>bool</em></p>
+<div><p><em>bool</em>, <em>optional</em></p>
 <p>Should a reference antenna be used for this calibration</p>
 </div></blockquote>
 <p><strong>flag</strong></p>
@@ -616,11 +593,6 @@
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Enables plotting dignostics</p>
 </div></blockquote>
-<p><strong>table_name</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
-<p>Table to plot</p>
-</div></blockquote>
 <p><strong>gaintype</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
@@ -628,7 +600,7 @@
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
 <p>Fields to plot. Specify by field id, index.</p>
 </div></blockquote>
 <p><strong>corr</strong></p>
@@ -656,7 +628,7 @@
 <p><strong>reference</strong></p>
 <blockquote>
 <div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
-<p>Field to transfer flux sale from. Specify either the field number, name or even as ‘gcal’ corresponding to field specification in observation config.</p>
+<p>Field to transfer flux sale from. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</p>
 </div></blockquote>
 <p><strong>transfer</strong></p>
 <blockquote>
@@ -671,11 +643,6 @@
 <div><p><em>bool</em>, <em>optional</em></p>
 <p>Enables plotting dignostics</p>
 </div></blockquote>
-<p><strong>table_name</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em></p>
-<p>Table to plot</p>
-</div></blockquote>
 <p><strong>gaintype</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em></p>
@@ -683,7 +650,7 @@
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
 <p>Fields to plot. Specify by field id, index.</p>
 </div></blockquote>
 <p><strong>corr</strong></p>
@@ -736,7 +703,7 @@
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
 <p>Field to select in the bandpass table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal’.</p>
 </div></blockquote>
 <p><strong>applyto</strong></p>
@@ -762,7 +729,7 @@
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
 <p>Field to select in the gain calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘gcal’.</p>
 </div></blockquote>
 <p><strong>applyto</strong></p>
@@ -788,7 +755,7 @@
 </div></blockquote>
 <p><strong>field</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em></p>
 <p>Field to select in the fluxscale table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘gcal’.</p>
 </div></blockquote>
 <p><strong>applyto</strong></p>
@@ -864,7 +831,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../inspect_data/index.html" class="btn btn-neutral float-right" title="inspect_data" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../polcal/index.html" class="btn btn-neutral float-right" title="polcal" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../flagging/index.html" class="btn btn-neutral" title="flagging" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
