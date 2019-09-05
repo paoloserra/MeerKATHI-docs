@@ -82,8 +82,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html#download-install">Download &amp; Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
@@ -95,6 +94,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../selfcal/index.html">Continuum imaging and self-calibration</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Spectral line imaging</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#continuum-subtraction">Continuum subtraction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#doppler-correction">Doppler correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solar-rfi-flagging">Solar RFI flagging</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#imaging">Imaging</a></li>
 </ul>
 </li>
@@ -158,44 +159,55 @@
 <div class="toctree-wrapper compound">
 </div>
 <p><strong>[relevant workers:</strong> <a class="reference internal" href="../../workers/image_HI/index.html#image-hi"><span class="std std-ref">image_HI</span></a><strong>]</strong></p>
+<p>Spectral line imaging runs on a combination of custom software, CASA, WSclean, SunBlocker and SoFiA in order to subtract the continuum,
+Doppler correct, flag solar RFI, create cleaned spectral line cubes and their moment images.
+It can run on the input .MS
+files or on .MS files created by MeerKATHI at various stages of the pipeline (e.g., by the <a class="reference internal" href="../../workers/split_target/index.html#split-target"><span class="std std-ref">split_target</span></a> worker).
+In the latter case the name of the .MS files to be flagged is based on that of the input .MS files, with a label
+added before the extension. Users can set the label with the <a class="reference internal" href="../../workers/image_HI/index.html#image-hi-label"><span class="std std-ref">image_HI: label</span></a> parameter in this worker.</p>
+<p>The input .MS files may contain several targets. In this case, MeerKATHI makes one HI cube per target, using all
+available visibilities for that target from all input .MS files. This worker does not mosaic single-target cubes together.</p>
 <div class="section" id="continuum-subtraction">
 <h2>Continuum subtraction<a class="headerlink" href="#continuum-subtraction" title="Permalink to this headline">¶</a></h2>
-<p>A run of MeerKATHI must always start by setting up a number of directory and file
-names. This is done through the <a class="reference internal" href="../../workers/general/index.html#general"><span class="std std-ref">general</span></a> and <a class="reference internal" href="../../workers/get_data/index.html#get-data"><span class="std std-ref">get_data</span></a> workers.</p>
-<p>In the <a class="reference internal" href="../../workers/general/index.html#general"><span class="std std-ref">general</span></a> worker users give:</p>
-<ul class="simple">
-<li>if necessary, the <em>data_path</em> directory where to find the files that should be converted to .MS
-format (<a class="reference internal" href="../../workers/general/index.html#general-data-path"><span class="std std-ref">general: data_path</span></a>);</li>
-<li>the <em>msdir</em> directory where to find/write .MS files (<a class="reference internal" href="../../workers/general/index.html#general-msdir"><span class="std std-ref">general: msdir</span></a>);</li>
-<li>the <em>output</em> directory where to write all output data products (<a class="reference internal" href="../../workers/general/index.html#general-output"><span class="std std-ref">general: output</span></a>);</li>
-<li>the <em>input</em> directory where to find various input files, such as AOflagger strategies etc.
-(<a class="reference internal" href="../../workers/general/index.html#general-input"><span class="std std-ref">general: input</span></a>);</li>
-<li>the prefix for the output data products (<a class="reference internal" href="../../workers/general/index.html#general-prefix"><span class="std std-ref">general: prefix</span></a>).</li>
-</ul>
-<p>If they do not exist yet, the above directories can be created by setting
-<a class="reference internal" href="../../workers/general/index.html#general-init-pipeline"><span class="std std-ref">general: init_pipeline</span></a> to <em>true</em>. This also copies
-files from the meerkathi/data/meerkat_files directory to the <em>input</em> directory set above.</p>
-<p>In the <a class="reference internal" href="../../workers/get_data/index.html#get-data"><span class="std std-ref">get_data</span></a> worker users give the name of the .MS files to be processed
-(<a class="reference internal" href="../../workers/get_data/index.html#get-data-dataid"><span class="std std-ref">get_data: dataid</span></a>). Furthermore, the following optional steps are available:</p>
-<ul class="simple">
-<li>convert from HDF5/MVF format to .MS (<a class="reference internal" href="../../workers/get_data/index.html#get-data-mvftoms"><span class="std std-ref">get_data: mvftoms</span></a>);
-this step includes the following additional conversion options:<ul>
-<li>create a .MS.TAR file,</li>
-<li>convert only visibilities in a selected channel range,</li>
-<li>discard cross-polarisation products;</li>
-</ul>
-</li>
-<li>untar an existing .MS.TAR file (<a class="reference internal" href="../../workers/get_data/index.html#get-data-untar"><span class="std std-ref">get_data: untar</span></a>);</li>
-<li>virtually concatenate all .MS input files (<a class="reference internal" href="../../workers/get_data/index.html#get-data-combine"><span class="std std-ref">get_data: combine</span></a>);
-optionally users can delete an existing concatenate file and tar/untar the concatenated file.</li>
-</ul>
+<p>Continuum subtraction might be necessary before imaging the spectral line of interest.
+MeerKATHI can do this using two standard methods, which can be run sequentially within a single MeerKATHI run: i)
+subtraction of the FT-ed continuum model components from the visibilities (<a class="reference internal" href="../../workers/image_HI/index.html#image-hi-subtractmodelcol"><span class="std std-ref">image_HI: subtractmodelcol</span></a>);
+and ii) fitting and subtracting polynomials from the individual real and imaginary visibility spectra (parameter <em>uvlin</em> in
+<a class="reference internal" href="../../workers/image_HI/index.html#image-hi-mstransform"><span class="std std-ref">image_HI: mstransform</span></a>).
+A third standard method currently NOT implemented in MeerKATHI consists of fitting and subtracting polynomials from
+individual image spectra in the data cube. This may be implemented in the future.</p>
+<p>In practice, the first method consists of subtracting the MODEL_DATA column from the CORRECTED_DATA column
+of the .MS files. MeerKATHI writes the resulting visibilities in the CORRECTED_DATA column itself.</p>
+<p><strong>Users should therefore be aware that the CORRECTED_DATA column gets overwritten.</strong></p>
+<p>The MODEL_DATA column contains the continuum model to be subtract. Within
+MeerKATHI, the MODEL_DATA column should have been filled in with the continuum model resulting from the
+continuum imaging and self-calibration done by the <a class="reference internal" href="../../workers/self_cal/index.html#self-cal"><span class="std std-ref">self_cal</span></a> worker.</p>
+<p>When running the second continuum subtraction method, which uses the CASA task MSTRANSFORM, users can select the order of the fit,
+the channels that should be included in the fit, and the column that should be considered. This method writes a new file with an ‘mst’
+suffix appended to the file name. Subsequent steps of this worker can be instructed to run on the latter file.</p>
+</div>
+<div class="section" id="doppler-correction">
+<h2>Doppler correction<a class="headerlink" href="#doppler-correction" title="Permalink to this headline">¶</a></h2>
+<p>Doppler correction is performed with the CASA task MSTRANSFORM (parameter <em>doppler</em> in <a class="reference internal" href="../../workers/image_HI/index.html#image-hi-mstransform"><span class="std std-ref">image_HI: mstransform</span></a>)
+in the same run of this task used to perform continuum subtraction (see above). Users can select the telescope (choosing from a list
+of available names, see parameter <em>telescope</em> in <a class="reference internal" href="../../workers/image_HI/index.html#image-hi-mstransform"><span class="std std-ref">image_HI: mstransform</span></a>), as well the regridding mode (channel, frequency
+or velocity), velocity type and output frame. Users can also set the frequency (or velocity, …) grid they want to Doppler correct to, but
+they can also let MeerKATHI fin the optimal one given the input files. In the latter case visibilities will be regridded to the largest
+Doppler-corrected spectral interval common to all input .MS files, at the worse Doppler-corrected spectral resolution of them all.</p>
+</div>
+<div class="section" id="solar-rfi-flagging">
+<h2>Solar RFI flagging<a class="headerlink" href="#solar-rfi-flagging" title="Permalink to this headline">¶</a></h2>
+<p>MeerKATHI flags solar RFI using SunBlocker (<a class="reference internal" href="../../workers/image_HI/index.html#image-hi-sunblocker"><span class="std std-ref">image_HI: sunblocker</span></a>).
+The main idea of SunBlocker is that, because solar RFI is broadband, averaging visibilities in
+frequency should enhance its detectability. However, the phase of solar RFI changes rapidly with frequency, leading to vectorial averages
+with very low amplitude. In order to enhance the detectability of the Sun SunBlocker performs a scalar average instead. It does so in uv cells of the
+visibility plane (i.e., on gridded visibilities). Once that is done, UV cells with anomalously high (scalar) average ampliude are flagged.
+This method has been shown to work well on continuum-subtracted data. Users have control over some of the SunBlocker settings,
+such as flagging threshold and gridding.</p>
 </div>
 <div class="section" id="imaging">
 <h2>Imaging<a class="headerlink" href="#imaging" title="Permalink to this headline">¶</a></h2>
-<p>Finally, before starting the actual data processing users need to provide some
-info about the content of the input .MS files through the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
-(e.g., target and calibrators name, channelisation, etc.). In principle, this can be done
-by editing the relevant parameters of this worker:</p>
+<p>Imaging is done with WSCLEAN.</p>
 </div>
 </div>
 
