@@ -32,7 +32,7 @@ process (e.g., flagging, cross-calibration, spectral line imaging, etc.). Each w
 executes several tasks from the interferometry packages included in Stimela (e.g., the
 cross-calibration worker can calibrate delays, bandpass, gains and flux scale).
 
-In practice, users tell MeerKATHI what to do – and how to do it – via a configuration file.
+In practice, users tell MeerKATHI what to do – and how to do it – via a YAML configuration file.
 The configuration file has one section for each run of a worker. By editing the configuration
 file users control the workers' options, deciding which tasks to run and with what settings.
 A detailed explanation of the configuration file syntax is given in the :ref:`configfile`
@@ -59,7 +59,7 @@ and  observation_config) should always be executed. All other workers are option
 ^^^^^^^^^^^^^^
 
 This worker sets up the name of various input/output directories
-and the prefix for the output data products (e.g., diagnostic plots, images, etc.).
+and the prefix used for the output data products (e.g., diagnostic plots, images, etc.).
 
 :ref:`get_data`
 ^^^^^^^^^^^^^^^
@@ -98,8 +98,8 @@ crosscorrelations.
 ^^^^^^^^^^^^^^^^
 
 This worker cross-calibrates the data. Users can calibrate delays, bandpass,
-gains and flux scale. The calibration can be applied to the calibrators' visibilities for
-future inspection. Numerous parameters are available for users to decide how to calibrate.
+gains and flux scale. The calibration can be applied to the calibrators' visibilities (for
+ later inspection) and to the target. Numerous parameters are available for users to decide how to calibrate.
 Flagging based on closure errors is available in this worker.
 
 :ref:`polcal`
@@ -115,9 +115,9 @@ This worker produces diagnostic plots based on the calibrated calibrators' visib
 :ref:`split_target`
 ^^^^^^^^^^^^^^^^^^^
 
-This worker creates new .MS files which contain the target's calibrated
+This worker creates new .MS files which contain the targets' calibrated
 visibilities only. Time and frequency averaging is available, as well as phase rotation to
-a new phase centre.
+a new phase centre. Crosscalibration can be applied on the fly while splitting.
 
 :ref:`masking`
 ^^^^^^^^^^^^^^
@@ -131,8 +131,8 @@ resulting mask with a mask based on an existing image.
 
 This worker performs continuum imaging and standard (i.e., direction-independent)
 self-calibration. Automated convergence of the calibration procedure is optionally
-available. This worker can also transfer sky model and calibration to another .MS
-(e.g., from a coarse- to a fine-channel .MS file).
+available. This worker can also interpolat and transfer sky model and calibration tables
+to another .MS (e.g., from a coarse- to a fine-channel .MS file).
 
 :ref:`image_HI`
 ^^^^^^^^^^^^^^^
