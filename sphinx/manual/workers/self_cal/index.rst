@@ -94,7 +94,7 @@ Perform Self calibration on the data
 **ncpu**
 --------------------------------------------------
 
-  *int*, *optional*, *default = 1*
+  *int*, *optional*, *default = 5*
 
   number of cpu's to use
 
@@ -432,7 +432,7 @@ Perform Self calibration on the data
 
   **local_rms**
 
-    *bool*, *optional*, *default = True*
+    *bool*, *optional*, *default = False*
 
     switch on local rms measurement for cleaning
 
@@ -570,7 +570,7 @@ Perform Self calibration on the data
 
   **model**
 
-    *list* *of str*, *optional*, *default = 1, 2*
+    *list* *of str*, *optional*, *default = 1,2*
 
     Model number to use [or combination e.g. '1+2' to use first and second models]
 
@@ -612,7 +612,7 @@ Perform Self calibration on the data
 
   **Gsols_time**
 
-    *list* *of float*, *optional*, *default = 100*
+    *list* *of float*, *optional*, *default = 20*
 
     Gsols for individual calibration steps, if not given will default to cal_Gsols
 
@@ -630,13 +630,13 @@ Perform Self calibration on the data
 
   **Bsols_time**
 
-    *list* *of int*, *optional*, *default = 100*
+    *list* *of int*, *optional*, *default = 0*
 
     Gsols for individual calibration steps, if not given will default to cal_Gsols
 
   **Bsols_channel**
 
-    *list* *of float*, *optional*, *default = 1*
+    *list* *of float*, *optional*, *default = 2*
 
     Gsols for individual calibration steps, if not given will default to cal_Gsols
 
@@ -842,9 +842,15 @@ Perform Self calibration on the data
 
   **num-workers**
 
-    *int*, *optional*, *default = 8*
+    *int*, *optional*, *default = 0*
 
-    Explicitly set the number of worker threads. Default is None
+    Explicitly set the number of worker threads. Default is 0, meaning it uses all threads.
+
+  **memory-fraction**
+
+    *float*, *optional*, *default = 0.5*
+
+    Fraction of system RAM that can be used. Used when setting automatically the chunk size.
 
 
 

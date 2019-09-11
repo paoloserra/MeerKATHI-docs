@@ -242,7 +242,7 @@
 <div class="section" id="ncpu">
 <span id="self-cal-ncpu"></span><h2><strong>ncpu</strong><a class="headerlink" href="#ncpu" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 1</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 5</em></p>
 <p>number of cpu’s to use</p>
 </div></blockquote>
 </div>
@@ -464,7 +464,7 @@
 </div></blockquote>
 <p><strong>local_rms</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>switch on local rms measurement for cleaning</p>
 </div></blockquote>
 </div></blockquote>
@@ -572,7 +572,7 @@
 </div></blockquote>
 <p><strong>model</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = 1, 2</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = 1,2</em></p>
 <p>Model number to use [or combination e.g. ‘1+2’ to use first and second models]</p>
 </div></blockquote>
 <p><strong>output_data</strong></p>
@@ -607,7 +607,7 @@
 </div></blockquote>
 <p><strong>Gsols_time</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 100</em></p>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 20</em></p>
 <p>Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
 </div></blockquote>
 <p><strong>Gsols_channel</strong></p>
@@ -622,12 +622,12 @@
 </div></blockquote>
 <p><strong>Bsols_time</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 100</em></p>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
 </div></blockquote>
 <p><strong>Bsols_channel</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 1</em></p>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 2</em></p>
 <p>Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
 </div></blockquote>
 <p><strong>DDjones</strong></p>
@@ -790,8 +790,13 @@
 </div></blockquote>
 <p><strong>num-workers</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 8</em></p>
-<p>Explicitly set the number of worker threads. Default is None</p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
+<p>Explicitly set the number of worker threads. Default is 0, meaning it uses all threads.</p>
+</div></blockquote>
+<p><strong>memory-fraction</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0.5</em></p>
+<p>Fraction of system RAM that can be used. Used when setting automatically the chunk size.</p>
 </div></blockquote>
 </div></blockquote>
 </div>

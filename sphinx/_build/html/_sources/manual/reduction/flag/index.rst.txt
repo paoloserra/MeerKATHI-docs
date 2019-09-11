@@ -46,11 +46,11 @@ below for a detailed documentation of the individual flagging modes.
 * Flag selected scans (:ref:`flagging: flag_scan <flagging_flag_scan>`).
 * Flag according to a static mask of bad frequency ranges using the custom program
   RFIMASKER (:ref:`flagging: static_mask <flagging_static_mask>`). The mask file should
-  be located at the *input* directory set by :ref:`general: input <general_input>`.
+  be located in the *input* directory set by :ref:`general: input <general_input>`.
   Users can decide to limit the flagging to a selected UV range. This could be useful
   to flag short baselines only.
 * Flag with AOFlagger (:ref:`flagging: autoflag_rfi <flagging_autoflag_rfi>`). The
-  AOFlagger strategy file should be located at the *input* directory set by
+  AOFlagger strategy file should be located in the *input* directory set by
   :ref:`general: input <general_input>`.
   MeerKATHI comes with a number of strategy files, which are located in the
   meerkathi/data/meerkat_files directory and are copied to the *input* directory by the

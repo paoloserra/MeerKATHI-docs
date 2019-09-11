@@ -179,7 +179,7 @@ MeerKATHI consists of a sequence of Stimela scripts, which it links and runs seq
 process (e.g., flagging, cross-calibration, spectral line imaging, etc.). Each worker
 executes several tasks from the interferometry packages included in Stimela (e.g., the
 cross-calibration worker can calibrate delays, bandpass, gains and flux scale).</p>
-<p>In practice, users tell MeerKATHI what to do – and how to do it – via a configuration file.
+<p>In practice, users tell MeerKATHI what to do – and how to do it – via a YAML configuration file.
 The configuration file has one section for each run of a worker. By editing the configuration
 file users control the workers’ options, deciding which tasks to run and with what settings.
 A detailed explanation of the configuration file syntax is given in the <a class="reference internal" href="../configfile/index.html#configfile"><span class="std std-ref">Configuration file</span></a>
@@ -201,7 +201,7 @@ and  observation_config) should always be executed. All other workers are option
 <div class="section" id="general">
 <h3><a class="reference internal" href="../workers/general/index.html#general"><span class="std std-ref">general</span></a><a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
 <p>This worker sets up the name of various input/output directories
-and the prefix for the output data products (e.g., diagnostic plots, images, etc.).</p>
+and the prefix used for the output data products (e.g., diagnostic plots, images, etc.).</p>
 </div>
 <div class="section" id="get-data">
 <h3><a class="reference internal" href="../workers/get_data/index.html#get-data"><span class="std std-ref">get_data</span></a><a class="headerlink" href="#get-data" title="Permalink to this headline">¶</a></h3>
@@ -234,9 +234,10 @@ crosscorrelations.</p>
 <div class="section" id="cross-cal">
 <h3><a class="reference internal" href="../workers/cross_cal/index.html#cross-cal"><span class="std std-ref">cross_cal</span></a><a class="headerlink" href="#cross-cal" title="Permalink to this headline">¶</a></h3>
 <p>This worker cross-calibrates the data. Users can calibrate delays, bandpass,
-gains and flux scale. The calibration can be applied to the calibrators’ visibilities for
-future inspection. Numerous parameters are available for users to decide how to calibrate.
-Flagging based on closure errors is available in this worker.</p>
+gains and flux scale. The calibration can be applied to the calibrators’ visibilities (for</p>
+<blockquote>
+<div>later inspection) and to the target. Numerous parameters are available for users to decide how to calibrate.</div></blockquote>
+<p>Flagging based on closure errors is available in this worker.</p>
 </div>
 <div class="section" id="polcal">
 <h3><a class="reference internal" href="../workers/polcal/index.html#polcal"><span class="std std-ref">polcal</span></a><a class="headerlink" href="#polcal" title="Permalink to this headline">¶</a></h3>
@@ -248,9 +249,9 @@ Flagging based on closure errors is available in this worker.</p>
 </div>
 <div class="section" id="split-target">
 <h3><a class="reference internal" href="../workers/split_target/index.html#split-target"><span class="std std-ref">split_target</span></a><a class="headerlink" href="#split-target" title="Permalink to this headline">¶</a></h3>
-<p>This worker creates new .MS files which contain the target’s calibrated
+<p>This worker creates new .MS files which contain the targets’ calibrated
 visibilities only. Time and frequency averaging is available, as well as phase rotation to
-a new phase centre.</p>
+a new phase centre. Crosscalibration can be applied on the fly while splitting.</p>
 </div>
 <div class="section" id="masking">
 <h3><a class="reference internal" href="../workers/masking/index.html#masking"><span class="std std-ref">masking</span></a><a class="headerlink" href="#masking" title="Permalink to this headline">¶</a></h3>
@@ -262,8 +263,8 @@ resulting mask with a mask based on an existing image.</p>
 <h3><a class="reference internal" href="../workers/self_cal/index.html#self-cal"><span class="std std-ref">self_cal</span></a><a class="headerlink" href="#self-cal" title="Permalink to this headline">¶</a></h3>
 <p>This worker performs continuum imaging and standard (i.e., direction-independent)
 self-calibration. Automated convergence of the calibration procedure is optionally
-available. This worker can also transfer sky model and calibration to another .MS
-(e.g., from a coarse- to a fine-channel .MS file).</p>
+available. This worker can also interpolat and transfer sky model and calibration tables
+to another .MS (e.g., from a coarse- to a fine-channel .MS file).</p>
 </div>
 <div class="section" id="image-hi">
 <h3><a class="reference internal" href="../workers/image_HI/index.html#image-hi"><span class="std std-ref">image_HI</span></a><a class="headerlink" href="#image-hi" title="Permalink to this headline">¶</a></h3>
