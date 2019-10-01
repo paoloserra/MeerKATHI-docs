@@ -106,7 +106,7 @@ Perform Self calibration on the data
 **img_npix**
 --------------------------------------------------
 
-  *int*, *optional*, *default = 900*
+  *int*, *optional*, *default = 1800*
 
   Number of pixels in output image
 
@@ -332,7 +332,7 @@ Perform Self calibration on the data
 
   **tolerance**
 
-    *float*, *optional*, *default = 2.*
+    *float*, *optional*, *default = 0.02*
 
     Relative change in weighted mean of several indicators from aimfast.
 
@@ -344,7 +344,7 @@ Perform Self calibration on the data
 
   **area_factor**
 
-    *float*, *optional*, *default = 1.*
+    *int*, *optional*, *default = 6*
 
     Peak flux source area multiplying factor i.e tot_area = psf-size\*af
 
@@ -356,7 +356,7 @@ Perform Self calibration on the data
 
   **plot**
 
-    *bool*, *optional*, *default = False*
+    *bool*, *optional*, *default = True*
 
     Generate html plots for comparing catalogs and residuals
 
@@ -417,12 +417,6 @@ Perform Self calibration on the data
     *list* *of int*, *optional*, *default = 10, 20, 30*
 
     scales of multiscale [0,10,20,etc, etc] in pixels
-
-  **no_update_model**
-
-    *bool*, *optional*, *default = False*
-
-    do not update column MODEL_DATA after wsclean
 
   **minuvw_m**
 
@@ -542,7 +536,7 @@ Perform Self calibration on the data
 
   **thresh_pix**
 
-    *list* *of int*, *optional*, *default = 3*
+    *list* *of int*, *optional*, *default = 5*
 
     Source finder pixel threshold
 
@@ -672,9 +666,15 @@ Perform Self calibration on the data
 
   **madmax_flag_thresh**
 
-    *list* *of int*, *optional*, *default = 1, 2*
+    *list* *of int*, *optional*, *default = 0, 10*
 
     Threshold for madmax flagging
+
+  **sol_term_iters**
+
+    *str*, *optional*, *default = auto*
+
+    Number of iterations per Jones term. If set to 'auto', uses hardcoded iteration numbers depending on the jones chain.
 
   **ragavi_plot**
 
@@ -682,7 +682,7 @@ Perform Self calibration on the data
 
     **enable**
 
-      *bool*, *optional*, *default = True*
+      *bool*, *optional*, *default = False*
 
       Enables plotting dignostics
 
@@ -804,19 +804,19 @@ Perform Self calibration on the data
 
     Model sources as non-flat spectra. The spectral coefficients and reference frequency must be present in the sky model.
 
-  **row-chunks**
+  **row_chunks**
 
     *int*, *optional*, *default = 0*
 
     Number of rows of input .MS that are processed in a single chunk.
 
-  **model-chunks**
+  **model_chunks**
 
     *int*, *optional*, *default = 0*
 
     Number of sky model components that are processed in a single chunk.
 
-  **invert-uvw**
+  **invert_uvw**
 
     *bool*, *optional*, *default = True*
 
@@ -828,25 +828,25 @@ Perform Self calibration on the data
 
     Give JS9 region file. Only sources within those regions will be included.
 
-  **points-only**
+  **points_only**
 
     *bool*, *optional*, *default = False*
 
     Select only point-only sources. Default is False.
 
-  **num-sources**
+  **num_sources**
 
     *int*, *optional*, *default = 0*
 
     Select only N brightest sources. Default is 0
 
-  **num-workers**
+  **num_workers**
 
     *int*, *optional*, *default = 0*
 
     Explicitly set the number of worker threads. Default is 0, meaning it uses all threads.
 
-  **memory-fraction**
+  **memory_fraction**
 
     *float*, *optional*, *default = 0.5*
 

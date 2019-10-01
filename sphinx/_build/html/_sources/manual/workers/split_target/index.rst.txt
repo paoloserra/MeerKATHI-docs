@@ -102,7 +102,7 @@ Split and average target data
 
     **enable**
 
-      *bool*, *optional*, *default = False*
+      *bool*, *optional*, *default = True*
 
       Execute this section
 

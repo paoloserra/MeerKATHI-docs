@@ -58,7 +58,7 @@ Create HI data cube and detect sources therein
 **npix**
 --------------------------------------------------
 
-  *list* *of int*, *optional*, *default = 360*
+  *list* *of int*, *optional*, *default = 900*
 
   Default number of pixels (wherever npix is requested) in this worker. List of integers (width and height) or a single integer for square images.
 
@@ -70,7 +70,7 @@ Create HI data cube and detect sources therein
 **cell**
 --------------------------------------------------
 
-  *float*, *optional*, *default = 5*
+  *float*, *optional*, *default = 2*
 
   Default scale of a pixel in arcsec.
 
@@ -94,7 +94,7 @@ Create HI data cube and detect sources therein
 **robust**
 --------------------------------------------------
 
-  *float*, *optional*, *default = 2*
+  *float*, *optional*, *default = 0*
 
   Default robust parameter in case of Briggs weighting.
 
@@ -214,19 +214,19 @@ Create HI data cube and detect sources therein
 
   **use_mstransform**
 
-    *bool*, *optional*, *default = False*
+    *bool*, *optional*, *default = True*
 
     Execute sunblocker on continuum-subtracted data (otherwise use non-continuum-subtracted data) (yes/no). Default is yes.
 
   **imsize**
 
-    *int*, *optional*, *default = 1000*
+    *int*, *optional*, *default = 900*
 
     Image size (use the same as in wsclean_image or casa_image). Default is worker npix
 
   **cell**
 
-    *float*, *optional*, *default = 7.*
+    *float*, *optional*, *default = 2.*
 
     Cell size in arcsec (use the same as in wsclean_image or casa_image). Default is worker cell
 
@@ -326,7 +326,7 @@ Create HI data cube and detect sources therein
 
   **npix**
 
-    *seq*, *optional*, *default = 1000 , 1000*
+    *seq*, *optional*, *default = 900 , 900*
 
     Image size in pixels. List of integers (width and height) or a single integer for square images. Default is Worker default for npix.
 
@@ -344,7 +344,7 @@ Create HI data cube and detect sources therein
 
   **cell**
 
-    *float*, *optional*, *default = 7*
+    *float*, *optional*, *default = 2*
 
     Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. 'scale 20asec'. Default is Worker default for cell.
 
@@ -356,7 +356,7 @@ Create HI data cube and detect sources therein
 
   **robust**
 
-    *float*, *optional*, *default = 2*
+    *float*, *optional*, *default = 0*
 
     Robust parameter in case of Briggs weighting. Default is 2.
 
@@ -464,21 +464,27 @@ Create HI data cube and detect sources therein
 
     Number of channels. If set to 'all', all channels are used. Otherwise provide the number of channels (starting with startchan, see below). Default is 'all'.
 
-  **startchan**
+  **firstchan**
 
     *int*, *optional*, *default = 0*
 
-    Starting channel of the cube. Used in combination with nchans. Default is 0.
+    First channel of HI cube. Default is 0.
+
+  **binchans**
+
+    *int*, *optional*, *default = 1*
+
+    Integer binning of channels. Default is 1 (no binning).
 
   **npix**
 
-    *seq*, *optional*, *default = 1000, 1000*
+    *seq*, *optional*, *default = 900, 900*
 
     Image size in pixels. List of integers (width and height) or a single integer for square images. Default is worker npix.
 
   **cell**
 
-    *float*, *optional*, *default = 7*
+    *float*, *optional*, *default = 2*
 
     Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. 'scale 20asec'. Default is worker cell.
 
@@ -490,7 +496,7 @@ Create HI data cube and detect sources therein
 
   **robust**
 
-    *float*, *optional*, *default = 0.5*
+    *float*, *optional*, *default = 0.0*
 
     Robust parameter in case of Briggs weighting. Default is worker robust.
 
@@ -543,6 +549,12 @@ Create HI data cube and detect sources therein
     *bool*, *optional*, *default = False*
 
     Execute this segment. Default is false
+
+  **apply_pb**
+
+    *bool*, *optional*, *default = False*
+
+    Whether to apply the primary beam correction to the image cube. Default is false
 
 
 
@@ -684,15 +696,9 @@ Create HI data cube and detect sources therein
 
   **catalog**
 
-    *{"NVSS", "PYBDSF"}*
+    *{"NVSS", "PYBDSF"}*, *optional*, *default = PYBDSF*
 
     Type of catalog to use (PYBDSF/NVSS). Default is 'PYBDSF'
-
-  **catalog_file**
-
-    *str*, *optional*, *default = catalog_contSources.lsm.html*
-
-    Catalog file where to store sources from online surveys (NVSS)
 
   **channels_per_plot**
 

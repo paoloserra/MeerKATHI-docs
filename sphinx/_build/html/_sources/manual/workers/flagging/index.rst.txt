@@ -342,6 +342,16 @@ Flagging of the data.
 
     comma separated list of (zero-indexed) band ids to process
 
+  **window_backend**
+
+    *{"numpy", "zarr-disk"}*, *optional*, *default = numpy*
+
+    Visibility and flag data is re-ordered from a MS row ordering into time-frequency windows ordered by baseline.
+
+  **tricolour_calibrator_strat**
+
+    *str*, *optional*, *default = mk_rfi_flagging_calibrator_fields_firstpass.yaml*
+
 
 
 .. _flagging_rfinder:

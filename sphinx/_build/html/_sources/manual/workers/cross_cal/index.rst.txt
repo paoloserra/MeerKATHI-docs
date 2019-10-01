@@ -64,6 +64,18 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
 
 
+.. _cross_cal_casa_version:
+
+--------------------------------------------------
+**casa_version**
+--------------------------------------------------
+
+  *str*, *optional*, *default = 47*
+
+  Casa version to carry out cross-calibration. '47' means use CASA 4.7, which is recommended, unless you enjoy your data extra flag-gy. Leave empty to use the latest CASA.
+
+
+
 .. _cross_cal_clear_cal:
 
 --------------------------------------------------
@@ -648,7 +660,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **applyto**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal, target, xcal*
+    *list* *of str*, *optional*, *default = bpcal, gcal, xcal*
 
     Field(s) to apply the delay correction calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
@@ -682,7 +694,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **applyto**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal, target, xcal*
+    *list* *of str*, *optional*, *default = bpcal, gcal, xcal*
 
     Field(s) to apply the bandpass table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
@@ -716,7 +728,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **applyto**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal, target, xcal*
+    *list* *of str*, *optional*, *default = bpcal, gcal, xcal*
 
     Field(s) to apply the gain calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
@@ -750,7 +762,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **applyto**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal, target, xcal*
+    *list* *of str*, *optional*, *default = bpcal, gcal, xcal*
 
     Field(s) to apply the fluxscale table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 

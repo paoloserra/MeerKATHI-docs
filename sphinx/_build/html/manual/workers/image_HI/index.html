@@ -204,14 +204,14 @@
 <div class="section" id="npix">
 <span id="image-hi-npix"></span><h2><strong>npix</strong><a class="headerlink" href="#npix" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 360</em></p>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 900</em></p>
 <p>Default number of pixels (wherever npix is requested) in this worker. List of integers (width and height) or a single integer for square images.</p>
 </div></blockquote>
 </div>
 <div class="section" id="cell">
 <span id="image-hi-cell"></span><h2><strong>cell</strong><a class="headerlink" href="#cell" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em>, <em>default = 5</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 2</em></p>
 <p>Default scale of a pixel in arcsec.</p>
 </div></blockquote>
 </div>
@@ -225,7 +225,7 @@
 <div class="section" id="robust">
 <span id="image-hi-robust"></span><h2><strong>robust</strong><a class="headerlink" href="#robust" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em>, <em>default = 2</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Default robust parameter in case of Briggs weighting.</p>
 </div></blockquote>
 </div>
@@ -317,17 +317,17 @@
 </div></blockquote>
 <p><strong>use_mstransform</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Execute sunblocker on continuum-subtracted data (otherwise use non-continuum-subtracted data) (yes/no). Default is yes.</p>
 </div></blockquote>
 <p><strong>imsize</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 1000</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 900</em></p>
 <p>Image size (use the same as in wsclean_image or casa_image). Default is worker npix</p>
 </div></blockquote>
 <p><strong>cell</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em>, <em>default = 7.</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 2.</em></p>
 <p>Cell size in arcsec (use the same as in wsclean_image or casa_image). Default is worker cell</p>
 </div></blockquote>
 <p><strong>threshold</strong></p>
@@ -408,7 +408,7 @@
 </div></blockquote>
 <p><strong>npix</strong></p>
 <blockquote>
-<div><p><em>seq</em>, <em>optional</em>, <em>default = 1000 , 1000</em></p>
+<div><p><em>seq</em>, <em>optional</em>, <em>default = 900 , 900</em></p>
 <p>Image size in pixels. List of integers (width and height) or a single integer for square images. Default is Worker default for npix.</p>
 </div></blockquote>
 <p><strong>padding</strong></p>
@@ -423,7 +423,7 @@
 </div></blockquote>
 <p><strong>cell</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em>, <em>default = 7</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 2</em></p>
 <p>Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. ‘scale 20asec’. Default is Worker default for cell.</p>
 </div></blockquote>
 <p><strong>weight</strong></p>
@@ -433,7 +433,7 @@
 </div></blockquote>
 <p><strong>robust</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em>, <em>default = 2</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Robust parameter in case of Briggs weighting. Default is 2.</p>
 </div></blockquote>
 <p><strong>taper</strong></p>
@@ -520,19 +520,24 @@
 <div><p><em>str</em>, <em>optional</em>, <em>default = all</em></p>
 <p>Number of channels. If set to ‘all’, all channels are used. Otherwise provide the number of channels (starting with startchan, see below). Default is ‘all’.</p>
 </div></blockquote>
-<p><strong>startchan</strong></p>
+<p><strong>firstchan</strong></p>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
-<p>Starting channel of the cube. Used in combination with nchans. Default is 0.</p>
+<p>First channel of HI cube. Default is 0.</p>
+</div></blockquote>
+<p><strong>binchans</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1</em></p>
+<p>Integer binning of channels. Default is 1 (no binning).</p>
 </div></blockquote>
 <p><strong>npix</strong></p>
 <blockquote>
-<div><p><em>seq</em>, <em>optional</em>, <em>default = 1000, 1000</em></p>
+<div><p><em>seq</em>, <em>optional</em>, <em>default = 900, 900</em></p>
 <p>Image size in pixels. List of integers (width and height) or a single integer for square images. Default is worker npix.</p>
 </div></blockquote>
 <p><strong>cell</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em>, <em>default = 7</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 2</em></p>
 <p>Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. ‘scale 20asec’. Default is worker cell.</p>
 </div></blockquote>
 <p><strong>weight</strong></p>
@@ -542,7 +547,7 @@
 </div></blockquote>
 <p><strong>robust</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em>, <em>default = 0.5</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0.0</em></p>
 <p>Robust parameter in case of Briggs weighting. Default is worker robust.</p>
 </div></blockquote>
 <p><strong>niter</strong></p>
@@ -581,6 +586,11 @@
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Execute this segment. Default is false</p>
+</div></blockquote>
+<p><strong>apply_pb</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Whether to apply the primary beam correction to the image cube. Default is false</p>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -692,13 +702,8 @@
 </div></blockquote>
 <p><strong>catalog</strong></p>
 <blockquote>
-<div><p><em>{“NVSS”, “PYBDSF”}</em></p>
+<div><p><em>{“NVSS”, “PYBDSF”}</em>, <em>optional</em>, <em>default = PYBDSF</em></p>
 <p>Type of catalog to use (PYBDSF/NVSS). Default is ‘PYBDSF’</p>
-</div></blockquote>
-<p><strong>catalog_file</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = catalog_contSources.lsm.html</em></p>
-<p>Catalog file where to store sources from online surveys (NVSS)</p>
 </div></blockquote>
 <p><strong>channels_per_plot</strong></p>
 <blockquote>

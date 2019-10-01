@@ -249,7 +249,7 @@
 <div class="section" id="img-npix">
 <span id="self-cal-img-npix"></span><h2><strong>img_npix</strong><a class="headerlink" href="#img-npix" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 900</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1800</em></p>
 <p>Number of pixels in output image</p>
 </div></blockquote>
 </div>
@@ -383,7 +383,7 @@
 </div></blockquote>
 <p><strong>tolerance</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em>, <em>default = 2.</em></p>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0.02</em></p>
 <p>Relative change in weighted mean of several indicators from aimfast.</p>
 </div></blockquote>
 <p><strong>convergence_criteria</strong></p>
@@ -393,7 +393,7 @@
 </div></blockquote>
 <p><strong>area_factor</strong></p>
 <blockquote>
-<div><p><em>float</em>, <em>optional</em>, <em>default = 1.</em></p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 6</em></p>
 <p>Peak flux source area multiplying factor i.e tot_area = psf-size*af</p>
 </div></blockquote>
 <p><strong>normality_model</strong></p>
@@ -403,7 +403,7 @@
 </div></blockquote>
 <p><strong>plot</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Generate html plots for comparing catalogs and residuals</p>
 </div></blockquote>
 </div></blockquote>
@@ -451,11 +451,6 @@
 <blockquote>
 <div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 10, 20, 30</em></p>
 <p>scales of multiscale [0,10,20,etc, etc] in pixels</p>
-</div></blockquote>
-<p><strong>no_update_model</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
-<p>do not update column MODEL_DATA after wsclean</p>
 </div></blockquote>
 <p><strong>minuvw_m</strong></p>
 <blockquote>
@@ -551,7 +546,7 @@
 </div></blockquote>
 <p><strong>thresh_pix</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 3</em></p>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 5</em></p>
 <p>Source finder pixel threshold</p>
 </div></blockquote>
 <p><strong>thresh_isl</strong></p>
@@ -657,15 +652,20 @@
 </div></blockquote>
 <p><strong>madmax_flag_thresh</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 1, 2</em></p>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 0, 10</em></p>
 <p>Threshold for madmax flagging</p>
+</div></blockquote>
+<p><strong>sol_term_iters</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
+<p>Number of iterations per Jones term. If set to ‘auto’, uses hardcoded iteration numbers depending on the jones chain.</p>
 </div></blockquote>
 <p><strong>ragavi_plot</strong></p>
 <blockquote>
 <div><p>Plotting dignostics plots for delay correction calibration.</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Enables plotting dignostics</p>
 </div></blockquote>
 <p><strong>gaintype</strong></p>
@@ -758,17 +758,17 @@
 <div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Model sources as non-flat spectra. The spectral coefficients and reference frequency must be present in the sky model.</p>
 </div></blockquote>
-<p><strong>row-chunks</strong></p>
+<p><strong>row_chunks</strong></p>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Number of rows of input .MS that are processed in a single chunk.</p>
 </div></blockquote>
-<p><strong>model-chunks</strong></p>
+<p><strong>model_chunks</strong></p>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Number of sky model components that are processed in a single chunk.</p>
 </div></blockquote>
-<p><strong>invert-uvw</strong></p>
+<p><strong>invert_uvw</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>Invert UVW coordinates. Useful if we want compare our visibilities against MeqTrees.</p>
@@ -778,22 +778,22 @@
 <div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
 <p>Give JS9 region file. Only sources within those regions will be included.</p>
 </div></blockquote>
-<p><strong>points-only</strong></p>
+<p><strong>points_only</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Select only point-only sources. Default is False.</p>
 </div></blockquote>
-<p><strong>num-sources</strong></p>
+<p><strong>num_sources</strong></p>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Select only N brightest sources. Default is 0</p>
 </div></blockquote>
-<p><strong>num-workers</strong></p>
+<p><strong>num_workers</strong></p>
 <blockquote>
 <div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Explicitly set the number of worker threads. Default is 0, meaning it uses all threads.</p>
 </div></blockquote>
-<p><strong>memory-fraction</strong></p>
+<p><strong>memory_fraction</strong></p>
 <blockquote>
 <div><p><em>float</em>, <em>optional</em>, <em>default = 0.5</em></p>
 <p>Fraction of system RAM that can be used. Used when setting automatically the chunk size.</p>
