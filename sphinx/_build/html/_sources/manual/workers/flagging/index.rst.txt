@@ -428,7 +428,7 @@ Flagging of the data.
 
   **enable**
 
-    *bool*
+    *bool*, *optional*, *default = False*
 
     Enables the writing of flagging summary.
 

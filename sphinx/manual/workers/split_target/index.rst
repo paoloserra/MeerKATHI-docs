@@ -244,7 +244,7 @@ Split and average target data
 
   **enable**
 
-    *bool*
+    *bool*, *optional*, *default = True*
 
     Run this section
 

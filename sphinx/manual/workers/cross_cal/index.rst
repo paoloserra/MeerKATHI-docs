@@ -86,7 +86,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **enable**
 
-    *bool*
+    *bool*, *optional*, *default = True*
 
     Execute intialization step
 
@@ -508,7 +508,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **solint**
 
-    *str*, *optional*, *default = inf*
+    *str*, *optional*, *default = 30s*
 
     Time solution interval
 
