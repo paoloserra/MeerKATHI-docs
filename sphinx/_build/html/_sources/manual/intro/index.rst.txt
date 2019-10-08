@@ -99,8 +99,8 @@ crosscorrelations.
 
 This worker cross-calibrates the data. Users can calibrate delays, bandpass,
 gains and flux scale. The calibration can be applied to the calibrators' visibilities (for
- later inspection) and to the target. Numerous parameters are available for users to decide how to calibrate.
-Flagging based on closure errors is available in this worker.
+later inspection) and to the target. Numerous parameters are available for users to decide
+how to calibrate. Flagging based on closure errors is available in this worker.
 
 :ref:`polcal`
 ^^^^^^^^^^^^^^^^
