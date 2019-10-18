@@ -308,9 +308,9 @@ Create HI data cube and detect sources therein
 
   **nchans**
 
-    *str*, *optional*, *default = all*
+    *int*, *optional*, *default = 0*
 
-    Number of channels of HI cube, 'all' or an integer number. Default is 'all'.
+    Number of channels of HI cube, 0 means all channels.
 
   **firstchan**
 
@@ -460,9 +460,9 @@ Create HI data cube and detect sources therein
 
   **nchans**
 
-    *str*, *optional*, *default = all*
+    *int*, *optional*, *default = 0*
 
-    Number of channels. If set to 'all', all channels are used. Otherwise provide the number of channels (starting with startchan, see below). Default is 'all'.
+    Number of channels of HI cube, 0 means all channels.
 
   **firstchan**
 

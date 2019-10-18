@@ -160,7 +160,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **combine**
 
-    *{"", "obs", "scan", "spw", "field", "obs,scan", "scan,obs"}*, *optional*, *default = ' '*
+    *{"", "obs", "scan", "spw", "field", "obs,scan", "scan,obs"}*, *optional*, *default = scan*
 
     Parameter to combine different data axis for solving.
 
@@ -256,7 +256,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **combine**
 
-    *{"", "obs", "scan", "spw", "field", "obs,scan", "scan,obs"}*, *optional*, *default = ' '*
+    *{"", "obs", "scan", "spw", "field", "obs,scan", "scan,obs"}*, *optional*, *default = scan*
 
     Parameter to combine different data axis for solving.
 
@@ -288,7 +288,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     *str*, *optional*, *default = inf*
 
-    Solution interval for delay-correction calibration.
+    Solution interval for bandpass calibration.
 
   **set_refant**
 
@@ -298,9 +298,37 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **remove_ph_time_var**
 
-    *bool*, *optional*, *default = False*
+    Remove large temporal phase variations from the bandpass calibrator before solving for the bandpass.
 
-    Remove large temporal phase variations from bandpass calibrator before solving.
+    **enable**
+
+      *bool*, *optional*, *default = False*
+
+      Enable removal of gain phase variations with time prior to solving for final bandpass.
+
+    **bp_solint**
+
+      *str*, *optional*, *default = inf*
+
+      Solution interval for bandpass calibration before determining the variation of the gain phase with time.
+
+    **bp_combine**
+
+      *{"", "obs", "scan", "spw", "field", "obs,scan", "scan,obs"}*, *optional*, *default = ' '*
+
+      Parameter to combine different data axis for solving.
+
+    **g_solint**
+
+      *str*, *optional*, *default = inf*
+
+      Solution interval for gain phase calibration to be applied when solving for the final bandpass.
+
+    **g_combine**
+
+      *{"", "obs", "scan", "spw", "field", "obs,scan", "scan,obs"}*, *optional*, *default = ' '*
+
+      Parameter to combine different data axis for solving.
 
   **flag**
 
@@ -508,7 +536,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **solint**
 
-    *str*, *optional*, *default = 30s*
+    *str*, *optional*, *default = inf*
 
     Time solution interval
 
@@ -660,7 +688,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **applyto**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal, xcal*
+    *list* *of str*, *optional*, *default = bpcal, gcal, xcal, target*
 
     Field(s) to apply the delay correction calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
@@ -694,7 +722,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **applyto**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal, xcal*
+    *list* *of str*, *optional*, *default = bpcal, gcal, xcal, target*
 
     Field(s) to apply the bandpass table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
@@ -728,7 +756,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **applyto**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal, xcal*
+    *list* *of str*, *optional*, *default = bpcal, gcal, xcal, target*
 
     Field(s) to apply the gain calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 
@@ -762,7 +790,7 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
   **applyto**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal, xcal*
+    *list* *of str*, *optional*, *default = bpcal, gcal, xcal, target*
 
     Field(s) to apply the fluxscale table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. 'bpcal, gcal, target'.
 

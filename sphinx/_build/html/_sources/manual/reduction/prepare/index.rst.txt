@@ -10,7 +10,7 @@ Prepare pipeline and data
 .. toctree::
    :maxdepth: 1
 
-**[relevant workers:** :ref:`general`, :ref:`get_data`, :ref:`observation_config`\ **]**
+**[relevant workers:** :ref:`general`, :ref:`get_data`, :ref:`observation_config`, :ref:`prepare_data`\ **]**
 
 --------------------------------
 Directories and input file names

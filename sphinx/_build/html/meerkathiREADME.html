@@ -172,13 +172,18 @@ $ export PYTHONPATH=&#39;&#39; # Ensure that you use venv Python
 <li>Pull and/or build stimela images</li>
 </ol>
 <ul>
-<li><p class="first"><strong>uDocker</strong>[Recomended]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela pull
+<li><p class="first"><strong>Podman</strong>[Recommended]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela pull -p
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>Singularity</strong>[Recomeded]</p>
+<li><p class="first"><strong>Singularity</strong>[Recommended]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela pull --singularity --pull-folder &lt;folder to store stimela singularity images&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>uDocker</strong>[Recommended]&lt;note: no python3 support&gt;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela pull
 </pre></div>
 </div>
 </li>
@@ -193,10 +198,12 @@ $ stimela build
 <li>run meerkathi</li>
 </ol>
 <ul class="simple">
-<li><strong>uDocker</strong>[Recomended]
-<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">meerkathi</span> <span class="pre">-c</span> <span class="pre">path_to_configuration_file</span> <span class="pre">--container-tech</span> <span class="pre">udocker</span></code></li>
-<li><strong>Singularity</strong>[Recomended]
+<li><strong>Podman</strong>[Recommended]
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">meerkathi</span> <span class="pre">-c</span> <span class="pre">path_to_configuration_file</span> <span class="pre">--container-tech</span> <span class="pre">podman</span></code></li>
+<li><strong>Singularity</strong>[Recommended]
 <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">meerkathi</span> <span class="pre">-c</span> <span class="pre">path_to_configuration_file</span> <span class="pre">--container-tech</span> <span class="pre">singularity</span> <span class="pre">-sid</span> <span class="pre">&lt;folder</span> <span class="pre">where</span> <span class="pre">singularity</span> <span class="pre">images</span> <span class="pre">are</span> <span class="pre">stored&gt;</span></code></li>
+<li><strong>uDocker</strong>[no python3 support]
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">meerkathi</span> <span class="pre">-c</span> <span class="pre">path_to_configuration_file</span> <span class="pre">--container-tech</span> <span class="pre">udocker</span></code></li>
 <li><strong>Docker</strong>
 <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">meerkathi</span> <span class="pre">-c&lt;</span> <span class="pre">path</span> <span class="pre">to</span> <span class="pre">configuration</span> <span class="pre">file&gt;</span></code></li>
 </ul>
@@ -248,7 +255,7 @@ $ export PYTHONPATH=&#39;&#39; # Ensure that you use venv Python
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>Singularity</strong>[Recommeded]</p>
+<li><p class="first"><strong>Singularity</strong>[Recommended]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ stimela pull --singularity --pull-folder &lt;folder to store stimela singularity images&gt;
 </pre></div>
 </div>

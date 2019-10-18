@@ -131,7 +131,7 @@ resulting mask with a mask based on an existing image.
 
 This worker performs continuum imaging and standard (i.e., direction-independent)
 self-calibration. Automated convergence of the calibration procedure is optionally
-available. This worker can also interpolat and transfer sky model and calibration tables
+available. This worker can also interpolate and transfer sky model and calibration tables
 to another .MS (e.g., from a coarse- to a fine-channel .MS file).
 
 :ref:`image_HI`

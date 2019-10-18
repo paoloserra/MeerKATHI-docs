@@ -278,7 +278,7 @@
 </div></blockquote>
 <p><strong>combine</strong></p>
 <blockquote>
-<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
+<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em>, <em>default = scan</em></p>
 <p>Parameter to combine different data axis for solving.</p>
 </div></blockquote>
 <p><strong>solint</strong></p>
@@ -357,7 +357,7 @@
 </div></blockquote>
 <p><strong>combine</strong></p>
 <blockquote>
-<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
+<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em>, <em>default = scan</em></p>
 <p>Parameter to combine different data axis for solving.</p>
 </div></blockquote>
 <p><strong>field</strong></p>
@@ -383,7 +383,7 @@
 <p><strong>solint</strong></p>
 <blockquote>
 <div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
-<p>Solution interval for delay-correction calibration.</p>
+<p>Solution interval for bandpass calibration.</p>
 </div></blockquote>
 <p><strong>set_refant</strong></p>
 <blockquote>
@@ -392,8 +392,32 @@
 </div></blockquote>
 <p><strong>remove_ph_time_var</strong></p>
 <blockquote>
+<div><p>Remove large temporal phase variations from the bandpass calibrator before solving for the bandpass.</p>
+<p><strong>enable</strong></p>
+<blockquote>
 <div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
-<p>Remove large temporal phase variations from bandpass calibrator before solving.</p>
+<p>Enable removal of gain phase variations with time prior to solving for final bandpass.</p>
+</div></blockquote>
+<p><strong>bp_solint</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
+<p>Solution interval for bandpass calibration before determining the variation of the gain phase with time.</p>
+</div></blockquote>
+<p><strong>bp_combine</strong></p>
+<blockquote>
+<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
+<p>Parameter to combine different data axis for solving.</p>
+</div></blockquote>
+<p><strong>g_solint</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
+<p>Solution interval for gain phase calibration to be applied when solving for the final bandpass.</p>
+</div></blockquote>
+<p><strong>g_combine</strong></p>
+<blockquote>
+<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
+<p>Parameter to combine different data axis for solving.</p>
+</div></blockquote>
 </div></blockquote>
 <p><strong>flag</strong></p>
 <blockquote>
@@ -565,7 +589,7 @@
 </div></blockquote>
 <p><strong>solint</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = 30s</em></p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
 <p>Time solution interval</p>
 </div></blockquote>
 <p><strong>set_refant</strong></p>
@@ -689,7 +713,7 @@
 </div></blockquote>
 <p><strong>applyto</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, xcal</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, xcal, target</em></p>
 <p>Field(s) to apply the delay correction calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
 </div></blockquote>
 <p><strong>applymode</strong></p>
@@ -715,7 +739,7 @@
 </div></blockquote>
 <p><strong>applyto</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, xcal</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, xcal, target</em></p>
 <p>Field(s) to apply the bandpass table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
 </div></blockquote>
 <p><strong>applymode</strong></p>
@@ -741,7 +765,7 @@
 </div></blockquote>
 <p><strong>applyto</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, xcal</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, xcal, target</em></p>
 <p>Field(s) to apply the gain calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
 </div></blockquote>
 <p><strong>applymode</strong></p>
@@ -767,7 +791,7 @@
 </div></blockquote>
 <p><strong>applyto</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, xcal</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, xcal, target</em></p>
 <p>Field(s) to apply the fluxscale table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
 </div></blockquote>
 <p><strong>applymode</strong></p>
