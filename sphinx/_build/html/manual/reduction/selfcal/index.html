@@ -91,7 +91,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../prepare/index.html">Prepare pipeline and data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../flag/index.html">Flag data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../crosscal/index.html">Cross-calibration</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Continuum imaging and self-calibration</a><ul class="simple">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Continuum imaging and self-calibration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#split-average-and-flag-target-visibilities">Split, average and flag target visibilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#image-the-continuum-and-self-calibrate">Image the continuum and self-calibrate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gain-and-model-transfer">Gain and model transfer</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../line/index.html">Spectral line imaging</a></li>
@@ -155,6 +158,8 @@
 <div class="toctree-wrapper compound">
 </div>
 <p><strong>[relevant workers:</strong> <a class="reference internal" href="../../workers/split_target/index.html#split-target"><span class="std std-ref">split_target</span></a>, <a class="reference internal" href="../../workers/flagging/index.html#flagging"><span class="std std-ref">flagging</span></a>, <a class="reference internal" href="../../workers/self_cal/index.html#self-cal"><span class="std std-ref">self_cal</span></a><strong>]</strong></p>
+<div class="section" id="split-average-and-flag-target-visibilities">
+<h2>Split, average and flag target visibilities<a class="headerlink" href="#split-average-and-flag-target-visibilities" title="Permalink to this headline">¶</a></h2>
 <p>Following cross-calibration MeerKATHI creates a new .MS file which contains the
 cross-calibrated target visibilities only. This is done by the <a class="reference internal" href="../../workers/split_target/index.html#split-target"><span class="std std-ref">split_target</span></a>
 worker. In case the cross-calibration tables have not been applied to the target
@@ -171,7 +176,34 @@ best strategy for their project.</p>
 (Typically the target is not flagged before applying the cross-calibration.) This can
 be done with the <a class="reference internal" href="../../workers/flagging/index.html#flagging"><span class="std std-ref">flagging</span></a> worker (which was probably already run on the
 calibrators’ visibilities before cross-calibration) setting fields to target in
-<a class="reference internal" href="../../workers/flagging/index.html#flagging-autoflag-rfi"><span class="std std-ref">flagging: autoflag_rfi:</span></a>.</p>
+<a class="reference internal" href="../../workers/flagging/index.html#flagging-autoflag-rfi"><span class="std std-ref">flagging: autoflag_rfi</span></a>.</p>
+</div>
+<div class="section" id="image-the-continuum-and-self-calibrate">
+<h2>Image the continuum and self-calibrate<a class="headerlink" href="#image-the-continuum-and-self-calibrate" title="Permalink to this headline">¶</a></h2>
+<p>Having split, optionally averaged and flagged the target, it is now possible to
+iteratively image the radio continuum emission and self-calibrate the visibilities.
+The resulting gain tables and continuum model can also be transferred to another
+.MS file (particularly useful for spectral line work). All this can be done with the
+<a class="reference internal" href="../../workers/self_cal/index.html#self-cal"><span class="std std-ref">self_cal</span></a> worker.</p>
+<p>Several parameters allow users to set up both the imaging and self-calibration
+according to their needs. Imaging is done with WSclean, and the parameters of this
+imaging software are available in the <a class="reference internal" href="../../workers/self_cal/index.html#self-cal"><span class="std std-ref">self_cal</span></a> worker. Calibration is done
+with either Cubical or MeqTrees, and also in this case the <a class="reference internal" href="../../workers/self_cal/index.html#self-cal"><span class="std std-ref">self_cal</span></a> worker
+includes the parameters available in those packages.</p>
+<p>Additional parameters allow users to decide how many calibration iterations to
+perform through the parameter <a class="reference internal" href="../../workers/self_cal/index.html#self-cal-cal-niter"><span class="std std-ref">self_cal: cal_niter</span></a>.
+For a value N, the code will create N+1 images following the sequence image1,
+selfcal1, image2, selfcal2, … imageN, selfcalN, imageN+1.</p>
+<p>Optionally, users can enable <a class="reference internal" href="../../workers/self_cal/index.html#self-cal-aimfast"><span class="std std-ref">self_cal: aimfast</span></a>, which
+at each new iteration compares the new continuum image with the previous one and
+decides whether the image has improved significantly. In case it has not, no further
+iterations are performed. In this case therefore <a class="reference internal" href="../../workers/self_cal/index.html#self-cal-cal-niter"><span class="std std-ref">self_cal: cal_niter</span></a>
+is the maximum number of iterations.</p>
+<p><strong>[missing a description of additional functionalities]</strong></p>
+</div>
+<div class="section" id="gain-and-model-transfer">
+<h2>Gain and model transfer<a class="headerlink" href="#gain-and-model-transfer" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
