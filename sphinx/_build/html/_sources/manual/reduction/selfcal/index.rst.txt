@@ -63,8 +63,20 @@ decides whether the image has improved significantly. In case it has not, no fur
 iterations are performed. In this case therefore :ref:`self_cal: cal_niter  <self_cal_cal_niter>`
 is the maximum number of iterations.
 
+While imaging, WSclean auto-mask and auto-threshold can be used, but it is also possible
+to use a clean mask made by SoFiA from the previous continuum image. This functionality
+is controlled through :ref:`self_cal: sofia_mask  <self_cal_sofia_mask>`.
+
 **[missing a description of additional functionalities]**
 
 -----------------------
 Gain and model transfer
 -----------------------
+
+If the self-cal loop was executed on a frequency-averaged .MS file, it might
+be necessary to transfer the resulting gains and continuum model back to the
+original .MS file. This is done with 
+:ref:`self_cal: transfer_apply_gains  <self_cal_transfer_apply_gains>` (using Cubical)
+and :ref:`self_cal: transfer_model  <self_cal_transfer_model>` (using Crystalball),
+respectively. The latter allows users to limit the model transfer to the N brightest
+sources, to sources in a region, or to point sources only.

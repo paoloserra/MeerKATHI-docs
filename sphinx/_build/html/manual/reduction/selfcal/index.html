@@ -199,10 +199,20 @@ at each new iteration compares the new continuum image with the previous one and
 decides whether the image has improved significantly. In case it has not, no further
 iterations are performed. In this case therefore <a class="reference internal" href="../../workers/self_cal/index.html#self-cal-cal-niter"><span class="std std-ref">self_cal: cal_niter</span></a>
 is the maximum number of iterations.</p>
+<p>While imaging, WSclean auto-mask and auto-threshold can be used, but it is also possible
+to use a clean mask made by SoFiA from the previous continuum image. This functionality
+is controlled through <a class="reference internal" href="../../workers/self_cal/index.html#self-cal-sofia-mask"><span class="std std-ref">self_cal: sofia_mask</span></a>.</p>
 <p><strong>[missing a description of additional functionalities]</strong></p>
 </div>
 <div class="section" id="gain-and-model-transfer">
 <h2>Gain and model transfer<a class="headerlink" href="#gain-and-model-transfer" title="Permalink to this headline">¶</a></h2>
+<p>If the self-cal loop was executed on a frequency-averaged .MS file, it might
+be necessary to transfer the resulting gains and continuum model back to the
+original .MS file. This is done with
+<a class="reference internal" href="../../workers/self_cal/index.html#self-cal-transfer-apply-gains"><span class="std std-ref">self_cal: transfer_apply_gains</span></a> (using Cubical)
+and <a class="reference internal" href="../../workers/self_cal/index.html#self-cal-transfer-model"><span class="std std-ref">self_cal: transfer_model</span></a> (using Crystalball),
+respectively. The latter allows users to limit the model transfer to the N brightest
+sources, to sources in a region, or to point sources only.</p>
 </div>
 </div>
 
