@@ -224,9 +224,9 @@ as a whole, and not individually for each antenna and each polarisation product.
 The final flux scale solutions can be plotted (*plot*). Normally, all plotting options can be kept to their
 default values.
 
----------------------------
-Apply the cross-calibration
----------------------------
+------------------------------------------------
+Apply the cross-calibration and diagnostic plots
+------------------------------------------------
 
 MeerKATHI can apply the cross calibration tables to all calibrators (useful for diagnostics) and to the science
 target. In doing so it will use the following interpolation rules:
@@ -237,5 +237,9 @@ target. In doing so it will use the following interpolation rules:
   with linear, linear, linear interpolation, respectively.
 * Gain calibration after bootstrapping the flux scale: applied to the fields bpcal, gcal, target
   with linear, nearest, linear interpolation, repsectively.
+
+The calibrated caibrators' visibilities can be inspected to check whether the calibration is correct. This is
+done by the :ref:`inspect_data` worker. A number of .PNG plots are produced, such as phase-vs-amplitude and
+real-vs-imaginary.
 
 **[missing from this page: flag on closure errors and flag statistics]**

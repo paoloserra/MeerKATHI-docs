@@ -154,7 +154,24 @@
 <h1>Continuum imaging and self-calibration<a class="headerlink" href="#continuum-imaging-and-self-calibration" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>TBD</p>
+<p><strong>[relevant workers:</strong> <a class="reference internal" href="../../workers/split_target/index.html#split-target"><span class="std std-ref">split_target</span></a>, <a class="reference internal" href="../../workers/flagging/index.html#flagging"><span class="std std-ref">flagging</span></a>, <a class="reference internal" href="../../workers/self_cal/index.html#self-cal"><span class="std std-ref">self_cal</span></a><strong>]</strong></p>
+<p>Following cross-calibration MeerKATHI creates a new .MS file which contains the
+cross-calibrated target visibilities only. This is done by the <a class="reference internal" href="../../workers/split_target/index.html#split-target"><span class="std std-ref">split_target</span></a>
+worker. In case the cross-calibration tables have not been applied to the target
+by the <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal"><span class="std std-ref">cross_cal</span></a> worker, <a class="reference internal" href="../../workers/split_target/index.html#split-target"><span class="std std-ref">split_target</span></a> can do so on the fly while
+splitting using the CASA task MSTRANSFORM.</p>
+<p>Optionally, the <a class="reference internal" href="../../workers/split_target/index.html#split-target"><span class="std std-ref">split_target</span></a> worker can average in time and/or frequency
+while splitting. Depending on the science goals, it might be useful to run this
+worker more than once. E.g., the first time to create a frequency-averaged dataset
+for continuum imaging and self-calibration, and the second time to create a
+narrow-band dataset for spectral-line work. The possibility of running this
+worker multiple times within a single MeerKATHI run allows users to design the
+best strategy for their project.</p>
+<p>Before self-calibrating it might also be good to flag the target’s visibilities.
+(Typically the target is not flagged before applying the cross-calibration.) This can
+be done with the <a class="reference internal" href="../../workers/flagging/index.html#flagging"><span class="std std-ref">flagging</span></a> worker (which was probably already run on the
+calibrators’ visibilities before cross-calibration) setting fields to target in
+<a class="reference internal" href="../../workers/flagging/index.html#flagging-autoflag-rfi"><span class="std std-ref">flagging: autoflag_rfi:</span></a>.</p>
 </div>
 
 

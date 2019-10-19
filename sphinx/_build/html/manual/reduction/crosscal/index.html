@@ -97,7 +97,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#flux-scale-calibration">Flux scale calibration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gain-calibration">Gain calibration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flux-scale-bootstrapping">Flux scale bootstrapping</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#apply-the-cross-calibration">Apply the cross-calibration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apply-the-cross-calibration-and-diagnostic-plots">Apply the cross-calibration and diagnostic plots</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../selfcal/index.html">Continuum imaging and self-calibration</a></li>
@@ -352,8 +352,8 @@ as a whole, and not individually for each antenna and each polarisation product.
 <p>The final flux scale solutions can be plotted (<em>plot</em>). Normally, all plotting options can be kept to their
 default values.</p>
 </div>
-<div class="section" id="apply-the-cross-calibration">
-<h2>Apply the cross-calibration<a class="headerlink" href="#apply-the-cross-calibration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="apply-the-cross-calibration-and-diagnostic-plots">
+<h2>Apply the cross-calibration and diagnostic plots<a class="headerlink" href="#apply-the-cross-calibration-and-diagnostic-plots" title="Permalink to this headline">¶</a></h2>
 <p>MeerKATHI can apply the cross calibration tables to all calibrators (useful for diagnostics) and to the science
 target. In doing so it will use the following interpolation rules:</p>
 <ul class="simple">
@@ -364,6 +364,9 @@ with linear, linear, linear interpolation, respectively.</li>
 <li>Gain calibration after bootstrapping the flux scale: applied to the fields bpcal, gcal, target
 with linear, nearest, linear interpolation, repsectively.</li>
 </ul>
+<p>The calibrated caibrators’ visibilities can be inspected to check whether the calibration is correct. This is
+done by the <a class="reference internal" href="../../workers/inspect_data/index.html#inspect-data"><span class="std std-ref">inspect_data</span></a> worker. A number of .PNG plots are produced, such as phase-vs-amplitude and
+real-vs-imaginary.</p>
 <p><strong>[missing from this page: flag on closure errors and flag statistics]</strong></p>
 </div>
 </div>
