@@ -310,9 +310,21 @@ Perform Self calibration on the data
 **cal_time_chunk**
 --------------------------------------------------
 
-  *int*
+  *int*, *optional*, *default = 128*
 
-  chunk in time for calibration (seconds)
+  Chunk data up by this number of timeslots. This limits the amount of data processed at once. Smaller chunks allow for a smaller RAM footprint and greater parallelism but sets an upper limit on the time solution intervals that may be employed. 0 means use full time axis but does not cross scan boundaries.
+
+
+
+.. _self_cal_cal_freq_chunk:
+
+--------------------------------------------------
+**cal_freq_chunk**
+--------------------------------------------------
+
+  *int*, *optional*, *default = 1024*
+
+  Chunk data up by this number of channels. This limits the amount of data processed at once. Smaller chunks allow for a smaller RAM footprint and greater parallelism but sets an upper limit on the frequency solution intervals that may be employed. 0 means use full frequency axis but does not cross SPW boundaries.
 
 
 
@@ -606,15 +618,15 @@ Perform Self calibration on the data
 
   **Gsols_time**
 
-    *list* *of float*, *optional*, *default = 20*
+    *list* *of float*, *optional*, *default = 16*
 
-    Gsols for individual calibration steps, if not given will default to cal_Gsols
+    G-Jones time solution interval. The parameter cal_time_chunk above should a multiple of Gsols_time. 0 means a single solution for the full time chunk.
 
   **Gsols_channel**
 
     *list* *of float*, *optional*, *default = 0*
 
-    Gsols for individual calibration steps, if not given will default to cal_Gsols
+    G-Jones frequency solution interval. The parameter cal_frq_chunk above should a multiple of Gsols_channel. 0 means a single solution for the full frequency chunk.
 
   **Bjones**
 

@@ -48,7 +48,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   *str*, *optional*, *default = XX, YY*
 
-  Label specyfying the correlations (default all).
+  Label specifying the correlations.
 
 
 

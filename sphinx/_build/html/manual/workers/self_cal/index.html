@@ -125,6 +125,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#cal-niter"><strong>cal_niter</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#start-at-iter"><strong>start_at_iter</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cal-time-chunk"><strong>cal_time_chunk</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cal-freq-chunk"><strong>cal_freq_chunk</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#aimfast"><strong>aimfast</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#image"><strong>image</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sofia-mask"><strong>sofia_mask</strong></a></li>
@@ -368,8 +369,15 @@
 <div class="section" id="cal-time-chunk">
 <span id="self-cal-cal-time-chunk"></span><h2><strong>cal_time_chunk</strong><a class="headerlink" href="#cal-time-chunk" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>int</em></p>
-<p>chunk in time for calibration (seconds)</p>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 128</em></p>
+<p>Chunk data up by this number of timeslots. This limits the amount of data processed at once. Smaller chunks allow for a smaller RAM footprint and greater parallelism but sets an upper limit on the time solution intervals that may be employed. 0 means use full time axis but does not cross scan boundaries.</p>
+</div></blockquote>
+</div>
+<div class="section" id="cal-freq-chunk">
+<span id="self-cal-cal-freq-chunk"></span><h2><strong>cal_freq_chunk</strong><a class="headerlink" href="#cal-freq-chunk" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1024</em></p>
+<p>Chunk data up by this number of channels. This limits the amount of data processed at once. Smaller chunks allow for a smaller RAM footprint and greater parallelism but sets an upper limit on the frequency solution intervals that may be employed. 0 means use full frequency axis but does not cross SPW boundaries.</p>
 </div></blockquote>
 </div>
 <div class="section" id="aimfast">
@@ -602,13 +610,13 @@
 </div></blockquote>
 <p><strong>Gsols_time</strong></p>
 <blockquote>
-<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 20</em></p>
-<p>Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
+<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 16</em></p>
+<p>G-Jones time solution interval. The parameter cal_time_chunk above should a multiple of Gsols_time. 0 means a single solution for the full time chunk.</p>
 </div></blockquote>
 <p><strong>Gsols_channel</strong></p>
 <blockquote>
 <div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 0</em></p>
-<p>Gsols for individual calibration steps, if not given will default to cal_Gsols</p>
+<p>G-Jones frequency solution interval. The parameter cal_frq_chunk above should a multiple of Gsols_channel. 0 means a single solution for the full frequency chunk.</p>
 </div></blockquote>
 <p><strong>Bjones</strong></p>
 <blockquote>
