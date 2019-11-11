@@ -290,6 +290,12 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     Solution interval for bandpass calibration.
 
+  **solint_PREB0**
+
+    *str*, *optional*, *default = 60s*
+
+    Solution interval for delay-correction calibration.
+
   **set_refant**
 
     *bool*, *optional*, *default = False*

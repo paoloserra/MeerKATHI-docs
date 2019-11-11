@@ -64,6 +64,18 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 
 
+.. _inspect_data_fields:
+
+--------------------------------------------------
+**fields**
+--------------------------------------------------
+
+  *list* *of str*, *optional*, *default = pbcal, gcal*
+
+  Fields to plot. Specify by field id, index or keys like, gcal, bpcal.
+
+
+
 .. _inspect_data_real_imag:
 
 --------------------------------------------------
@@ -80,7 +92,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   **fields**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal*
+    *list* *of str*, *optional*, *default = ' '*
 
     Fields to plot. Specify by field id, index or keys like, gcal, bpcal.
 
@@ -120,7 +132,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   **fields**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal*
+    *list* *of str*, *optional*, *default = ' '*
 
     Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
 
@@ -160,7 +172,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   **fields**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal*
+    *list* *of str*, *optional*, *default = ' '*
 
     Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
 
@@ -200,7 +212,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   **fields**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal*
+    *list* *of str*, *optional*, *default = ' '*
 
     Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
 
@@ -240,7 +252,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   **fields**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal*
+    *list* *of str*, *optional*, *default = ' '*
 
     Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
 
@@ -280,7 +292,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 
   **fields**
 
-    *list* *of str*, *optional*, *default = bpcal, gcal*
+    *list* *of str*, *optional*, *default = ' '*
 
     Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
 

@@ -102,7 +102,7 @@ Flagging of the data.
 
   **enable**
 
-    *bool*, *optional*, *default = False*
+    *bool*, *optional*, *default = True*
 
     Enables flagging of autocorrelations.
 
