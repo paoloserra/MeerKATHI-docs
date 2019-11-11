@@ -7,7 +7,7 @@
 Acknowledgements
 ================
  
-The MeerKATHI team acnkowledges support from the following institutes:
+The MeerKATHI team acknowledges support from the following institutes:
  
 * South African Radio Astronomy Observatory (SARAO)
 * Rhodes University
