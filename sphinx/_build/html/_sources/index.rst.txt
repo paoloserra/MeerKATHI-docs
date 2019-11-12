@@ -17,5 +17,5 @@ It works on data from any radio interferometer as long as they are in "measureme
  
    meerkathiREADME.md
    manual/index.rst
-   tutorial/index.rst
    credits/index.rst
+.. tutorial/index.rst
