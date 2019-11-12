@@ -1,0 +1,706 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>image_line &mdash; MeerKATHI  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="MeerKATHI  documentation" href="../../../index.html"/>
+        <link rel="up" title="Workers parameters" href="../index.html"/>
+        <link rel="next" title="Tutorial" href="../../../tutorial/index.html"/>
+        <link rel="prev" title="self_cal" href="../self_cal/index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> MeerKATHI
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reduction/index.html">Data reduction</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Workers parameters</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../general/index.html">general</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_data/index.html">get_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../observation_config/index.html">observation_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prepare_data/index.html">prepare_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flagging/index.html">flagging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cross_cal/index.html">cross_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../inspect_data/index.html">inspect_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../split_target/index.html">split_target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">image_line</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enable"><strong>enable</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#label"><strong>label</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#line-name"><strong>line_name</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restfreq"><strong>restfreq</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#subtractmodelcol"><strong>subtractmodelcol</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mstransform"><strong>mstransform</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sunblocker"><strong>sunblocker</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#make-image"><strong>make_image</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-stokes-axis"><strong>remove_stokes_axis</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pb-cube"><strong>pb_cube</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#freq-to-vel"><strong>freq_to_vel</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sofia"><strong>sofia</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sharpener"><strong>sharpener</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits/index.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">MeerKATHI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Manual</a> &raquo;</li>
+      
+          <li><a href="../index.html">Workers parameters</a> &raquo;</li>
+      
+    <li>image_line</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/manual/workers/image_line/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="image-line">
+<span id="id1"></span><h1>image_line<a class="headerlink" href="#image-line" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Create HI data cube and detect sources therein</p>
+<div class="section" id="enable">
+<span id="image-line-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>bool</em></p>
+<p>Execute segment image_line.</p>
+</div></blockquote>
+</div>
+<div class="section" id="label">
+<span id="image-line-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corr</em></p>
+<p>Label of names of MS data sets to be used. MS data set names will always start with the data set id, followed by a hyphen, followed by desc.</p>
+</div></blockquote>
+</div>
+<div class="section" id="line-name">
+<span id="image-line-line-name"></span><h2><strong>line_name</strong><a class="headerlink" href="#line-name" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = HI</em></p>
+<p>Line name string to be used for output file names.</p>
+</div></blockquote>
+</div>
+<div class="section" id="restfreq">
+<span id="image-line-restfreq"></span><h2><strong>restfreq</strong><a class="headerlink" href="#restfreq" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 1.420405752GHz</em></p>
+<p>Rest frequency default value for this worker.</p>
+</div></blockquote>
+</div>
+<div class="section" id="subtractmodelcol">
+<span id="image-line-subtractmodelcol"></span><h2><strong>subtractmodelcol</strong><a class="headerlink" href="#subtractmodelcol" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Replace the column CORRECTED_DATA with the difference CORRECTED_DATA - MODEL_DATA. This is useful for continuum subtraction as it enables the subtraction of the most recent continuum clean model.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Execute segment subtractmodelcol.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="mstransform">
+<span id="image-line-mstransform"></span><h2><strong>mstransform</strong><a class="headerlink" href="#mstransform" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Perform UVLIN continuum subtraction and/or doppler tracking corrections</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Execute segment doppler correction.</p>
+</div></blockquote>
+<p><strong>telescope</strong></p>
+<blockquote>
+<div><p><em>{“meerkat”, “vla”, “gmrt”, “wsrt”, “atca”, “askap”}</em>, <em>optional</em>, <em>default = meerkat</em></p>
+<p>The name of the telescope from which observations were made. Default is the ‘meerkat’ telescope. Current options are gmrt, vla, wsrt, atca.</p>
+</div></blockquote>
+<p><strong>doppler</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Transform channel labels and visibilities to a different spectral reference frame.</p>
+</div></blockquote>
+<p><strong>mode</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = frequency</em></p>
+<p>Regridding mode (channel/velocity/frequency/channel_b).</p>
+</div></blockquote>
+<p><strong>outframe</strong></p>
+<blockquote>
+<div><p><em>{“”, “topo”, “geo”, “lsrk”, “lsrd”, “bary”, “galacto”, “lgroup”, “cmb”, “source”}</em>, <em>optional</em>, <em>default = bary</em></p>
+<p>Output reference frame, options ‘’, ‘topo’, ‘geo’, ‘lsrk’, ‘lsrd’, ‘bary’, ‘galacto’, ‘lgroup’, ‘cmb’, ‘source’</p>
+</div></blockquote>
+<p><strong>veltype</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = radio</em></p>
+<p>Definition of velocity (as used in mode), radio or optical.</p>
+</div></blockquote>
+<p><strong>outchangrid</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
+<p>Output channel grid for Doppler correction. Default is ‘auto’, and the pipeline will calculate the appropriate channel grid. If not ‘auto’ it must be in the format ‘nchan,chan0,chanw’ where nchan is an integer, and chan0 and chanw must include units appropriate for the chosen mode (see parameter ‘mode’ above)</p>
+</div></blockquote>
+<p><strong>uvlin</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Perform continuum subtraction as in task uvcontsub whilst regridding within mstransform.</p>
+</div></blockquote>
+<p><strong>fitspw</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
+<p>Spectral window channel selection for fitting the continuumSelection of line-free channels using CASA syntax (e.g. ‘0:0~100;150:300’). If set to null, a fit to all unflagges visibilities will be performed.</p>
+</div></blockquote>
+<p><strong>fitorder</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1</em></p>
+<p>Polynomial order for the continuum fits</p>
+</div></blockquote>
+<p><strong>column</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corrected</em></p>
+<p>Data column to use.</p>
+</div></blockquote>
+<p><strong>obsinfo</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Create obsinfo.txt and obsinfo.json of MS file created by mstransform.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="sunblocker">
+<span id="image-line-sunblocker"></span><h2><strong>sunblocker</strong><a class="headerlink" href="#sunblocker" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Use sunblocker to remove solar RFI. See description of sunblocker on github repository gigjozsa/sunblocker in method phazer of module sunblocker.py.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Execute segment sunblocker.</p>
+</div></blockquote>
+<p><strong>use_mstransform</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Execute sunblocker on continuum-subtracted data (otherwise use non-continuum-subtracted data).</p>
+</div></blockquote>
+<p><strong>imsize</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 900</em></p>
+<p>Image size (use the same as in wsclean_image or casa_image).</p>
+</div></blockquote>
+<p><strong>cell</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 2.</em></p>
+<p>Cell size in arcsec (use the same as in wsclean_image or casa_image).</p>
+</div></blockquote>
+<p><strong>threshold</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 4.</em></p>
+<p>Distance from average beyond which data are flagged in units of sigma.</p>
+</div></blockquote>
+<p><strong>vampirisms</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Apply only to data taken during day time.</p>
+</div></blockquote>
+<p><strong>uvmax</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 2000</em></p>
+<p>Maximum uvdistance in wavelength to be analysed.</p>
+</div></blockquote>
+<p><strong>uvmin</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0.</em></p>
+<p>Minimum uvdistance in wavelength to be analysed.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="make-image">
+<span id="image-line-make-image"></span><h2><strong>make_image</strong><a class="headerlink" href="#make-image" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Image either with WSclean + SoFiA (for clean masks) or with Casa.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Execute segment make_image.</p>
+</div></blockquote>
+<p><strong>image_with</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = wsclean</em></p>
+<p>Choose whether to image with WSclean + SoFiA (“wsclean”) or with Casa (“casa”).</p>
+</div></blockquote>
+<p><strong>use_mstransform</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Image the .MS file(s) made by CASA MSTRANSFORM (continuum-subtracted and/or Doppler corrected).</p>
+</div></blockquote>
+<p><strong>pol</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = I</em></p>
+<p>Polarizations in output cube (I,Q,U,V,XX,YY,XY,YX,RR,LL,RL,LR and combinations).</p>
+</div></blockquote>
+<p><strong>spwid</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
+<p>Spectral window to use.</p>
+</div></blockquote>
+<p><strong>nchans</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
+<p>Number of channels of HI cube, 0 means all channels.</p>
+</div></blockquote>
+<p><strong>firstchan</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
+<p>First channel of HI cube.</p>
+</div></blockquote>
+<p><strong>binchans</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1</em></p>
+<p>Integer binning of channels.</p>
+</div></blockquote>
+<p><strong>npix</strong></p>
+<blockquote>
+<div><p><em>seq</em>, <em>optional</em>, <em>default = 900 , 900</em></p>
+<p>Image size in pixels. List of integers (width and height) or a single integer for square images.</p>
+</div></blockquote>
+<p><strong>cell</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 2</em></p>
+<p>Scale of a pixel. Default unit is arcsec, but can be specificied, e.g. ‘scale 20asec’.</p>
+</div></blockquote>
+<p><strong>padding</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 1.2</em></p>
+<p>Images have initial size padding*npix, and are later trimmed to npix.</p>
+</div></blockquote>
+<p><strong>weight</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = briggs</em></p>
+<p>Weightmode can be natural, uniform, briggs. When using Briggs weighting, the Robustness parameter robust has to be specified in addition.</p>
+</div></blockquote>
+<p><strong>robust</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0</em></p>
+<p>Robust parameter in case of Briggs weighting.</p>
+</div></blockquote>
+<p><strong>taper</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0</em></p>
+<p>Gaussian taper FWHM in arcsec. Zero means no tapering.</p>
+</div></blockquote>
+<p><strong>niter</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 1000000</em></p>
+<p>Maximum number of clean iterations to perform.</p>
+</div></blockquote>
+<p><strong>wscl_mgain</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 1.0</em></p>
+<p>WSclean gain for major iterations, Ratio of peak that will be subtracted in each major iteration.</p>
+</div></blockquote>
+<p><strong>wscl_sofia_niter</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 2</em></p>
+<p>Maximum number of WSclean + SoFiA iterations. The initial cleaning is done with WSclean automasking or with a user clean mask. Subsequent iterations use a SoFiA clean mask. A value of 1 means that WSclean is only executed once and SoFiA is not used.</p>
+</div></blockquote>
+<p><strong>wscl_sofia_converge</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 1.1</em></p>
+<p>Stop the WSclean + SoFiA iterations if the cube RMS has dropped by a factor &lt; wscl_sofia_converge when comparing the last two iterations. If set to 0 then the maximum number of iterations is performed regardless of the noise change.</p>
+</div></blockquote>
+<p><strong>wscl_keep_final_products_only</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>If set to true it deletes WSclean + Sofia intermediate cubes from the output directory, if set to false it keeps all the cubes of the WSclean + SoFiA iterations.</p>
+</div></blockquote>
+<p><strong>wscl_user_clean_mask</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
+<p>WSclean user clean mask for first WSclean + SoFiA iteration (give filename, to be located in the output/masking folder).</p>
+</div></blockquote>
+<p><strong>wscl_auto_mask</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 10</em></p>
+<p>WSclean option. Construct a mask from found components and when a threshold of sigma is reached, continue cleaning with the mask down to the normal threshold.</p>
+</div></blockquote>
+<p><strong>wscl_auto_threshold</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0.5</em></p>
+<p>WSclean option. Auto clean threshold.</p>
+</div></blockquote>
+<p><strong>wscl_make_cube</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>If set to true the output of WSclean is a data cube, if set to false the output is one fits file per spectral channel.</p>
+</div></blockquote>
+<p><strong>wscl_no_update_mod</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>If set to true, WSclean will not store the line clean model in MODEL_DATA.</p>
+</div></blockquote>
+<p><strong>wscl_multi_scale</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Switch on WSclean multiscale cleaning.</p>
+</div></blockquote>
+<p><strong>wscl_multi_scale_scales</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 0, 10, 20, 30</em></p>
+<p>Scales of WSclean multiscale [0,10,20,etc, etc].</p>
+</div></blockquote>
+<p><strong>casa_threshold</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 10mJy</em></p>
+<p>Flux level to stop CASA cleaning, must include units, e.g. ‘1.0mJy’.</p>
+</div></blockquote>
+<p><strong>casa_port2fits</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Port CASA output to fits files.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="remove-stokes-axis">
+<span id="image-line-remove-stokes-axis"></span><h2><strong>remove_stokes_axis</strong><a class="headerlink" href="#remove-stokes-axis" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Remove Stokes axis from HI cube</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Execute this segment.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="pb-cube">
+<span id="image-line-pb-cube"></span><h2><strong>pb_cube</strong><a class="headerlink" href="#pb-cube" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Make primary beam cube</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Execute this segment.</p>
+</div></blockquote>
+<p><strong>apply_pb</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Whether to apply the primary beam correction to the image cube.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="freq-to-vel">
+<span id="image-line-freq-to-vel"></span><h2><strong>freq_to_vel</strong><a class="headerlink" href="#freq-to-vel" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Convert the spectral axis’ header keys of the HI cube from frequency to velocity in the radio definition, v=c(1-obsfreq/restfreq). No change of spectra reference frame is performed.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Execute conversion.</p>
+</div></blockquote>
+<p><strong>reverse</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Perform the inverse transformation and change the cube 3rd axis from radio velocity to frequency.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="sofia">
+<span id="image-line-sofia"></span><h2><strong>sofia</strong><a class="headerlink" href="#sofia" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Run SoFiA source finder to produce a source mask and a Moment-0 map</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Execute segment sofia?</p>
+</div></blockquote>
+<p><strong>rmsMode</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = mad</em></p>
+<p>Method to determine rms (‘mad’ for using median absolute deviation, ‘std’ for using standard deviation, ‘negative’ for using Gaussian fit to negative voxels).</p>
+</div></blockquote>
+<p><strong>threshold</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 4.0</em></p>
+<p>SoFiA source finding threshold.</p>
+</div></blockquote>
+<p><strong>flag</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Use flag regions?</p>
+</div></blockquote>
+<p><strong>flagregion</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 10, 10</em></p>
+<p>Pixel/channel range(s) to be flagged prior to source finding. Format is [[x1, x2, y1, y2, z1, z2], …].</p>
+</div></blockquote>
+<p><strong>merge</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Use method to de-select and merge emission islands detected by any of SoFiA source finding algorithms. If turned on, pixels with a separation of less than mergeX pixels in x direction and less than mergeY pixels in y-direction and less than z pixels in z-direction will be merged and identified as a single object in the mask. Detections whose extent in x-direction is smaller than minSizeX, in y direction is smaller than minSizeY, and in z-direction is smaller than minSizeZ will be removed from the mask. Parameter merge determines if the merging should be applied.</p>
+</div></blockquote>
+<p><strong>mergeX</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 2</em></p>
+<p>Merge-‘radius’ in x-direction.</p>
+</div></blockquote>
+<p><strong>mergeY</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 2</em></p>
+<p>Merge-‘radius’ in y-direction.</p>
+</div></blockquote>
+<p><strong>mergeZ</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
+<p>Merge-‘radius’ in z-direction (velocity direction).</p>
+</div></blockquote>
+<p><strong>minSizeX</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
+<p>Minimum size in x-direction.</p>
+</div></blockquote>
+<p><strong>minSizeY</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
+<p>Minimum size in y-direction.</p>
+</div></blockquote>
+<p><strong>minSizeZ</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
+<p>Minimum size in y-direction.</p>
+</div></blockquote>
+<p><strong>do_cubelets</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Create cubelets of HI sources.</p>
+</div></blockquote>
+<p><strong>do_mom0</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Create moment 0 map.</p>
+</div></blockquote>
+<p><strong>do_mom1</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Create moment 1 map.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="sharpener">
+<span id="image-line-sharpener"></span><h2><strong>sharpener</strong><a class="headerlink" href="#sharpener" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Run sharpener to extract spectrum of all continuum sources against the lines of sight. The spectra are then plotted.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Execute sharpener?</p>
+</div></blockquote>
+<p><strong>catalog</strong></p>
+<blockquote>
+<div><p><em>{“NVSS”, “PYBDSF”}</em>, <em>optional</em>, <em>default = PYBDSF</em></p>
+<p>Type of catalog to use (PYBDSF/NVSS).</p>
+</div></blockquote>
+<p><strong>channels_per_plot</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 50</em></p>
+<p>Number of channels to plot per detail plot.</p>
+</div></blockquote>
+<p><strong>thresh</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 20</em></p>
+<p>Threshold to select sources in online catalogs (mJy).</p>
+</div></blockquote>
+<p><strong>width</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = 1.0d</em></p>
+<p>Field of view of output catalog (degrees).</p>
+</div></blockquote>
+<p><strong>label</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
+<p>Prefix label of plot names and titles.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../tutorial/index.html" class="btn btn-neutral float-right" title="Tutorial" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../self_cal/index.html" class="btn btn-neutral" title="self_cal" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, MeerKATHI team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

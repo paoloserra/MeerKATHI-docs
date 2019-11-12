@@ -10,13 +10,13 @@ Spectral line imaging
 .. toctree::
    :maxdepth: 1
 
-**[relevant workers:** :ref:`image_HI`\ **]**
+**[relevant workers:** :ref:`image_line`\ **]**
 
 Spectral line imaging runs on a combination of custom software, CASA, WSclean, SunBlocker and SoFiA in order to subtract the continuum,
 Doppler correct, flag solar RFI, create cleaned spectral line cubes and moment images.
 It can run on the input .MS files or on .MS files created by MeerKATHI at various stages of the pipeline
 (e.g., by the :ref:`split_target` worker). In the latter case the name of the .MS files to be imaged is based on that of the input .MS files,
-with a label added before the extension. Users can set the label with the :ref:`image_HI: label <image_HI_label>` parameter in this worker.
+with a label added before the extension. Users can set the label with the :ref:`image_line: label <image_line_label>` parameter in this worker.
 
 The input .MS files may contain several targets. In this case, MeerKATHI makes one HI cube per target, using all
 available visibilities for that target from all input .MS files. This worker does not mosaic line cubes made for different targets.
@@ -27,9 +27,9 @@ Continuum subtraction
  
 Continuum subtraction might be necessary before imaging the spectral line of interest.
 MeerKATHI can do this using two standard methods, which can be run sequentially within a single MeerKATHI run: i)
-subtraction of the continuum model visibilities from the field visibilities (:ref:`image_HI: subtractmodelcol <image_HI_subtractmodelcol>`);
+subtraction of the continuum model visibilities from the field visibilities (:ref:`image_line: subtractmodelcol <image_line_subtractmodelcol>`);
 and ii) fitting and subtracting polynomials from the individual real and imaginary visibility spectra (parameter *uvlin* in
-:ref:`image_HI: mstransform <image_HI_mstransform>`).
+:ref:`image_line: mstransform <image_line_mstransform>`).
 A third standard method currently NOT implemented in MeerKATHI consists of fitting and subtracting polynomials from
 individual image spectra in the data cube. This may be implemented in the future.
 
@@ -50,9 +50,9 @@ suffix appended to the file name. Subsequent steps of this worker can be instruc
 Doppler correction
 ------------------
 
-Doppler correction is performed with the CASA task MSTRANSFORM (parameter *doppler* in :ref:`image_HI: mstransform <image_HI_mstransform>`)
+Doppler correction is performed with the CASA task MSTRANSFORM (parameter *doppler* in :ref:`image_line: mstransform <image_line_mstransform>`)
 in the same run of this task used to perform continuum subtraction (see above). Users can select the telescope (choosing from a list
-of available names, see parameter *telescope* in :ref:`image_HI: mstransform <image_HI_mstransform>`), as well the regridding mode (channel, frequency
+of available names, see parameter *telescope* in :ref:`image_line: mstransform <image_line_mstransform>`), as well the regridding mode (channel, frequency
 or velocity), velocity type and output frame. Users can also set the frequency (or velocity, ...) grid they want to Doppler correct to, but
 they can also let MeerKATHI fin the optimal one given the input files. In the latter case, visibilities will be regridded to the widest
 Doppler-corrected spectral interval common to all input .MS files, at the worse Doppler-corrected spectral resolution of them all.
@@ -61,7 +61,7 @@ Doppler-corrected spectral interval common to all input .MS files, at the worse 
 Solar RFI flagging
 ------------------
 
-MeerKATHI flags solar RFI using SunBlocker (:ref:`image_HI: sunblocker <image_HI_sunblocker>`).
+MeerKATHI flags solar RFI using SunBlocker (:ref:`image_line: sunblocker <image_line_sunblocker>`).
 The main idea of SunBlocker is that, because solar RFI is broadband, averaging visibilities in
 frequency should enhance its detectability. However, the phase of solar RFI changes rapidly with frequency, leading to vectorial averages
 with very low amplitude. In order to enhance the detectability of the solar RFI SunBlocker performs a scalar average. It does so in uv cells of the

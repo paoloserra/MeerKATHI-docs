@@ -134,8 +134,8 @@ self-calibration. Automated convergence of the calibration procedure is optional
 available. This worker can also interpolate and transfer sky model and calibration tables
 to another .MS (e.g., from a coarse- to a fine-channel .MS file).
 
-:ref:`image_HI`
-^^^^^^^^^^^^^^^
+:ref:`image_line`
+^^^^^^^^^^^^^^^^^
 
 This worker creates spectral-line cubes and images. It can subtract the continuum via both
 model and UVLIN-like subtraction, Doppler correct, flag solar RFI, perform
