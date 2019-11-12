@@ -24,7 +24,7 @@ sortedWorkers = [
   'split_target',
   'masking',
   'self_cal',
-  'image_HI',
+  'image_line',
   ]
 
 

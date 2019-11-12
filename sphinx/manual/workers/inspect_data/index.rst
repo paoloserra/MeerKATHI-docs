@@ -70,7 +70,7 @@ Dignostic plots of the first-pass cross-calibrated data.
 **fields**
 --------------------------------------------------
 
-  *list* *of str*, *optional*, *default = pbcal, gcal*
+  *list* *of str*, *optional*, *default = bpcal, gcal*
 
   Fields to plot. Specify by field id, index or keys like, gcal, bpcal.
 

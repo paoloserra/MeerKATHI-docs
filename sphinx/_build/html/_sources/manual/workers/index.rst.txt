@@ -23,4 +23,4 @@ Workers parameters
    split_target/index.rst
    masking/index.rst
    self_cal/index.rst
-   image_HI/index.rst
+   image_line/index.rst
