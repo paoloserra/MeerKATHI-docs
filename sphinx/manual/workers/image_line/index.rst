@@ -12,7 +12,7 @@ image_line
 .. toctree::
    :maxdepth: 1
  
-Create HI data cube and detect sources therein
+Process visibilities for spectral line work and create line cubes and images.
 
 
 
