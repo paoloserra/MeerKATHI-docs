@@ -100,6 +100,18 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_minuvw_m:
+
+--------------------------------------------------
+**minuvw_m**
+--------------------------------------------------
+
+  *int*, *optional*, *default = 0*
+
+  Exclude baselines shorter than this value (given in metres) from the imaging and selfcalibration loop.
+
+
+
 .. _self_cal_img_npix:
 
 --------------------------------------------------
@@ -430,12 +442,6 @@ Perform Self calibration on the data
 
     scales of multiscale [0,10,20,etc, etc] in pixels
 
-  **minuvw_m**
-
-    *int*, *optional*, *default = 0*
-
-    exclude short baselines [m]
-
   **local_rms**
 
     *bool*, *optional*, *default = False*
@@ -709,12 +715,6 @@ Perform Self calibration on the data
       *list* *of int*, *optional*, *default = 0*
 
       Fields to plot. Specify by field id, index.
-
-    **corr**
-
-      *str*, *optional*, *default = X*
-
-      Correlation to plot. E.g. X/Y or H/V
 
 
 

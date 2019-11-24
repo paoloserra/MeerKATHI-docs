@@ -192,30 +192,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
       Enables plotting dignostics
 
-    **gaintype**
-
-      *str*, *optional*, *default = K*
-
-      Type of gain solution table
-
-    **field**
-
-      *list* *of str*, *optional*, *default = bpcal*
-
-      Fields to plot. Specify by field id, index.
-
-    **corr**
-
-      *str*, *optional*, *default = X*
-
-      Correlation to plot. E.g. X/Y or H/V
-
-    **htmlname**
-
-      *str*, *optional*, *default = ' '*
-
-      Output HTML file name
-
   **flag**
 
     Flagging based on delay correction solutions.
@@ -290,12 +266,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
     Solution interval for bandpass calibration.
 
-  **solint_PREB0**
-
-    *str*, *optional*, *default = 60s*
-
-    Solution interval for delay-correction calibration.
-
   **set_refant**
 
     *bool*, *optional*, *default = False*
@@ -367,30 +337,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
       *bool*, *optional*, *default = True*
 
       Enables plotting dignostics
-
-    **gaintype**
-
-      *str*, *optional*, *default = B*
-
-      Type of gain solution table
-
-    **field**
-
-      *list* *of str*, *optional*, *default = bpcal*
-
-      Fields to plot. Specify by field id, index.
-
-    **corr**
-
-      *str*, *optional*, *default = X*
-
-      Correlation to plot. E.g. X/Y or H/V
-
-    **htmlname**
-
-      *str*, *optional*, *default = ' '*
-
-      Output HTML file name
 
 
 
@@ -476,30 +422,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
       Enables plotting dignostics
 
-    **gaintype**
-
-      *str*, *optional*, *default = G*
-
-      Type of gain solution table
-
-    **field**
-
-      *list* *of str*, *optional*, *default = fcal*
-
-      Fields to plot. Specify by field id, index.
-
-    **corr**
-
-      *str*, *optional*, *default = X*
-
-      Correlation to plot. E.g. X/Y or H/V
-
-    **htmlname**
-
-      *str*, *optional*, *default = ' '*
-
-      Output HTML file name
-
 
 
 .. _cross_cal_gain_cal_gain:
@@ -584,30 +506,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
 
       Enables plotting dignostics
 
-    **gaintype**
-
-      *str*, *optional*, *default = G*
-
-      Type of gain solution table
-
-    **field**
-
-      *list* *of str*, *optional*, *default = gcal*
-
-      Fields to plot. Specify by field id, index.
-
-    **corr**
-
-      *str*, *optional*, *default = X*
-
-      Correlation to plot. E.g. X/Y or H/V
-
-    **htmlname**
-
-      *str*, *optional*, *default = ' '*
-
-      Output HTML file name
-
 
 
 .. _cross_cal_transfer_fluxscale:
@@ -645,30 +543,6 @@ Carry out Cross calibration of the data (delay, bandpass and gain calibration)
       *bool*, *optional*, *default = True*
 
       Enables plotting dignostics
-
-    **gaintype**
-
-      *str*, *optional*, *default = G*
-
-      Type of gain solution table
-
-    **field**
-
-      *list* *of str*, *optional*, *default = gcal*
-
-      Fields to plot. Specify by field id, index.
-
-    **corr**
-
-      *str*, *optional*, *default = X*
-
-      Correlation to plot. E.g. X/Y or H/V
-
-    **htmlname**
-
-      *str*, *optional*, *default = ' '*
-
-      Output HTML file name
 
 
 

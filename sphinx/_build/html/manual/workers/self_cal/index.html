@@ -107,6 +107,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#calibrate-with"><strong>calibrate_with</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#spwid"><strong>spwid</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ncpu"><strong>ncpu</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#minuvw-m"><strong>minuvw_m</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-npix"><strong>img_npix</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-padding"><strong>img_padding</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#img-mgain"><strong>img_mgain</strong></a></li>
@@ -244,6 +245,13 @@
 <blockquote>
 <div><p><em>int</em>, <em>optional</em>, <em>default = 5</em></p>
 <p>number of cpu’s to use</p>
+</div></blockquote>
+</div>
+<div class="section" id="minuvw-m">
+<span id="self-cal-minuvw-m"></span><h2><strong>minuvw_m</strong><a class="headerlink" href="#minuvw-m" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
+<p>Exclude baselines shorter than this value (given in metres) from the imaging and selfcalibration loop.</p>
 </div></blockquote>
 </div>
 <div class="section" id="img-npix">
@@ -458,11 +466,6 @@
 <blockquote>
 <div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 10, 20, 30</em></p>
 <p>scales of multiscale [0,10,20,etc, etc] in pixels</p>
-</div></blockquote>
-<p><strong>minuvw_m</strong></p>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 0</em></p>
-<p>exclude short baselines [m]</p>
 </div></blockquote>
 <p><strong>local_rms</strong></p>
 <blockquote>
@@ -684,11 +687,6 @@
 <blockquote>
 <div><p><em>list</em> <em>of int</em>, <em>optional</em>, <em>default = 0</em></p>
 <p>Fields to plot. Specify by field id, index.</p>
-</div></blockquote>
-<p><strong>corr</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = X</em></p>
-<p>Correlation to plot. E.g. X/Y or H/V</p>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>

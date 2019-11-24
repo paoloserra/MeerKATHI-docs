@@ -136,6 +136,34 @@ Flagging of the data.
 
 
 
+.. _flagging_flag_elevation:
+
+--------------------------------------------------
+**flag_elevation**
+--------------------------------------------------
+
+  Flag antennas with pointing elevation outisde the selected range through CASA FLAGDATA.
+
+  **enable**
+
+    *bool*, *optional*, *default = False*
+
+    Enable flagging based on pointing elevation.
+
+  **low**
+
+    *float*, *optional*, *default = 0*
+
+    Lower elevation limit. Antennas pointing at elevation below this value are flagged.
+
+  **high**
+
+    *float*, *optional*, *default = 90*
+
+    Upper elevation limit. Antennas pointing at elevation above this value are flagged.
+
+
+
 .. _flagging_flag_shadow:
 
 --------------------------------------------------

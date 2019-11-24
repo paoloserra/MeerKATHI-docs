@@ -99,6 +99,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#autoflag-autocorr-powerspectra"><strong>autoflag_autocorr_powerspectra</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flag-autocorr"><strong>flag_autocorr</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#quack-flagging"><strong>quack_flagging</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flag-elevation"><strong>flag_elevation</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flag-shadow"><strong>flag_shadow</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flag-spw"><strong>flag_spw</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flag-time"><strong>flag_time</strong></a></li>
@@ -259,6 +260,27 @@
 <blockquote>
 <div><p><em>{“beg”, “endb”, “end”, “tail”}</em>, <em>optional</em>, <em>default = beg</em></p>
 <p>Quack flagging mode. Either ‘beg’, which flags scan begining, ‘endb’, which flags end of the scan, ‘end’, which flags everything but the first specified seconds of the scan and ‘tail’ which flags all but the last specified seconds of the scan.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="flag-elevation">
+<span id="flagging-flag-elevation"></span><h2><strong>flag_elevation</strong><a class="headerlink" href="#flag-elevation" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Flag antennas with pointing elevation outisde the selected range through CASA FLAGDATA.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Enable flagging based on pointing elevation.</p>
+</div></blockquote>
+<p><strong>low</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0</em></p>
+<p>Lower elevation limit. Antennas pointing at elevation below this value are flagged.</p>
+</div></blockquote>
+<p><strong>high</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 90</em></p>
+<p>Upper elevation limit. Antennas pointing at elevation above this value are flagged.</p>
 </div></blockquote>
 </div></blockquote>
 </div>
