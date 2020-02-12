@@ -13,44 +13,40 @@
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../../genindex.html"/>
-        <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="MeerKATHI  documentation" href="../../../index.html"/>
-        <link rel="up" title="Workers parameters" href="../index.html"/>
-        <link rel="next" title="prepare_data" href="../prepare_data/index.html"/>
-        <link rel="prev" title="get_data" href="../get_data/index.html"/> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="prepare_data" href="../prepare_data/index.html" />
+    <link rel="prev" title="get_data" href="../get_data/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -81,7 +77,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
@@ -93,14 +92,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../get_data/index.html">get_data</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">observation_config</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#obsinfo"><strong>obsinfo</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#check-cals"><strong>Check_Cals</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#target"><strong>target</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gcal"><strong>gcal</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#bpcal"><strong>bpcal</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#fcal"><strong>fcal</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#xcal"><strong>xcal</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#reference-antenna"><strong>reference_antenna</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#primary-beam"><strong>primary_beam</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../prepare_data/index.html">prepare_data</a></li>
@@ -112,6 +109,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../image_line/index.html">image_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mosaic/index.html">mosaic</a></li>
 </ul>
 </li>
 </ul>
@@ -128,38 +126,58 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../../index.html">MeerKATHI</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MeerKATHI</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../../../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="../../index.html">Manual</a> &raquo;</li>
-      
+        
           <li><a href="../index.html">Workers parameters</a> &raquo;</li>
-      
-    <li>observation_config</li>
+        
+      <li>observation_config</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../../_sources/manual/workers/observation_config/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -194,101 +212,74 @@
 <div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
 <p>Returns sun free time range</p>
 </div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="check-cals">
-<span id="observation-config-check-cals"></span><h2><strong>Check_Cals</strong><a class="headerlink" href="#check-cals" title="Permalink to this headline">¶</a></h2>
+<p><strong>plot_elevation_tracks</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Should the existence of the  calibrators be checked for or only the target. Setting this to false allows the pipeline to run on split datasets. Default True</p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Make Elevation vs Hour angle plots for observed fields</p>
+</div></blockquote>
+<p><strong>plotter</strong></p>
+<blockquote>
+<div><p><em>{“plotms”, “owlcat”}</em>, <em>optional</em>, <em>default = owlcat</em></p>
+<p>Application to use for making plots</p>
+</div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="target">
 <span id="observation-config-target"></span><h2><strong>target</strong><a class="headerlink" href="#target" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
-<p>Target field. If set to ‘auto’ then will automatically set using JSON file from ‘obsinfo’</p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = all</em></p>
+<p>Field name of target field. Or ‘all’ for all the target fields.</p>
 </div></blockquote>
 </div>
 <div class="section" id="gcal">
 <span id="observation-config-gcal"></span><h2><strong>gcal</strong><a class="headerlink" href="#gcal" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
-<p>Gain calibrator field. If set to ‘auto’ then will automatically set using JSON file from ‘obsinfo’</p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = all</em></p>
+<p>Field name of gain (amplitude/phase) calibrator field. Or set as ‘all’ for all the gcal fields, ‘longest’ to setlect the gcal field observed for the longest time, ‘nearest’ to select the gcal field closest to the target. Note that if multiple targets and gcals are present, then ‘all’ (for both) means each target will be paired with the closest gcal.</p>
 </div></blockquote>
 </div>
 <div class="section" id="bpcal">
 <span id="observation-config-bpcal"></span><h2><strong>bpcal</strong><a class="headerlink" href="#bpcal" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
-<p>Bandpass calibrator field. If set to ‘auto’ then will automatically set using JSON file from ‘obsinfo’</p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = longest</em></p>
+<p>Field name of bandpass calibrator field. Or set as ‘all’ for all the bpcal fields, ‘longest’ to setlect the bpcal field observed for the longest time, ‘nearest’ to select the bpcal field closest to the target.</p>
 </div></blockquote>
 </div>
 <div class="section" id="fcal">
 <span id="observation-config-fcal"></span><h2><strong>fcal</strong><a class="headerlink" href="#fcal" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
-<p>Fluxscale calibrator field. If set to ‘auto’ then will automatically set using JSON file from ‘obsinfo’</p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = longest</em></p>
+<p>Field name of fluxscale calibrator field. Or set as ‘all’ for all the fcal fields, ‘longest’ to setlect the fcal field observed for the longest time, ‘nearest’ to select the fcal field closest   to the target.</p>
 </div></blockquote>
 </div>
 <div class="section" id="xcal">
 <span id="observation-config-xcal"></span><h2><strong>xcal</strong><a class="headerlink" href="#xcal" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = longest</em></p>
 <p>Crosshand phase angle calibrator. This calibrator must be linearly polarized and have a non-zero parallactic angle coverage at the time of observation to solve for the X-Y offsets in digitizers and the absolute polarization angle of the system. Successful calibration derotates U from V.</p>
 </div></blockquote>
 </div>
 <div class="section" id="reference-antenna">
 <span id="observation-config-reference-antenna"></span><h2><strong>reference_antenna</strong><a class="headerlink" href="#reference-antenna" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
-<p>Reference antenna. If ‘auto’ then MeerKATHI will automatically pick the reference antenna from the .JSON metadata file if available. The file name is the same as the input .MS file but with .JSON extension. This file is typically available only for old (ROACH2) MeerKAT data. For all other data the pipeline will likely throw an error and gracefully terminate. In that case the reference antenna should be set manually.</p>
-</div></blockquote>
-</div>
-<div class="section" id="primary-beam">
-<span id="observation-config-primary-beam"></span><h2><strong>primary_beam</strong><a class="headerlink" href="#primary-beam" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Generate primary beam model</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
-<p>Execute this section</p>
-</div></blockquote>
-<p><strong>freq</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = 855 1760 16</em></p>
-<p>A single freq, or the start, end freqs, and channel width in MHz</p>
-</div></blockquote>
-<p><strong>diameter</strong></p>
-<blockquote>
-<div><p><em>float</em>, <em>optional</em>, <em>default = 6.0</em></p>
-<p>Diameter of the required beam</p>
-</div></blockquote>
-<p><strong>pixels</strong></p>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 256</em></p>
-<p>Number of pixels on one side</p>
-</div></blockquote>
-<p><strong>coefficients</strong></p>
-<blockquote>
-<div><p><em>{“me”, “mh”}</em>, <em>optional</em>, <em>default = me</em></p>
-<p>Coeficients file name</p>
-</div></blockquote>
+<div><p><em>str</em></p>
+<p>Reference antenna.</p>
 </div></blockquote>
 </div>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../prepare_data/index.html" class="btn btn-neutral float-right" title="prepare_data" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../prepare_data/index.html" class="btn btn-neutral float-right" title="prepare_data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../get_data/index.html" class="btn btn-neutral" title="get_data" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../get_data/index.html" class="btn btn-neutral float-left" title="get_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -297,11 +288,11 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, MeerKATHI team.
+        &copy; Copyright 2019, MeerKATHI team
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -314,36 +305,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/language_data.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

@@ -82,13 +82,19 @@ Split and average target data
 
     *str*, *optional*, *default = corrected*
 
-    Column to split, default is 'data'. Which means use otf calibration.
+    Column to split, default is 'corrected'.
 
   **correlation**
 
     *str*, *optional*, *default = ' '*
 
     Select correlations
+
+  **usewtspectrum**
+
+    *bool*, *optional*, *default = True*
+
+    Create a WEIGHT_SPECTRUM column in the output MS.
 
   **spw**
 
@@ -231,20 +237,4 @@ Split and average target data
     *bool*, *optional*, *default = True*
 
     Run MSUtils function
-
-
-
-.. _split_target_init_legacy_flagset:
-
---------------------------------------------------
-**init_legacy_flagset**
---------------------------------------------------
-
-  Save existing flags to legacy flagset
-
-  **enable**
-
-    *bool*, *optional*, *default = True*
-
-    Run this section
 

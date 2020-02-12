@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mosaic &mdash; MeerKATHI  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Acknowledgements" href="../../../credits/index.html" />
+    <link rel="prev" title="image_line" href="../image_line/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> MeerKATHI
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configfile/index.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/index.html">Data products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reduction/index.html">Data reduction</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Workers parameters</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../general/index.html">general</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_data/index.html">get_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../observation_config/index.html">observation_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prepare_data/index.html">prepare_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flagging/index.html">flagging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cross_cal/index.html">cross_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../polcal/index.html">polcal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../inspect_data/index.html">inspect_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../split_target/index.html">split_target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../image_line/index.html">image_line</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mosaic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enable"><strong>enable</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mosaic-type"><strong>mosaic_type</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#domontage"><strong>domontage</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cutoff"><strong>cutoff</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#use-mfs-images"><strong>use_MFS_images</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#name"><strong>name</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#target-images"><strong>target_images</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dish-diameter"><strong>dish_diameter</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ref-frequency"><strong>ref_frequency</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#label"><strong>label</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#line-name"><strong>line_name</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits/index.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MeerKATHI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Manual</a> &raquo;</li>
+        
+          <li><a href="../index.html">Workers parameters</a> &raquo;</li>
+        
+      <li>mosaic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/manual/workers/mosaic/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mosaic">
+<span id="id1"></span><h1>mosaic<a class="headerlink" href="#mosaic" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Mosaic images output by selfcal or image_line worker.</p>
+<div class="section" id="enable">
+<span id="mosaic-enable"></span><h2><strong>enable</strong><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>bool</em></p>
+<p>Execute mosaic segment(yes/no). Default is no.</p>
+</div></blockquote>
+</div>
+<div class="section" id="mosaic-type">
+<span id="mosaic-mosaic-type"></span><h2><strong>mosaic_type</strong><a class="headerlink" href="#mosaic-type" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em></p>
+<p>Type of mosaic to be made(continuum/spectral). Default is continuum.</p>
+</div></blockquote>
+</div>
+<div class="section" id="domontage">
+<span id="mosaic-domontage"></span><h2><strong>domontage</strong><a class="headerlink" href="#domontage" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Re-grid the input images, and associated beams. Default is true.</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Execute this domontage section.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="cutoff">
+<span id="mosaic-cutoff"></span><h2><strong>cutoff</strong><a class="headerlink" href="#cutoff" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 0.1</em></p>
+<p>The cutoff in the primary beam to use, assuming a Gaussian at the moment. Default is 0.1 (signifying 10 per cent).</p>
+</div></blockquote>
+</div>
+<div class="section" id="use-mfs-images">
+<span id="mosaic-use-mfs-images"></span><h2><strong>use_MFS_images</strong><a class="headerlink" href="#use-mfs-images" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Indicate that the images to be mosaicked were created using MFS. Default is false.</p>
+</div></blockquote>
+</div>
+<div class="section" id="name">
+<span id="mosaic-name"></span><h2><strong>name</strong><a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
+<p>The prefix to be used for output files. Default is the pipeline prefix(pipeline.prefix).</p>
+</div></blockquote>
+</div>
+<div class="section" id="target-images">
+<span id="mosaic-target-images"></span><h2><strong>target_images</strong><a class="headerlink" href="#target-images" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>seq</em>, <em>optional</em>, <em>default = directory/first_image.fits, directory/second_image.fits</em></p>
+<p>List of images to be mosaicked, with suffix of image.fits being expected.</p>
+</div></blockquote>
+</div>
+<div class="section" id="dish-diameter">
+<span id="mosaic-dish-diameter"></span><h2><strong>dish_diameter</strong><a class="headerlink" href="#dish-diameter" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 13.5</em></p>
+<p>If no continuum pb.fits are already in place, user needs to specify the dish diameter(in units of m) so that rudimentary primary beams can be created.</p>
+</div></blockquote>
+</div>
+<div class="section" id="ref-frequency">
+<span id="mosaic-ref-frequency"></span><h2><strong>ref_frequency</strong><a class="headerlink" href="#ref-frequency" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 1383685546.875</em></p>
+<p>If no continuum pb.fits are already in place, user needs to specify the reference frequency(in units of Hz) so that rudimentary primary beams can be created.</p>
+</div></blockquote>
+</div>
+<div class="section" id="label">
+<span id="mosaic-label"></span><h2><strong>label</strong><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = corr</em></p>
+<p>For autoselection of images, this needs to match the label setting used for the self_cal worker(when mosaicking continuum images) or the image_line worker(when mosaicking cubes).</p>
+</div></blockquote>
+</div>
+<div class="section" id="line-name">
+<span id="mosaic-line-name"></span><h2><strong>line_name</strong><a class="headerlink" href="#line-name" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = HI</em></p>
+<p>Spectral mode only - - If autoselection is used to find the final cubes, this needs to match the line_name parameter used for the image_line_worker. Default is HI.</p>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../credits/index.html" class="btn btn-neutral float-right" title="Acknowledgements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../image_line/index.html" class="btn btn-neutral float-left" title="image_line" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, MeerKATHI team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

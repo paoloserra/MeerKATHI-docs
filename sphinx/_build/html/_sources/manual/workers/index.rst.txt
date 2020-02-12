@@ -24,3 +24,4 @@ Workers parameters
    masking/index.rst
    self_cal/index.rst
    image_line/index.rst
+   mosaic/index.rst

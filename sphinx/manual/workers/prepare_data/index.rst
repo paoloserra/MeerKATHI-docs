@@ -44,6 +44,18 @@ Prepare the data for calibration and imaging.
 
 
 
+.. _prepare_data_clear_cal:
+
+--------------------------------------------------
+**clear_cal**
+--------------------------------------------------
+
+  *bool*, *optional*, *default = False*
+
+  Clears out calibrated data and resets previous predicted model
+
+
+
 .. _prepare_data_manage_flags:
 
 --------------------------------------------------
@@ -78,41 +90,51 @@ Prepare the data for calibration and imaging.
 
 
 
-.. _prepare_data_add_spectral_weights:
+.. _prepare_data_spectral_weights:
 
 --------------------------------------------------
-**add_spectral_weights**
+**spectral_weights**
 --------------------------------------------------
 
-  Add spectral weights column to the measurement set.
+  How to initialize spectral weights
 
   **enable**
 
-    *bool*, *optional*, *default = false*
+    *bool*, *optional*, *default = False*
 
-    Enables addition of spectral weights column to the measurement set.
+    Enable this segment
 
-  **weight_columns**
+  **mode**
 
-    *list* *of str*, *optional*, *default = WEIGHT, WEIGHT_SPECTRUM*
+    *{"uniform", "estimate", "delete"}*, *optional*, *default = uniform*
 
-    column names
+    uniform: Set all weights to unity, estimate: Estimate spectral weights from frequency-dependent SEFD/Tsys/Noise values, delete: Delete WEIGHT_SPECTRUM column if it exists. if 'estimate', then further settings are available in the 'estimate' segement of this section
 
-  **noise_columns**
+  **estimate**
 
-    *list* *of str*, *optional*, *default = SIGMA, SIGMA_SPECTRUM*
+    Estimate spectral weights from frequency-dependent SEFD/Tsys/Noise values
 
-    column names for noise
+    **stats_data**
 
-  **write_to_ms**
+      *str*, *optional*, *default = use_package_meerkat_spec*
 
-    *bool*, *optional*, *default = true*
+      File with SEFD/Tsys/Noise data. If data is from MeerKAT telescope, you can specify 'use_package_meerkat_spec' to use package data.
 
-    write columns to file
+    **weight_columns**
 
-  **stats_data**
+      *list* *of str*, *optional*, *default = WEIGHT, WEIGHT_SPECTRUM*
 
-    *str*, *optional*, *default = use_package_meerkat_spec*
+      column names
 
-    which statistics for the file.
+    **noise_columns**
+
+      *list* *of str*, *optional*, *default = SIGMA, SIGMA_SPECTRUM*
+
+      column names for noise
+
+    **write_to_ms**
+
+      *bool*, *optional*, *default = True*
+
+      write columns to file
 

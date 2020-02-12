@@ -48,17 +48,17 @@ Setup some basic observation information
 
     Returns sun free time range
 
+  **plot_elevation_tracks**
 
+    *bool*, *optional*, *default = False*
 
-.. _observation_config_Check_Cals:
+    Make Elevation vs Hour angle plots for observed fields
 
---------------------------------------------------
-**Check_Cals**
---------------------------------------------------
+  **plotter**
 
-  *bool*, *optional*, *default = True*
+    *{"plotms", "owlcat"}*, *optional*, *default = owlcat*
 
-  Should the existence of the  calibrators be checked for or only the target. Setting this to false allows the pipeline to run on split datasets. Default True
+    Application to use for making plots
 
 
 
@@ -68,9 +68,9 @@ Setup some basic observation information
 **target**
 --------------------------------------------------
 
-  *str*, *optional*, *default = auto*
+  *list* *of str*, *optional*, *default = all*
 
-  Target field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
+  Field name of target field. Or 'all' for all the target fields.
 
 
 
@@ -80,9 +80,9 @@ Setup some basic observation information
 **gcal**
 --------------------------------------------------
 
-  *str*, *optional*, *default = auto*
+  *list* *of str*, *optional*, *default = all*
 
-  Gain calibrator field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
+  Field name of gain (amplitude/phase) calibrator field. Or set as 'all' for all the gcal fields, 'longest' to setlect the gcal field observed for the longest time, 'nearest' to select the gcal field closest to the target. Note that if multiple targets and gcals are present, then 'all' (for both) means each target will be paired with the closest gcal.
 
 
 
@@ -92,9 +92,9 @@ Setup some basic observation information
 **bpcal**
 --------------------------------------------------
 
-  *str*, *optional*, *default = auto*
+  *list* *of str*, *optional*, *default = longest*
 
-  Bandpass calibrator field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
+  Field name of bandpass calibrator field. Or set as 'all' for all the bpcal fields, 'longest' to setlect the bpcal field observed for the longest time, 'nearest' to select the bpcal field closest to the target.
 
 
 
@@ -104,9 +104,9 @@ Setup some basic observation information
 **fcal**
 --------------------------------------------------
 
-  *str*, *optional*, *default = auto*
+  *list* *of str*, *optional*, *default = longest*
 
-  Fluxscale calibrator field. If set to 'auto' then will automatically set using JSON file from 'obsinfo'
+  Field name of fluxscale calibrator field. Or set as 'all' for all the fcal fields, 'longest' to setlect the fcal field observed for the longest time, 'nearest' to select the fcal field closest   to the target.
 
 
 
@@ -116,7 +116,7 @@ Setup some basic observation information
 **xcal**
 --------------------------------------------------
 
-  *str*, *optional*, *default = auto*
+  *list* *of str*, *optional*, *default = longest*
 
   Crosshand phase angle calibrator. This calibrator must be linearly polarized and have a non-zero parallactic angle coverage at the time of observation to solve for the X-Y offsets in digitizers and the absolute polarization angle of the system. Successful calibration derotates U from V.
 
@@ -128,47 +128,7 @@ Setup some basic observation information
 **reference_antenna**
 --------------------------------------------------
 
-  *str*, *optional*, *default = auto*
+  *str*
 
-  Reference antenna. If 'auto' then MeerKATHI will automatically pick the reference antenna from the .JSON metadata file if available. The file name is the same as the input .MS file but with .JSON extension. This file is typically available only for old (ROACH2) MeerKAT data. For all other data the pipeline will likely throw an error and gracefully terminate. In that case the reference antenna should be set manually.
-
-
-
-.. _observation_config_primary_beam:
-
---------------------------------------------------
-**primary_beam**
---------------------------------------------------
-
-  Generate primary beam model
-
-  **enable**
-
-    *bool*, *optional*, *default = False*
-
-    Execute this section
-
-  **freq**
-
-    *str*, *optional*, *default = 855 1760 16*
-
-    A single freq, or the start, end freqs, and channel width in MHz
-
-  **diameter**
-
-    *float*, *optional*, *default = 6.0*
-
-    Diameter of the required beam
-
-  **pixels**
-
-    *int*, *optional*, *default = 256*
-
-    Number of pixels on one side
-
-  **coefficients**
-
-    *{"me", "mh"}*, *optional*, *default = me*
-
-    Coeficients file name
+  Reference antenna.
 

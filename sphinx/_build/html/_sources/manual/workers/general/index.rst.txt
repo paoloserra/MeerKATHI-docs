@@ -86,3 +86,15 @@ General pipeline information, data IDs, prefixes for output
 
   Initialise pipeline by copying input files (meerkat specific; flagging strategies, beam model, etc.)
 
+
+
+.. _general_init_notebooks:
+
+--------------------------------------------------
+**init_notebooks**
+--------------------------------------------------
+
+  *list* *of str*, *optional*, *default = std-progress-report*
+
+  Install standard radiopadre notebooks, given by list of basenames
+

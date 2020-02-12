@@ -25,6 +25,7 @@ sortedWorkers = [
   'masking',
   'self_cal',
   'image_line',
+  'mosaic',
   ]
 
 

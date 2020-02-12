@@ -13,44 +13,40 @@
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../../genindex.html"/>
-        <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="MeerKATHI  documentation" href="../../../index.html"/>
-        <link rel="up" title="Data reduction" href="../index.html"/>
-        <link rel="next" title="Continuum imaging and self-calibration" href="../selfcal/index.html"/>
-        <link rel="prev" title="Flag data" href="../flag/index.html"/> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Continuum imaging and self-calibration" href="../selfcal/index.html" />
+    <link rel="prev" title="Flag data" href="../flag/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -81,7 +77,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
@@ -107,7 +106,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../workers/index.html">Workers parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../credits/index.html">Acknowledgements</a></li>
 </ul>
 
@@ -120,38 +118,58 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../../index.html">MeerKATHI</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MeerKATHI</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../../../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="../../index.html">Manual</a> &raquo;</li>
-      
+        
           <li><a href="../index.html">Data reduction</a> &raquo;</li>
-      
-    <li>Cross-calibration</li>
+        
+      <li>Cross-calibration</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../../_sources/manual/reduction/crosscal/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -178,28 +196,28 @@ settings makes physical sense.</p>
 <h2>Preliminary steps<a class="headerlink" href="#preliminary-steps" title="Permalink to this headline">¶</a></h2>
 <p>Before starting users can take the following optional steps.</p>
 <ul class="simple">
-<li>Set up a label which will be appended to all
-cross-calibration products (i.e., tables and plots; <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-label"><span class="std std-ref">cross_cal: label</span></a>)</li>
-<li>Reinitialise the .MS for calibration with the CASA task CLEARCAL
-(<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-clear-cal"><span class="std std-ref">cross_cal: clear_cal</span></a>). Given the users’ field selection
+<li><p>Set up a label which will be appended to all
+cross-calibration products (i.e., tables and plots; <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-label"><span class="std std-ref">cross_cal: label</span></a>)</p></li>
+<li><p>Reinitialise the .MS for calibration with the CASA task CLEARCAL
+(<span class="xref std std-ref">cross_cal: clear_cal</span>). Given the users’ field selection
 for this task (with the <em>field</em> parameter) MeerKATHI sets the MODEL_DATA column
 to unity in total intensity and zero in polarization, sets the
 CORRECTED_DATA column equal to the DATA column, and optionally adds a MODEL_DATA
 column if not already present. Selected fields can be specified with the field number or name
 as it appears in the metadata, or with the field code within MeerKATHI (typically “fcal”, “bpcal”;
 field codes are set by the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker).
-Multiple fields can be selected.</li>
-<li>Select the UV range that should be used to calibrate the data
+Multiple fields can be selected.</p></li>
+<li><p>Select the UV range that should be used to calibrate the data
 (<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-uvrange"><span class="std std-ref">cross_cal: uvrange</span></a>). This can be useful, for example,
-to exclude short baselines from the calibration.</li>
-<li>Fill the MODEL_DATA column based on a calibrator model with the CASA task SETJY
+to exclude short baselines from the calibration.</p></li>
+<li><p>Fill the MODEL_DATA column based on a calibrator model with the CASA task SETJY
 (<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-set-model"><span class="std std-ref">cross_cal: set_model</span></a>). Various models are available
 and can be chosen using a number of additional parameters.
 For PKS 1934-638, users can choose a sky model which includes confusing
 sources and their spectral shape as seen through a frequency-dependent MeerKAT primary beam.
 This is recommended for MeerKAT observations. Alternatively, users can choose a point
 source model. When available, SARAO models are adopted. Alternatively, MeerKATHI uses the
-NRAO models.</li>
+NRAO models.</p></li>
 </ul>
 </div>
 <div class="section" id="delay-calibration">
@@ -212,19 +230,19 @@ Therefore, the choice of reference antennas is very important. For example, refe
 involved in short baselines should probably be avoided. Also, care should be taken that the reference
 antenna is not involved in heavily flagged baselines, as this could result in loss of a much larger
 fraction of the array due to missing delay calibration.</p>
-<p>The delay calibration options are set at <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-delay-cal"><span class="std std-ref">cross_cal: delay_cal</span></a>.
+<p>The delay calibration options are set at <span class="xref std std-ref">cross_cal: delay_cal</span>.
 Users can set the following parameters:</p>
 <ul class="simple">
-<li>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
+<li><p>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
 field code within MeerKATHI (“fcal”, “bpcal”, “gcal”; field codes are set by the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
-worker). Multiple fields can be used for the delay calibration.</li>
-<li>Solution time interval (<em>solint</em>). Set this to ‘inf’ for time-independent delays. Note that for fully
-time-independent delays you may need to set the <em>combine</em> option below to an appropriate value.</li>
-<li>Whether and how to combine the data (<em>combine</em>). If this is an empty string then data are not combined
+worker). Multiple fields can be used for the delay calibration.</p></li>
+<li><p>Solution time interval (<em>solint</em>). Set this to ‘inf’ for time-independent delays. Note that for fully
+time-independent delays you may need to set the <em>combine</em> option below to an appropriate value.</p></li>
+<li><p>Whether and how to combine the data (<em>combine</em>). If this is an empty string then data are not combined
 and at least one delay solution is calculated per observation, field, scan, spw (even for
-<em>solint=”inf”</em>).</li>
-<li>Minimum S/N ratio (<em>minsnr</em>). No delay is calculated for solution intervals with a S/N ratio
-below this value.</li>
+<em>solint=”inf”</em>).</p></li>
+<li><p>Minimum S/N ratio (<em>minsnr</em>). No delay is calculated for solution intervals with a S/N ratio
+below this value.</p></li>
 </ul>
 <p>Once a delay calibration has been obtaiend users can flag the data based on the delay solutions (<em>flag</em>).
 This is done with the CASA task FLAGDATA.
@@ -236,27 +254,27 @@ default values.</p>
 <div class="section" id="bandpass-calibration">
 <h2>Bandpass calibration<a class="headerlink" href="#bandpass-calibration" title="Permalink to this headline">¶</a></h2>
 <p>Antenna-based bandpass calibration is performed with the CASA tasks BANDPASS and, optionally, GAINCAL.
-Its options are set at <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-bp-cal"><span class="std std-ref">cross_cal: bp_cal</span></a>.
+Its options are set at <span class="xref std std-ref">cross_cal: bp_cal</span>.
 The following bandpass calibration options are similar to those for the delay calibration (see above):</p>
 <ul class="simple">
-<li>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
+<li><p>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
 field code within MeerKATHI (typically “bpcal”; field codes are set by the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
-worker). Multiple fields can be used for the bandpass calibration.</li>
-<li>Solution time interval (<em>solint</em>). Set this to ‘inf’ for a time-independent bandpass. Note that for a fully
-time-independent bandpass you may need to set the <em>combine</em> option below to an appropriate value.</li>
-<li>Whether and how to combine the data (<em>combine</em>). If this is an empty string then data are not combined
+worker). Multiple fields can be used for the bandpass calibration.</p></li>
+<li><p>Solution time interval (<em>solint</em>). Set this to ‘inf’ for a time-independent bandpass. Note that for a fully
+time-independent bandpass you may need to set the <em>combine</em> option below to an appropriate value.</p></li>
+<li><p>Whether and how to combine the data (<em>combine</em>). If this is an empty string then data are not combined
 and at least one bandpass solution is calculated per observation, field, scan (even for
-<em>solint=”inf”</em>).</li>
-<li>Minimum S/N ratio (<em>minsnr</em>). No bandpass is calculated for solution intervals with a S/N ratio
-below this value.</li>
+<em>solint=”inf”</em>).</p></li>
+<li><p>Minimum S/N ratio (<em>minsnr</em>). No bandpass is calculated for solution intervals with a S/N ratio
+below this value.</p></li>
 </ul>
 <p>Bandpass calibration has the following additional options:</p>
 <ul class="simple">
-<li>Minimum number of baselines (<em>minnrbl</em>). Given a solution interval, no bandpass is calculated for antennas
-with less baselines than this minimum number.</li>
-<li>Whether to set the reference antenna to the value given in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
-(<em>set_refant</em>). If <em>false</em> then CASA BANDPASS will decide which reference antenna to use.</li>
-<li>Whether to normalise the bandpass to have average amplitude and phase of 1 and 0, repsectively (<em>solnorm</em>).</li>
+<li><p>Minimum number of baselines (<em>minnrbl</em>). Given a solution interval, no bandpass is calculated for antennas
+with less baselines than this minimum number.</p></li>
+<li><p>Whether to set the reference antenna to the value given in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
+(<em>set_refant</em>). If <em>false</em> then CASA BANDPASS will decide which reference antenna to use.</p></li>
+<li><p>Whether to normalise the bandpass to have average amplitude and phase of 1 and 0, repsectively (<em>solnorm</em>).</p></li>
 </ul>
 <p>MeerKATHI can calibrate the bandpass with the above options in a single run of the CASA task BANDPASS.
 However, a single run of BANDPASS may not be ideal when calculating a time-independent bandpass from
@@ -268,15 +286,15 @@ time-averaging the calibrator’s visibilities and calculating the time-independ
 MeerKATHI allows users to do this through the parameter <em>remove_ph_time_var</em>.
 Setting this parameter to <em>true</em> results in the following three steps (instead of a single run of BANDPASS):</p>
 <ul class="simple">
-<li>A first run of BANDPASS with the solution interval set by <em>solint</em> and with <em>combine=”“</em> (regardless of
+<li><p>A first run of BANDPASS with the solution interval set by <em>solint</em> and with <em>combine=””</em> (regardless of
 what users set <em>combine</em> to be). This results in a preliminary
-bandpass solution per observation, field, scan even for <em>solint=”inf”</em>.</li>
-<li>A run of the the CASA task GAINCAL applying the above bandpass on the fly and solving for
+bandpass solution per observation, field, scan even for <em>solint=”inf”</em>.</p></li>
+<li><p>A run of the the CASA task GAINCAL applying the above bandpass on the fly and solving for
 time-dependent antenna gains. The use of the preliminary bandpass ensures a good quality of the
-time-dependent gain calibration.</li>
-<li>A second run of BANDPASS with the solution interval set by <em>solint</em> and combining the data as
+time-dependent gain calibration.</p></li>
+<li><p>A second run of BANDPASS with the solution interval set by <em>solint</em> and combining the data as
 requested by the user with <em>combine</em>. The above gain calibration is applied on the fly, resulting in
-a more accurate time-independent bandpass.</li>
+a more accurate time-independent bandpass.</p></li>
 </ul>
 <p>Finally, the solutions can be plotted (<em>plot</em>). Normally, all plotting options can be kept to their
 default values.</p>
@@ -284,23 +302,23 @@ default values.</p>
 <div class="section" id="flux-scale-calibration">
 <h2>Flux scale calibration<a class="headerlink" href="#flux-scale-calibration" title="Permalink to this headline">¶</a></h2>
 <p>Antenna-based flux scale calibration is performed with the CASA task GAINCAL. Its options are set at
-<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-gain-cal-flux"><span class="std std-ref">cross_cal: gain_cal_flux</span></a>.</p>
+<span class="xref std std-ref">cross_cal: gain_cal_flux</span>.</p>
 <p>The flux scale calibration options are similar to those for the bandpass calibration (see above):</p>
 <ul class="simple">
-<li>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
+<li><p>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
 field code within MeerKATHI (typically “fcal”; field codes are set by the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
-worker). Multiple fields can be used for the flux scale calibration.</li>
-<li>Solution time interval (<em>solint</em>). Set this to ‘inf’ for a time-independent calibration. Note that for a fully
-time-independent calibration you may need to set the <em>combine</em> option below to an appropriate value.</li>
-<li>Whether and how to combine the data (<em>combine</em>). If this is an empty string then data are not combined
+worker). Multiple fields can be used for the flux scale calibration.</p></li>
+<li><p>Solution time interval (<em>solint</em>). Set this to ‘inf’ for a time-independent calibration. Note that for a fully
+time-independent calibration you may need to set the <em>combine</em> option below to an appropriate value.</p></li>
+<li><p>Whether and how to combine the data (<em>combine</em>). If this is an empty string then data are not combined
 and at least one flux scale solution is calculated per observation, field, scan, spw (even for
-<em>solint=”inf”</em>).</li>
-<li>Minimum S/N ratio (<em>minsnr</em>). No flux scale calibration is calculated for solution intervals with a S/N ratio
-below this value.</li>
-<li>Minimum number of baselines (<em>minnrbl</em>). Given a solution interval, no flux scale calibration is calculated for
-antennas with less baselines than this minimum number.</li>
-<li>Whether to set the reference antenna to the value given in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
-(<em>set_refant</em>). If <em>false</em> then CASA GAINCAL will decide which reference antenna to use.</li>
+<em>solint=”inf”</em>).</p></li>
+<li><p>Minimum S/N ratio (<em>minsnr</em>). No flux scale calibration is calculated for solution intervals with a S/N ratio
+below this value.</p></li>
+<li><p>Minimum number of baselines (<em>minnrbl</em>). Given a solution interval, no flux scale calibration is calculated for
+antennas with less baselines than this minimum number.</p></li>
+<li><p>Whether to set the reference antenna to the value given in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
+(<em>set_refant</em>). If <em>false</em> then CASA GAINCAL will decide which reference antenna to use.</p></li>
 </ul>
 <p>Finally, the solutions can be plotted (<em>plot</em>). Normally, all plotting options can be kept to their
 default values.</p>
@@ -308,23 +326,23 @@ default values.</p>
 <div class="section" id="gain-calibration">
 <h2>Gain calibration<a class="headerlink" href="#gain-calibration" title="Permalink to this headline">¶</a></h2>
 <p>Antenna-based gain calibration is performed with the CASA task GAINCAL. Its options are set at
-<a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-gain-cal-gain"><span class="std std-ref">cross_cal: gain_cal_gain</span></a>.</p>
+<span class="xref std std-ref">cross_cal: gain_cal_gain</span>.</p>
 <p>The gain scale calibration options are identical to those for the flux calibration (see above):</p>
 <ul class="simple">
-<li>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
+<li><p>Field to use (<em>field</em>). This can be the field number or name as it appears in the metadata, or the
 field code within MeerKATHI (typically “gcal”; field codes are set by the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a>
-worker). Multiple fields can be used for the gain calibration.</li>
-<li>Solution time interval (<em>solint</em>). Set this to ‘inf’ for a time-independent calibration. Note that for a fully
-time-independent calibration you may need to set the <em>combine</em> option below to an appropriate value.</li>
-<li>Whether and how to combine the data (<em>combine</em>). If this is an empty string then data are not combined
+worker). Multiple fields can be used for the gain calibration.</p></li>
+<li><p>Solution time interval (<em>solint</em>). Set this to ‘inf’ for a time-independent calibration. Note that for a fully
+time-independent calibration you may need to set the <em>combine</em> option below to an appropriate value.</p></li>
+<li><p>Whether and how to combine the data (<em>combine</em>). If this is an empty string then data are not combined
 and at least one gain solution is calculated per observation, field, scan, spw (even for
-<em>solint=”inf”</em>). This is probably the mode of interest in most cases.</li>
-<li>Minimum S/N ratio (<em>minsnr</em>). No gain calibration is calculated for solution intervals with a S/N ratio
-below this value.</li>
-<li>Minimum number of baselines (<em>minnrbl</em>). Given a solution interval, no gain calibration is calculated for
-antennas with less baselines than this minimum number.</li>
-<li>Whether to set the reference antenna to the value given in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
-(<em>set_refant</em>). If <em>false</em> then CASA GAINCAL will decide which reference antenna to use.</li>
+<em>solint=”inf”</em>). This is probably the mode of interest in most cases.</p></li>
+<li><p>Minimum S/N ratio (<em>minsnr</em>). No gain calibration is calculated for solution intervals with a S/N ratio
+below this value.</p></li>
+<li><p>Minimum number of baselines (<em>minnrbl</em>). Given a solution interval, no gain calibration is calculated for
+antennas with less baselines than this minimum number.</p></li>
+<li><p>Whether to set the reference antenna to the value given in the <a class="reference internal" href="../../workers/observation_config/index.html#observation-config"><span class="std std-ref">observation_config</span></a> worker
+(<em>set_refant</em>). If <em>false</em> then CASA GAINCAL will decide which reference antenna to use.</p></li>
 </ul>
 <p>Finally, the gain solutions can be plotted (<em>plot</em>). Normally, all plotting options can be kept to their
 default values.</p>
@@ -337,7 +355,7 @@ of the variation of the gain amplitude with time might be provided by the gain c
 which is based on the typically more frequent observation of a gain calibrator.
 These gain amplitudes do not give a reliable, absolute flux scale, but can be scaled to the gain
 amplitudes obtained from the flux calibrator. Within MeerKATHI, this step is performed with the CASA
-task FLUXSCALE. Its options are set at <a class="reference internal" href="../../workers/cross_cal/index.html#cross-cal-transfer-fluxscale"><span class="std std-ref">cross_cal: transfer_fluxscale</span></a>.</p>
+task FLUXSCALE. Its options are set at <span class="xref std std-ref">cross_cal: transfer_fluxscale</span>.</p>
 <p>The only availabel options are the field(s) from which the flux scale was derived (<em>reference</em>) and those
 whose gains should be scaled (<em>transfer</em>). As for all other steps above, fields can be specified
 with the field number or name as it appears in the metadata, or the field code within MeerKATHI. Typically
@@ -357,12 +375,12 @@ default values.</p>
 <p>MeerKATHI can apply the cross calibration tables to all calibrators (useful for diagnostics) and to the science
 target. In doing so it will use the following interpolation rules:</p>
 <ul class="simple">
-<li>Delay calibration: applied to the fields bpcal, gcal, target with nearest, linear, linear interpolation, respectively.</li>
-<li>Bandpass calibration: applied to the fields bpcal, gcal, target with nearest, linear, linear interpolation, respectively.</li>
-<li>Gain calibration before bootstrapping the flux scale: applied to the fields bpcal, gcal, target
-with linear, linear, linear interpolation, respectively.</li>
-<li>Gain calibration after bootstrapping the flux scale: applied to the fields bpcal, gcal, target
-with linear, nearest, linear interpolation, repsectively.</li>
+<li><p>Delay calibration: applied to the fields bpcal, gcal, target with nearest, linear, linear interpolation, respectively.</p></li>
+<li><p>Bandpass calibration: applied to the fields bpcal, gcal, target with nearest, linear, linear interpolation, respectively.</p></li>
+<li><p>Gain calibration before bootstrapping the flux scale: applied to the fields bpcal, gcal, target
+with linear, linear, linear interpolation, respectively.</p></li>
+<li><p>Gain calibration after bootstrapping the flux scale: applied to the fields bpcal, gcal, target
+with linear, nearest, linear interpolation, repsectively.</p></li>
 </ul>
 <p>The calibrated caibrators’ visibilities can be inspected to check whether the calibration is correct. This is
 done by the <a class="reference internal" href="../../workers/inspect_data/index.html#inspect-data"><span class="std std-ref">inspect_data</span></a> worker. A number of .PNG plots are produced, such as phase-vs-amplitude and
@@ -373,15 +391,16 @@ real-vs-imaginary.</p>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../selfcal/index.html" class="btn btn-neutral float-right" title="Continuum imaging and self-calibration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../selfcal/index.html" class="btn btn-neutral float-right" title="Continuum imaging and self-calibration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../flag/index.html" class="btn btn-neutral" title="Flag data" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../flag/index.html" class="btn btn-neutral float-left" title="Flag data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -390,11 +409,11 @@ real-vs-imaginary.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, MeerKATHI team.
+        &copy; Copyright 2019, MeerKATHI team
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -407,36 +426,15 @@ real-vs-imaginary.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/language_data.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

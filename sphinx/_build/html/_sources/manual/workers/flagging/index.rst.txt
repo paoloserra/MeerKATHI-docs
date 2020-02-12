@@ -238,7 +238,13 @@ Flagging of the data.
 
     *str*, *optional*, *default = ' '*
 
-    Timerange to flag. Given in format 'YYYY/MM/DD/HH:MM:SS-YYYY/MM/DD/HH:MM:SS'.
+    Timerange to flag. Required in the format 'YYYY/MM/DD/HH:MM:SS-YYYY/MM/DD/HH:MM:SS'.
+
+  **ensure_valid_selection**
+
+    *bool*, *optional*, *default = False*
+
+    Check whether the timerange is in the ms being considered. This stops the pipeline from crashing when multiple dataset are being processed.
 
 
 
@@ -266,7 +272,13 @@ Flagging of the data.
 
     *str*, *optional*, *default = ' '*
 
-    Timerange to flag. Given in format 'YYYY/MM/DD/HH:MM:SS-YYYY/MM/DD/HH:MM:SS'.
+    Timerange to flag. Required in the format 'YYYY/MM/DD/HH:MM:SS-YYYY/MM/DD/HH:MM:SS'.
+
+  **ensure_valid_selection**
+
+    *bool*, *optional*, *default = False*
+
+    Check whether the timerange is in the ms being considered. This stops the pipeline from crashing when multiple dataset are being processed.
 
 
 
@@ -336,7 +348,7 @@ Flagging of the data.
 
   **flagger**
 
-    *{"aoflagger", "tricolour"}*, *optional*, *default = aoflagger*
+    *{"aoflagger", "tricolour", "tfcrop"}*, *optional*, *default = aoflagger*
 
     Choose flagger for automatic flagging
 
@@ -379,6 +391,42 @@ Flagging of the data.
   **tricolour_calibrator_strat**
 
     *str*, *optional*, *default = mk_rfi_flagging_calibrator_fields_firstpass.yaml*
+
+  **usewindowstats**
+
+    *{"none", "sum", "std", "both"}*, *optional*, *default = std*
+
+    Calculate additional flags using sliding window statistics
+
+  **combinescans**
+
+    *bool*, *optional*, *default = False*
+
+    Accumulate data across scans depending on the value of ntime
+
+  **flagdimension**
+
+    *{"freq", "time", "freqtime", "timefreq"}*, *optional*, *default = freqtime*
+
+    Dimensions along which to calculate fits (freq/time/freqtime/timefreq)
+
+  **timecutoff**
+
+    *float*, *optional*, *default = 4.0*
+
+    Flagging thresholds in units of deviation from the fit
+
+  **freqcutoff**
+
+    *float*, *optional*, *default = 3.0*
+
+    Flagging thresholds in units of deviation from the fit
+
+  **correlation**
+
+    *str*, *optional*, *default = ' '*
+
+    Correlation
 
 
 
@@ -456,7 +504,7 @@ Flagging of the data.
 
   **enable**
 
-    *bool*, *optional*, *default = False*
+    *bool*, *optional*, *default = True*
 
     Enables the writing of flagging summary.
 

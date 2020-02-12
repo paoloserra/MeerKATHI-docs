@@ -208,6 +208,18 @@ Perform Self calibration on the data
 
 
 
+.. _self_cal_img_nmiter:
+
+--------------------------------------------------
+**img_nmiter**
+--------------------------------------------------
+
+  *int*, *optional*, *default = 0*
+
+  Number of major cycles
+
+
+
 .. _self_cal_img_cleanborder:
 
 --------------------------------------------------
@@ -322,7 +334,7 @@ Perform Self calibration on the data
 **cal_time_chunk**
 --------------------------------------------------
 
-  *int*, *optional*, *default = 128*
+  *int*, *optional*, *default = 1*
 
   Chunk data up by this number of timeslots. This limits the amount of data processed at once. Smaller chunks allow for a smaller RAM footprint and greater parallelism but sets an upper limit on the time solution intervals that may be employed. 0 means use full time axis but does not cross scan boundaries.
 
@@ -334,7 +346,7 @@ Perform Self calibration on the data
 **cal_freq_chunk**
 --------------------------------------------------
 
-  *int*, *optional*, *default = 1024*
+  *int*, *optional*, *default = 0*
 
   Chunk data up by this number of channels. This limits the amount of data processed at once. Smaller chunks allow for a smaller RAM footprint and greater parallelism but sets an upper limit on the frequency solution intervals that may be employed. 0 means use full frequency axis but does not cross SPW boundaries.
 
@@ -624,7 +636,7 @@ Perform Self calibration on the data
 
   **Gsols_time**
 
-    *list* *of float*, *optional*, *default = 16*
+    *list* *of float*, *optional*, *default = 1*
 
     G-Jones time solution interval. The parameter cal_time_chunk above should a multiple of Gsols_time. 0 means a single solution for the full time chunk.
 
@@ -693,6 +705,12 @@ Perform Self calibration on the data
     *str*, *optional*, *default = auto*
 
     Number of iterations per Jones term. If set to 'auto', uses hardcoded iteration numbers depending on the jones chain.
+
+  **dist_max_chunks**
+
+    *int*, *optional*, *default = 4*
+
+    Maximum number of time/freq data-chunks to load into memory simultaneously. If 0, then as many as possible will be loaded.
 
   **ragavi_plot**
 
@@ -782,6 +800,40 @@ Perform Self calibration on the data
 
     label of cross-calibrated .ms file to which to transfer and apply the selfcal gains
 
+  **interpolate**
+
+    To interpolate the gains or not to interpolate the gains. That is indeed the question.
+
+    **enable**
+
+      *bool*, *optional*, *default = True*
+
+      Enable gain interpolation.
+
+    **time_int**
+
+      *int*, *optional*, *default = 1*
+
+      Solution interval in time (units of timeslots/intergration time) to transfer gains.
+
+    **freq_int**
+
+      *int*, *optional*, *default = 0*
+
+      Solution interval in frequency (units of channels) to transfer gains.
+
+    **time_chunk**
+
+      *int*, *optional*, *default = 128*
+
+      Time chunk in units of timeslots for transferring gains with Cubical.
+
+    **freq_chunk**
+
+      *int*, *optional*, *default = 0*
+
+      Frequency chunk in units of channels for transferring gains with Cubical. '0' means the whole spw.
+
 
 
 .. _self_cal_transfer_model:
@@ -828,11 +880,11 @@ Perform Self calibration on the data
 
     Number of sky model components that are processed in a single chunk.
 
-  **invert_uvw**
+  **exp-sign-convention**
 
-    *bool*, *optional*, *default = True*
+    *str*, *optional*, *default = casa*
 
-    Invert UVW coordinates. Useful if we want compare our visibilities against MeqTrees.
+    Sign convention to use for the complex exponential. 'casa' specifies the e^(2.pi.I) convention while 'thompson' specifies the e^(-2.pi.I) convention in the white book and Fourier analysis literature. Defaults to 'casa'.
 
   **within**
 
@@ -863,80 +915,4 @@ Perform Self calibration on the data
     *float*, *optional*, *default = 0.5*
 
     Fraction of system RAM that can be used. Used when setting automatically the chunk size.
-
-
-
-.. _self_cal_highfreqres_contim:
-
---------------------------------------------------
-**highfreqres_contim**
---------------------------------------------------
-
-  Make final continuum image and model at higher frequency resolution, ideally using a clean mask based on the last round of continuum imaging
-
-  **enable**
-
-    *bool*, *optional*, *default = False*
-
-    Execute this segment
-
-  **chans**
-
-    *int*, *optional*, *default = 10*
-
-    output continuum channels
-
-  **deconv_chans**
-
-    *int*, *optional*, *default = 2*
-
-    nr of channels used for deconvolution grouping together output continuum channels
-
-  **fit_spectral_pol**
-
-    *int*, *optional*, *default = 2*
-
-    How many terms for the spectral polynomial fit of each clean component
-
-  **fits_mask**
-
-    *str*, *optional*, *default = ' '*
-
-    filename of fits mask (including folder if not input), default None
-
-  **auto_mask**
-
-    *float*, *optional*, *default = 10*
-
-    Auto masking threshold, default None
-
-  **auto_threshold**
-
-    *float*, *optional*, *default = 0.5*
-
-    Auto clean threshold, default 10
-
-  **column**
-
-    *str*, *optional*, *default = CORR_DATA*
-
-    Column to image
-
-  **multi_scale**
-
-    *bool*, *optional*, *default = False*
-
-    switch on multiscale cleaning
-
-  **multi_scale_scales**
-
-    *list* *of int*, *optional*, *default = 10, 20, 30, 40*
-
-    scales of multiscale [0,10,20,etc, etc] in pixel
-
-  **local_rms**
-
-    *bool*, *optional*, *default = False*
-
-    switch on local rms measurement for cleaning
 

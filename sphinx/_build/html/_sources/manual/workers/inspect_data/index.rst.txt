@@ -40,6 +40,18 @@ Dignostic plots of the first-pass cross-calibrated data.
 
 
 
+.. _inspect_data_plotter:
+
+--------------------------------------------------
+**plotter**
+--------------------------------------------------
+
+  *{"plotms", "shadems"}*, *optional*, *default = plotms*
+
+  Application to use for making plots
+
+
+
 .. _inspect_data_correlation:
 
 --------------------------------------------------
@@ -289,6 +301,86 @@ Dignostic plots of the first-pass cross-calibrated data.
     *bool*, *optional*, *default = True*
 
     Executes plotting data amplitude v/s scan number.
+
+  **fields**
+
+    *list* *of str*, *optional*, *default = ' '*
+
+    Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
+
+  **column**
+
+    *str*, *optional*, *default = corrected*
+
+    Data column to plot.
+
+  **avgtime**
+
+    *str*, *optional*, *default = 10*
+
+    Time to average for plotting, in seconds.
+
+  **avgchannel**
+
+    *str*, *optional*, *default = 10*
+
+    Number of channels to average for plotting.
+
+
+
+.. _inspect_data_amp_chan:
+
+--------------------------------------------------
+**amp_chan**
+--------------------------------------------------
+
+  Plot Amplitude vs Channel data.
+
+  **enable**
+
+    *bool*, *optional*, *default = True*
+
+    Executes the plotting of amplitude v/s phase for data.
+
+  **fields**
+
+    *list* *of str*, *optional*, *default = ' '*
+
+    Fields to plot. Specify by field id, index or keys like: gcal, bpcal.
+
+  **column**
+
+    *str*, *optional*, *default = corrected*
+
+    Data column to plot.
+
+  **avgtime**
+
+    *str*, *optional*, *default = 10*
+
+    Time to average for plotting, in seconds.
+
+  **avgchannel**
+
+    *str*, *optional*, *default = 10*
+
+    Number of channels to average for plotting.
+
+
+
+.. _inspect_data_phase_chan:
+
+--------------------------------------------------
+**phase_chan**
+--------------------------------------------------
+
+  Plot Phase vs Chan.
+
+  **enable**
+
+    *bool*, *optional*, *default = True*
+
+    Executes the plotting of amplitude v/s phase for data.
 
   **fields**
 

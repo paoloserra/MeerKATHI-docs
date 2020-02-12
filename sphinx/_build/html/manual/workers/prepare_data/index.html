@@ -13,44 +13,40 @@
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../../genindex.html"/>
-        <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="MeerKATHI  documentation" href="../../../index.html"/>
-        <link rel="up" title="Workers parameters" href="../index.html"/>
-        <link rel="next" title="flagging" href="../flagging/index.html"/>
-        <link rel="prev" title="observation_config" href="../observation_config/index.html"/> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="flagging" href="../flagging/index.html" />
+    <link rel="prev" title="observation_config" href="../observation_config/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -81,7 +77,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
@@ -95,8 +94,9 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">prepare_data</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enable"><strong>enable</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#fixvis"><strong>fixvis</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clear-cal"><strong>clear_cal</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#manage-flags"><strong>manage_flags</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#add-spectral-weights"><strong>add_spectral_weights</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spectral-weights"><strong>spectral_weights</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../flagging/index.html">flagging</a></li>
@@ -107,6 +107,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../image_line/index.html">image_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mosaic/index.html">mosaic</a></li>
 </ul>
 </li>
 </ul>
@@ -123,38 +124,58 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../../index.html">MeerKATHI</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MeerKATHI</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../../../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="../../index.html">Manual</a> &raquo;</li>
-      
+        
           <li><a href="../index.html">Workers parameters</a> &raquo;</li>
-      
-    <li>prepare_data</li>
+        
+      <li>prepare_data</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../../_sources/manual/workers/prepare_data/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -183,6 +204,13 @@
 </div></blockquote>
 </div></blockquote>
 </div>
+<div class="section" id="clear-cal">
+<span id="prepare-data-clear-cal"></span><h2><strong>clear_cal</strong><a class="headerlink" href="#clear-cal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Clears out calibrated data and resets previous predicted model</p>
+</div></blockquote>
+</div>
 <div class="section" id="manage-flags">
 <span id="prepare-data-manage-flags"></span><h2><strong>manage_flags</strong><a class="headerlink" href="#manage-flags" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -209,14 +237,27 @@
 </div></blockquote>
 </div></blockquote>
 </div>
-<div class="section" id="add-spectral-weights">
-<span id="prepare-data-add-spectral-weights"></span><h2><strong>add_spectral_weights</strong><a class="headerlink" href="#add-spectral-weights" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="spectral-weights">
+<span id="prepare-data-spectral-weights"></span><h2><strong>spectral_weights</strong><a class="headerlink" href="#spectral-weights" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>Add spectral weights column to the measurement set.</p>
+<div><p>How to initialize spectral weights</p>
 <p><strong>enable</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = false</em></p>
-<p>Enables addition of spectral weights column to the measurement set.</p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Enable this segment</p>
+</div></blockquote>
+<p><strong>mode</strong></p>
+<blockquote>
+<div><p><em>{“uniform”, “estimate”, “delete”}</em>, <em>optional</em>, <em>default = uniform</em></p>
+<p>uniform: Set all weights to unity, estimate: Estimate spectral weights from frequency-dependent SEFD/Tsys/Noise values, delete: Delete WEIGHT_SPECTRUM column if it exists. if ‘estimate’, then further settings are available in the ‘estimate’ segement of this section</p>
+</div></blockquote>
+<p><strong>estimate</strong></p>
+<blockquote>
+<div><p>Estimate spectral weights from frequency-dependent SEFD/Tsys/Noise values</p>
+<p><strong>stats_data</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = use_package_meerkat_spec</em></p>
+<p>File with SEFD/Tsys/Noise data. If data is from MeerKAT telescope, you can specify ‘use_package_meerkat_spec’ to use package data.</p>
 </div></blockquote>
 <p><strong>weight_columns</strong></p>
 <blockquote>
@@ -230,13 +271,9 @@
 </div></blockquote>
 <p><strong>write_to_ms</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = true</em></p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
 <p>write columns to file</p>
 </div></blockquote>
-<p><strong>stats_data</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = use_package_meerkat_spec</em></p>
-<p>which statistics for the file.</p>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -244,15 +281,16 @@
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../flagging/index.html" class="btn btn-neutral float-right" title="flagging" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../flagging/index.html" class="btn btn-neutral float-right" title="flagging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../observation_config/index.html" class="btn btn-neutral" title="observation_config" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../observation_config/index.html" class="btn btn-neutral float-left" title="observation_config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -261,11 +299,11 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, MeerKATHI team.
+        &copy; Copyright 2019, MeerKATHI team
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -278,36 +316,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/language_data.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

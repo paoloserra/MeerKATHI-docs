@@ -13,44 +13,40 @@
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../../genindex.html"/>
-        <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="MeerKATHI  documentation" href="../../../index.html"/>
-        <link rel="up" title="Data reduction" href="../index.html"/>
-        <link rel="next" title="Flag data" href="../flag/index.html"/>
-        <link rel="prev" title="Data reduction" href="../index.html"/> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Flag data" href="../flag/index.html" />
+    <link rel="prev" title="Data reduction" href="../index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -81,7 +77,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
@@ -102,7 +101,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../workers/index.html">Workers parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../credits/index.html">Acknowledgements</a></li>
 </ul>
 
@@ -115,38 +113,58 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../../index.html">MeerKATHI</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MeerKATHI</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../../../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="../../index.html">Manual</a> &raquo;</li>
-      
+        
           <li><a href="../index.html">Data reduction</a> &raquo;</li>
-      
-    <li>Prepare pipeline and data</li>
+        
+      <li>Prepare pipeline and data</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../../_sources/manual/reduction/prepare/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -163,13 +181,13 @@
 names. This is done through the <a class="reference internal" href="../../workers/general/index.html#general"><span class="std std-ref">general</span></a> and <a class="reference internal" href="../../workers/get_data/index.html#get-data"><span class="std std-ref">get_data</span></a> workers.</p>
 <p>In the <a class="reference internal" href="../../workers/general/index.html#general"><span class="std std-ref">general</span></a> worker users give:</p>
 <ul class="simple">
-<li>if necessary, the <em>data_path</em> directory where to find the files that should be converted to .MS
-format (<a class="reference internal" href="../../workers/general/index.html#general-data-path"><span class="std std-ref">general: data_path</span></a>);</li>
-<li>the <em>msdir</em> directory where to find/write .MS files (<a class="reference internal" href="../../workers/general/index.html#general-msdir"><span class="std std-ref">general: msdir</span></a>);</li>
-<li>the <em>output</em> directory where to write all output data products (<a class="reference internal" href="../../workers/general/index.html#general-output"><span class="std std-ref">general: output</span></a>);</li>
-<li>the <em>input</em> directory where to find various input files, such as AOflagger strategies etc.
-(<a class="reference internal" href="../../workers/general/index.html#general-input"><span class="std std-ref">general: input</span></a>);</li>
-<li>the prefix for the output data products (<a class="reference internal" href="../../workers/general/index.html#general-prefix"><span class="std std-ref">general: prefix</span></a>).</li>
+<li><p>if necessary, the <em>data_path</em> directory where to find the files that should be converted to .MS
+format (<a class="reference internal" href="../../workers/general/index.html#general-data-path"><span class="std std-ref">general: data_path</span></a>);</p></li>
+<li><p>the <em>msdir</em> directory where to find/write .MS files (<a class="reference internal" href="../../workers/general/index.html#general-msdir"><span class="std std-ref">general: msdir</span></a>);</p></li>
+<li><p>the <em>output</em> directory where to write all output data products (<a class="reference internal" href="../../workers/general/index.html#general-output"><span class="std std-ref">general: output</span></a>);</p></li>
+<li><p>the <em>input</em> directory where to find various input files, such as AOflagger strategies etc.
+(<a class="reference internal" href="../../workers/general/index.html#general-input"><span class="std std-ref">general: input</span></a>);</p></li>
+<li><p>the prefix for the output data products (<a class="reference internal" href="../../workers/general/index.html#general-prefix"><span class="std std-ref">general: prefix</span></a>).</p></li>
 </ul>
 <p>If they do not exist yet, the above directories can be created by setting
 <a class="reference internal" href="../../workers/general/index.html#general-init-pipeline"><span class="std std-ref">general: init_pipeline</span></a> to <em>true</em>. This also copies
@@ -177,16 +195,17 @@ files from the meerkathi/data/meerkat_files directory to the <em>input</em> dire
 <p>In the <a class="reference internal" href="../../workers/get_data/index.html#get-data"><span class="std std-ref">get_data</span></a> worker users give the name of the .MS files to be processed
 (<a class="reference internal" href="../../workers/get_data/index.html#get-data-dataid"><span class="std std-ref">get_data: dataid</span></a>). Furthermore, the following optional steps are available:</p>
 <ul class="simple">
-<li>convert from HDF5/MVF format to .MS (<a class="reference internal" href="../../workers/get_data/index.html#get-data-mvftoms"><span class="std std-ref">get_data: mvftoms</span></a>);
-this step includes the following additional conversion options:<ul>
-<li>create a .MS.TAR file,</li>
-<li>convert only visibilities in a selected channel range,</li>
-<li>discard cross-polarisation products;</li>
+<li><p>convert from HDF5/MVF format to .MS (<a class="reference internal" href="../../workers/get_data/index.html#get-data-mvftoms"><span class="std std-ref">get_data: mvftoms</span></a>);
+this step includes the following additional conversion options:</p>
+<ul>
+<li><p>create a .MS.TAR file,</p></li>
+<li><p>convert only visibilities in a selected channel range,</p></li>
+<li><p>discard cross-polarisation products;</p></li>
 </ul>
 </li>
-<li>untar an existing .MS.TAR file (<a class="reference internal" href="../../workers/get_data/index.html#get-data-untar"><span class="std std-ref">get_data: untar</span></a>);</li>
-<li>virtually concatenate all .MS input files (<a class="reference internal" href="../../workers/get_data/index.html#get-data-combine"><span class="std std-ref">get_data: combine</span></a>);
-optionally users can delete an existing concatenate file and tar/untar the concatenated file.</li>
+<li><p>untar an existing .MS.TAR file (<a class="reference internal" href="../../workers/get_data/index.html#get-data-untar"><span class="std std-ref">get_data: untar</span></a>);</p></li>
+<li><p>virtually concatenate all .MS input files (<a class="reference internal" href="../../workers/get_data/index.html#get-data-combine"><span class="std std-ref">get_data: combine</span></a>);
+optionally users can delete an existing concatenate file and tar/untar the concatenated file.</p></li>
 </ul>
 </div>
 <div class="section" id="metadata">
@@ -196,11 +215,11 @@ info about the content of the input .MS files through the <a class="reference in
 (e.g., target and calibrators name, channelisation, etc.). In principle, this can be done
 by editing the relevant parameters of this worker:</p>
 <ul class="simple">
-<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-target"><span class="std std-ref">observation_config: target</span></a></li>
-<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-bpcal"><span class="std std-ref">observation_config: bpcal</span></a></li>
-<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-fcal"><span class="std std-ref">observation_config: fcal</span></a></li>
-<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-gcal"><span class="std std-ref">observation_config: gcal</span></a></li>
-<li><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-reference-antenna"><span class="std std-ref">observation_config: reference_antenna</span></a></li>
+<li><p><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-target"><span class="std std-ref">observation_config: target</span></a></p></li>
+<li><p><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-bpcal"><span class="std std-ref">observation_config: bpcal</span></a></p></li>
+<li><p><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-fcal"><span class="std std-ref">observation_config: fcal</span></a></p></li>
+<li><p><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-gcal"><span class="std std-ref">observation_config: gcal</span></a></p></li>
+<li><p><a class="reference internal" href="../../workers/observation_config/index.html#observation-config-reference-antenna"><span class="std std-ref">observation_config: reference_antenna</span></a></p></li>
 </ul>
 <p>In fact, MeerKATHI can automatically extract
 most of these info from the .MS files themselves. To do so users should enable the
@@ -217,15 +236,16 @@ parameter.</p>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../flag/index.html" class="btn btn-neutral float-right" title="Flag data" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../flag/index.html" class="btn btn-neutral float-right" title="Flag data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Data reduction" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Data reduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -234,11 +254,11 @@ parameter.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, MeerKATHI team.
+        &copy; Copyright 2019, MeerKATHI team
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -251,36 +271,15 @@ parameter.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/language_data.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

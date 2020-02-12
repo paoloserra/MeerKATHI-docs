@@ -108,9 +108,9 @@ Process visibilities for spectral line work and create line cubes and images.
 
   **mode**
 
-    *str*, *optional*, *default = frequency*
+    *{"frequency"}*, *optional*, *default = frequency*
 
-    Regridding mode (channel/velocity/frequency/channel_b).
+    Regridding mode (channel/velocity/frequency/channel_b). IMPORTANT - Currently only frequency mode is supported.
 
   **outframe**
 
@@ -220,23 +220,23 @@ Process visibilities for spectral line work and create line cubes and images.
 
 
 
-.. _image_line_make_image:
+.. _image_line_make_cube:
 
 --------------------------------------------------
-**make_image**
+**make_cube**
 --------------------------------------------------
 
-  Image either with WSclean + SoFiA (for clean masks) or with Casa.
+  Make a line cube with either WSclean + SoFiA (for clean masks) or Casa.
 
   **enable**
 
     *bool*, *optional*, *default = True*
 
-    Execute segment make_image.
+    Execute segment make_cube.
 
   **image_with**
 
-    *str*, *optional*, *default = wsclean*
+    *{"wsclean", "casa"}*, *optional*, *default = wsclean*
 
     Choose whether to image with WSclean + SoFiA ("wsclean") or with Casa ("casa").
 
@@ -318,11 +318,17 @@ Process visibilities for spectral line work and create line cubes and images.
 
     Maximum number of clean iterations to perform.
 
+  **gain**
+
+    *float*, *optional*, *default = 0.1*
+
+    Fraction of the peak that will be cleaned in each minor iteration.
+
   **wscl_mgain**
 
     *float*, *optional*, *default = 1.0*
 
-    WSclean gain for major iterations, Ratio of peak that will be subtracted in each major iteration.
+    WSclean gain for major iterations, i.e., maximum fraction of peak that will be cleaned in each major iteration.
 
   **wscl_sofia_niter**
 
@@ -382,7 +388,13 @@ Process visibilities for spectral line work and create line cubes and images.
 
     *list* *of int*, *optional*, *default = 0, 10, 20, 30*
 
-    Scales of WSclean multiscale [0,10,20,etc, etc].
+    List of scales of WSclean multiscale in units of pixels. Only used is wscl_multi_scale is set to True.
+
+  **wscl_multi_scale_bias**
+
+    *float*, *optional*, *default = 0.6*
+
+    Parameter to set the bias towards larger scales during multi-scale cleaning. A lower bias will give preference to larger scales.
 
   **casa_threshold**
 

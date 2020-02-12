@@ -13,44 +13,40 @@
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../../genindex.html"/>
-        <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="MeerKATHI  documentation" href="../../../index.html"/>
-        <link rel="up" title="Workers parameters" href="../index.html"/>
-        <link rel="next" title="polcal" href="../polcal/index.html"/>
-        <link rel="prev" title="flagging" href="../flagging/index.html"/> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="polcal" href="../polcal/index.html" />
+    <link rel="prev" title="flagging" href="../flagging/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -81,7 +77,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../meerkathiREADME.html">Download &amp; Install</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
@@ -100,18 +99,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#uvrange"><strong>uvrange</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#label"><strong>label</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#casa-version"><strong>casa_version</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#clear-cal"><strong>clear_cal</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#set-model"><strong>set_model</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#delay-cal"><strong>delay_cal</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#bp-cal"><strong>bp_cal</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gain-cal-flux"><strong>gain_cal_flux</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gain-cal-gain"><strong>gain_cal_gain</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#transfer-fluxscale"><strong>transfer_fluxscale</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#apply-delay-cal"><strong>apply_delay_cal</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#apply-bp-cal"><strong>apply_bp_cal</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#apply-gain-cal-gain"><strong>apply_gain_cal_gain</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#apply-transfer-fluxscale"><strong>apply_transfer_fluxscale</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#autoflag-closure-error"><strong>autoflag_closure_error</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#primary-cal"><strong>primary_cal</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#secondary-cal"><strong>secondary_cal</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apply-cal"><strong>apply_cal</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flagging-summary"><strong>flagging_summary</strong></a></li>
 </ul>
 </li>
@@ -121,6 +112,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../masking/index.html">masking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../self_cal/index.html">self_cal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../image_line/index.html">image_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mosaic/index.html">mosaic</a></li>
 </ul>
 </li>
 </ul>
@@ -137,38 +129,58 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../../index.html">MeerKATHI</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MeerKATHI</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../../../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="../../index.html">Manual</a> &raquo;</li>
-      
+        
           <li><a href="../index.html">Workers parameters</a> &raquo;</li>
-      
-    <li>cross_cal</li>
+        
+      <li>cross_cal</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../../_sources/manual/workers/cross_cal/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -214,27 +226,6 @@
 <p>Casa version to carry out cross-calibration. ‘47’ means use CASA 4.7, which is recommended, unless you enjoy your data extra flag-gy. Leave empty to use the latest CASA.</p>
 </div></blockquote>
 </div>
-<div class="section" id="clear-cal">
-<span id="cross-cal-clear-cal"></span><h2><strong>clear_cal</strong><a class="headerlink" href="#clear-cal" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Initializes dataset for calibration using CASA</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Execute intialization step</p>
-</div></blockquote>
-<p><strong>field</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = fcal, bpcal, gcal, xcal, target</em></p>
-<p>fields to initialize</p>
-</div></blockquote>
-<p><strong>addmodel</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Intializes scratch MODEL_DATA column</p>
-</div></blockquote>
-</div></blockquote>
-</div>
 <div class="section" id="set-model">
 <span id="cross-cal-set-model"></span><h2><strong>set_model</strong><a class="headerlink" href="#set-model" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -266,478 +257,204 @@
 </div></blockquote>
 </div></blockquote>
 </div>
-<div class="section" id="delay-cal">
-<span id="cross-cal-delay-cal"></span><h2><strong>delay_cal</strong><a class="headerlink" href="#delay-cal" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="primary-cal">
+<span id="cross-cal-primary-cal"></span><h2><strong>primary_cal</strong><a class="headerlink" href="#primary-cal" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>Carry out delay correction calibration (using gaincal task from CASA).</p>
+<div><p>Calibrating on the bandpass calibrator field</p>
 <p><strong>enable</strong></p>
 <blockquote>
 <div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Execute delay correction calibration.</p>
+<p>Execute this section</p>
 </div></blockquote>
-<p><strong>combine</strong></p>
+<p><strong>reuse_existing_gains</strong></p>
 <blockquote>
-<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em>, <em>default = scan</em></p>
-<p>Parameter to combine different data axis for solving.</p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Reuse gain tables if they exist</p>
 </div></blockquote>
-<p><strong>solint</strong></p>
+<p><strong>order</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
-<p>Solution interval for delay-correction calibration.</p>
-</div></blockquote>
-<p><strong>minsnr</strong></p>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
-<p>Minimum required SNR for solutions.</p>
-</div></blockquote>
-<p><strong>field</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal</em></p>
-<p>Set the field to estimate the delay correction from. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</p>
-</div></blockquote>
-<p><strong>plot</strong></p>
-<blockquote>
-<div><p>Plotting dignostics plots for delay correction calibration.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Enables plotting dignostics</p>
-</div></blockquote>
-</div></blockquote>
-<p><strong>flag</strong></p>
-<blockquote>
-<div><p>Flagging based on delay correction solutions.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Enable flagging based on delay correction solutions via CASA FLAGDATA task.</p>
-</div></blockquote>
-<p><strong>mode</strong></p>
-<blockquote>
-<div><p><em>{“list”, “manual”, “clip”, “quack”, “shadow”, “elevation”, “tfcrop”, “antint”, “extend”, “unflag”, “summary”}</em>, <em>optional</em>, <em>default = clip</em></p>
-<p>Mode to set for flagging based on delay correction gains. Default used is “clip”. If you want to use other modes, specify the relevant keywords from Flagdata.</p>
-</div></blockquote>
-<p><strong>clipminmax</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = -60.0, 60.0</em></p>
-<p>Specifies the minimum and maximum delay to keep, e.g. [-60, 60]. Execute order 66 on the rest.</p>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="bp-cal">
-<span id="cross-cal-bp-cal"></span><h2><strong>bp_cal</strong><a class="headerlink" href="#bp-cal" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Carry out bandpass calibration (using bandpass task from CASA)</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Executes bandpass calibration.</p>
-</div></blockquote>
-<p><strong>combine</strong></p>
-<blockquote>
-<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em>, <em>default = scan</em></p>
-<p>Parameter to combine different data axis for solving.</p>
-</div></blockquote>
-<p><strong>field</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal</em></p>
-<p>Set the field to estimate the bandpass from. Specify either the field number, name or even as ‘bpcal’ corresponding to field specification in observation config.</p>
-</div></blockquote>
-<p><strong>minnrbl</strong></p>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 4</em></p>
-<p>Minimum number of baselines required (per antenna) for solving.</p>
-</div></blockquote>
-<p><strong>minsnr</strong></p>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 5</em></p>
-<p>Minimum required SNR for solutions.</p>
+<div><p><em>str</em>, <em>optional</em>, <em>default = KGB</em></p>
+<p>Order in which to solve for gains for this field. E.g, if order is set to ‘KGB’, the we solve for delays, then the phase and amplitude, and finally the bandpass. The full options are: K-delay calibration; G-amplitude and phase calibration; B-bandpass calibration; A-automatic flagging (existing gains will be applied first).</p>
 </div></blockquote>
 <p><strong>solnorm</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Normalize average solution amplitudes to unity.</p>
-</div></blockquote>
-<p><strong>solint</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
-<p>Solution interval for bandpass calibration.</p>
-</div></blockquote>
-<p><strong>set_refant</strong></p>
-<blockquote>
 <div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
-<p>Should a reference antenna be used for this calibration</p>
-</div></blockquote>
-<p><strong>remove_ph_time_var</strong></p>
-<blockquote>
-<div><p>Remove large temporal phase variations from the bandpass calibrator before solving for the bandpass.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
-<p>Enable removal of gain phase variations with time prior to solving for final bandpass.</p>
-</div></blockquote>
-<p><strong>bp_solint</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
-<p>Solution interval for bandpass calibration before determining the variation of the gain phase with time.</p>
-</div></blockquote>
-<p><strong>bp_combine</strong></p>
-<blockquote>
-<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
-<p>Parameter to combine different data axis for solving.</p>
-</div></blockquote>
-<p><strong>g_solint</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
-<p>Solution interval for gain phase calibration to be applied when solving for the final bandpass.</p>
-</div></blockquote>
-<p><strong>g_combine</strong></p>
-<blockquote>
-<div><p><em>{“”, “obs”, “scan”, “spw”, “field”, “obs,scan”, “scan,obs”}</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
-<p>Parameter to combine different data axis for solving.</p>
-</div></blockquote>
-</div></blockquote>
-<p><strong>flag</strong></p>
-<blockquote>
-<div><p>Flagging based on bandpass amplitude solutions.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
-<p>Enable flagging based on Bandpass correction solutions via CASA FLAGDATA task.</p>
-</div></blockquote>
-<p><strong>mode</strong></p>
-<blockquote>
-<div><p><em>{“list”, “manual”, “clip”, “quack”, “shadow”, “elevation”, “tfcrop”, “antint”, “extend”, “unflag”, “summary”}</em>, <em>optional</em>, <em>default = clip</em></p>
-<p>Mode to set for flagging based on delay correction gains. Default is “clip”. If you want to use other modes, specify the relevant keywords from Flagdata.</p>
-</div></blockquote>
-<p><strong>clipminmax</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 0.1,10.0</em></p>
-<p>Specifies the minimum and maximum gain to keep, e.g. [0.1, 10].</p>
-</div></blockquote>
-</div></blockquote>
-<p><strong>plot</strong></p>
-<blockquote>
-<div><p>Plotting dignostics plots for bandpass correction calibration.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Enables plotting dignostics</p>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="gain-cal-flux">
-<span id="cross-cal-gain-cal-flux"></span><h2><strong>gain_cal_flux</strong><a class="headerlink" href="#gain-cal-flux" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Carry out gain calibration on the flux calibrator field.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Execute gain calibration on the flux calibrator field.</p>
+<p>Normalise average solution amplitude to 1.0</p>
 </div></blockquote>
 <p><strong>combine</strong></p>
 <blockquote>
-<div><p><em>{“”, “obs”, “scan”, “spw”, “field”}</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
-<p>Parameter to combine different data axis for solving.</p>
-</div></blockquote>
-<p><strong>field</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = fcal</em></p>
-<p>Set the field to estimate the gain from. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</p>
-</div></blockquote>
-<p><strong>minnrbl</strong></p>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 4</em></p>
-<p>Minimum number of baselines required (per antenna) for solving.</p>
-</div></blockquote>
-<p><strong>minsnr</strong></p>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 5</em></p>
-<p>Minimum required SNR for solutions.</p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = ‘’, ‘’, scan</em></p>
+<p>Parameter to combine different data axis for solving. Options are [‘’,’obs’, ‘scan’, ‘spw’, ‘field’, ‘obs,scan’, ‘scan,ob’]</p>
 </div></blockquote>
 <p><strong>solint</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
-<p>Time solution interval</p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = 120s, 120s, inf</em></p>
+<p>Solution interval for delay-correction calibration.</p>
 </div></blockquote>
-<p><strong>set_refant</strong></p>
+<p><strong>calmode</strong></p>
 <blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
-<p>Should a reference antenna be used for this calibration</p>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = a, ap, ap</em></p>
+<p>Type of solution</p>
+</div></blockquote>
+<p><strong>B_fillgaps</strong></p>
+<blockquote>
+<div><p><em>int</em>, <em>optional</em>, <em>default = 70</em></p>
+<p>Fill flagged solution channels by interpolation</p>
+</div></blockquote>
+<p><strong>plotgains</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Plot gains</p>
 </div></blockquote>
 <p><strong>flag</strong></p>
 <blockquote>
-<div><p>Flagging based on flux-scale amplitude solutions.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
-<p>Enable flagging based on delay correction solutions via CASA FLAGDATA task. Default is False.</p>
-</div></blockquote>
-<p><strong>mode</strong></p>
-<blockquote>
-<div><p><em>{“list”, “manual”, “clip”, “quack”, “shadow”, “elevation”, “tfcrop”, “antint”, “extend”, “unflag”, “summary”}</em>, <em>optional</em>, <em>default = clip</em></p>
-<p>Mode to set for flagging based on delay correction gains. Default is “clip”. If you want to use other modes, specify the relevant keywords from Flagdata.</p>
-</div></blockquote>
-<p><strong>clipminmax</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 0.1, 10.0</em></p>
-<p>Specifies the minimum and maximum delay to keep, e.g. [0.1, 10].</p>
-</div></blockquote>
-</div></blockquote>
-<p><strong>plot</strong></p>
-<blockquote>
-<div><p>Plotting dignostics plots for flux calibrator corrections.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Enables plotting dignostics</p>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="gain-cal-gain">
-<span id="cross-cal-gain-cal-gain"></span><h2><strong>gain_cal_gain</strong><a class="headerlink" href="#gain-cal-gain" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Carry out gain calibration on the gain calibrator field.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Execute gain calibration on the gain calibrator field.</p>
-</div></blockquote>
-<p><strong>combine</strong></p>
-<blockquote>
-<div><p><em>{“”, “obs”, “scan”, “spw”, “field”}</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
-<p>Parameter to combine different data axis for solving.</p>
-</div></blockquote>
-<p><strong>field</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = gcal</em></p>
-<p>Set the field to estimate the gain from. Specify either the field number, name or even as ‘gcal’ corresponding to field specification in observation config.</p>
-</div></blockquote>
-<p><strong>minnrbl</strong></p>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 4</em></p>
-<p>Minimum number of baselines required (per antenna) for solving.</p>
-</div></blockquote>
-<p><strong>minsnr</strong></p>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
-<p>Minimum required SNR for solutions.</p>
-</div></blockquote>
-<p><strong>solint</strong></p>
-<blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = inf</em></p>
-<p>Time solution interval</p>
-</div></blockquote>
-<p><strong>set_refant</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
-<p>Should a reference antenna be used for this calibration</p>
-</div></blockquote>
-<p><strong>flag</strong></p>
-<blockquote>
-<div><p>Flagging based on gain amplitudes.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
-<p>Enable flagging based on delay correction solutions via CASA FLAGDATA task. Default is False.</p>
-</div></blockquote>
-<p><strong>mode</strong></p>
-<blockquote>
-<div><p><em>{“list”, “manual”, “clip”, “quack”, “shadow”, “elevation”, “tfcrop”, “antint”, “extend”, “unflag”, “summary”}</em>, <em>optional</em>, <em>default = clip</em></p>
-<p>Mode to set for flagging based on delay correction gains. Default is “clip”. If you want to use other modes, specify the relevant keywords from Flagdata.</p>
-</div></blockquote>
-<p><strong>clipminmax</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of float</em>, <em>optional</em>, <em>default = 0.1, 10.0</em></p>
-<p>Specifies the minimum and maximum delay to keep, e.g. [0.1, 10].</p>
-</div></blockquote>
-</div></blockquote>
-<p><strong>plot</strong></p>
-<blockquote>
-<div><p>Plotting dignostics plots for gain calibrator corrections.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Enables plotting dignostics</p>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="transfer-fluxscale">
-<span id="cross-cal-transfer-fluxscale"></span><h2><strong>transfer_fluxscale</strong><a class="headerlink" href="#transfer-fluxscale" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Transfers fluxscale from the flux calibrator field to the gain calibrator.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Executes transferring flux scale.</p>
-</div></blockquote>
-<p><strong>reference</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = fcal</em></p>
-<p>Field to transfer flux sale from. Specify either the field number, name or even as ‘fcal’ corresponding to field specification in observation config.</p>
-</div></blockquote>
-<p><strong>transfer</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = gcal</em></p>
-<p>Field to transfer flux scale to. Specify either the field number, name or even as ‘gcal’ corresponding to field specification in observation config.</p>
-</div></blockquote>
-<p><strong>plot</strong></p>
-<blockquote>
-<div><p>Enables plotting gain amplitudes for Flux and Gain calibrator field.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Enables plotting dignostics</p>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="apply-delay-cal">
-<span id="cross-cal-apply-delay-cal"></span><h2><strong>apply_delay_cal</strong><a class="headerlink" href="#apply-delay-cal" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Apply the delay correction calibration table to specified fields via the CASA applycal task.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Executes application of delay correction calibration table.</p>
-</div></blockquote>
-<p><strong>field</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal</em></p>
-<p>Field to select in the delay correction calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal’.</p>
-</div></blockquote>
-<p><strong>applyto</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, xcal, target</em></p>
-<p>Field(s) to apply the delay correction calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
-</div></blockquote>
-<p><strong>applymode</strong></p>
-<blockquote>
-<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em>, <em>default = calflag</em></p>
-<p>Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
-</div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="apply-bp-cal">
-<span id="cross-cal-apply-bp-cal"></span><h2><strong>apply_bp_cal</strong><a class="headerlink" href="#apply-bp-cal" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Apply the bandpass table to specified fields via the CASA applycal task.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Executes application of bandpass table.</p>
-</div></blockquote>
-<p><strong>field</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal</em></p>
-<p>Field to select in the bandpass table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal’.</p>
-</div></blockquote>
-<p><strong>applyto</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, xcal, target</em></p>
-<p>Field(s) to apply the bandpass table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
-</div></blockquote>
-<p><strong>applymode</strong></p>
-<blockquote>
-<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em>, <em>default = calflag</em></p>
-<p>Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
-</div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="apply-gain-cal-gain">
-<span id="cross-cal-apply-gain-cal-gain"></span><h2><strong>apply_gain_cal_gain</strong><a class="headerlink" href="#apply-gain-cal-gain" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Apply the gain calibration table to specified fields via the CASA applycal task.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
-<p>Executes application of gain calibration table.</p>
-</div></blockquote>
-<p><strong>field</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = gcal</em></p>
-<p>Field to select in the gain calibration table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘gcal’.</p>
-</div></blockquote>
-<p><strong>applyto</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, xcal, target</em></p>
-<p>Field(s) to apply the gain calibration table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
-</div></blockquote>
-<p><strong>applymode</strong></p>
-<blockquote>
-<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em>, <em>default = calflag</em></p>
-<p>Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
-</div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="apply-transfer-fluxscale">
-<span id="cross-cal-apply-transfer-fluxscale"></span><h2><strong>apply_transfer_fluxscale</strong><a class="headerlink" href="#apply-transfer-fluxscale" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Apply the fluxscale table to specified fields via the CASA applycal task.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
-<p>Executes application of fluxscale table.</p>
-</div></blockquote>
-<p><strong>field</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = gcal</em></p>
-<p>Field to select in the fluxscale table. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘gcal’.</p>
-</div></blockquote>
-<p><strong>applyto</strong></p>
-<blockquote>
-<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, xcal, target</em></p>
-<p>Field(s) to apply the fluxscale table to. Specify either the field number, name or as corrsponding to field spec in observation config, e.g. ‘bpcal, gcal, target’.</p>
-</div></blockquote>
-<p><strong>applymode</strong></p>
-<blockquote>
-<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em>, <em>default = calflag</em></p>
-<p>Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
-</div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="autoflag-closure-error">
-<span id="cross-cal-autoflag-closure-error"></span><h2><strong>autoflag_closure_error</strong><a class="headerlink" href="#autoflag-closure-error" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Flag closure errors and systematic issues based on calibrated calibrator phase.</p>
-<p><strong>enable</strong></p>
-<blockquote>
-<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
-<p>Execute flagging closure errors etc.</p>
-</div></blockquote>
-<p><strong>scan_to_scan_threshold</strong></p>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
-<p>Sigma spread above the rest of the scans per field per channel.</p>
-</div></blockquote>
-<p><strong>baseline_to_group_threshold</strong></p>
-<blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 3</em></p>
-<p>Sigma above array median phase spread per scan per field per channel.</p>
-</div></blockquote>
+<div><p>Apply existing gains and flag corrected data</p>
 <p><strong>column</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = CORRECTED_DATA</em></p>
-<p>MS column to use.</p>
+<div><p><em>{“corrected”, “residual”}</em>, <em>optional</em>, <em>default = corrected</em></p>
+<p>Data column to flag on</p>
 </div></blockquote>
-<p><strong>fields</strong></p>
+<p><strong>usewindowstats</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
-<p>Fields to flag. Either set ‘auto’ or specify as ‘gcal, bpcal, target’</p>
+<div><p><em>{“none”, “sum”, “std”, “both”}</em>, <em>optional</em>, <em>default = std</em></p>
+<p>Calculate additional flags using sliding window statistics</p>
 </div></blockquote>
-<p><strong>calibrator_fields</strong></p>
+<p><strong>combinescans</strong></p>
 <blockquote>
-<div><p><em>str</em>, <em>optional</em>, <em>default = auto</em></p>
-<p>Calibrator fields to estimate the closure errors etc. from.</p>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Accumulate data across scans depending on the value of ntime</p>
 </div></blockquote>
-<p><strong>threads</strong></p>
+<p><strong>flagdimension</strong></p>
 <blockquote>
-<div><p><em>int</em>, <em>optional</em>, <em>default = 1</em></p>
-<p>Number of cores to use to carry out this process.</p>
+<div><p><em>{“freq”, “time”, “freqtime”, “timefreq”}</em>, <em>optional</em>, <em>default = freqtime</em></p>
+<p>Dimensions along which to calculate fits (freq/time/freqtime/timefreq)</p>
+</div></blockquote>
+<p><strong>timecutoff</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 4.0</em></p>
+<p>Flagging thresholds in units of deviation from the fit</p>
+</div></blockquote>
+<p><strong>freqcutoff</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 3.0</em></p>
+<p>Flagging thresholds in units of deviation from the fit</p>
+</div></blockquote>
+<p><strong>correlation</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
+<p>Correlation</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="secondary-cal">
+<span id="cross-cal-secondary-cal"></span><h2><strong>secondary_cal</strong><a class="headerlink" href="#secondary-cal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Calibrating on the amplitude/phase calibrator field</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Execute this section</p>
+</div></blockquote>
+<p><strong>reuse_existing_gains</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Reuse gain tables if they exist</p>
+</div></blockquote>
+<p><strong>order</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = KG</em></p>
+<p>Order in which to solve for gains for this field. E.g, if order is set to ‘KGB’, the we solve for delays, then the phase and amplitude, and finally the bandpass. The full options are: K-delay calibration; G-amplitude and phase calibration; B-bandpass calibration; A-automatic flagging (existing gains will be applied first); I-Do a self-callibration</p>
+</div></blockquote>
+<p><strong>solnorm</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Normalise average solution amplitude to 1.0</p>
+</div></blockquote>
+<p><strong>combine</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = ‘’, scan</em></p>
+<p>Parameter to combine different data axis for solving. Options are [‘’,’obs’, ‘scan’, ‘spw’, ‘field’, ‘obs,scan’, ‘scan,ob’]</p>
+</div></blockquote>
+<p><strong>solint</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = 120s, 120s</em></p>
+<p>Solution interval for delay-correction calibration.</p>
+</div></blockquote>
+<p><strong>calmode</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = a, ap, ap</em></p>
+<p>Type of solution</p>
+</div></blockquote>
+<p><strong>apply</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = B</em></p>
+<p>Gains to apply from calibration of bandpass field</p>
+</div></blockquote>
+<p><strong>plotgains</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Plot gains</p>
+</div></blockquote>
+<p><strong>flag</strong></p>
+<blockquote>
+<div><p>Apply existing gains and flag corrected data</p>
+<p><strong>column</strong></p>
+<blockquote>
+<div><p><em>{“corrected”, “residual”}</em>, <em>optional</em>, <em>default = corrected</em></p>
+<p>Data column to flag on</p>
+</div></blockquote>
+<p><strong>usewindowstats</strong></p>
+<blockquote>
+<div><p><em>{“none”, “sum”, “std”, “both”}</em>, <em>optional</em>, <em>default = std</em></p>
+<p>Calculate additional flags using sliding window statistics</p>
+</div></blockquote>
+<p><strong>combinescans</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = False</em></p>
+<p>Accumulate data across scans depending on the value of ntime</p>
+</div></blockquote>
+<p><strong>flagdimension</strong></p>
+<blockquote>
+<div><p><em>{“freq”, “time”, “freqtime”, “timefreq”}</em>, <em>optional</em>, <em>default = freqtime</em></p>
+<p>Dimensions along which to calculate fits (freq/time/freqtime/timefreq)</p>
+</div></blockquote>
+<p><strong>timecutoff</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 4.0</em></p>
+<p>Flagging thresholds in units of deviation from the fit</p>
+</div></blockquote>
+<p><strong>freqcutoff</strong></p>
+<blockquote>
+<div><p><em>float</em>, <em>optional</em>, <em>default = 3.0</em></p>
+<p>Flagging thresholds in units of deviation from the fit</p>
+</div></blockquote>
+<p><strong>correlation</strong></p>
+<blockquote>
+<div><p><em>str</em>, <em>optional</em>, <em>default = ‘ ‘</em></p>
+<p>Correlation</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="apply-cal">
+<span id="cross-cal-apply-cal"></span><h2><strong>apply_cal</strong><a class="headerlink" href="#apply-cal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Apply calibration</p>
+<p><strong>enable</strong></p>
+<blockquote>
+<div><p><em>bool</em>, <em>optional</em>, <em>default = True</em></p>
+<p>Execute this section</p>
+</div></blockquote>
+<p><strong>applyto</strong></p>
+<blockquote>
+<div><p><em>list</em> <em>of str</em>, <em>optional</em>, <em>default = bpcal, gcal, target</em></p>
+<p>Fields to apply calibration to</p>
+</div></blockquote>
+<p><strong>calmode</strong></p>
+<blockquote>
+<div><p><em>{“=”, “calflag”, “calflagstrict”, “trial”, “flagonly”, “flagonlystrict”}</em>, <em>optional</em>, <em>default = calflag</em></p>
+<p>Calibration mode, the default being “calflag” - calibrates and applies flags from solutions. See CASA documentation for info on other modes.</p>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -756,15 +473,16 @@
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../polcal/index.html" class="btn btn-neutral float-right" title="polcal" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../polcal/index.html" class="btn btn-neutral float-right" title="polcal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../flagging/index.html" class="btn btn-neutral" title="flagging" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../flagging/index.html" class="btn btn-neutral float-left" title="flagging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -773,11 +491,11 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, MeerKATHI team.
+        &copy; Copyright 2019, MeerKATHI team
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -790,36 +508,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/language_data.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>
