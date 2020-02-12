@@ -19,8 +19,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'Caracal'
-copyright = u'2019, Caracal team'
+project = u'MeerKATHI'
+copyright = u'2019, MeerKATHI team'
 author = u'Paolo Serra'
 
 # The short X.Y version
